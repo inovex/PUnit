@@ -11,10 +11,7 @@ import static org.mockito.Matchers.isA;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.portlet.PortletRequest;
 import javax.portlet.PortletResponse;
@@ -22,8 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
@@ -55,11 +50,7 @@ import com.liferay.portlet.PortletURLFactoryUtil;
  * @param <T>
  * 
  */
-public class DefaultUtilInitializerMap implements InitializerMap{
-	
-	private final static Logger LOG = LoggerFactory.getLogger(DefaultUtilInitializerMap.class);
-	
-	private Map<Class<?>, Collection<Initializer<?>>> initializerMap = new HashMap<Class<?>, Collection<Initializer<?>>>();
+public class DefaultUtilInitializerMap extends AbstractInitializerMap {	
 	
 	public DefaultUtilInitializerMap() {
 		addHttpUtilInitializer();
@@ -68,7 +59,6 @@ public class DefaultUtilInitializerMap implements InitializerMap{
 		addPortletURLFactoryInitializer();
 	}
 	
-	
 	protected void addPortalUtilInitializer() {
 		Class<PortalUtil> typeClass = PortalUtil.class;
 		Collection<Initializer<PortalUtil>> configurationFactoryUtilInitializers = getInitializers(typeClass, true);
@@ -76,7 +66,7 @@ public class DefaultUtilInitializerMap implements InitializerMap{
 
 			@Override
 			public void initialize(PortalUtil portalUtil) throws Exception{
-				logUtilPostInitialize(portalUtil.getClass());
+				logPostInitialize(portalUtil.getClass());
 				PortalMock portalMock = (PortalMock) PortalUtil.getPortal();
 				when(portalMock.getMockObject().getHttpServletRequest(isA(PortletRequest.class)))
 					.thenReturn(new MockHttpServletRequest());
@@ -114,7 +104,7 @@ public class DefaultUtilInitializerMap implements InitializerMap{
 
 			@Override
 			public void initialize(PortletURLFactoryUtil instance) {
-				logUtilPostInitialize(instance.getClass());
+				logPostInitialize(instance.getClass());
 				when(PortletURLFactoryUtil.getPortletURLFactory().create(
 						any(PortletRequest.class), anyString(), anyLong(),
 						anyString()))
@@ -132,7 +122,7 @@ public class DefaultUtilInitializerMap implements InitializerMap{
 
 			@Override			
 			public void initialize(HttpUtil httpUtil) {
-				logUtilPostInitialize(httpUtil.getClass());
+				logPostInitialize(httpUtil.getClass());
 				Answer<String> simpleAddAnswer = new Answer<String>() {
 
 					@Override
@@ -167,53 +157,13 @@ public class DefaultUtilInitializerMap implements InitializerMap{
 
 			@Override
 			public void initialize(ConfigurationFactoryUtil configurationFactoryUtil) {
-				logUtilPostInitialize(configurationFactoryUtil.getClass());
+				logPostInitialize(configurationFactoryUtil.getClass());
 				when(ConfigurationFactoryUtil.getConfiguration(any(ClassLoader.class), anyString()))
 					.thenReturn(mock(Configuration.class));
 			}
 			
 		});
 		putInitializer(clazz, configurationFactoryUtilInitializers);
-	}
-	
-	protected void logUtilPostInitialize(Class<?> utilClass){
-		if(LOG.isDebugEnabled()){
-			LOG.debug("Handle {} post construct", utilClass.getSimpleName());
-		}
-	}
-	
-	protected <T> Collection<Initializer<T>> getInitializers (Class<T> type, boolean initializeCollection){
-		Collection<Initializer<T>> configurationFactoryUtilInitializers = convertToTypedCollection(type, initializerMap.get(type));
-		if(initializeCollection && configurationFactoryUtilInitializers == null){
-			configurationFactoryUtilInitializers = new ArrayList<Initializer<T>>();
-		} 
-		return configurationFactoryUtilInitializers; 
-	}
-	
-	public <T> Collection<Initializer<T>> getInitializers(Class<T> clazz) {		
-		return getInitializers(clazz, false);
-	}
-	
-	@SuppressWarnings("unchecked")
-	private <T> Collection<Initializer<T>> convertToTypedCollection(Class<T> typeClass, Collection<Initializer<?>> genericCollection){
-		Collection<Initializer<T>> convertedCollection = null;
-		if(genericCollection != null){
-			convertedCollection = new ArrayList<Initializer<T>>(genericCollection.size());
-			for(Initializer<?> genericInitializer : genericCollection){
-				convertedCollection.add((Initializer<T>) genericInitializer);
-			}
-		}
-		return convertedCollection;
-	}
-	
-	private <T> void putInitializer(Class<T> typeClass, Collection<Initializer<T>> collection){
-		if(collection != null){
-			Collection<Initializer<?>> convertedCollection = new ArrayList<Initializer<?>>(collection.size());
-			for(Initializer<T> initializer : collection){
-				convertedCollection.add(initializer);
-			}
-			this.initializerMap.put(typeClass, convertedCollection);
-		}
 	}
 
 }

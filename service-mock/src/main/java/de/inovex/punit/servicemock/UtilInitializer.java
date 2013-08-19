@@ -142,8 +142,10 @@ public class UtilInitializer {
 	private static <T> void invokeInitializer(T utilInstance, InitializerMap initializerMap) throws Exception{
 		Class<T> clazz = (Class<T>) utilInstance.getClass();
 		Collection<Initializer<T>> initializers = initializerMap.getInitializers(clazz);
-		for(Initializer<T> initializer : initializers){
-			initializer.initialize(utilInstance);
+		if(initializers != null){
+			for(Initializer<T> initializer : initializers){
+				initializer.initialize(utilInstance);
+			}
 		}
 	}
 

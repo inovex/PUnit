@@ -36,5 +36,7 @@ public interface Scenario extends TestRule {
 	public MockRenderResponse getRenderResponse();
 	
 	public InitializerMap getUtilInitializerMap();
+	
+	public InitializerMap getServiceInitializerMap();
 		
 }
