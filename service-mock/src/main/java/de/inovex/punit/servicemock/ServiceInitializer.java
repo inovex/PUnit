@@ -50,9 +50,9 @@ import com.liferay.portal.service.UserLocalServiceUtil;
  * the License.
  * 
  */
-public class MockedServiceInitializer {
+public class ServiceInitializer {
 	
-	private final static Logger LOG = LoggerFactory.getLogger(MockedServiceInitializer.class);
+	private final static Logger LOG = LoggerFactory.getLogger(ServiceInitializer.class);
 	
 	public static void setMockedService(Object liferayLocalServiceUtil, Object mockedService){
 		Field serviceField = ReflectionUtils.findField(liferayLocalServiceUtil.getClass(), "_service");
@@ -97,7 +97,7 @@ public class MockedServiceInitializer {
 	}
 	
 	private static void servicePostConstruct(Object utilInstance){
-		Method method = ReflectionUtils.findMethod(MockedServiceInitializer.class, "handle" + utilInstance.getClass().getSimpleName() + "PostConstruct", utilInstance.getClass());
+		Method method = ReflectionUtils.findMethod(ServiceInitializer.class, "handle" + utilInstance.getClass().getSimpleName() + "PostConstruct", utilInstance.getClass());
 		if(method != null){
 			ReflectionUtils.invokeMethod(method, null, utilInstance);
 		}

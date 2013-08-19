@@ -6,9 +6,12 @@ import org.springframework.mock.web.portlet.MockActionResponse;
 import org.springframework.mock.web.portlet.MockRenderRequest;
 import org.springframework.mock.web.portlet.MockRenderResponse;
 
-import de.inovex.punit.servicemock.MockedServiceInitializer;
+import com.liferay.portal.kernel.util.PropsUtil;
+
+import de.inovex.punit.servicemock.InitializerMap;
+import de.inovex.punit.servicemock.ServiceInitializer;
 import de.inovex.punit.servicemock.PropsMock;
-import de.inovex.punit.servicemock.StaticUtilInitializer;
+import de.inovex.punit.servicemock.UtilInitializer;
 
 /**
  * 
@@ -27,16 +30,16 @@ import de.inovex.punit.servicemock.StaticUtilInitializer;
  * the License.
  * 
  */
-public class DefaultGuestScenario extends ExternalResource implements Scenario{
+public class DefaultLiferayScenario extends ExternalResource implements Scenario{
 	
 	protected LiferayTestRequestUtil requestUtil = new LiferayTestRequestUtil();
 
 	@Override
 	protected void before() throws Throwable {				
 		super.before();
-		com.liferay.portal.kernel.util.PropsUtil.setProps(new PropsMock());
-		MockedServiceInitializer.initAllMockedServices();
-		StaticUtilInitializer.initAllMockedUtils();
+		PropsUtil.setProps(new PropsMock());
+		ServiceInitializer.initAllMockedServices();
+		UtilInitializer.initAllMockedUtils();
 	}
 
 	@Override
@@ -57,6 +60,12 @@ public class DefaultGuestScenario extends ExternalResource implements Scenario{
 	@Override
 	public MockRenderResponse getRenderResponse() {
 		return requestUtil.getRenderResponse();
+	}
+
+	@Override
+	public InitializerMap getUtilInitializerMap() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

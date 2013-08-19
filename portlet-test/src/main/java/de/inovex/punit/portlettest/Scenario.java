@@ -6,6 +6,8 @@ import org.springframework.mock.web.portlet.MockActionResponse;
 import org.springframework.mock.web.portlet.MockRenderRequest;
 import org.springframework.mock.web.portlet.MockRenderResponse;
 
+import de.inovex.punit.servicemock.InitializerMap;
+
 /**
  * 
  * Copyright (C) 2013 Andreas Friedel - https://github.com/inovex/PUnit - <inovex GmbH>
@@ -32,4 +34,7 @@ public interface Scenario extends TestRule {
 	public MockRenderRequest getRenderRequest();
 	
 	public MockRenderResponse getRenderResponse();
+	
+	public InitializerMap getUtilInitializerMap();
+		
 }
