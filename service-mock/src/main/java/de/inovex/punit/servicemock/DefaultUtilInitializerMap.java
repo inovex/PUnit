@@ -29,8 +29,6 @@ import org.springframework.mock.web.MockHttpServletResponse;
 
 import com.liferay.portal.kernel.configuration.Configuration;
 import com.liferay.portal.kernel.configuration.ConfigurationFactoryUtil;
-import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.portlet.LiferayPortletURL;
 import com.liferay.portal.kernel.util.HttpUtil;
 import com.liferay.portal.model.Company;
@@ -63,7 +61,7 @@ public class DefaultUtilInitializerMap implements InitializerMap{
 	
 	private Map<Class<?>, Collection<Initializer<?>>> initializerMap = new HashMap<Class<?>, Collection<Initializer<?>>>();
 	
-	public DefaultUtilInitializerMap() throws PortalException, SystemException{
+	public DefaultUtilInitializerMap() {
 		addHttpUtilInitializer();
 		addConfigurationFactoryInitializer();
 		addPortalUtilInitializer();
@@ -71,8 +69,7 @@ public class DefaultUtilInitializerMap implements InitializerMap{
 	}
 	
 	
-	protected void addPortalUtilInitializer()
-			throws PortalException, SystemException {
+	protected void addPortalUtilInitializer() {
 		Class<PortalUtil> typeClass = PortalUtil.class;
 		Collection<Initializer<PortalUtil>> configurationFactoryUtilInitializers = getInitializers(typeClass, true);
 		configurationFactoryUtilInitializers.add(new Initializer<PortalUtil>(){

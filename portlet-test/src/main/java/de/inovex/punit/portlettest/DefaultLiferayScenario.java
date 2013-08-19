@@ -8,6 +8,7 @@ import org.springframework.mock.web.portlet.MockRenderResponse;
 
 import com.liferay.portal.kernel.util.PropsUtil;
 
+import de.inovex.punit.servicemock.DefaultUtilInitializerMap;
 import de.inovex.punit.servicemock.InitializerMap;
 import de.inovex.punit.servicemock.ServiceInitializer;
 import de.inovex.punit.servicemock.PropsMock;
@@ -33,13 +34,15 @@ import de.inovex.punit.servicemock.UtilInitializer;
 public class DefaultLiferayScenario extends ExternalResource implements Scenario{
 	
 	protected LiferayTestRequestUtil requestUtil = new LiferayTestRequestUtil();
+	
+	protected InitializerMap utilInitializerMap = new DefaultUtilInitializerMap();
 
 	@Override
 	protected void before() throws Throwable {				
 		super.before();
 		PropsUtil.setProps(new PropsMock());
 		ServiceInitializer.initAllMockedServices();
-		UtilInitializer.initAllMockedUtils();
+		UtilInitializer.initAllMockedUtils(getUtilInitializerMap());
 	}
 
 	@Override
@@ -64,8 +67,7 @@ public class DefaultLiferayScenario extends ExternalResource implements Scenario
 
 	@Override
 	public InitializerMap getUtilInitializerMap() {
-		// TODO Auto-generated method stub
-		return null;
+		return utilInitializerMap;
 	}
 
 }
