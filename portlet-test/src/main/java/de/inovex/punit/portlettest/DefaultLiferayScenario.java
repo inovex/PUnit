@@ -44,7 +44,7 @@ public class DefaultLiferayScenario extends ExternalResource implements Scenario
 	protected void before() throws Throwable {				
 		super.before();
 		PropsUtil.setProps(new PropsMock());
-		ServiceInitializer.initAllMockedServices();
+		ServiceInitializer.initAllMockedServices(getServiceInitializerMap());
 		UtilInitializer.initAllMockedUtils(getUtilInitializerMap());
 	}
 
