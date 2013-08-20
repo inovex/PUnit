@@ -35,6 +35,12 @@ public class ServiceInitializer {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(ServiceInitializer.class);
 	
+	private static final String PROPERTIES = ".properties";
+	
+	private static final String SERVICE_PROPERTIES = "service-mock" + PROPERTIES;
+	
+	private static final String CUSTOM_SERVICE_PROPERTIES = "custom-" + SERVICE_PROPERTIES;	
+	
 	public static void setMockedService(Object liferayLocalServiceUtil, Object mockedService){
 		Field serviceField = ReflectionUtils.findField(liferayLocalServiceUtil.getClass(), "_service");
 		ReflectionUtils.makeAccessible(serviceField);
@@ -46,8 +52,8 @@ public class ServiceInitializer {
 	}
 	
 	public static void initAllMockedServices(InitializerMap serviceInitializerMap) throws IOException, InstantiationException, IllegalAccessException{
-		Properties serviceProperties = PropertiesLoaderUtils.loadAllProperties("service-mock.properties");
-		Properties customProperties = PropertiesLoaderUtils.loadAllProperties("custom-service-mock.properties");
+		Properties serviceProperties = PropertiesLoaderUtils.loadAllProperties(SERVICE_PROPERTIES);
+		Properties customProperties = PropertiesLoaderUtils.loadAllProperties(CUSTOM_SERVICE_PROPERTIES);
 		if(customProperties != null && !customProperties.isEmpty()){
 			LOG.info("Loading custom service properties");
 			serviceProperties.putAll(customProperties);

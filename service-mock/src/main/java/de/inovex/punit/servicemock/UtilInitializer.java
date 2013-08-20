@@ -43,11 +43,11 @@ public class UtilInitializer {
 	
 	private static Map<String, Object> INSTANCE_MAP = new ConcurrentHashMap<String, Object>();
 	
-	private static final String UTIL_PROPERTIES = "util-mock";
-	
-	private static final String CUSTOM_UTIL_PROPERTIES = "util-mock";
-	
 	private static final String PROPERTIES = ".properties";
+	
+	private static final String UTIL_PROPERTIES = "util-mock" + PROPERTIES;
+	
+	private static final String CUSTOM_UTIL_PROPERTIES = "custom-" + UTIL_PROPERTIES;	
 	
 	public static void initAllMockedUtils() throws SecurityException,
 			IllegalArgumentException, IOException, InstantiationException,
@@ -74,11 +74,11 @@ public class UtilInitializer {
 	}
 	
 	private static Properties loadUtilProperties() throws IOException{
-		return PropertiesLoaderUtils.loadAllProperties(UTIL_PROPERTIES + PROPERTIES);
+		return PropertiesLoaderUtils.loadAllProperties(UTIL_PROPERTIES);
 	}
 	
 	private static Properties loadCustomUtilProperties() throws IOException{
-		return PropertiesLoaderUtils.loadAllProperties(CUSTOM_UTIL_PROPERTIES + PROPERTIES);
+		return PropertiesLoaderUtils.loadAllProperties(CUSTOM_UTIL_PROPERTIES);
 	}
 	
 	private static Object getUtilInstance(Class<?> utilClass)
