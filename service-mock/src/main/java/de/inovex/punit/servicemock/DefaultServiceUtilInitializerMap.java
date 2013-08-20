@@ -39,9 +39,9 @@ import com.liferay.portal.service.UserLocalServiceUtil;
  * @param <T>
  * 
  */
-public class DefaultServiceInitializerMap extends AbstractInitializerMap{
+public class DefaultServiceUtilInitializerMap extends AbstractInitializerMap{
 
-	public DefaultServiceInitializerMap(){
+	public DefaultServiceUtilInitializerMap(){
 		addUserLocalServiceUtilInitializer();
 	}
 	

@@ -48,7 +48,7 @@ public class ServiceInitializer {
 	}
 	
 	public static void initAllMockedServices() throws IOException, InstantiationException, IllegalAccessException{
-		initAllMockedServices(new DefaultServiceInitializerMap());
+		initAllMockedServices(new DefaultServiceUtilInitializerMap());
 	}
 	
 	public static void initAllMockedServices(InitializerMap serviceInitializerMap) throws IOException, InstantiationException, IllegalAccessException{
@@ -65,9 +65,9 @@ public class ServiceInitializer {
 			try {
 				Class<?> utilClass = findLiferayUtilClass(object.toString());
 				Class<?> serviceClass = Class.forName(serviceProperties.getProperty(object.toString()));
-				Object serviceInstance = utilClass.newInstance();
-				setMockedService(serviceInstance, getMockObject(serviceClass));
-				invokeInitializer(serviceInstance, serviceInitializerMap);
+				Object serviceUtilInstance = utilClass.newInstance();
+				setMockedService(serviceUtilInstance, getMockObject(serviceClass));
+				invokeInitializer(serviceUtilInstance, serviceInitializerMap);
 			} catch (ClassNotFoundException e) {
 				LOG.error("Util class not found for: " + object);
 			} catch (Exception e) {
@@ -90,12 +90,12 @@ public class ServiceInitializer {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static <T> void invokeInitializer(T serviceInstance, InitializerMap initializerMap) throws Exception{
-		Class<T> clazz = (Class<T>) serviceInstance.getClass();
+	private static <T> void invokeInitializer(T serviceUtilInstance, InitializerMap initializerMap) throws Exception{
+		Class<T> clazz = (Class<T>) serviceUtilInstance.getClass();
 		Collection<Initializer<T>> initializers = initializerMap.getInitializers(clazz);
 		if(initializers != null){
 			for(Initializer<T> initializer : initializers){
-				initializer.initialize(serviceInstance);
+				initializer.initialize(serviceUtilInstance);
 			}
 		}
 	}

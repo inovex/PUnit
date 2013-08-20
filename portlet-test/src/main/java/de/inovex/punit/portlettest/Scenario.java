@@ -37,6 +37,6 @@ public interface Scenario extends TestRule {
 	
 	public InitializerMap getUtilInitializerMap();
 	
-	public InitializerMap getServiceInitializerMap();
+	public InitializerMap getServiceUtilInitializerMap();
 		
 }
