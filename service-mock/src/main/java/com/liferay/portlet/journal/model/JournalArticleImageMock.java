@@ -4,10 +4,10 @@ package com.liferay.portlet.journal.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -58,14 +58,11 @@ public class JournalArticleImageMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -79,11 +76,7 @@ public class JournalArticleImageMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -93,8 +86,10 @@ public class JournalArticleImageMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<JournalArticleImage> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public JournalArticleImage toEscapedModel() {
@@ -105,6 +100,24 @@ public class JournalArticleImageMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<JournalArticleImage> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
     public String getLanguageId() {
         return this.mockObject.getLanguageId();
     }
@@ -112,32 +125,8 @@ public class JournalArticleImageMock
     public void setLanguageId(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public double getVersion() {
-        return this.mockObject.getVersion();
-    }
-
-    public void setVersion(double param0) {
-    }
-
     public long getArticleImageId() {
         return this.mockObject.getArticleImageId();
-    }
-
-    public void setArticleImageId(long param0) {
-    }
-
-    public String getArticleId() {
-        return this.mockObject.getArticleId();
-    }
-
-    public void setArticleId(String param0) {
     }
 
     public String getElInstanceId() {
@@ -154,6 +143,10 @@ public class JournalArticleImageMock
     public void setElName(String param0) {
     }
 
+    public String getArticleId() {
+        return this.mockObject.getArticleId();
+    }
+
     public boolean getTempImage() {
         return this.mockObject.getTempImage();
     }
@@ -165,11 +158,28 @@ public class JournalArticleImageMock
     public void setTempImage(boolean param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setArticleImageId(long param0) {
+    }
+
+    public void setArticleId(String param0) {
+    }
+
+    public void setVersion(double param0) {
+    }
+
+    public double getVersion() {
+        return this.mockObject.getVersion();
+    }
+
+    public JournalArticleImage toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

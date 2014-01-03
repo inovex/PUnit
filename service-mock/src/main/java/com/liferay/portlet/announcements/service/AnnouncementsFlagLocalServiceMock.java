@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.announcements.model.AnnouncementsFlag;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -54,39 +54,23 @@ public class AnnouncementsFlagLocalServiceMock
         return this.mockObject.addFlag(param0, param1, param2);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public void deleteFlag(AnnouncementsFlag param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public void deleteFlag(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public AnnouncementsFlag createAnnouncementsFlag(long param0) {
+        return this.mockObject.createAnnouncementsFlag(param0);
+    }
+
+    public void deleteFlags(long param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
     }
 
     public AnnouncementsFlag addAnnouncementsFlag(AnnouncementsFlag param0)
@@ -96,18 +80,20 @@ public class AnnouncementsFlagLocalServiceMock
         return param0;
     }
 
-    public AnnouncementsFlag createAnnouncementsFlag(long param0) {
-        return this.mockObject.createAnnouncementsFlag(param0);
-    }
-
-    public AnnouncementsFlag deleteAnnouncementsFlag(long param0)
+    public AnnouncementsFlag getFlag(long param0, long param1, int param2)
         throws PortalException, SystemException
     {
-        return this.mockObject.deleteAnnouncementsFlag(param0);
+        return this.mockObject.getFlag(param0, param1, param2);
     }
 
     public AnnouncementsFlag deleteAnnouncementsFlag(AnnouncementsFlag param0)
         throws SystemException
+    {
+        return this.mockObject.deleteAnnouncementsFlag(param0);
+    }
+
+    public AnnouncementsFlag deleteAnnouncementsFlag(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deleteAnnouncementsFlag(param0);
     }
@@ -142,31 +128,45 @@ public class AnnouncementsFlagLocalServiceMock
         return this.mockObject.updateAnnouncementsFlag(param0);
     }
 
-    public AnnouncementsFlag updateAnnouncementsFlag(AnnouncementsFlag param0, boolean param1)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
-        return this.mockObject.updateAnnouncementsFlag(param0, param1);
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
     }
 
-    public void deleteFlag(AnnouncementsFlag param0)
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
+        return this.mockObject.dynamicQuery(param0);
     }
 
-    public void deleteFlag(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteFlags(long param0)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
         throws SystemException
     {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
-    public AnnouncementsFlag getFlag(long param0, long param1, int param2)
-        throws PortalException, SystemException
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
     {
-        return this.mockObject.getFlag(param0, param1, param2);
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

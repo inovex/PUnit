@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.UnicodeProperties;
 import com.liferay.portal.security.permission.PermissionChecker;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -45,35 +45,8 @@ public class LayoutMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.Layout.class));
     }
 
-    public Group getGroup()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getGroup();
-    }
-
-    public String getTypeSettings() {
-        return this.mockObject.getTypeSettings();
-    }
-
-    public UnicodeProperties getTypeSettingsProperties() {
-        return this.mockObject.getTypeSettingsProperties();
-    }
-
-    public String getTypeSettingsProperty(String param0) {
-        return this.mockObject.getTypeSettingsProperty(param0);
-    }
-
-    public String getTypeSettingsProperty(String param0, String param1) {
-        return this.mockObject.getTypeSettingsProperty(param0, param1);
-    }
-
-    public void setTypeSettings(String param0) {
-    }
-
-    public void setTypeSettingsProperties(UnicodeProperties param0) {
-    }
-
-    public void setGroupId(long param0) {
+    public String getTarget() {
+        return this.mockObject.getTarget();
     }
 
     public List<Layout> getAncestors()
@@ -82,56 +55,16 @@ public class LayoutMock
         return this.mockObject.getAncestors();
     }
 
-    public ColorScheme getColorScheme()
+    public Group getGroup()
         throws PortalException, SystemException
     {
-        return this.mockObject.getColorScheme();
-    }
-
-    public LayoutSet getLayoutSet()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getLayoutSet();
+        return this.mockObject.getGroup();
     }
 
     public Group getScopeGroup()
         throws PortalException, SystemException
     {
         return this.mockObject.getScopeGroup();
-    }
-
-    public boolean hasScopeGroup()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.hasScopeGroup();
-    }
-
-    public Theme getTheme()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getTheme();
-    }
-
-    public String getThemeSetting(String param0, String param1) {
-        return this.mockObject.getThemeSetting(param0, param1);
-    }
-
-    public void setLayoutSet(LayoutSet param0) {
-    }
-
-    public ColorScheme getWapColorScheme()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getWapColorScheme();
-    }
-
-    public Theme getWapTheme()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getWapTheme();
-    }
-
-    public void setPrivateLayout(boolean param0) {
     }
 
     public List<Layout> getAllChildren()
@@ -152,30 +85,16 @@ public class LayoutMock
         return this.mockObject.getAncestorPlid();
     }
 
-    public List<Layout> getChildren()
+    public Map<Locale, String> getFriendlyURLMap()
         throws SystemException
     {
-        return this.mockObject.getChildren();
+        return this.mockObject.getFriendlyURLMap();
     }
 
-    public List<Layout> getChildren(PermissionChecker param0)
-        throws PortalException, SystemException
+    public String getFriendlyURLsXML()
+        throws SystemException
     {
-        return this.mockObject.getChildren(param0);
-    }
-
-    public String getCssText()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getCssText();
-    }
-
-    public String getHTMLTitle(Locale param0) {
-        return this.mockObject.getHTMLTitle(param0);
-    }
-
-    public String getHTMLTitle(String param0) {
-        return this.mockObject.getHTMLTitle(param0);
+        return this.mockObject.getFriendlyURLsXML();
     }
 
     public LayoutType getLayoutType() {
@@ -204,16 +123,6 @@ public class LayoutMock
         throws PortalException, SystemException
     {
         return this.mockObject.getResetMaxStateURL(param0);
-    }
-
-    public String getTarget() {
-        return this.mockObject.getTarget();
-    }
-
-    public boolean hasAncestor(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.hasAncestor(param0);
     }
 
     public boolean hasChildren()
@@ -264,6 +173,10 @@ public class LayoutMock
         return this.mockObject.isSelected(param0, param1, param2);
     }
 
+    public boolean isSupportsEmbeddedPortlets() {
+        return this.mockObject.isSupportsEmbeddedPortlets();
+    }
+
     public boolean isTypeArticle() {
         return this.mockObject.isTypeArticle();
     }
@@ -292,6 +205,100 @@ public class LayoutMock
         return this.mockObject.isTypeURL();
     }
 
+    public ColorScheme getWapColorScheme()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getWapColorScheme();
+    }
+
+    public Theme getWapTheme()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getWapTheme();
+    }
+
+    public String getHTMLTitle(String param0) {
+        return this.mockObject.getHTMLTitle(param0);
+    }
+
+    public String getHTMLTitle(Locale param0) {
+        return this.mockObject.getHTMLTitle(param0);
+    }
+
+    public String getCssText()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getCssText();
+    }
+
+    public ColorScheme getColorScheme()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getColorScheme();
+    }
+
+    public LayoutSet getLayoutSet()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getLayoutSet();
+    }
+
+    public boolean hasScopeGroup()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.hasScopeGroup();
+    }
+
+    public Theme getTheme()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTheme();
+    }
+
+    public String getThemeSetting(String param0, String param1) {
+        return this.mockObject.getThemeSetting(param0, param1);
+    }
+
+    public void setLayoutSet(LayoutSet param0) {
+    }
+
+    public UnicodeProperties getTypeSettingsProperties() {
+        return this.mockObject.getTypeSettingsProperties();
+    }
+
+    public String getTypeSettingsProperty(String param0) {
+        return this.mockObject.getTypeSettingsProperty(param0);
+    }
+
+    public String getTypeSettingsProperty(String param0, String param1) {
+        return this.mockObject.getTypeSettingsProperty(param0, param1);
+    }
+
+    public boolean hasAncestor(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.hasAncestor(param0);
+    }
+
+    public void setTypeSettingsProperties(UnicodeProperties param0) {
+    }
+
+    public String getFriendlyURL(Locale param0) {
+        return this.mockObject.getFriendlyURL(param0);
+    }
+
+    public List<Layout> getChildren()
+        throws SystemException
+    {
+        return this.mockObject.getChildren();
+    }
+
+    public List<Layout> getChildren(PermissionChecker param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getChildren(param0);
+    }
+
     public String toString() {
         return this.mockObject.toString();
     }
@@ -308,11 +315,7 @@ public class LayoutMock
         return this.mockObject.compareTo(param0);
     }
 
-    public String getName() {
-        return this.mockObject.getName();
-    }
-
-    public String getName(Locale param0) {
+    public String getName(String param0) {
         return this.mockObject.getName(param0);
     }
 
@@ -320,8 +323,12 @@ public class LayoutMock
         return this.mockObject.getName(param0, param1);
     }
 
-    public String getName(String param0) {
+    public String getName(Locale param0) {
         return this.mockObject.getName(param0);
+    }
+
+    public String getName() {
+        return this.mockObject.getName();
     }
 
     public String getName(String param0, boolean param1) {
@@ -335,10 +342,10 @@ public class LayoutMock
         return this.mockObject.getPriority();
     }
 
-    public void setName(String param0) {
+    public void setName(String param0, Locale param1) {
     }
 
-    public void setName(String param0, Locale param1) {
+    public void setName(String param0) {
     }
 
     public void setName(String param0, Locale param1, Locale param2) {
@@ -350,6 +357,18 @@ public class LayoutMock
 
     public boolean isHidden() {
         return this.mockObject.isHidden();
+    }
+
+    public long getPrimaryKey() {
+        return this.mockObject.getPrimaryKey();
+    }
+
+    public String getDescription(String param0, boolean param1) {
+        return this.mockObject.getDescription(param0, param1);
+    }
+
+    public String getDescription(String param0) {
+        return this.mockObject.getDescription(param0);
     }
 
     public String getDescription() {
@@ -364,26 +383,11 @@ public class LayoutMock
         return this.mockObject.getDescription(param0, param1);
     }
 
-    public String getDescription(String param0) {
-        return this.mockObject.getDescription(param0);
+    public void setGroupId(long param0) {
     }
 
-    public String getDescription(String param0, boolean param1) {
-        return this.mockObject.getDescription(param0, param1);
-    }
-
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
-    }
-
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -397,11 +401,7 @@ public class LayoutMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -411,8 +411,10 @@ public class LayoutMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<Layout> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public Layout toEscapedModel() {
@@ -423,18 +425,22 @@ public class LayoutMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Layout> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -451,6 +457,13 @@ public class LayoutMock
     public void setPlid(long param0) {
     }
 
+    public long getUserId() {
+        return this.mockObject.getUserId();
+    }
+
+    public void setUserId(long param0) {
+    }
+
     public String getUuid() {
         return this.mockObject.getUuid();
     }
@@ -458,70 +471,38 @@ public class LayoutMock
     public void setUuid(String param0) {
     }
 
+    public String getUserName() {
+        return this.mockObject.getUserName();
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
+    }
+
     public void setType(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public void setDescription(String param0) {
+    public String getNameCurrentLanguageId() {
+        return this.mockObject.getNameCurrentLanguageId();
     }
 
-    public void setDescription(String param0, Locale param1) {
+    public String getNameCurrentValue() {
+        return this.mockObject.getNameCurrentValue();
     }
 
-    public void setDescription(String param0, Locale param1, Locale param2) {
-    }
-
-    public String getFriendlyURL() {
-        return this.mockObject.getFriendlyURL();
-    }
-
-    public void setFriendlyURL(String param0) {
-    }
-
-    public String getColorSchemeId() {
-        return this.mockObject.getColorSchemeId();
-    }
-
-    public String getThemeId() {
-        return this.mockObject.getThemeId();
-    }
-
-    public boolean getPrivateLayout() {
-        return this.mockObject.getPrivateLayout();
-    }
-
-    public boolean isPrivateLayout() {
-        return this.mockObject.isPrivateLayout();
-    }
-
-    public void setThemeId(String param0) {
-    }
-
-    public void setColorSchemeId(String param0) {
-    }
-
-    public String getWapThemeId() {
-        return this.mockObject.getWapThemeId();
-    }
-
-    public void setWapThemeId(String param0) {
-    }
-
-    public String getWapColorSchemeId() {
-        return this.mockObject.getWapColorSchemeId();
-    }
-
-    public void setWapColorSchemeId(String param0) {
-    }
-
-    public String getCss() {
-        return this.mockObject.getCss();
-    }
-
-    public void setCss(String param0) {
+    public void setNameCurrentLanguageId(String param0) {
     }
 
     public long getLayoutId() {
@@ -538,41 +519,30 @@ public class LayoutMock
     public void setParentLayoutId(long param0) {
     }
 
-    public String getNameCurrentLanguageId() {
-        return this.mockObject.getNameCurrentLanguageId();
-    }
-
-    public String getNameCurrentValue() {
-        return this.mockObject.getNameCurrentValue();
-    }
-
     public Map<Locale, String> getNameMap() {
         return this.mockObject.getNameMap();
-    }
-
-    public void setNameCurrentLanguageId(String param0) {
-    }
-
-    public void setNameMap(Map<Locale, String> param0) {
     }
 
     public void setNameMap(Map<Locale, String> param0, Locale param1) {
     }
 
-    public String getTitle() {
-        return this.mockObject.getTitle();
-    }
-
-    public String getTitle(Locale param0) {
-        return this.mockObject.getTitle(param0);
+    public void setNameMap(Map<Locale, String> param0) {
     }
 
     public String getTitle(Locale param0, boolean param1) {
         return this.mockObject.getTitle(param0, param1);
     }
 
+    public String getTitle(Locale param0) {
+        return this.mockObject.getTitle(param0);
+    }
+
     public String getTitle(String param0) {
         return this.mockObject.getTitle(param0);
+    }
+
+    public String getTitle() {
+        return this.mockObject.getTitle();
     }
 
     public String getTitle(String param0, boolean param1) {
@@ -591,10 +561,10 @@ public class LayoutMock
         return this.mockObject.getTitleMap();
     }
 
-    public void setTitle(String param0) {
+    public void setTitle(String param0, Locale param1) {
     }
 
-    public void setTitle(String param0, Locale param1) {
+    public void setTitle(String param0) {
     }
 
     public void setTitle(String param0, Locale param1, Locale param2) {
@@ -603,10 +573,10 @@ public class LayoutMock
     public void setTitleCurrentLanguageId(String param0) {
     }
 
-    public void setTitleMap(Map<Locale, String> param0) {
+    public void setTitleMap(Map<Locale, String> param0, Locale param1) {
     }
 
-    public void setTitleMap(Map<Locale, String> param0, Locale param1) {
+    public void setTitleMap(Map<Locale, String> param0) {
     }
 
     public String getDescriptionCurrentLanguageId() {
@@ -624,10 +594,10 @@ public class LayoutMock
     public void setDescriptionCurrentLanguageId(String param0) {
     }
 
-    public void setDescriptionMap(Map<Locale, String> param0) {
+    public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
     }
 
-    public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
+    public void setDescriptionMap(Map<Locale, String> param0) {
     }
 
     public String getKeywords() {
@@ -638,7 +608,7 @@ public class LayoutMock
         return this.mockObject.getKeywords(param0);
     }
 
-    public String getKeywords(Locale param0, boolean param1) {
+    public String getKeywords(String param0, boolean param1) {
         return this.mockObject.getKeywords(param0, param1);
     }
 
@@ -646,7 +616,7 @@ public class LayoutMock
         return this.mockObject.getKeywords(param0);
     }
 
-    public String getKeywords(String param0, boolean param1) {
+    public String getKeywords(Locale param0, boolean param1) {
         return this.mockObject.getKeywords(param0, param1);
     }
 
@@ -662,13 +632,13 @@ public class LayoutMock
         return this.mockObject.getKeywordsMap();
     }
 
-    public void setKeywords(String param0) {
+    public void setKeywords(String param0, Locale param1, Locale param2) {
     }
 
     public void setKeywords(String param0, Locale param1) {
     }
 
-    public void setKeywords(String param0, Locale param1, Locale param2) {
+    public void setKeywords(String param0) {
     }
 
     public void setKeywordsCurrentLanguageId(String param0) {
@@ -680,16 +650,12 @@ public class LayoutMock
     public void setKeywordsMap(Map<Locale, String> param0, Locale param1) {
     }
 
-    public String getRobots() {
-        return this.mockObject.getRobots();
-    }
-
     public String getRobots(Locale param0) {
         return this.mockObject.getRobots(param0);
     }
 
-    public String getRobots(Locale param0, boolean param1) {
-        return this.mockObject.getRobots(param0, param1);
+    public String getRobots() {
+        return this.mockObject.getRobots();
     }
 
     public String getRobots(String param0) {
@@ -697,6 +663,10 @@ public class LayoutMock
     }
 
     public String getRobots(String param0, boolean param1) {
+        return this.mockObject.getRobots(param0, param1);
+    }
+
+    public String getRobots(Locale param0, boolean param1) {
         return this.mockObject.getRobots(param0, param1);
     }
 
@@ -712,22 +682,22 @@ public class LayoutMock
         return this.mockObject.getRobotsMap();
     }
 
-    public void setRobots(String param0) {
+    public void setRobots(String param0, Locale param1, Locale param2) {
     }
 
     public void setRobots(String param0, Locale param1) {
     }
 
-    public void setRobots(String param0, Locale param1, Locale param2) {
+    public void setRobots(String param0) {
     }
 
     public void setRobotsCurrentLanguageId(String param0) {
     }
 
-    public void setRobotsMap(Map<Locale, String> param0) {
+    public void setRobotsMap(Map<Locale, String> param0, Locale param1) {
     }
 
-    public void setRobotsMap(Map<Locale, String> param0, Locale param1) {
+    public void setRobotsMap(Map<Locale, String> param0) {
     }
 
     public boolean getHidden() {
@@ -780,16 +750,112 @@ public class LayoutMock
     public void setSourcePrototypeLayoutUuid(String param0) {
     }
 
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
     public void prepareLocalizedFieldsForImport(Locale param0)
         throws LocaleException
     {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
+    }
+
+    public boolean getPrivateLayout() {
+        return this.mockObject.getPrivateLayout();
+    }
+
+    public boolean isPrivateLayout() {
+        return this.mockObject.isPrivateLayout();
+    }
+
+    public void setPrivateLayout(boolean param0) {
+    }
+
+    public void setThemeId(String param0) {
+    }
+
+    public void setColorSchemeId(String param0) {
+    }
+
+    public String getWapThemeId() {
+        return this.mockObject.getWapThemeId();
+    }
+
+    public void setWapThemeId(String param0) {
+    }
+
+    public String getWapColorSchemeId() {
+        return this.mockObject.getWapColorSchemeId();
+    }
+
+    public void setWapColorSchemeId(String param0) {
+    }
+
+    public String getCss() {
+        return this.mockObject.getCss();
+    }
+
+    public void setCss(String param0) {
+    }
+
+    public Layout toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public String getColorSchemeId() {
+        return this.mockObject.getColorSchemeId();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public String getThemeId() {
+        return this.mockObject.getThemeId();
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public void setDescription(String param0, Locale param1) {
+    }
+
+    public void setDescription(String param0, Locale param1, Locale param2) {
+    }
+
+    public String getTypeSettings() {
+        return this.mockObject.getTypeSettings();
+    }
+
+    public void setTypeSettings(String param0) {
+    }
+
+    public String getFriendlyURL() {
+        return this.mockObject.getFriendlyURL();
+    }
+
+    public void setFriendlyURL(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -801,6 +867,10 @@ public class LayoutMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

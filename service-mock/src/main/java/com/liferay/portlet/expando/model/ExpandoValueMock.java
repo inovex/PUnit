@@ -3,12 +3,14 @@ package com.liferay.portlet.expando.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -106,6 +108,18 @@ public class ExpandoValueMock
         return this.mockObject.getNumber();
     }
 
+    public List<Locale> getAvailableLocales()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getAvailableLocales();
+    }
+
+    public String getString(Locale param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getString(param0);
+    }
+
     public String getString()
         throws PortalException, SystemException
     {
@@ -118,26 +132,28 @@ public class ExpandoValueMock
         return this.mockObject.getDate();
     }
 
+    public String[] getStringArray(Locale param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getStringArray(param0);
+    }
+
     public String[] getStringArray()
         throws PortalException, SystemException
     {
         return this.mockObject.getStringArray();
     }
 
-    public void setDate(Date param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void setNumber(Number param0)
-        throws PortalException, SystemException
-    {
-    }
-
     public ExpandoColumn getColumn()
         throws PortalException, SystemException
     {
         return this.mockObject.getColumn();
+    }
+
+    public Locale getDefaultLocale()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDefaultLocale();
     }
 
     public boolean[] getBooleanArray()
@@ -182,16 +198,22 @@ public class ExpandoValueMock
         return this.mockObject.getNumberArray();
     }
 
-    public Serializable getSerializable()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getSerializable();
-    }
-
     public short[] getShortArray()
         throws PortalException, SystemException
     {
         return this.mockObject.getShortArray();
+    }
+
+    public Map<Locale, String[]> getStringArrayMap()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getStringArrayMap();
+    }
+
+    public Map<Locale, String> getStringMap()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getStringMap();
     }
 
     public void setBooleanArray(boolean[] param0)
@@ -242,12 +264,48 @@ public class ExpandoValueMock
     {
     }
 
+    public void setString(String param0, Locale param1, Locale param2)
+        throws PortalException, SystemException
+    {
+    }
+
     public void setString(String param0)
         throws PortalException, SystemException
     {
     }
 
+    public void setStringArray(String[] param0, Locale param1, Locale param2)
+        throws PortalException, SystemException
+    {
+    }
+
     public void setStringArray(String[] param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void setStringArrayMap(Map<Locale, String[]> param0, Locale param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void setStringMap(Map<Locale, String> param0, Locale param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void setDate(Date param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public Serializable getSerializable()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getSerializable();
+    }
+
+    public void setNumber(Number param0)
         throws PortalException, SystemException
     {
     }
@@ -280,16 +338,6 @@ public class ExpandoValueMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -301,22 +349,20 @@ public class ExpandoValueMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<ExpandoValue> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public ExpandoValue toEscapedModel() {
@@ -327,12 +373,68 @@ public class ExpandoValueMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ExpandoValue> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
     public long getClassPK() {
         return this.mockObject.getClassPK();
     }
 
+    public void setTableId(long param0) {
+    }
+
+    public long getColumnId() {
+        return this.mockObject.getColumnId();
+    }
+
+    public void setColumnId(long param0) {
+    }
+
+    public long getTableId() {
+        return this.mockObject.getTableId();
+    }
+
+    public void setRowId(long param0) {
+    }
+
+    public long getRowId() {
+        return this.mockObject.getRowId();
+    }
+
+    public void setValueId(long param0) {
+    }
+
+    public long getValueId() {
+        return this.mockObject.getValueId();
+    }
+
+    public void setData(String param0) {
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
     public long getCompanyId() {
         return this.mockObject.getCompanyId();
+    }
+
+    public ExpandoValue toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void setClassName(String param0) {
@@ -348,45 +450,11 @@ public class ExpandoValueMock
         return this.mockObject.getClassNameId();
     }
 
-    public void setClassNameId(long param0) {
-    }
-
-    public void setData(String param0) {
-    }
-
-    public long getColumnId() {
-        return this.mockObject.getColumnId();
-    }
-
-    public void setColumnId(long param0) {
-    }
-
-    public long getTableId() {
-        return this.mockObject.getTableId();
-    }
-
-    public void setTableId(long param0) {
-    }
-
-    public long getRowId() {
-        return this.mockObject.getRowId();
-    }
-
-    public void setRowId(long param0) {
-    }
-
-    public long getValueId() {
-        return this.mockObject.getValueId();
-    }
-
-    public void setValueId(long param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

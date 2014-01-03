@@ -6,13 +6,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.asset.model.AssetEntry;
 import com.liferay.portlet.social.model.SocialActivity;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -50,70 +50,6 @@ public class SocialActivityLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public SocialActivity addSocialActivity(SocialActivity param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public SocialActivity createSocialActivity(long param0) {
-        return this.mockObject.createSocialActivity(param0);
-    }
-
-    public SocialActivity deleteSocialActivity(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteSocialActivity(param0);
-    }
-
-    public SocialActivity deleteSocialActivity(SocialActivity param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteSocialActivity(param0);
-    }
-
-    public SocialActivity fetchSocialActivity(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
     public SocialActivity getSocialActivity(long param0)
         throws PortalException, SystemException
     {
@@ -138,10 +74,9 @@ public class SocialActivityLocalServiceMock
         return this.mockObject.updateSocialActivity(param0);
     }
 
-    public SocialActivity updateSocialActivity(SocialActivity param0, boolean param1)
-        throws SystemException
+    public void addActivity(SocialActivity param0, SocialActivity param1)
+        throws PortalException, SystemException
     {
-        return this.mockObject.updateSocialActivity(param0, param1);
     }
 
     public void addActivity(long param0, long param1, Date param2, String param3, long param4, int param5, String param6, long param7)
@@ -154,86 +89,45 @@ public class SocialActivityLocalServiceMock
     {
     }
 
-    public void addActivity(SocialActivity param0, SocialActivity param1)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void addUniqueActivity(long param0, long param1, Date param2, String param3, long param4, int param5, String param6, long param7)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void addUniqueActivity(long param0, long param1, String param2, long param3, int param4, String param5, long param6)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteActivities(AssetEntry param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteActivities(String param0, long param1)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
         throws SystemException
     {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
-    public void deleteActivity(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteActivity(SocialActivity param0)
+    public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
+        return this.mockObject.dynamicQuery(param0);
     }
 
-    public void deleteUserActivities(long param0)
-        throws SystemException
-    {
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
     }
 
-    public List<SocialActivity> getActivities(long param0, int param1, int param2)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
-        return this.mockObject.getActivities(param0, param1, param2);
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
     }
 
-    public List<SocialActivity> getActivities(long param0, long param1, long param2, int param3, int param4)
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
         throws SystemException
     {
-        return this.mockObject.getActivities(param0, param1, param2, param3, param4);
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
-    public List<SocialActivity> getActivities(long param0, String param1, long param2, int param3, int param4)
+    public long dynamicQueryCount(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.getActivities(param0, param1, param2, param3, param4);
+        return this.mockObject.dynamicQueryCount(param0);
     }
 
-    public List<SocialActivity> getActivities(String param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.getActivities(param0, param1, param2);
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
     }
 
-    public int getActivitiesCount(long param0)
-        throws SystemException
-    {
-        return this.mockObject.getActivitiesCount(param0);
-    }
-
-    public int getActivitiesCount(long param0, long param1, long param2)
-        throws SystemException
-    {
-        return this.mockObject.getActivitiesCount(param0, param1, param2);
-    }
-
-    public int getActivitiesCount(long param0, String param1, long param2)
-        throws SystemException
-    {
-        return this.mockObject.getActivitiesCount(param0, param1, param2);
+    public void setBeanIdentifier(String param0) {
     }
 
     public int getActivitiesCount(String param0)
@@ -242,10 +136,28 @@ public class SocialActivityLocalServiceMock
         return this.mockObject.getActivitiesCount(param0);
     }
 
-    public SocialActivity getActivity(long param0)
-        throws PortalException, SystemException
+    public int getActivitiesCount(long param0, String param1, long param2)
+        throws SystemException
     {
-        return this.mockObject.getActivity(param0);
+        return this.mockObject.getActivitiesCount(param0, param1, param2);
+    }
+
+    public int getActivitiesCount(long param0, long param1, long param2)
+        throws SystemException
+    {
+        return this.mockObject.getActivitiesCount(param0, param1, param2);
+    }
+
+    public int getActivitiesCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getActivitiesCount(param0);
+    }
+
+    public List<SocialActivity> getActivitySetActivities(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getActivitySetActivities(param0, param1, param2);
     }
 
     public List<SocialActivity> getGroupActivities(long param0, int param1, int param2)
@@ -372,6 +284,111 @@ public class SocialActivityLocalServiceMock
         throws SystemException
     {
         return this.mockObject.getUserOrganizationsActivitiesCount(param0);
+    }
+
+    public SocialActivity createSocialActivity(long param0) {
+        return this.mockObject.createSocialActivity(param0);
+    }
+
+    public SocialActivity deleteSocialActivity(SocialActivity param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteSocialActivity(param0);
+    }
+
+    public SocialActivity deleteSocialActivity(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteSocialActivity(param0);
+    }
+
+    public SocialActivity fetchSocialActivity(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public SocialActivity addSocialActivity(SocialActivity param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public void addUniqueActivity(long param0, long param1, String param2, long param3, int param4, String param5, long param6)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void addUniqueActivity(long param0, long param1, Date param2, String param3, long param4, int param5, String param6, long param7)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteActivities(long param0)
+        throws SystemException
+    {
+    }
+
+    public void deleteActivities(AssetEntry param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteActivities(String param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteActivity(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteActivity(SocialActivity param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteUserActivities(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public SocialActivity fetchFirstActivity(String param0, long param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.fetchFirstActivity(param0, param1, param2);
+    }
+
+    public List<SocialActivity> getActivities(String param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getActivities(param0, param1, param2);
+    }
+
+    public List<SocialActivity> getActivities(long param0, String param1, long param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.getActivities(param0, param1, param2, param3, param4);
+    }
+
+    public List<SocialActivity> getActivities(long param0, long param1, long param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.getActivities(param0, param1, param2, param3, param4);
+    }
+
+    public List<SocialActivity> getActivities(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getActivities(param0, param1, param2);
+    }
+
+    public SocialActivity getActivity(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getActivity(param0);
     }
 
 }

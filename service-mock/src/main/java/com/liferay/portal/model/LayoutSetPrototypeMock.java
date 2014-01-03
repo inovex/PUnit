@@ -8,10 +8,10 @@ import java.util.Map;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.UnicodeProperties;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -42,16 +42,16 @@ public class LayoutSetPrototypeMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.LayoutSetPrototype.class));
     }
 
+    public long getGroupId()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getGroupId();
+    }
+
     public Group getGroup()
         throws PortalException, SystemException
     {
         return this.mockObject.getGroup();
-    }
-
-    public LayoutSet getLayoutSet()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getLayoutSet();
     }
 
     public UnicodeProperties getSettingsProperties() {
@@ -62,10 +62,13 @@ public class LayoutSetPrototypeMock
         return this.mockObject.getSettingsProperty(param0);
     }
 
-    public void setSettings(String param0) {
+    public void setSettingsProperties(UnicodeProperties param0) {
     }
 
-    public void setSettingsProperties(UnicodeProperties param0) {
+    public LayoutSet getLayoutSet()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getLayoutSet();
     }
 
     public String toString() {
@@ -104,31 +107,21 @@ public class LayoutSetPrototypeMock
         return this.mockObject.getName(param0, param1);
     }
 
-    public void setName(String param0) {
-    }
-
     public void setName(String param0, Locale param1) {
     }
 
     public void setName(String param0, Locale param1, Locale param2) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
+    public void setName(String param0) {
     }
 
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
     public boolean isCachedModel() {
@@ -142,11 +135,7 @@ public class LayoutSetPrototypeMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -156,8 +145,10 @@ public class LayoutSetPrototypeMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<LayoutSetPrototype> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public LayoutSetPrototype toEscapedModel() {
@@ -168,18 +159,22 @@ public class LayoutSetPrototypeMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<LayoutSetPrototype> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -189,11 +184,37 @@ public class LayoutSetPrototypeMock
     public void setModifiedDate(Date param0) {
     }
 
+    public long getUserId() {
+        return this.mockObject.getUserId();
+    }
+
+    public void setUserId(long param0) {
+    }
+
     public String getUuid() {
         return this.mockObject.getUuid();
     }
 
     public void setUuid(String param0) {
+    }
+
+    public String getUserName() {
+        return this.mockObject.getUserName();
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
+    }
+
+    public void setLayoutSetPrototypeId(long param0) {
     }
 
     public boolean getActive() {
@@ -207,15 +228,8 @@ public class LayoutSetPrototypeMock
     public void setActive(boolean param0) {
     }
 
-    public void setDescription(String param0) {
-    }
-
-    public String getSettings() {
-        return this.mockObject.getSettings();
-    }
-
-    public long getLayoutSetPrototypeId() {
-        return this.mockObject.getLayoutSetPrototypeId();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getNameCurrentLanguageId() {
@@ -226,11 +240,11 @@ public class LayoutSetPrototypeMock
         return this.mockObject.getNameCurrentValue();
     }
 
-    public Map<Locale, String> getNameMap() {
-        return this.mockObject.getNameMap();
+    public void setNameCurrentLanguageId(String param0) {
     }
 
-    public void setNameCurrentLanguageId(String param0) {
+    public Map<Locale, String> getNameMap() {
+        return this.mockObject.getNameMap();
     }
 
     public void setNameMap(Map<Locale, String> param0) {
@@ -239,19 +253,57 @@ public class LayoutSetPrototypeMock
     public void setNameMap(Map<Locale, String> param0, Locale param1) {
     }
 
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
     public void prepareLocalizedFieldsForImport(Locale param0)
         throws LocaleException
     {
     }
 
-    public void setLayoutSetPrototypeId(long param0) {
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
+    }
+
+    public long getLayoutSetPrototypeId() {
+        return this.mockObject.getLayoutSetPrototypeId();
+    }
+
+    public void setSettings(String param0) {
+    }
+
+    public LayoutSetPrototype toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public String getSettings() {
+        return this.mockObject.getSettings();
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -263,6 +315,10 @@ public class LayoutSetPrototypeMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

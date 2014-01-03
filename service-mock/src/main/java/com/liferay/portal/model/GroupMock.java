@@ -2,15 +2,16 @@
 package com.liferay.portal.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.UnicodeProperties;
+import com.liferay.portal.security.permission.PermissionChecker;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -41,8 +42,20 @@ public class GroupMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.Group.class));
     }
 
+    public List<Group> getAncestors()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getAncestors();
+    }
+
     public boolean hasPublicLayouts() {
         return this.mockObject.hasPublicLayouts();
+    }
+
+    public int getChildrenWithLayoutsCount(boolean param0)
+        throws SystemException
+    {
+        return this.mockObject.getChildrenWithLayoutsCount(param0);
     }
 
     public long getDefaultPrivatePlid() {
@@ -53,20 +66,32 @@ public class GroupMock
         return this.mockObject.getDefaultPublicPlid();
     }
 
-    public String getDescriptiveName()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getDescriptiveName();
-    }
-
     public String getDescriptiveName(Locale param0)
         throws PortalException, SystemException
     {
         return this.mockObject.getDescriptiveName(param0);
     }
 
+    public String getDescriptiveName()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDescriptiveName();
+    }
+
+    public String getIconURL(ThemeDisplay param0) {
+        return this.mockObject.getIconURL(param0);
+    }
+
+    public String getLayoutRootNodeName(boolean param0, Locale param1) {
+        return this.mockObject.getLayoutRootNodeName(param0, param1);
+    }
+
     public Group getLiveGroup() {
         return this.mockObject.getLiveGroup();
+    }
+
+    public String getLiveParentTypeSettingsProperty(String param0) {
+        return this.mockObject.getLiveParentTypeSettingsProperty(param0);
     }
 
     public long getOrganizationId() {
@@ -77,6 +102,10 @@ public class GroupMock
         throws PortalException, SystemException
     {
         return this.mockObject.getParentGroup();
+    }
+
+    public UnicodeProperties getParentLiveGroupTypeSettingsProperties() {
+        return this.mockObject.getParentLiveGroupTypeSettingsProperties();
     }
 
     public String getPathFriendlyURL(boolean param0, ThemeDisplay param1) {
@@ -99,16 +128,22 @@ public class GroupMock
         return this.mockObject.getPublicLayoutsPageCount();
     }
 
+    public String getScopeDescriptiveName(ThemeDisplay param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getScopeDescriptiveName(param0);
+    }
+
+    public String getScopeLabel(ThemeDisplay param0) {
+        return this.mockObject.getScopeLabel(param0);
+    }
+
     public Group getStagingGroup() {
         return this.mockObject.getStagingGroup();
     }
 
     public String getTypeLabel() {
         return this.mockObject.getTypeLabel();
-    }
-
-    public String getTypeSettings() {
-        return this.mockObject.getTypeSettings();
     }
 
     public UnicodeProperties getTypeSettingsProperties() {
@@ -119,12 +154,24 @@ public class GroupMock
         return this.mockObject.getTypeSettingsProperty(param0);
     }
 
+    public boolean hasAncestor(long param0) {
+        return this.mockObject.hasAncestor(param0);
+    }
+
+    public boolean hasLocalOrRemoteStagingGroup() {
+        return this.mockObject.hasLocalOrRemoteStagingGroup();
+    }
+
     public boolean hasPrivateLayouts() {
         return this.mockObject.hasPrivateLayouts();
     }
 
     public boolean hasStagingGroup() {
         return this.mockObject.hasStagingGroup();
+    }
+
+    public boolean isChild(long param0) {
+        return this.mockObject.isChild(param0);
     }
 
     public boolean isCommunity() {
@@ -135,12 +182,20 @@ public class GroupMock
         return this.mockObject.isCompany();
     }
 
+    public boolean isCompanyStagingGroup() {
+        return this.mockObject.isCompanyStagingGroup();
+    }
+
     public boolean isControlPanel() {
         return this.mockObject.isControlPanel();
     }
 
     public boolean isGuest() {
         return this.mockObject.isGuest();
+    }
+
+    public boolean isInStagingPortlet(String param0) {
+        return this.mockObject.isInStagingPortlet(param0);
     }
 
     public boolean isLayout() {
@@ -155,12 +210,22 @@ public class GroupMock
         return this.mockObject.isLayoutSetPrototype();
     }
 
+    public boolean isLimitedToParentSiteMembers() {
+        return this.mockObject.isLimitedToParentSiteMembers();
+    }
+
     public boolean isOrganization() {
         return this.mockObject.isOrganization();
     }
 
     public boolean isRegularSite() {
         return this.mockObject.isRegularSite();
+    }
+
+    public boolean isShowSite(PermissionChecker param0, boolean param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.isShowSite(param0, param1);
     }
 
     public boolean isStaged() {
@@ -191,10 +256,26 @@ public class GroupMock
         return this.mockObject.isUserPersonalSite();
     }
 
-    public void setTypeSettings(String param0) {
+    public void setTypeSettingsProperties(UnicodeProperties param0) {
     }
 
-    public void setTypeSettingsProperties(UnicodeProperties param0) {
+    public void clearStagingGroup() {
+    }
+
+    public List<Group> getChildren(boolean param0)
+        throws SystemException
+    {
+        return this.mockObject.getChildren(param0);
+    }
+
+    public List<Group> getChildrenWithLayouts(boolean param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getChildrenWithLayouts(param0, param1, param2);
+    }
+
+    public boolean isRoot() {
+        return this.mockObject.isRoot();
     }
 
     public String toString() {
@@ -228,22 +309,19 @@ public class GroupMock
         return this.mockObject.getClassName();
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -257,22 +335,20 @@ public class GroupMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<Group> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public Group toEscapedModel() {
@@ -283,35 +359,36 @@ public class GroupMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Group> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public String getUuid() {
+        return this.mockObject.getUuid();
+    }
+
+    public void setUuid(String param0) {
+    }
+
     public long getClassPK() {
         return this.mockObject.getClassPK();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
-    }
-
-    public void setClassName(String param0) {
-    }
-
-    public void setClassPK(long param0) {
-    }
-
-    public void setCompanyId(long param0) {
-    }
-
-    public long getParentGroupId() {
-        return this.mockObject.getParentGroupId();
-    }
-
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
-    }
-
     public void setType(int param0) {
-    }
-
-    public void setClassNameId(long param0) {
     }
 
     public boolean getActive() {
@@ -325,18 +402,28 @@ public class GroupMock
     public void setActive(boolean param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public void setClassNameId(long param0) {
     }
 
-    public void setGroupId(long param0) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public long getCreatorUserId() {
-        return this.mockObject.getCreatorUserId();
+    public Group toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setCreatorUserId(long param0) {
+    public long getParentGroupId() {
+        return this.mockObject.getParentGroupId();
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public String getCreatorUserUuid()
@@ -358,7 +445,35 @@ public class GroupMock
     public void setLiveGroupId(long param0) {
     }
 
+    public void setTreePath(String param0) {
+    }
+
     public void setDescription(String param0) {
+    }
+
+    public String getTypeSettings() {
+        return this.mockObject.getTypeSettings();
+    }
+
+    public void setTypeSettings(String param0) {
+    }
+
+    public boolean getManualMembership() {
+        return this.mockObject.getManualMembership();
+    }
+
+    public boolean isManualMembership() {
+        return this.mockObject.isManualMembership();
+    }
+
+    public void setManualMembership(boolean param0) {
+    }
+
+    public int getMembershipRestriction() {
+        return this.mockObject.getMembershipRestriction();
+    }
+
+    public void setMembershipRestriction(int param0) {
     }
 
     public String getFriendlyURL() {
@@ -379,11 +494,33 @@ public class GroupMock
     public void setSite(boolean param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public int getRemoteStagingGroupCount() {
+        return this.mockObject.getRemoteStagingGroupCount();
+    }
+
+    public void setRemoteStagingGroupCount(int param0) {
+    }
+
+    public long getCreatorUserId() {
+        return this.mockObject.getCreatorUserId();
+    }
+
+    public void setCreatorUserId(long param0) {
+    }
+
+    public String getTreePath() {
+        return this.mockObject.getTreePath();
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -398,6 +535,17 @@ public class GroupMock
     }
 
     public void persist()
+        throws SystemException
+    {
+    }
+
+    public String buildTreePath()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.buildTreePath();
+    }
+
+    public void updateTreePath(String param0)
         throws SystemException
     {
     }

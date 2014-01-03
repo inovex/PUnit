@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -73,14 +73,11 @@ public class SCFrameworkVersionMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -94,11 +91,7 @@ public class SCFrameworkVersionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -108,8 +101,10 @@ public class SCFrameworkVersionMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<SCFrameworkVersion> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public SCFrameworkVersion toEscapedModel() {
@@ -120,18 +115,22 @@ public class SCFrameworkVersionMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<SCFrameworkVersion> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -146,6 +145,13 @@ public class SCFrameworkVersionMock
     }
 
     public void setUserId(long param0) {
+    }
+
+    public String getUrl() {
+        return this.mockObject.getUrl();
+    }
+
+    public void setUrl(String param0) {
     }
 
     public String getUserName() {
@@ -175,18 +181,8 @@ public class SCFrameworkVersionMock
     public void setActive(boolean param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public String getUrl() {
-        return this.mockObject.getUrl();
-    }
-
-    public void setUrl(String param0) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public long getFrameworkVersionId() {
@@ -196,11 +192,25 @@ public class SCFrameworkVersionMock
     public void setFrameworkVersionId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public SCFrameworkVersion toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

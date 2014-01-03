@@ -5,13 +5,14 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
+import com.liferay.portal.model.Group;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.asset.model.AssetTag;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,63 +50,85 @@ public class AssetTagLocalServiceMock
         return this.mockObject.search(param0, param1, param2, param3, param4);
     }
 
+    public List<AssetTag> search(long[] param0, String param1, String[] param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.search(param0, param1, param2, param3, param4);
+    }
+
     public PersistedModel getPersistedModel(Serializable param0)
         throws PortalException, SystemException
     {
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public String[] getTagNames(long param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return this.mockObject.getTagNames(param0, param1);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public String[] getTagNames()
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
+        return this.mockObject.getTagNames();
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+    public String[] getTagNames(String param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+        return this.mockObject.getTagNames(param0, param1);
     }
 
-    public long dynamicQueryCount(DynamicQuery param0)
+    public AssetTag deleteAssetTag(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteAssetTag(param0);
+    }
+
+    public AssetTag deleteAssetTag(AssetTag param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQueryCount(param0);
+        return this.mockObject.deleteAssetTag(param0);
     }
 
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
+    public void addTagResources(AssetTag param0, boolean param1, boolean param2)
+        throws PortalException, SystemException
+    {
     }
 
-    public void setBeanIdentifier(String param0) {
+    public void addTagResources(AssetTag param0, String[] param1, String[] param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public boolean hasTag(long param0, String param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.hasTag(param0, param1);
+    }
+
+    public AssetTag incrementAssetCount(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.incrementAssetCount(param0, param1);
+    }
+
+    public void mergeTags(long param0, long param1, boolean param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public AssetTag updateTag(long param0, long param1, String param2, String[] param3, ServiceContext param4)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateTag(param0, param1, param2, param3, param4);
     }
 
     public List<AssetTag> getTags()
         throws SystemException
     {
         return this.mockObject.getTags();
-    }
-
-    public List<AssetTag> getTags(long param0, long param1)
-        throws SystemException
-    {
-        return this.mockObject.getTags(param0, param1);
-    }
-
-    public List<AssetTag> getTags(long param0, long param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getTags(param0, param1, param2);
     }
 
     public List<AssetTag> getTags(long param0, long param1, String param2, int param3, int param4)
@@ -120,22 +143,191 @@ public class AssetTagLocalServiceMock
         return this.mockObject.getTags(param0, param1);
     }
 
-    public String[] getTagNames()
+    public List<AssetTag> getTags(long param0, long param1)
         throws SystemException
     {
-        return this.mockObject.getTagNames();
+        return this.mockObject.getTags(param0, param1);
     }
 
-    public String[] getTagNames(long param0, long param1)
+    public List<AssetTag> getTags(long param0, long param1, String param2)
         throws SystemException
     {
-        return this.mockObject.getTagNames(param0, param1);
+        return this.mockObject.getTags(param0, param1, param2);
     }
 
-    public String[] getTagNames(String param0, long param1)
+    public void checkTags(long param0, long param1, String[] param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public List<AssetTag> checkTags(long param0, Group param1, String[] param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.checkTags(param0, param1, param2);
+    }
+
+    public AssetTag decrementAssetCount(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.decrementAssetCount(param0, param1);
+    }
+
+    public void deleteGroupTags(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteTag(AssetTag param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteTag(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public List<AssetTag> getEntryTags(long param0)
         throws SystemException
     {
-        return this.mockObject.getTagNames(param0, param1);
+        return this.mockObject.getEntryTags(param0);
+    }
+
+    public List<AssetTag> getGroupsTags(long[] param0)
+        throws SystemException
+    {
+        return this.mockObject.getGroupsTags(param0);
+    }
+
+    public List<AssetTag> getGroupTags(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getGroupTags(param0, param1, param2);
+    }
+
+    public List<AssetTag> getGroupTags(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getGroupTags(param0);
+    }
+
+    public int getGroupTagsCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getGroupTagsCount(param0);
+    }
+
+    public List<AssetTag> getSocialActivityCounterOffsetTags(long param0, String param1, int param2, int param3)
+        throws SystemException
+    {
+        return this.mockObject.getSocialActivityCounterOffsetTags(param0, param1, param2, param3);
+    }
+
+    public List<AssetTag> getSocialActivityCounterPeriodTags(long param0, String param1, int param2, int param3)
+        throws SystemException
+    {
+        return this.mockObject.getSocialActivityCounterPeriodTags(param0, param1, param2, param3);
+    }
+
+    public AssetTag getTag(long param0, String param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTag(param0, param1);
+    }
+
+    public AssetTag getTag(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTag(param0);
+    }
+
+    public int getTagsSize(long param0, long param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getTagsSize(param0, param1, param2);
+    }
+
+    public void addAssetEntryAssetTags(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void addAssetEntryAssetTags(long param0, List<AssetTag> param1)
+        throws SystemException
+    {
+    }
+
+    public void clearAssetEntryAssetTags(long param0)
+        throws SystemException
+    {
+    }
+
+    public void deleteAssetEntryAssetTag(long param0, long param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteAssetEntryAssetTag(long param0, AssetTag param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteAssetEntryAssetTags(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteAssetEntryAssetTags(long param0, List<AssetTag> param1)
+        throws SystemException
+    {
+    }
+
+    public List<AssetTag> getAssetEntryAssetTags(long param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.getAssetEntryAssetTags(param0, param1, param2, param3);
+    }
+
+    public List<AssetTag> getAssetEntryAssetTags(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getAssetEntryAssetTags(param0, param1, param2);
+    }
+
+    public List<AssetTag> getAssetEntryAssetTags(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getAssetEntryAssetTags(param0);
+    }
+
+    public int getAssetEntryAssetTagsCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getAssetEntryAssetTagsCount(param0);
+    }
+
+    public boolean hasAssetEntryAssetTag(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.hasAssetEntryAssetTag(param0, param1);
+    }
+
+    public boolean hasAssetEntryAssetTags(long param0)
+        throws SystemException
+    {
+        return this.mockObject.hasAssetEntryAssetTags(param0);
+    }
+
+    public void setAssetEntryAssetTags(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public AssetTag addAssetTag(AssetTag param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
     public long[] getTagIds(long param0, String[] param1)
@@ -156,27 +348,8 @@ public class AssetTagLocalServiceMock
         return this.mockObject.getTagIds(param0, param1);
     }
 
-    public AssetTag addAssetTag(AssetTag param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
     public AssetTag createAssetTag(long param0) {
         return this.mockObject.createAssetTag(param0);
-    }
-
-    public AssetTag deleteAssetTag(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteAssetTag(param0);
-    }
-
-    public AssetTag deleteAssetTag(AssetTag param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteAssetTag(param0);
     }
 
     public AssetTag fetchAssetTag(long param0)
@@ -209,10 +382,14 @@ public class AssetTagLocalServiceMock
         return this.mockObject.updateAssetTag(param0);
     }
 
-    public AssetTag updateAssetTag(AssetTag param0, boolean param1)
+    public void addAssetEntryAssetTag(long param0, long param1)
         throws SystemException
     {
-        return this.mockObject.updateAssetTag(param0, param1);
+    }
+
+    public void addAssetEntryAssetTag(long param0, AssetTag param1)
+        throws SystemException
+    {
     }
 
     public AssetTag addTag(long param0, String param1, String[] param2, ServiceContext param3)
@@ -221,118 +398,45 @@ public class AssetTagLocalServiceMock
         return this.mockObject.addTag(param0, param1, param2, param3);
     }
 
-    public void addTagResources(AssetTag param0, boolean param1, boolean param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void addTagResources(AssetTag param0, String[] param1, String[] param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void checkTags(long param0, long param1, String[] param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public AssetTag decrementAssetCount(long param0, long param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.decrementAssetCount(param0, param1);
-    }
-
-    public void deleteTag(AssetTag param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteTag(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public List<AssetTag> getEntryTags(long param0)
+    public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.getEntryTags(param0);
+        return this.mockObject.dynamicQuery(param0);
     }
 
-    public List<AssetTag> getGroupsTags(long[] param0)
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
         throws SystemException
     {
-        return this.mockObject.getGroupsTags(param0);
+        return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
-    public List<AssetTag> getGroupTags(long param0)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
-        return this.mockObject.getGroupTags(param0);
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
     }
 
-    public List<AssetTag> getGroupTags(long param0, int param1, int param2)
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
         throws SystemException
     {
-        return this.mockObject.getGroupTags(param0, param1, param2);
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
-    public int getGroupTagsCount(long param0)
+    public long dynamicQueryCount(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.getGroupTagsCount(param0);
+        return this.mockObject.dynamicQueryCount(param0);
     }
 
-    public List<AssetTag> getSocialActivityCounterOffsetTags(long param0, String param1, int param2, int param3)
-        throws SystemException
-    {
-        return this.mockObject.getSocialActivityCounterOffsetTags(param0, param1, param2, param3);
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
     }
 
-    public List<AssetTag> getSocialActivityCounterPeriodTags(long param0, String param1, int param2, int param3)
-        throws SystemException
-    {
-        return this.mockObject.getSocialActivityCounterPeriodTags(param0, param1, param2, param3);
-    }
-
-    public AssetTag getTag(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getTag(param0);
-    }
-
-    public AssetTag getTag(long param0, String param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getTag(param0, param1);
-    }
-
-    public int getTagsSize(long param0, long param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getTagsSize(param0, param1, param2);
-    }
-
-    public boolean hasTag(long param0, String param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.hasTag(param0, param1);
-    }
-
-    public AssetTag incrementAssetCount(long param0, long param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.incrementAssetCount(param0, param1);
-    }
-
-    public void mergeTags(long param0, long param1, boolean param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public AssetTag updateTag(long param0, long param1, String param2, String[] param3, ServiceContext param4)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateTag(param0, param1, param2, param3, param4);
+    public void setBeanIdentifier(String param0) {
     }
 
 }

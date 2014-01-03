@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.LayoutSetBranch;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,39 +48,10 @@ public class LayoutSetBranchLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
+    public LayoutSetBranch addLayoutSetBranch(long param0, long param1, boolean param2, String param3, String param4, boolean param5, long param6, ServiceContext param7)
+        throws PortalException, SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
+        return this.mockObject.addLayoutSetBranch(param0, param1, param2, param3, param4, param5, param6, param7);
     }
 
     public LayoutSetBranch addLayoutSetBranch(LayoutSetBranch param0)
@@ -90,26 +61,8 @@ public class LayoutSetBranchLocalServiceMock
         return param0;
     }
 
-    public LayoutSetBranch addLayoutSetBranch(long param0, long param1, boolean param2, String param3, String param4, boolean param5, long param6, ServiceContext param7)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addLayoutSetBranch(param0, param1, param2, param3, param4, param5, param6, param7);
-    }
-
     public LayoutSetBranch createLayoutSetBranch(long param0) {
         return this.mockObject.createLayoutSetBranch(param0);
-    }
-
-    public LayoutSetBranch deleteLayoutSetBranch(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteLayoutSetBranch(param0);
-    }
-
-    public LayoutSetBranch deleteLayoutSetBranch(LayoutSetBranch param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteLayoutSetBranch(param0);
     }
 
     public LayoutSetBranch deleteLayoutSetBranch(LayoutSetBranch param0, boolean param1)
@@ -118,10 +71,28 @@ public class LayoutSetBranchLocalServiceMock
         return this.mockObject.deleteLayoutSetBranch(param0, param1);
     }
 
+    public LayoutSetBranch deleteLayoutSetBranch(LayoutSetBranch param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteLayoutSetBranch(param0);
+    }
+
+    public LayoutSetBranch deleteLayoutSetBranch(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteLayoutSetBranch(param0);
+    }
+
     public LayoutSetBranch fetchLayoutSetBranch(long param0)
         throws SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public LayoutSetBranch fetchLayoutSetBranch(long param0, boolean param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.fetchLayoutSetBranch(param0, param1, param2);
     }
 
     public LayoutSetBranch getLayoutSetBranch(long param0)
@@ -148,22 +119,57 @@ public class LayoutSetBranchLocalServiceMock
         return this.mockObject.getLayoutSetBranchsCount();
     }
 
+    public LayoutSetBranch updateLayoutSetBranch(long param0, String param1, String param2, ServiceContext param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateLayoutSetBranch(param0, param1, param2, param3);
+    }
+
     public LayoutSetBranch updateLayoutSetBranch(LayoutSetBranch param0)
         throws SystemException
     {
         return this.mockObject.updateLayoutSetBranch(param0);
     }
 
-    public LayoutSetBranch updateLayoutSetBranch(LayoutSetBranch param0, boolean param1)
+    public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.updateLayoutSetBranch(param0, param1);
+        return this.mockObject.dynamicQuery(param0);
     }
 
-    public LayoutSetBranch updateLayoutSetBranch(long param0, String param1, String param2, ServiceContext param3)
-        throws PortalException, SystemException
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
     {
-        return this.mockObject.updateLayoutSetBranch(param0, param1, param2, param3);
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
     public void deleteLayoutSetBranches(long param0, boolean param1)

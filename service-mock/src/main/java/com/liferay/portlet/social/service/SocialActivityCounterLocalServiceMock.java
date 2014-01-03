@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
@@ -13,7 +14,6 @@ import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.asset.model.AssetEntry;
 import com.liferay.portlet.social.model.SocialActivity;
 import com.liferay.portlet.social.model.SocialActivityCounter;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -51,8 +51,15 @@ public class SocialActivityCounterLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
+    public SocialActivityCounter createSocialActivityCounter(long param0) {
+        return this.mockObject.createSocialActivityCounter(param0);
+    }
+
+    public SocialActivityCounter addSocialActivityCounter(SocialActivityCounter param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
     public List dynamicQuery(DynamicQuery param0)
@@ -73,6 +80,16 @@ public class SocialActivityCounterLocalServiceMock
         return this.mockObject.dynamicQuery(param0, param1, param2, param3);
     }
 
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
     public long dynamicQueryCount(DynamicQuery param0)
         throws SystemException
     {
@@ -86,15 +103,27 @@ public class SocialActivityCounterLocalServiceMock
     public void setBeanIdentifier(String param0) {
     }
 
-    public SocialActivityCounter addSocialActivityCounter(SocialActivityCounter param0)
+    public List<SocialActivityCounter> getPeriodDistributionActivityCounters(long param0, String param1, int param2, int param3)
         throws SystemException
     {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
+        return this.mockObject.getPeriodDistributionActivityCounters(param0, param1, param2, param3);
     }
 
-    public SocialActivityCounter createSocialActivityCounter(long param0) {
-        return this.mockObject.createSocialActivityCounter(param0);
+    public List<Tuple> getUserActivityCounters(long param0, String[] param1, String[] param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.getUserActivityCounters(param0, param1, param2, param3, param4);
+    }
+
+    public int getUserActivityCountersCount(long param0, String[] param1)
+        throws SystemException
+    {
+        return this.mockObject.getUserActivityCountersCount(param0, param1);
+    }
+
+    public void incrementUserAchievementCounter(long param0, long param1)
+        throws PortalException, SystemException
+    {
     }
 
     public SocialActivityCounter deleteSocialActivityCounter(long param0)
@@ -139,16 +168,10 @@ public class SocialActivityCounterLocalServiceMock
         return this.mockObject.updateSocialActivityCounter(param0);
     }
 
-    public SocialActivityCounter updateSocialActivityCounter(SocialActivityCounter param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateSocialActivityCounter(param0, param1);
-    }
-
-    public SocialActivityCounter addActivityCounter(long param0, long param1, long param2, String param3, int param4, int param5, int param6, int param7, int param8)
+    public SocialActivityCounter addActivityCounter(long param0, long param1, long param2, String param3, int param4, int param5, long param6, int param7)
         throws PortalException, SystemException
     {
-        return this.mockObject.addActivityCounter(param0, param1, param2, param3, param4, param5, param6, param7, param8);
+        return this.mockObject.addActivityCounter(param0, param1, param2, param3, param4, param5, param6, param7);
     }
 
     public SocialActivityCounter addActivityCounter(long param0, long param1, long param2, String param3, int param4, int param5, int param6, int param7, int param8, long param9, int param10)
@@ -157,15 +180,15 @@ public class SocialActivityCounterLocalServiceMock
         return this.mockObject.addActivityCounter(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10);
     }
 
+    public SocialActivityCounter addActivityCounter(long param0, long param1, long param2, String param3, int param4, int param5, int param6, int param7, int param8)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addActivityCounter(param0, param1, param2, param3, param4, param5, param6, param7, param8);
+    }
+
     public void addActivityCounters(SocialActivity param0)
         throws PortalException, SystemException
     {
-    }
-
-    public SocialActivityCounter createActivityCounter(long param0, long param1, long param2, String param3, int param4, int param5, int param6, int param7, int param8)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.createActivityCounter(param0, param1, param2, param3, param4, param5, param6, param7, param8);
     }
 
     public SocialActivityCounter createActivityCounter(long param0, long param1, long param2, String param3, int param4, int param5, int param6, int param7, int param8, long param9, int param10)
@@ -174,13 +197,44 @@ public class SocialActivityCounterLocalServiceMock
         return this.mockObject.createActivityCounter(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10);
     }
 
+    public SocialActivityCounter createActivityCounter(long param0, long param1, long param2, String param3, int param4, int param5, int param6, int param7, int param8)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.createActivityCounter(param0, param1, param2, param3, param4, param5, param6, param7, param8);
+    }
+
     public void deleteActivityCounters(AssetEntry param0)
         throws PortalException, SystemException
     {
     }
 
     public void deleteActivityCounters(long param0, long param1)
-        throws SystemException
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteActivityCounters(String param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void disableActivityCounters(String param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void disableActivityCounters(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void enableActivityCounters(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void enableActivityCounters(String param0, long param1)
+        throws PortalException, SystemException
     {
     }
 
@@ -218,29 +272,6 @@ public class SocialActivityCounterLocalServiceMock
         throws SystemException
     {
         return this.mockObject.getPeriodActivityCounters(param0, param1, param2, param3);
-    }
-
-    public List<SocialActivityCounter> getPeriodDistributionActivityCounters(long param0, String param1, int param2, int param3)
-        throws SystemException
-    {
-        return this.mockObject.getPeriodDistributionActivityCounters(param0, param1, param2, param3);
-    }
-
-    public List<Tuple> getUserActivityCounters(long param0, String[] param1, String[] param2, int param3, int param4)
-        throws SystemException
-    {
-        return this.mockObject.getUserActivityCounters(param0, param1, param2, param3, param4);
-    }
-
-    public int getUserActivityCountersCount(long param0, String[] param1)
-        throws SystemException
-    {
-        return this.mockObject.getUserActivityCountersCount(param0, param1);
-    }
-
-    public void incrementUserAchievementCounter(long param0, long param1)
-        throws PortalException, SystemException
-    {
     }
 
 }

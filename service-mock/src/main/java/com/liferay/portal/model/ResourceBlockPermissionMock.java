@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -57,16 +56,6 @@ public class ResourceBlockPermissionMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -78,22 +67,20 @@ public class ResourceBlockPermissionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<ResourceBlockPermission> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public ResourceBlockPermission toEscapedModel() {
@@ -104,15 +91,40 @@ public class ResourceBlockPermissionMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ResourceBlockPermission> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
     public long getActionIds() {
         return this.mockObject.getActionIds();
+    }
+
+    public void setResourceBlockId(long param0) {
     }
 
     public long getResourceBlockId() {
         return this.mockObject.getResourceBlockId();
     }
 
-    public void setResourceBlockId(long param0) {
+    public void setActionIds(long param0) {
+    }
+
+    public long getRoleId() {
+        return this.mockObject.getRoleId();
     }
 
     public long getResourceBlockPermissionId() {
@@ -122,21 +134,18 @@ public class ResourceBlockPermissionMock
     public void setResourceBlockPermissionId(long param0) {
     }
 
-    public long getRoleId() {
-        return this.mockObject.getRoleId();
-    }
-
     public void setRoleId(long param0) {
     }
 
-    public void setActionIds(long param0) {
+    public ResourceBlockPermission toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

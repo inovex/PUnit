@@ -8,7 +8,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -39,8 +38,15 @@ public class UserTrackerMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.UserTracker.class));
     }
 
-    public int compareTo(UserTracker param0) {
-        return this.mockObject.compareTo(param0);
+    public int getHits() {
+        return this.mockObject.getHits();
+    }
+
+    public List<UserTrackerPath> getPaths() {
+        return this.mockObject.getPaths();
+    }
+
+    public void addPath(UserTrackerPath param0) {
     }
 
     public String getEmailAddress() {
@@ -49,17 +55,6 @@ public class UserTrackerMock
 
     public String getFullName() {
         return this.mockObject.getFullName();
-    }
-
-    public void addPath(UserTrackerPath param0) {
-    }
-
-    public int getHits() {
-        return this.mockObject.getHits();
-    }
-
-    public List<UserTrackerPath> getPaths() {
-        return this.mockObject.getPaths();
     }
 
     public String toString() {
@@ -74,18 +69,12 @@ public class UserTrackerMock
         return this.mockObject.clone();
     }
 
+    public int compareTo(UserTracker param0) {
+        return this.mockObject.compareTo(param0);
+    }
+
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
-    }
-
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
     }
 
     public boolean isCachedModel() {
@@ -99,11 +88,7 @@ public class UserTrackerMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -113,8 +98,10 @@ public class UserTrackerMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<UserTracker> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public UserTracker toEscapedModel() {
@@ -125,11 +112,22 @@ public class UserTrackerMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<UserTracker> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -160,10 +158,6 @@ public class UserTrackerMock
     public void setUserId(long param0) {
     }
 
-    public String getUserAgent() {
-        return this.mockObject.getUserAgent();
-    }
-
     public String getUserUuid()
         throws SystemException
     {
@@ -171,13 +165,6 @@ public class UserTrackerMock
     }
 
     public void setUserUuid(String param0) {
-    }
-
-    public String getSessionId() {
-        return this.mockObject.getSessionId();
-    }
-
-    public void setSessionId(String param0) {
     }
 
     public long getUserTrackerId() {
@@ -190,11 +177,33 @@ public class UserTrackerMock
     public void setUserAgent(String param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public String getUserAgent() {
+        return this.mockObject.getUserAgent();
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public UserTracker toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public String getSessionId() {
+        return this.mockObject.getSessionId();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setSessionId(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

@@ -5,13 +5,13 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.dynamicdatamapping.model.DDMStructureLink;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,60 +49,14 @@ public class DDMStructureLinkLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public DDMStructureLink deleteDDMStructureLink(DDMStructureLink param0)
         throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public DDMStructureLink addDDMStructureLink(DDMStructureLink param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public DDMStructureLink createDDMStructureLink(long param0) {
-        return this.mockObject.createDDMStructureLink(param0);
-    }
-
-    public DDMStructureLink deleteDDMStructureLink(long param0)
-        throws PortalException, SystemException
     {
         return this.mockObject.deleteDDMStructureLink(param0);
     }
 
-    public DDMStructureLink deleteDDMStructureLink(DDMStructureLink param0)
-        throws SystemException
+    public DDMStructureLink deleteDDMStructureLink(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deleteDDMStructureLink(param0);
     }
@@ -125,6 +79,17 @@ public class DDMStructureLinkLocalServiceMock
         return this.mockObject.getDDMStructureLinks(param0, param1);
     }
 
+    public DDMStructureLink createDDMStructureLink(long param0) {
+        return this.mockObject.createDDMStructureLink(param0);
+    }
+
+    public DDMStructureLink addDDMStructureLink(DDMStructureLink param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
     public int getDDMStructureLinksCount()
         throws SystemException
     {
@@ -135,12 +100,6 @@ public class DDMStructureLinkLocalServiceMock
         throws SystemException
     {
         return this.mockObject.updateDDMStructureLink(param0);
-    }
-
-    public DDMStructureLink updateDDMStructureLink(DDMStructureLink param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateDDMStructureLink(param0, param1);
     }
 
     public DDMStructureLink addStructureLink(long param0, long param1, long param2, ServiceContext param3)
@@ -154,13 +113,13 @@ public class DDMStructureLinkLocalServiceMock
     {
     }
 
-    public void deleteStructureLink(DDMStructureLink param0)
-        throws SystemException
+    public void deleteStructureLink(long param0)
+        throws PortalException, SystemException
     {
     }
 
-    public void deleteStructureLink(long param0)
-        throws PortalException, SystemException
+    public void deleteStructureLink(DDMStructureLink param0)
+        throws SystemException
     {
     }
 
@@ -197,6 +156,47 @@ public class DDMStructureLinkLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.updateStructureLink(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

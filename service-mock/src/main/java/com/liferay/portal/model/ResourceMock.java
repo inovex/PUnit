@@ -1,13 +1,6 @@
 
 package com.liferay.portal.model;
 
-import java.io.Serializable;
-import java.util.Map;
-import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.service.ServiceContext;
-import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -38,98 +31,14 @@ public class ResourceMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.Resource.class));
     }
 
-    public String getName()
-        throws PortalException, SystemException
-    {
+    public String getName() {
         return this.mockObject.getName();
     }
 
     public void setName(String param0) {
     }
 
-    public int getScope()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getScope();
-    }
-
-    public long getCompanyId()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getCompanyId();
-    }
-
-    public void setCompanyId(long param0) {
-    }
-
-    public void setScope(int param0) {
-    }
-
-    public String toString() {
-        return this.mockObject.toString();
-    }
-
-    public int hashCode() {
-        return this.mockObject.hashCode();
-    }
-
-    public Object clone() {
-        return this.mockObject.clone();
-    }
-
-    public int compareTo(Resource param0) {
-        return this.mockObject.compareTo(param0);
-    }
-
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
-    }
-
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
-    public boolean isCachedModel() {
-        return this.mockObject.isCachedModel();
-    }
-
-    public void setCachedModel(boolean param0) {
-    }
-
-    public boolean isEscapedModel() {
-        return this.mockObject.isEscapedModel();
-    }
-
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
-    }
-
-    public ExpandoBridge getExpandoBridge() {
-        return this.mockObject.getExpandoBridge();
-    }
-
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
-    }
-
-    public CacheModel<Resource> toCacheModel() {
-        return this.mockObject.toCacheModel();
-    }
-
-    public Resource toEscapedModel() {
-        return this.mockObject.toEscapedModel();
-    }
-
-    public String toXmlString() {
-        return this.mockObject.toXmlString();
+    public void setCodeId(long param0) {
     }
 
     public String getPrimKey() {
@@ -139,6 +48,13 @@ public class ResourceMock
     public void setPrimKey(String param0) {
     }
 
+    public long getCodeId() {
+        return this.mockObject.getCodeId();
+    }
+
+    public void setScope(int param0) {
+    }
+
     public long getResourceId() {
         return this.mockObject.getResourceId();
     }
@@ -146,34 +62,15 @@ public class ResourceMock
     public void setResourceId(long param0) {
     }
 
-    public long getCodeId() {
-        return this.mockObject.getCodeId();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public void setCodeId(long param0) {
+    public void setCompanyId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
-    }
-
-    public void setModelAttributes(Map<String, Object> param0) {
-    }
-
-    public Class<?> getModelClass() {
-        return this.mockObject.getModelClass();
-    }
-
-    public String getModelClassName() {
-        return this.mockObject.getModelClassName();
-    }
-
-    public void persist()
-        throws SystemException
-    {
+    public int getScope() {
+        return this.mockObject.getScope();
     }
 
 }

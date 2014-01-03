@@ -7,10 +7,15 @@ import java.util.List;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.repository.model.FileEntry;
+import com.liferay.portal.kernel.repository.model.Folder;
+import com.liferay.portal.kernel.trash.TrashHandler;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
+import com.liferay.portlet.trash.model.TrashEntry;
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -41,29 +46,85 @@ public class WikiPageMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.wiki.model.WikiPage.class));
     }
 
-    public WikiNode getNode() {
-        return this.mockObject.getNode();
+    public List<FileEntry> getAttachmentsFileEntries(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getAttachmentsFileEntries(param0, param1);
     }
 
-    public boolean isResourceMain() {
-        return this.mockObject.isResourceMain();
+    public List<FileEntry> getAttachmentsFileEntries()
+        throws SystemException
+    {
+        return this.mockObject.getAttachmentsFileEntries();
     }
 
-    public String getAttachmentsDir() {
-        return this.mockObject.getAttachmentsDir();
-    }
-
-    public String[] getAttachmentsFiles()
+    public Folder addAttachmentsFolder()
         throws PortalException, SystemException
     {
-        return this.mockObject.getAttachmentsFiles();
+        return this.mockObject.addAttachmentsFolder();
     }
 
-    public void setAttachmentsDir(String param0) {
+    public int getAttachmentsFileEntriesCount()
+        throws SystemException
+    {
+        return this.mockObject.getAttachmentsFileEntriesCount();
+    }
+
+    public long getAttachmentsFolderId()
+        throws SystemException
+    {
+        return this.mockObject.getAttachmentsFolderId();
     }
 
     public List<WikiPage> getChildPages() {
         return this.mockObject.getChildPages();
+    }
+
+    public long getNodeAttachmentsFolderId()
+        throws SystemException
+    {
+        return this.mockObject.getNodeAttachmentsFolderId();
+    }
+
+    public WikiPage getRedirectPage() {
+        return this.mockObject.getRedirectPage();
+    }
+
+    public List<WikiPage> getViewableChildPages() {
+        return this.mockObject.getViewableChildPages();
+    }
+
+    public WikiPage getViewableParentPage() {
+        return this.mockObject.getViewableParentPage();
+    }
+
+    public List<WikiPage> getViewableParentPages() {
+        return this.mockObject.getViewableParentPages();
+    }
+
+    public int getDeletedAttachmentsFileEntriesCount()
+        throws SystemException
+    {
+        return this.mockObject.getDeletedAttachmentsFileEntriesCount();
+    }
+
+    public void setAttachmentsFolderId(long param0) {
+    }
+
+    public List<FileEntry> getDeletedAttachmentsFileEntries(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getDeletedAttachmentsFileEntries(param0, param1);
+    }
+
+    public List<FileEntry> getDeletedAttachmentsFileEntries()
+        throws SystemException
+    {
+        return this.mockObject.getDeletedAttachmentsFileEntries();
+    }
+
+    public WikiNode getNode() {
+        return this.mockObject.getNode();
     }
 
     public WikiPage getParentPage() {
@@ -72,10 +133,6 @@ public class WikiPageMock
 
     public List<WikiPage> getParentPages() {
         return this.mockObject.getParentPages();
-    }
-
-    public WikiPage getRedirectPage() {
-        return this.mockObject.getRedirectPage();
     }
 
     public String toString() {
@@ -105,14 +162,18 @@ public class WikiPageMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
-    public void setNew(boolean param0) {
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -126,22 +187,20 @@ public class WikiPageMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<WikiPage> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public WikiPage toEscapedModel() {
@@ -152,18 +211,22 @@ public class WikiPageMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<WikiPage> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -187,6 +250,41 @@ public class WikiPageMock
     public void setUuid(String param0) {
     }
 
+    public void setPageId(long param0) {
+    }
+
+    public boolean getMinorEdit() {
+        return this.mockObject.getMinorEdit();
+    }
+
+    public boolean isMinorEdit() {
+        return this.mockObject.isMinorEdit();
+    }
+
+    public void setMinorEdit(boolean param0) {
+    }
+
+    public long getPageId() {
+        return this.mockObject.getPageId();
+    }
+
+    public void setContent(String param0) {
+    }
+
+    public String getParentTitle() {
+        return this.mockObject.getParentTitle();
+    }
+
+    public void setParentTitle(String param0) {
+    }
+
+    public String getRedirectTitle() {
+        return this.mockObject.getRedirectTitle();
+    }
+
+    public void setRedirectTitle(String param0) {
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -203,22 +301,62 @@ public class WikiPageMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public TrashEntry getTrashEntry()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTrashEntry();
     }
 
-    public void setGroupId(long param0) {
+    public long getTrashEntryClassPK() {
+        return this.mockObject.getTrashEntryClassPK();
     }
 
-    public int getStatus() {
-        return this.mockObject.getStatus();
+    public TrashHandler getTrashHandler() {
+        return this.mockObject.getTrashHandler();
     }
 
-    public void setStatus(int param0) {
+    public boolean isInTrash() {
+        return this.mockObject.isInTrash();
     }
 
-    public String getFormat() {
-        return this.mockObject.getFormat();
+    public boolean isInTrashContainer() {
+        return this.mockObject.isInTrashContainer();
+    }
+
+    public void setFormat(String param0) {
+    }
+
+    public void setResourcePrimKey(long param0) {
+    }
+
+    public boolean isResourceMain() {
+        return this.mockObject.isResourceMain();
+    }
+
+    public long getResourcePrimKey() {
+        return this.mockObject.getResourcePrimKey();
+    }
+
+    public void setVersion(double param0) {
+    }
+
+    public String getSummary() {
+        return this.mockObject.getSummary();
+    }
+
+    public void setSummary(String param0) {
+    }
+
+    public double getVersion() {
+        return this.mockObject.getVersion();
+    }
+
+    public boolean getHead() {
+        return this.mockObject.getHead();
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getTitle() {
@@ -228,8 +366,8 @@ public class WikiPageMock
     public void setTitle(String param0) {
     }
 
-    public boolean getHead() {
-        return this.mockObject.getHead();
+    public WikiPage toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public boolean isHead() {
@@ -302,33 +440,6 @@ public class WikiPageMock
         return this.mockObject.isScheduled();
     }
 
-    public double getVersion() {
-        return this.mockObject.getVersion();
-    }
-
-    public void setContent(String param0) {
-    }
-
-    public String getSummary() {
-        return this.mockObject.getSummary();
-    }
-
-    public void setSummary(String param0) {
-    }
-
-    public void setVersion(double param0) {
-    }
-
-    public long getResourcePrimKey() {
-        return this.mockObject.getResourcePrimKey();
-    }
-
-    public void setResourcePrimKey(long param0) {
-    }
-
-    public void setFormat(String param0) {
-    }
-
     public long getNodeId() {
         return this.mockObject.getNodeId();
     }
@@ -336,43 +447,25 @@ public class WikiPageMock
     public void setNodeId(long param0) {
     }
 
-    public long getPageId() {
-        return this.mockObject.getPageId();
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public void setPageId(long param0) {
+    public void setCreateDate(Date param0) {
     }
 
-    public boolean getMinorEdit() {
-        return this.mockObject.getMinorEdit();
+    public void setCompanyId(long param0) {
     }
 
-    public boolean isMinorEdit() {
-        return this.mockObject.isMinorEdit();
+    public String getFormat() {
+        return this.mockObject.getFormat();
     }
 
-    public void setMinorEdit(boolean param0) {
-    }
-
-    public String getParentTitle() {
-        return this.mockObject.getParentTitle();
-    }
-
-    public void setParentTitle(String param0) {
-    }
-
-    public String getRedirectTitle() {
-        return this.mockObject.getRedirectTitle();
-    }
-
-    public void setRedirectTitle(String param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -384,6 +477,10 @@ public class WikiPageMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

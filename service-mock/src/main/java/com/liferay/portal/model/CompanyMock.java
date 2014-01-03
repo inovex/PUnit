@@ -10,7 +10,6 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -41,10 +40,6 @@ public class CompanyMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.Company.class));
     }
 
-    public int compareTo(Company param0) {
-        return this.mockObject.compareTo(param0);
-    }
-
     public String getName()
         throws PortalException, SystemException
     {
@@ -57,10 +52,10 @@ public class CompanyMock
         return this.mockObject.getTimeZone();
     }
 
-    public String getShortName()
+    public long getGroupId()
         throws PortalException, SystemException
     {
-        return this.mockObject.getShortName();
+        return this.mockObject.getGroupId();
     }
 
     public String getPortalURL(long param0)
@@ -97,22 +92,12 @@ public class CompanyMock
         return this.mockObject.getAuthType();
     }
 
-    public User getDefaultUser()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getDefaultUser();
-    }
-
     public String getDefaultWebId() {
         return this.mockObject.getDefaultWebId();
     }
 
     public String getEmailAddress() {
         return this.mockObject.getEmailAddress();
-    }
-
-    public Key getKeyObj() {
-        return this.mockObject.getKeyObj();
     }
 
     public String getShardName()
@@ -173,10 +158,26 @@ public class CompanyMock
         return this.mockObject.isStrangersWithMx();
     }
 
-    public void setKey(String param0) {
+    public void setKeyObj(Key param0) {
     }
 
-    public void setKeyObj(Key param0) {
+    public void setVirtualHostname(String param0) {
+    }
+
+    public String getShortName()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getShortName();
+    }
+
+    public User getDefaultUser()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDefaultUser();
+    }
+
+    public Key getKeyObj() {
+        return this.mockObject.getKeyObj();
     }
 
     public String toString() {
@@ -191,22 +192,16 @@ public class CompanyMock
         return this.mockObject.clone();
     }
 
+    public int compareTo(Company param0) {
+        return this.mockObject.compareTo(param0);
+    }
+
     public String getKey() {
         return this.mockObject.getKey();
     }
 
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
-    }
-
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
     }
 
     public boolean isCachedModel() {
@@ -220,22 +215,20 @@ public class CompanyMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<Company> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public Company toEscapedModel() {
@@ -246,15 +239,22 @@ public class CompanyMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public String getHomeURL() {
-        return this.mockObject.getHomeURL();
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Company> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getAccountId() {
@@ -275,11 +275,18 @@ public class CompanyMock
     public void setActive(boolean param0) {
     }
 
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
     public String getWebId() {
         return this.mockObject.getWebId();
     }
 
     public void setWebId(String param0) {
+    }
+
+    public void setKey(String param0) {
     }
 
     public String getMx() {
@@ -317,11 +324,22 @@ public class CompanyMock
     public void setMaxUsers(int param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public String getHomeURL() {
+        return this.mockObject.getHomeURL();
+    }
+
+    public Company toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

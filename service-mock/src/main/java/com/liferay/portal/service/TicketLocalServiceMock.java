@@ -6,12 +6,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.Ticket;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -47,70 +47,6 @@ public class TicketLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.getPersistedModel(param0);
-    }
-
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public Ticket addTicket(Ticket param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public Ticket addTicket(long param0, String param1, long param2, int param3, String param4, Date param5, ServiceContext param6)
-        throws SystemException
-    {
-        return this.mockObject.addTicket(param0, param1, param2, param3, param4, param5, param6);
-    }
-
-    public Ticket createTicket(long param0) {
-        return this.mockObject.createTicket(param0);
-    }
-
-    public Ticket deleteTicket(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteTicket(param0);
-    }
-
-    public Ticket deleteTicket(Ticket param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteTicket(param0);
     }
 
     public Ticket fetchTicket(long param0)
@@ -149,16 +85,80 @@ public class TicketLocalServiceMock
         return this.mockObject.getTicketsCount();
     }
 
+    public Ticket addTicket(long param0, String param1, long param2, int param3, String param4, Date param5, ServiceContext param6)
+        throws SystemException
+    {
+        return this.mockObject.addTicket(param0, param1, param2, param3, param4, param5, param6);
+    }
+
+    public Ticket addTicket(Ticket param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public Ticket createTicket(long param0) {
+        return this.mockObject.createTicket(param0);
+    }
+
+    public Ticket deleteTicket(Ticket param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteTicket(param0);
+    }
+
+    public Ticket deleteTicket(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteTicket(param0);
+    }
+
     public Ticket updateTicket(Ticket param0)
         throws SystemException
     {
         return this.mockObject.updateTicket(param0);
     }
 
-    public Ticket updateTicket(Ticket param0, boolean param1)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
         throws SystemException
     {
-        return this.mockObject.updateTicket(param0, param1);
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

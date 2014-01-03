@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.ClassName;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -42,16 +42,16 @@ public class ClassNameLocalServiceMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.service.ClassNameLocalService.class));
     }
 
-    public ClassName getClassName(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
     public ClassName getClassName(String param0)
         throws SystemException
     {
         return this.mockObject.getClassName(param0);
+    }
+
+    public ClassName getClassName(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
     }
 
     public PersistedModel getPersistedModel(Serializable param0)
@@ -60,8 +60,10 @@ public class ClassNameLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
     public List dynamicQuery(DynamicQuery param0)
@@ -70,16 +72,20 @@ public class ClassNameLocalServiceMock
         return this.mockObject.dynamicQuery(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
     public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
         return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
     public long dynamicQueryCount(DynamicQuery param0)
@@ -95,12 +101,10 @@ public class ClassNameLocalServiceMock
     public void setBeanIdentifier(String param0) {
     }
 
-    public long getClassNameId(Class<?> param0) {
-        return this.mockObject.getClassNameId(param0);
-    }
-
-    public long getClassNameId(String param0) {
-        return this.mockObject.getClassNameId(param0);
+    public ClassName addClassName(String param0)
+        throws SystemException
+    {
+        return this.mockObject.addClassName(param0);
     }
 
     public ClassName addClassName(ClassName param0)
@@ -108,12 +112,6 @@ public class ClassNameLocalServiceMock
     {
         _serviceObjects.put(param0.getPrimaryKey(), param0);
         return param0;
-    }
-
-    public ClassName addClassName(String param0)
-        throws SystemException
-    {
-        return this.mockObject.addClassName(param0);
     }
 
     public ClassName createClassName(long param0) {
@@ -162,10 +160,7 @@ public class ClassNameLocalServiceMock
         return this.mockObject.updateClassName(param0);
     }
 
-    public ClassName updateClassName(ClassName param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateClassName(param0, param1);
+    public void invalidate() {
     }
 
     public void checkClassNames()
@@ -173,11 +168,11 @@ public class ClassNameLocalServiceMock
     {
     }
 
-    public long fetchClassNameId(Class<?> param0) {
+    public long fetchClassNameId(String param0) {
         return this.mockObject.fetchClassNameId(param0);
     }
 
-    public long fetchClassNameId(String param0) {
+    public long fetchClassNameId(Class<?> param0) {
         return this.mockObject.fetchClassNameId(param0);
     }
 
@@ -185,7 +180,12 @@ public class ClassNameLocalServiceMock
         return this.mockObject.getRegistryName();
     }
 
-    public void invalidate() {
+    public long getClassNameId(String param0) {
+        return this.mockObject.getClassNameId(param0);
+    }
+
+    public long getClassNameId(Class<?> param0) {
+        return this.mockObject.getClassNameId(param0);
     }
 
 }

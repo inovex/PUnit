@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.Subscription;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,71 +48,13 @@ public class SubscriptionLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public Subscription addSubscription(Subscription param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public Subscription addSubscription(long param0, long param1, String param2, long param3)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addSubscription(param0, param1, param2, param3);
-    }
-
-    public Subscription addSubscription(long param0, long param1, String param2, long param3, String param4)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addSubscription(param0, param1, param2, param3, param4);
-    }
-
-    public Subscription createSubscription(long param0) {
-        return this.mockObject.createSubscription(param0);
-    }
-
-    public Subscription deleteSubscription(long param0)
+    public Subscription deleteSubscription(Subscription param0)
         throws PortalException, SystemException
     {
         return this.mockObject.deleteSubscription(param0);
     }
 
-    public Subscription deleteSubscription(Subscription param0)
+    public Subscription deleteSubscription(long param0)
         throws PortalException, SystemException
     {
         return this.mockObject.deleteSubscription(param0);
@@ -147,10 +89,39 @@ public class SubscriptionLocalServiceMock
         return this.mockObject.getSubscriptions(param0, param1);
     }
 
+    public List<Subscription> getSubscriptions(long param0, long param1, String param2, long[] param3)
+        throws SystemException
+    {
+        return this.mockObject.getSubscriptions(param0, param1, param2, param3);
+    }
+
     public List<Subscription> getSubscriptions(long param0, String param1, long param2)
         throws SystemException
     {
         return this.mockObject.getSubscriptions(param0, param1, param2);
+    }
+
+    public Subscription addSubscription(Subscription param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public Subscription addSubscription(long param0, long param1, String param2, long param3, String param4)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addSubscription(param0, param1, param2, param3, param4);
+    }
+
+    public Subscription addSubscription(long param0, long param1, String param2, long param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addSubscription(param0, param1, param2, param3);
+    }
+
+    public Subscription createSubscription(long param0) {
+        return this.mockObject.createSubscription(param0);
     }
 
     public int getSubscriptionsCount()
@@ -165,12 +136,6 @@ public class SubscriptionLocalServiceMock
         return this.mockObject.updateSubscription(param0);
     }
 
-    public Subscription updateSubscription(Subscription param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateSubscription(param0, param1);
-    }
-
     public void deleteSubscriptions(long param0)
         throws PortalException, SystemException
     {
@@ -181,16 +146,16 @@ public class SubscriptionLocalServiceMock
     {
     }
 
-    public List<Subscription> getUserSubscriptions(long param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.getUserSubscriptions(param0, param1, param2, param3);
-    }
-
     public List<Subscription> getUserSubscriptions(long param0, String param1)
         throws SystemException
     {
         return this.mockObject.getUserSubscriptions(param0, param1);
+    }
+
+    public List<Subscription> getUserSubscriptions(long param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.getUserSubscriptions(param0, param1, param2, param3);
     }
 
     public int getUserSubscriptionsCount(long param0)
@@ -199,10 +164,57 @@ public class SubscriptionLocalServiceMock
         return this.mockObject.getUserSubscriptionsCount(param0);
     }
 
+    public boolean isSubscribed(long param0, long param1, String param2, long[] param3)
+        throws SystemException
+    {
+        return this.mockObject.isSubscribed(param0, param1, param2, param3);
+    }
+
     public boolean isSubscribed(long param0, long param1, String param2, long param3)
         throws SystemException
     {
         return this.mockObject.isSubscribed(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

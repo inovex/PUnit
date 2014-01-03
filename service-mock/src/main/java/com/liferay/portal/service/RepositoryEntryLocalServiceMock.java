@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.RepositoryEntry;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,74 +48,14 @@ public class RepositoryEntryLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public RepositoryEntry addRepositoryEntry(RepositoryEntry param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public RepositoryEntry addRepositoryEntry(long param0, long param1, String param2, ServiceContext param3)
-        throws SystemException
-    {
-        return this.mockObject.addRepositoryEntry(param0, param1, param2, param3);
-    }
-
     public RepositoryEntry createRepositoryEntry(long param0) {
         return this.mockObject.createRepositoryEntry(param0);
     }
 
-    public RepositoryEntry deleteRepositoryEntry(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteRepositoryEntry(param0);
-    }
-
-    public RepositoryEntry deleteRepositoryEntry(RepositoryEntry param0)
+    public RepositoryEntry fetchRepositoryEntryByUuidAndGroupId(String param0, long param1)
         throws SystemException
     {
-        return this.mockObject.deleteRepositoryEntry(param0);
-    }
-
-    public RepositoryEntry fetchRepositoryEntry(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
+        return this.mockObject.fetchRepositoryEntryByUuidAndGroupId(param0, param1);
     }
 
     public RepositoryEntry getRepositoryEntry(long param0)
@@ -124,10 +64,22 @@ public class RepositoryEntryLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
+    public RepositoryEntry getRepositoryEntryByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getRepositoryEntryByUuidAndCompanyId(param0, param1);
+    }
+
     public RepositoryEntry getRepositoryEntryByUuidAndGroupId(String param0, long param1)
         throws PortalException, SystemException
     {
         return this.mockObject.getRepositoryEntryByUuidAndGroupId(param0, param1);
+    }
+
+    public List<RepositoryEntry> getRepositoryEntries(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getRepositoryEntries(param0);
     }
 
     public List<RepositoryEntry> getRepositoryEntries(int param0, int param1)
@@ -142,22 +94,94 @@ public class RepositoryEntryLocalServiceMock
         return this.mockObject.getRepositoryEntriesCount();
     }
 
+    public RepositoryEntry updateRepositoryEntry(long param0, String param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateRepositoryEntry(param0, param1);
+    }
+
     public RepositoryEntry updateRepositoryEntry(RepositoryEntry param0)
         throws SystemException
     {
         return this.mockObject.updateRepositoryEntry(param0);
     }
 
-    public RepositoryEntry updateRepositoryEntry(RepositoryEntry param0, boolean param1)
+    public RepositoryEntry deleteRepositoryEntry(RepositoryEntry param0)
         throws SystemException
     {
-        return this.mockObject.updateRepositoryEntry(param0, param1);
+        return this.mockObject.deleteRepositoryEntry(param0);
     }
 
-    public RepositoryEntry updateRepositoryEntry(long param0, String param1)
+    public RepositoryEntry deleteRepositoryEntry(long param0)
         throws PortalException, SystemException
     {
-        return this.mockObject.updateRepositoryEntry(param0, param1);
+        return this.mockObject.deleteRepositoryEntry(param0);
+    }
+
+    public RepositoryEntry fetchRepositoryEntry(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public RepositoryEntry fetchRepositoryEntryByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchRepositoryEntryByUuidAndCompanyId(param0, param1);
+    }
+
+    public RepositoryEntry addRepositoryEntry(RepositoryEntry param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public RepositoryEntry addRepositoryEntry(long param0, long param1, long param2, String param3, ServiceContext param4)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addRepositoryEntry(param0, param1, param2, param3, param4);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

@@ -5,14 +5,16 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
+import com.liferay.portal.kernel.dao.orm.QueryDefinition;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.Hits;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.messageboards.model.MBMessage;
 import com.liferay.portlet.messageboards.model.MBThread;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -50,98 +52,34 @@ public class MBThreadLocalServiceMock
         return this.mockObject.getThreads(param0, param1, param2, param3, param4);
     }
 
+    public Hits search(long param0, long param1, long param2, int param3, int param4, int param5)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5);
+    }
+
+    public Hits search(long param0, long param1, long param2, long param3, long param4, int param5, int param6, int param7)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6, param7);
+    }
+
     public PersistedModel getPersistedModel(Serializable param0)
         throws PortalException, SystemException
     {
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public MBThread incrementViewCounter(long param0, int param1)
+    public MBThread getMBThreadByUuidAndCompanyId(String param0, long param1)
         throws PortalException, SystemException
     {
-        return this.mockObject.incrementViewCounter(param0, param1);
+        return this.mockObject.getMBThreadByUuidAndCompanyId(param0, param1);
     }
 
-    public MBThread getThread(long param0)
+    public MBThread getMBThreadByUuidAndGroupId(String param0, long param1)
         throws PortalException, SystemException
     {
-        return this.mockObject.getThread(param0);
-    }
-
-    public MBThread addMBThread(MBThread param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public MBThread createMBThread(long param0) {
-        return this.mockObject.createMBThread(param0);
-    }
-
-    public MBThread deleteMBThread(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteMBThread(param0);
-    }
-
-    public MBThread deleteMBThread(MBThread param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteMBThread(param0);
-    }
-
-    public MBThread fetchMBThread(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public MBThread getMBThread(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public List<MBThread> getMBThreads(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getMBThreads(param0, param1);
+        return this.mockObject.getMBThreadByUuidAndGroupId(param0, param1);
     }
 
     public int getMBThreadsCount()
@@ -156,16 +94,10 @@ public class MBThreadLocalServiceMock
         return this.mockObject.updateMBThread(param0);
     }
 
-    public MBThread updateMBThread(MBThread param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateMBThread(param0, param1);
-    }
-
-    public MBThread addThread(long param0, MBMessage param1)
+    public MBThread addThread(long param0, MBMessage param1, ServiceContext param2)
         throws PortalException, SystemException
     {
-        return this.mockObject.addThread(param0, param1);
+        return this.mockObject.addThread(param0, param1, param2);
     }
 
     public void deleteThread(long param0)
@@ -183,6 +115,11 @@ public class MBThreadLocalServiceMock
     {
     }
 
+    public void deleteThreads(long param0, long param1, boolean param2)
+        throws PortalException, SystemException
+    {
+    }
+
     public MBThread fetchThread(long param0)
         throws SystemException
     {
@@ -195,40 +132,58 @@ public class MBThreadLocalServiceMock
         return this.mockObject.getCategoryThreadsCount(param0, param1, param2);
     }
 
+    public List<MBThread> getGroupThreads(long param0, long param1, boolean param2, boolean param3, QueryDefinition param4)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreads(param0, param1, param2, param3, param4);
+    }
+
+    public List<MBThread> getGroupThreads(long param0, long param1, int param2, boolean param3, boolean param4, int param5, int param6)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreads(param0, param1, param2, param3, param4, param5, param6);
+    }
+
+    public List<MBThread> getGroupThreads(long param0, long param1, int param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreads(param0, param1, param2, param3, param4);
+    }
+
     public List<MBThread> getGroupThreads(long param0, int param1, int param2, int param3)
         throws SystemException
     {
         return this.mockObject.getGroupThreads(param0, param1, param2, param3);
     }
 
-    public List<MBThread> getGroupThreads(long param0, long param1, int param2, boolean param3, boolean param4, int param5, int param6)
-        throws PortalException, SystemException
+    public List<MBThread> getGroupThreads(long param0, long param1, boolean param2, QueryDefinition param3)
+        throws SystemException
     {
-        return this.mockObject.getGroupThreads(param0, param1, param2, param3, param4, param5, param6);
+        return this.mockObject.getGroupThreads(param0, param1, param2, param3);
+    }
+
+    public List<MBThread> getGroupThreads(long param0, QueryDefinition param1)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreads(param0, param1);
     }
 
     public List<MBThread> getGroupThreads(long param0, long param1, int param2, boolean param3, int param4, int param5)
-        throws PortalException, SystemException
+        throws SystemException
     {
         return this.mockObject.getGroupThreads(param0, param1, param2, param3, param4, param5);
     }
 
-    public List<MBThread> getGroupThreads(long param0, long param1, int param2, int param3, int param4)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getGroupThreads(param0, param1, param2, param3, param4);
-    }
-
-    public int getGroupThreadsCount(long param0, int param1)
+    public List<MBThread> getGroupThreads(long param0, long param1, QueryDefinition param2)
         throws SystemException
     {
-        return this.mockObject.getGroupThreadsCount(param0, param1);
+        return this.mockObject.getGroupThreads(param0, param1, param2);
     }
 
-    public int getGroupThreadsCount(long param0, long param1, int param2)
+    public int getGroupThreadsCount(long param0, long param1, int param2, boolean param3, boolean param4)
         throws SystemException
     {
-        return this.mockObject.getGroupThreadsCount(param0, param1, param2);
+        return this.mockObject.getGroupThreadsCount(param0, param1, param2, param3, param4);
     }
 
     public int getGroupThreadsCount(long param0, long param1, int param2, boolean param3)
@@ -237,10 +192,71 @@ public class MBThreadLocalServiceMock
         return this.mockObject.getGroupThreadsCount(param0, param1, param2, param3);
     }
 
-    public int getGroupThreadsCount(long param0, long param1, int param2, boolean param3, boolean param4)
+    public int getGroupThreadsCount(long param0, long param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreadsCount(param0, param1, param2);
+    }
+
+    public int getGroupThreadsCount(long param0, long param1, QueryDefinition param2)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreadsCount(param0, param1, param2);
+    }
+
+    public int getGroupThreadsCount(long param0, QueryDefinition param1)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreadsCount(param0, param1);
+    }
+
+    public int getGroupThreadsCount(long param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreadsCount(param0, param1);
+    }
+
+    public int getGroupThreadsCount(long param0, long param1, boolean param2, boolean param3, QueryDefinition param4)
         throws SystemException
     {
         return this.mockObject.getGroupThreadsCount(param0, param1, param2, param3, param4);
+    }
+
+    public int getGroupThreadsCount(long param0, long param1, boolean param2, QueryDefinition param3)
+        throws SystemException
+    {
+        return this.mockObject.getGroupThreadsCount(param0, param1, param2, param3);
+    }
+
+    public MBThread getThread(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getThread(param0);
+    }
+
+    public MBThread addMBThread(MBThread param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public MBThread getMBThread(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public List<MBThread> getMBThreads(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getMBThreads(param0, param1);
+    }
+
+    public MBThread incrementViewCounter(long param0, int param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.incrementViewCounter(param0, param1);
     }
 
     public List<MBThread> getNoAssetThreads()
@@ -273,10 +289,48 @@ public class MBThreadLocalServiceMock
         return this.mockObject.hasAnswerMessage(param0);
     }
 
+    public void moveDependentsToTrash(long param0, long param1, long param2)
+        throws PortalException, SystemException
+    {
+    }
+
     public MBThread moveThread(long param0, long param1, long param2)
         throws PortalException, SystemException
     {
         return this.mockObject.moveThread(param0, param1, param2);
+    }
+
+    public MBThread moveThreadFromTrash(long param0, long param1, long param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.moveThreadFromTrash(param0, param1, param2);
+    }
+
+    public void moveThreadsToTrash(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public MBThread moveThreadToTrash(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.moveThreadToTrash(param0, param1);
+    }
+
+    public MBThread moveThreadToTrash(long param0, MBThread param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.moveThreadToTrash(param0, param1);
+    }
+
+    public void restoreDependentsFromTrash(long param0, long param1, long param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void restoreThreadFromTrash(long param0, long param1)
+        throws PortalException, SystemException
+    {
     }
 
     public MBThread splitThread(long param0, String param1, ServiceContext param2)
@@ -294,6 +348,87 @@ public class MBThreadLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.updateThread(param0, param1);
+    }
+
+    public MBThread createMBThread(long param0) {
+        return this.mockObject.createMBThread(param0);
+    }
+
+    public MBThread deleteMBThread(MBThread param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteMBThread(param0);
+    }
+
+    public MBThread deleteMBThread(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteMBThread(param0);
+    }
+
+    public MBThread fetchMBThread(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public MBThread fetchMBThreadByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchMBThreadByUuidAndCompanyId(param0, param1);
+    }
+
+    public MBThread fetchMBThreadByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchMBThreadByUuidAndGroupId(param0, param1);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
+    }
+
+    public MBThread updateStatus(long param0, long param1, int param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateStatus(param0, param1, param2);
     }
 
 }

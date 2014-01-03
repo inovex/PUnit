@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -37,8 +36,7 @@ public class PluginSettingMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.PluginSetting.class));
     }
 
-    public boolean hasPermission(long param0) {
-        return this.mockObject.hasPermission(param0);
+    public void setRolesArray(String[] param0) {
     }
 
     public void addRole(String param0) {
@@ -52,10 +50,8 @@ public class PluginSettingMock
         return this.mockObject.hasRoleWithName(param0);
     }
 
-    public void setRoles(String param0) {
-    }
-
-    public void setRolesArray(String[] param0) {
+    public boolean hasPermission(long param0) {
+        return this.mockObject.hasPermission(param0);
     }
 
     public String toString() {
@@ -78,16 +74,6 @@ public class PluginSettingMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -99,22 +85,20 @@ public class PluginSettingMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<PluginSetting> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public PluginSetting toEscapedModel() {
@@ -125,11 +109,46 @@ public class PluginSettingMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<PluginSetting> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public void setPluginId(String param0) {
+    }
+
+    public long getPluginSettingId() {
+        return this.mockObject.getPluginSettingId();
+    }
+
+    public void setRoles(String param0) {
+    }
+
+    public void setPluginSettingId(long param0) {
+    }
+
+    public void setPluginType(String param0) {
+    }
+
+    public String getPluginId() {
+        return this.mockObject.getPluginId();
+    }
+
+    public String getPluginType() {
+        return this.mockObject.getPluginType();
     }
 
     public boolean getActive() {
@@ -143,36 +162,26 @@ public class PluginSettingMock
     public void setActive(boolean param0) {
     }
 
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public PluginSetting toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
     public String getRoles() {
         return this.mockObject.getRoles();
     }
 
-    public String getPluginId() {
-        return this.mockObject.getPluginId();
-    }
-
-    public String getPluginType() {
-        return this.mockObject.getPluginType();
-    }
-
-    public long getPluginSettingId() {
-        return this.mockObject.getPluginSettingId();
-    }
-
-    public void setPluginSettingId(long param0) {
-    }
-
-    public void setPluginId(String param0) {
-    }
-
-    public void setPluginType(String param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

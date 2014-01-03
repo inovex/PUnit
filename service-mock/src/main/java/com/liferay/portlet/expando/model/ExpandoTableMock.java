@@ -4,9 +4,9 @@ package com.liferay.portlet.expando.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -72,16 +72,6 @@ public class ExpandoTableMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -93,22 +83,20 @@ public class ExpandoTableMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<ExpandoTable> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public ExpandoTable toEscapedModel() {
@@ -119,8 +107,40 @@ public class ExpandoTableMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ExpandoTable> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public void setTableId(long param0) {
+    }
+
+    public long getTableId() {
+        return this.mockObject.getTableId();
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
     public long getCompanyId() {
         return this.mockObject.getCompanyId();
+    }
+
+    public ExpandoTable toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void setClassName(String param0) {
@@ -133,21 +153,11 @@ public class ExpandoTableMock
         return this.mockObject.getClassNameId();
     }
 
-    public void setClassNameId(long param0) {
-    }
-
-    public long getTableId() {
-        return this.mockObject.getTableId();
-    }
-
-    public void setTableId(long param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

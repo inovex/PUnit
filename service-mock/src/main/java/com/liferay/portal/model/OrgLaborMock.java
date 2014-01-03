@@ -7,7 +7,6 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -64,16 +63,6 @@ public class OrgLaborMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -85,11 +74,7 @@ public class OrgLaborMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -99,8 +84,10 @@ public class OrgLaborMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<OrgLabor> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public OrgLabor toEscapedModel() {
@@ -109,6 +96,34 @@ public class OrgLaborMock
 
     public String toXmlString() {
         return this.mockObject.toXmlString();
+    }
+
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<OrgLabor> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public long getOrgLaborId() {
+        return this.mockObject.getOrgLaborId();
+    }
+
+    public void setOrgLaborId(long param0) {
+    }
+
+    public void setSunOpen(int param0) {
     }
 
     public int getTypeId() {
@@ -122,21 +137,32 @@ public class OrgLaborMock
         return this.mockObject.getOrganizationId();
     }
 
+    public int getFriClose() {
+        return this.mockObject.getFriClose();
+    }
+
+    public void setFriClose(int param0) {
+    }
+
+    public int getSatOpen() {
+        return this.mockObject.getSatOpen();
+    }
+
+    public void setSatOpen(int param0) {
+    }
+
+    public int getSatClose() {
+        return this.mockObject.getSatClose();
+    }
+
+    public void setSatClose(int param0) {
+    }
+
     public void setOrganizationId(long param0) {
     }
 
-    public long getOrgLaborId() {
-        return this.mockObject.getOrgLaborId();
-    }
-
-    public void setOrgLaborId(long param0) {
-    }
-
-    public int getSunOpen() {
-        return this.mockObject.getSunOpen();
-    }
-
-    public void setSunOpen(int param0) {
+    public OrgLabor toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public int getSunClose() {
@@ -165,6 +191,10 @@ public class OrgLaborMock
     }
 
     public void setTueOpen(int param0) {
+    }
+
+    public int getSunOpen() {
+        return this.mockObject.getSunOpen();
     }
 
     public int getTueClose() {
@@ -209,32 +239,11 @@ public class OrgLaborMock
     public void setFriOpen(int param0) {
     }
 
-    public int getFriClose() {
-        return this.mockObject.getFriClose();
-    }
-
-    public void setFriClose(int param0) {
-    }
-
-    public int getSatOpen() {
-        return this.mockObject.getSatOpen();
-    }
-
-    public void setSatOpen(int param0) {
-    }
-
-    public int getSatClose() {
-        return this.mockObject.getSatClose();
-    }
-
-    public void setSatClose(int param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -68,16 +67,6 @@ public class ResourcePermissionMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -89,22 +78,20 @@ public class ResourcePermissionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<ResourcePermission> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public ResourcePermission toEscapedModel() {
@@ -115,15 +102,43 @@ public class ResourcePermissionMock
         return this.mockObject.toXmlString();
     }
 
-    public int getScope() {
-        return this.mockObject.getScope();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setCompanyId(long param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ResourcePermission> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public long getActionIds() {
+        return this.mockObject.getActionIds();
+    }
+
+    public void setOwnerId(long param0) {
+    }
+
+    public long getOwnerId() {
+        return this.mockObject.getOwnerId();
+    }
+
+    public void setActionIds(long param0) {
+    }
+
+    public long getRoleId() {
+        return this.mockObject.getRoleId();
+    }
+
+    public void setRoleId(long param0) {
     }
 
     public String getPrimKey() {
@@ -136,27 +151,6 @@ public class ResourcePermissionMock
     public void setScope(int param0) {
     }
 
-    public long getOwnerId() {
-        return this.mockObject.getOwnerId();
-    }
-
-    public void setOwnerId(long param0) {
-    }
-
-    public long getActionIds() {
-        return this.mockObject.getActionIds();
-    }
-
-    public long getRoleId() {
-        return this.mockObject.getRoleId();
-    }
-
-    public void setRoleId(long param0) {
-    }
-
-    public void setActionIds(long param0) {
-    }
-
     public long getResourcePermissionId() {
         return this.mockObject.getResourcePermissionId();
     }
@@ -164,11 +158,26 @@ public class ResourcePermissionMock
     public void setResourcePermissionId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public ResourcePermission toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public int getScope() {
+        return this.mockObject.getScope();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

@@ -4,10 +4,10 @@ package com.liferay.portlet.social.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -38,11 +38,15 @@ public class SocialActivityLimitMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.social.model.SocialActivityLimit.class));
     }
 
+    public void setCount(int param0, int param1) {
+    }
+
     public int getCount(int param0) {
         return this.mockObject.getCount(param0);
     }
 
-    public void setCount(int param0, int param1) {
+    public int getCount() {
+        return this.mockObject.getCount();
     }
 
     public String toString() {
@@ -76,14 +80,11 @@ public class SocialActivityLimitMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -97,11 +98,7 @@ public class SocialActivityLimitMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -111,8 +108,10 @@ public class SocialActivityLimitMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<SocialActivityLimit> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public SocialActivityLimit toEscapedModel() {
@@ -123,21 +122,22 @@ public class SocialActivityLimitMock
         return this.mockObject.toXmlString();
     }
 
-    public long getClassPK() {
-        return this.mockObject.getClassPK();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setClassName(String param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setClassPK(long param0) {
+    public void setNew(boolean param0) {
     }
 
-    public void setCompanyId(long param0) {
+    public CacheModel<SocialActivityLimit> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getUserId() {
@@ -147,8 +147,8 @@ public class SocialActivityLimitMock
     public void setUserId(long param0) {
     }
 
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
     }
 
     public String getUserUuid()
@@ -160,21 +160,35 @@ public class SocialActivityLimitMock
     public void setUserUuid(String param0) {
     }
 
-    public void setClassNameId(long param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
     public long getActivityLimitId() {
         return this.mockObject.getActivityLimitId();
     }
 
     public void setActivityLimitId(long param0) {
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public SocialActivityLimit toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public int getActivityType() {
@@ -191,11 +205,11 @@ public class SocialActivityLimitMock
     public void setActivityCounterName(String param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void resetOriginalValues() {
     }
 
-    public void resetOriginalValues() {
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

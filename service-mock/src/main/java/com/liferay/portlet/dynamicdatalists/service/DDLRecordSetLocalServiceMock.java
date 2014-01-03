@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.dynamicdatalists.model.DDLRecordSet;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -45,57 +45,22 @@ public class DDLRecordSetLocalServiceMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.dynamicdatalists.service.DDLRecordSetLocalService.class));
     }
 
-    public List<DDLRecordSet> search(long param0, long param1, String param2, int param3, int param4, int param5, OrderByComparator param6)
-        throws SystemException
-    {
-        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6);
-    }
-
     public List<DDLRecordSet> search(long param0, long param1, String param2, String param3, int param4, boolean param5, int param6, int param7, OrderByComparator param8)
         throws SystemException
     {
         return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6, param7, param8);
     }
 
+    public List<DDLRecordSet> search(long param0, long param1, String param2, int param3, int param4, int param5, OrderByComparator param6)
+        throws SystemException
+    {
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6);
+    }
+
     public PersistedModel getPersistedModel(Serializable param0)
         throws PortalException, SystemException
     {
         return this.mockObject.getPersistedModel(param0);
-    }
-
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
     }
 
     public int searchCount(long param0, long param1, String param2, int param3)
@@ -110,23 +75,17 @@ public class DDLRecordSetLocalServiceMock
         return this.mockObject.searchCount(param0, param1, param2, param3, param4, param5);
     }
 
-    public DDLRecordSet getRecordSet(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getRecordSet(param0);
-    }
-
-    public DDLRecordSet getRecordSet(long param0, String param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getRecordSet(param0, param1);
-    }
-
     public DDLRecordSet addDDLRecordSet(DDLRecordSet param0)
         throws SystemException
     {
         _serviceObjects.put(param0.getPrimaryKey(), param0);
         return param0;
+    }
+
+    public DDLRecordSet addRecordSet(long param0, long param1, long param2, String param3, Map<Locale, String> param4, Map<Locale, String> param5, int param6, int param7, ServiceContext param8)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addRecordSet(param0, param1, param2, param3, param4, param5, param6, param7, param8);
     }
 
     public DDLRecordSet createDDLRecordSet(long param0) {
@@ -151,10 +110,28 @@ public class DDLRecordSetLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
+    public DDLRecordSet fetchDDLRecordSetByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchDDLRecordSetByUuidAndCompanyId(param0, param1);
+    }
+
+    public DDLRecordSet fetchDDLRecordSetByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchDDLRecordSetByUuidAndGroupId(param0, param1);
+    }
+
     public DDLRecordSet getDDLRecordSet(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public DDLRecordSet getDDLRecordSetByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDDLRecordSetByUuidAndCompanyId(param0, param1);
     }
 
     public DDLRecordSet getDDLRecordSetByUuidAndGroupId(String param0, long param1)
@@ -181,29 +158,12 @@ public class DDLRecordSetLocalServiceMock
         return this.mockObject.updateDDLRecordSet(param0);
     }
 
-    public DDLRecordSet updateDDLRecordSet(DDLRecordSet param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateDDLRecordSet(param0, param1);
-    }
-
-    public DDLRecordSet addRecordSet(long param0, long param1, long param2, String param3, Map<Locale, String> param4, Map<Locale, String> param5, int param6, int param7, ServiceContext param8)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addRecordSet(param0, param1, param2, param3, param4, param5, param6, param7, param8);
-    }
-
-    public void addRecordSetResources(DDLRecordSet param0, boolean param1, boolean param2)
-        throws PortalException, SystemException
-    {
-    }
-
     public void addRecordSetResources(DDLRecordSet param0, String[] param1, String[] param2)
         throws PortalException, SystemException
     {
     }
 
-    public void deleteRecordSet(DDLRecordSet param0)
+    public void addRecordSetResources(DDLRecordSet param0, boolean param1, boolean param2)
         throws PortalException, SystemException
     {
     }
@@ -218,9 +178,20 @@ public class DDLRecordSetLocalServiceMock
     {
     }
 
+    public void deleteRecordSet(DDLRecordSet param0)
+        throws PortalException, SystemException
+    {
+    }
+
     public void deleteRecordSets(long param0)
         throws PortalException, SystemException
     {
+    }
+
+    public DDLRecordSet fetchRecordSet(long param0)
+        throws SystemException
+    {
+        return this.mockObject.fetchRecordSet(param0);
     }
 
     public DDLRecordSet fetchRecordSet(long param0, String param1)
@@ -257,6 +228,59 @@ public class DDLRecordSetLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.updateRecordSet(param0, param1, param2, param3, param4, param5, param6);
+    }
+
+    public DDLRecordSet getRecordSet(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getRecordSet(param0);
+    }
+
+    public DDLRecordSet getRecordSet(long param0, String param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getRecordSet(param0, param1);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

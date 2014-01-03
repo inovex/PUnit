@@ -8,10 +8,11 @@ import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -42,12 +43,22 @@ public class PollsQuestionMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.polls.model.PollsQuestion.class));
     }
 
-    public boolean isExpired() {
-        return this.mockObject.isExpired();
+    public int getVotesCount()
+        throws SystemException
+    {
+        return this.mockObject.getVotesCount();
     }
 
-    public boolean isExpired(ServiceContext param0, Date param1) {
-        return this.mockObject.isExpired(param0, param1);
+    public List<PollsVote> getVotes(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getVotes(param0, param1);
+    }
+
+    public List<PollsVote> getVotes()
+        throws SystemException
+    {
+        return this.mockObject.getVotes();
     }
 
     public List<PollsChoice> getChoices()
@@ -56,10 +67,12 @@ public class PollsQuestionMock
         return this.mockObject.getChoices();
     }
 
-    public int getVotesCount()
-        throws SystemException
-    {
-        return this.mockObject.getVotesCount();
+    public boolean isExpired() {
+        return this.mockObject.isExpired();
+    }
+
+    public boolean isExpired(ServiceContext param0, Date param1) {
+        return this.mockObject.isExpired(param0, param1);
     }
 
     public String toString() {
@@ -76,6 +89,10 @@ public class PollsQuestionMock
 
     public int compareTo(PollsQuestion param0) {
         return this.mockObject.compareTo(param0);
+    }
+
+    public long getPrimaryKey() {
+        return this.mockObject.getPrimaryKey();
     }
 
     public String getDescription() {
@@ -98,18 +115,11 @@ public class PollsQuestionMock
         return this.mockObject.getDescription(param0, param1);
     }
 
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
+    public void setGroupId(long param0) {
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -123,22 +133,20 @@ public class PollsQuestionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<PollsQuestion> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public PollsQuestion toEscapedModel() {
@@ -149,18 +157,22 @@ public class PollsQuestionMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<PollsQuestion> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -200,24 +212,37 @@ public class PollsQuestionMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public void setLastVoteDate(Date param0) {
     }
 
-    public void setGroupId(long param0) {
+    public void setQuestionId(long param0) {
     }
 
-    public void setDescription(String param0) {
+    public long getQuestionId() {
+        return this.mockObject.getQuestionId();
     }
 
-    public void setDescription(String param0, Locale param1) {
+    public Date getLastVoteDate() {
+        return this.mockObject.getLastVoteDate();
     }
 
-    public void setDescription(String param0, Locale param1, Locale param2) {
+    public Date getExpirationDate() {
+        return this.mockObject.getExpirationDate();
+    }
+
+    public void setExpirationDate(Date param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getTitle() {
         return this.mockObject.getTitle();
+    }
+
+    public String getTitle(String param0, boolean param1) {
+        return this.mockObject.getTitle(param0, param1);
     }
 
     public String getTitle(Locale param0) {
@@ -232,10 +257,6 @@ public class PollsQuestionMock
         return this.mockObject.getTitle(param0);
     }
 
-    public String getTitle(String param0, boolean param1) {
-        return this.mockObject.getTitle(param0, param1);
-    }
-
     public String getTitleCurrentLanguageId() {
         return this.mockObject.getTitleCurrentLanguageId();
     }
@@ -248,13 +269,13 @@ public class PollsQuestionMock
         return this.mockObject.getTitleMap();
     }
 
+    public void setTitle(String param0, Locale param1, Locale param2) {
+    }
+
     public void setTitle(String param0) {
     }
 
     public void setTitle(String param0, Locale param1) {
-    }
-
-    public void setTitle(String param0, Locale param1, Locale param2) {
     }
 
     public void setTitleCurrentLanguageId(String param0) {
@@ -281,10 +302,23 @@ public class PollsQuestionMock
     public void setDescriptionCurrentLanguageId(String param0) {
     }
 
+    public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
+    }
+
     public void setDescriptionMap(Map<Locale, String> param0) {
     }
 
-    public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
     }
 
     public void prepareLocalizedFieldsForImport(Locale param0)
@@ -292,32 +326,34 @@ public class PollsQuestionMock
     {
     }
 
-    public Date getExpirationDate() {
-        return this.mockObject.getExpirationDate();
+    public PollsQuestion toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setExpirationDate(Date param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public long getQuestionId() {
-        return this.mockObject.getQuestionId();
+    public void setCreateDate(Date param0) {
     }
 
-    public void setQuestionId(long param0) {
+    public void setCompanyId(long param0) {
     }
 
-    public Date getLastVoteDate() {
-        return this.mockObject.getLastVoteDate();
+    public void setDescription(String param0) {
     }
 
-    public void setLastVoteDate(Date param0) {
+    public void setDescription(String param0, Locale param1, Locale param2) {
+    }
+
+    public void setDescription(String param0, Locale param1) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -329,6 +365,10 @@ public class PollsQuestionMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

@@ -4,10 +4,10 @@ package com.liferay.counter.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -65,11 +65,50 @@ public class CounterMock
         return this.mockObject.getPrimaryKey();
     }
 
+    public boolean isCachedModel() {
+        return this.mockObject.isCachedModel();
+    }
+
+    public void setCachedModel(boolean param0) {
+    }
+
+    public boolean isEscapedModel() {
+        return this.mockObject.isEscapedModel();
+    }
+
     public void setPrimaryKey(String param0) {
+    }
+
+    public ExpandoBridge getExpandoBridge() {
+        return this.mockObject.getExpandoBridge();
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    }
+
+    public Counter toEscapedModel() {
+        return this.mockObject.toEscapedModel();
     }
 
     public long getCurrentId() {
         return this.mockObject.getCurrentId();
+    }
+
+    public String toXmlString() {
+        return this.mockObject.toXmlString();
+    }
+
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
     public void setCurrentId(long param0) {
@@ -82,48 +121,19 @@ public class CounterMock
     public void setNew(boolean param0) {
     }
 
-    public boolean isCachedModel() {
-        return this.mockObject.isCachedModel();
-    }
-
-    public void setCachedModel(boolean param0) {
-    }
-
-    public boolean isEscapedModel() {
-        return this.mockObject.isEscapedModel();
-    }
-
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
-    }
-
-    public ExpandoBridge getExpandoBridge() {
-        return this.mockObject.getExpandoBridge();
-    }
-
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
-    }
-
     public CacheModel<Counter> toCacheModel() {
         return this.mockObject.toCacheModel();
     }
 
-    public Counter toEscapedModel() {
-        return this.mockObject.toEscapedModel();
+    public Counter toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public String toXmlString() {
-        return this.mockObject.toXmlString();
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

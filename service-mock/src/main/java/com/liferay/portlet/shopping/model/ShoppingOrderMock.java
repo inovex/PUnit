@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -63,14 +63,11 @@ public class ShoppingOrderMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -84,11 +81,7 @@ public class ShoppingOrderMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -98,8 +91,10 @@ public class ShoppingOrderMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<ShoppingOrder> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public ShoppingOrder toEscapedModel() {
@@ -110,18 +105,22 @@ public class ShoppingOrderMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ShoppingOrder> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -154,21 +153,29 @@ public class ShoppingOrderMock
     public void setUserName(String param0) {
     }
 
-    public void setNumber(String param0) {
+    public void setOrderId(long param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public double getShipping() {
+        return this.mockObject.getShipping();
     }
 
-    public void setGroupId(long param0) {
+    public void setShipping(double param0) {
     }
 
-    public String getComments() {
-        return this.mockObject.getComments();
+    public boolean getRequiresShipping() {
+        return this.mockObject.getRequiresShipping();
     }
 
-    public void setComments(String param0) {
+    public boolean isRequiresShipping() {
+        return this.mockObject.isRequiresShipping();
+    }
+
+    public void setRequiresShipping(boolean param0) {
+    }
+
+    public long getOrderId() {
+        return this.mockObject.getOrderId();
     }
 
     public String getCouponCodes() {
@@ -196,40 +203,7 @@ public class ShoppingOrderMock
     public void setInsure(boolean param0) {
     }
 
-    public double getShipping() {
-        return this.mockObject.getShipping();
-    }
-
-    public void setShipping(double param0) {
-    }
-
-    public boolean getRequiresShipping() {
-        return this.mockObject.getRequiresShipping();
-    }
-
-    public boolean isRequiresShipping() {
-        return this.mockObject.isRequiresShipping();
-    }
-
-    public void setRequiresShipping(boolean param0) {
-    }
-
-    public long getOrderId() {
-        return this.mockObject.getOrderId();
-    }
-
-    public void setOrderId(long param0) {
-    }
-
-    public double getTax() {
-        return this.mockObject.getTax();
-    }
-
-    public void setTax(double param0) {
-    }
-
-    public double getInsurance() {
-        return this.mockObject.getInsurance();
+    public void setNumber(String param0) {
     }
 
     public void setInsurance(double param0) {
@@ -239,35 +213,37 @@ public class ShoppingOrderMock
         return this.mockObject.getCouponDiscount();
     }
 
-    public void setCouponDiscount(double param0) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public String getBillingFirstName() {
-        return this.mockObject.getBillingFirstName();
+    public String getComments() {
+        return this.mockObject.getComments();
     }
 
-    public void setBillingFirstName(String param0) {
+    public void setComments(String param0) {
     }
 
-    public String getBillingLastName() {
-        return this.mockObject.getBillingLastName();
+    public ShoppingOrder toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setBillingLastName(String param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public String getBillingEmailAddress() {
-        return this.mockObject.getBillingEmailAddress();
+    public void setCreateDate(Date param0) {
     }
 
-    public void setBillingEmailAddress(String param0) {
+    public void setTax(double param0) {
     }
 
-    public String getBillingCompany() {
-        return this.mockObject.getBillingCompany();
+    public double getInsurance() {
+        return this.mockObject.getInsurance();
     }
 
-    public void setBillingCompany(String param0) {
+    public double getTax() {
+        return this.mockObject.getTax();
     }
 
     public String getBillingStreet() {
@@ -492,11 +468,45 @@ public class ShoppingOrderMock
     public void setSendShippingEmail(boolean param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setCompanyId(long param0) {
+    }
+
+    public void setCouponDiscount(double param0) {
+    }
+
+    public String getBillingFirstName() {
+        return this.mockObject.getBillingFirstName();
+    }
+
+    public void setBillingFirstName(String param0) {
+    }
+
+    public String getBillingLastName() {
+        return this.mockObject.getBillingLastName();
+    }
+
+    public void setBillingLastName(String param0) {
+    }
+
+    public String getBillingEmailAddress() {
+        return this.mockObject.getBillingEmailAddress();
+    }
+
+    public void setBillingEmailAddress(String param0) {
+    }
+
+    public String getBillingCompany() {
+        return this.mockObject.getBillingCompany();
+    }
+
+    public void setBillingCompany(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

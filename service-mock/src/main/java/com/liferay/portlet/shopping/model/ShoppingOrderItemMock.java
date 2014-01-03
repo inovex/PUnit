@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -69,22 +69,12 @@ public class ShoppingOrderItemMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
     public boolean isCachedModel() {
@@ -98,22 +88,20 @@ public class ShoppingOrderItemMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<ShoppingOrderItem> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public ShoppingOrderItem toEscapedModel() {
@@ -124,21 +112,32 @@ public class ShoppingOrderItemMock
         return this.mockObject.toXmlString();
     }
 
-    public void setDescription(String param0) {
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public String getItemId() {
-        return this.mockObject.getItemId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setItemId(String param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ShoppingOrderItem> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public void setSku(String param0) {
+    }
+
+    public void setOrderId(long param0) {
     }
 
     public String getSku() {
         return this.mockObject.getSku();
-    }
-
-    public void setSku(String param0) {
     }
 
     public double getPrice() {
@@ -148,25 +147,25 @@ public class ShoppingOrderItemMock
     public void setPrice(double param0) {
     }
 
-    public long getOrderItemId() {
-        return this.mockObject.getOrderItemId();
-    }
-
-    public void setOrderItemId(long param0) {
-    }
-
     public long getOrderId() {
         return this.mockObject.getOrderId();
     }
 
-    public void setOrderId(long param0) {
+    public String getItemId() {
+        return this.mockObject.getItemId();
+    }
+
+    public void setQuantity(int param0) {
+    }
+
+    public void setItemId(String param0) {
     }
 
     public int getQuantity() {
         return this.mockObject.getQuantity();
     }
 
-    public void setQuantity(int param0) {
+    public void setOrderItemId(long param0) {
     }
 
     public Date getShippedDate() {
@@ -176,11 +175,22 @@ public class ShoppingOrderItemMock
     public void setShippedDate(Date param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getOrderItemId() {
+        return this.mockObject.getOrderItemId();
+    }
+
+    public ShoppingOrderItem toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setDescription(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

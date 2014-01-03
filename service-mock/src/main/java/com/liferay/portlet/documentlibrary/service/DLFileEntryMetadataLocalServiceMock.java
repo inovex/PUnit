@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
@@ -14,7 +15,6 @@ import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.documentlibrary.model.DLFileEntryMetadata;
 import com.liferay.portlet.dynamicdatamapping.model.DDMStructure;
 import com.liferay.portlet.dynamicdatamapping.storage.Fields;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -52,41 +52,6 @@ public class DLFileEntryMetadataLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
     public DLFileEntryMetadata addDLFileEntryMetadata(DLFileEntryMetadata param0)
         throws SystemException
     {
@@ -98,34 +63,10 @@ public class DLFileEntryMetadataLocalServiceMock
         return this.mockObject.createDLFileEntryMetadata(param0);
     }
 
-    public DLFileEntryMetadata deleteDLFileEntryMetadata(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteDLFileEntryMetadata(param0);
-    }
-
-    public DLFileEntryMetadata deleteDLFileEntryMetadata(DLFileEntryMetadata param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteDLFileEntryMetadata(param0);
-    }
-
-    public DLFileEntryMetadata fetchDLFileEntryMetadata(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
     public DLFileEntryMetadata getDLFileEntryMetadata(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
-    }
-
-    public List<DLFileEntryMetadata> getDLFileEntryMetadatas(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getDLFileEntryMetadatas(param0, param1);
     }
 
     public int getDLFileEntryMetadatasCount()
@@ -140,15 +81,26 @@ public class DLFileEntryMetadataLocalServiceMock
         return this.mockObject.updateDLFileEntryMetadata(param0);
     }
 
-    public DLFileEntryMetadata updateDLFileEntryMetadata(DLFileEntryMetadata param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateDLFileEntryMetadata(param0, param1);
-    }
-
     public void deleteFileEntryMetadata(long param0)
         throws PortalException, SystemException
     {
+    }
+
+    public void deleteFileVersionFileEntryMetadata(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public DLFileEntryMetadata fetchFileEntryMetadata(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchFileEntryMetadata(param0, param1);
+    }
+
+    public DLFileEntryMetadata fetchFileEntryMetadata(long param0)
+        throws SystemException
+    {
+        return this.mockObject.fetchFileEntryMetadata(param0);
     }
 
     public DLFileEntryMetadata getFileEntryMetadata(long param0)
@@ -169,6 +121,18 @@ public class DLFileEntryMetadataLocalServiceMock
         return this.mockObject.getFileEntryMetadataCount(param0, param1);
     }
 
+    public List<DLFileEntryMetadata> getFileVersionFileEntryMetadatas(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getFileVersionFileEntryMetadatas(param0);
+    }
+
+    public long getFileVersionFileEntryMetadatasCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getFileVersionFileEntryMetadatasCount(param0);
+    }
+
     public void updateFileEntryMetadata(long param0, List<DDMStructure> param1, long param2, long param3, long param4, Map<String, Fields> param5, ServiceContext param6)
         throws PortalException, SystemException
     {
@@ -177,6 +141,71 @@ public class DLFileEntryMetadataLocalServiceMock
     public void updateFileEntryMetadata(long param0, long param1, long param2, Map<String, Fields> param3, ServiceContext param4)
         throws PortalException, SystemException
     {
+    }
+
+    public DLFileEntryMetadata deleteDLFileEntryMetadata(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteDLFileEntryMetadata(param0);
+    }
+
+    public DLFileEntryMetadata deleteDLFileEntryMetadata(DLFileEntryMetadata param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteDLFileEntryMetadata(param0);
+    }
+
+    public DLFileEntryMetadata fetchDLFileEntryMetadata(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public List<DLFileEntryMetadata> getDLFileEntryMetadatas(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getDLFileEntryMetadatas(param0, param1);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

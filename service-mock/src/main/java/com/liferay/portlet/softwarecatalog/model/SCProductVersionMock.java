@@ -6,10 +6,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -70,16 +70,6 @@ public class SCProductVersionMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -91,11 +81,7 @@ public class SCProductVersionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -105,8 +91,10 @@ public class SCProductVersionMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<SCProductVersion> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public SCProductVersion toEscapedModel() {
@@ -117,18 +105,22 @@ public class SCProductVersionMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<SCProductVersion> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -143,6 +135,10 @@ public class SCProductVersionMock
     }
 
     public void setUserId(long param0) {
+    }
+
+    public String getChangeLog() {
+        return this.mockObject.getChangeLog();
     }
 
     public String getUserName() {
@@ -161,8 +157,7 @@ public class SCProductVersionMock
     public void setUserName(String param0) {
     }
 
-    public String getChangeLog() {
-        return this.mockObject.getChangeLog();
+    public void setVersion(String param0) {
     }
 
     public String getVersion() {
@@ -172,7 +167,8 @@ public class SCProductVersionMock
     public void setChangeLog(String param0) {
     }
 
-    public void setVersion(String param0) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public long getProductEntryId() {
@@ -180,13 +176,6 @@ public class SCProductVersionMock
     }
 
     public void setProductEntryId(long param0) {
-    }
-
-    public long getProductVersionId() {
-        return this.mockObject.getProductVersionId();
-    }
-
-    public void setProductVersionId(long param0) {
     }
 
     public String getDownloadPageURL() {
@@ -214,14 +203,25 @@ public class SCProductVersionMock
     public void setRepoStoreArtifact(boolean param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setProductVersionId(long param0) {
     }
 
-    public void resetOriginalValues() {
+    public long getProductVersionId() {
+        return this.mockObject.getProductVersionId();
     }
 
-    public void setModelAttributes(Map<String, Object> param0) {
+    public SCProductVersion toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public Class<?> getModelClass() {
@@ -230,6 +230,16 @@ public class SCProductVersionMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
+    }
+
+    public void setModelAttributes(Map<String, Object> param0) {
     }
 
     public void persist()

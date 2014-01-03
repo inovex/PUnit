@@ -2,12 +2,13 @@
 package com.liferay.portal.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -36,6 +37,12 @@ public class UserGroupMock
 
     public void initMockObject() {
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.UserGroup.class));
+    }
+
+    public long getGroupId()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getGroupId();
     }
 
     public Group getGroup()
@@ -91,22 +98,12 @@ public class UserGroupMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
     public boolean isCachedModel() {
@@ -120,22 +117,20 @@ public class UserGroupMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<UserGroup> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public UserGroup toEscapedModel() {
@@ -146,25 +141,67 @@ public class UserGroupMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<UserGroup> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public Date getModifiedDate() {
+        return this.mockObject.getModifiedDate();
+    }
+
+    public void setModifiedDate(Date param0) {
+    }
+
+    public long getUserId() {
+        return this.mockObject.getUserId();
+    }
+
+    public void setUserId(long param0) {
+    }
+
+    public String getUuid() {
+        return this.mockObject.getUuid();
+    }
+
+    public void setUuid(String param0) {
+    }
+
+    public String getUserName() {
+        return this.mockObject.getUserName();
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
+    }
+
     public long getCompanyId() {
         return this.mockObject.getCompanyId();
     }
 
-    public void setCompanyId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public long getUserGroupId() {
-        return this.mockObject.getUserGroupId();
-    }
-
-    public void setUserGroupId(long param0) {
-    }
-
-    public long getParentUserGroupId() {
-        return this.mockObject.getParentUserGroupId();
+    public UserGroup toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void setParentUserGroupId(long param0) {
@@ -178,14 +215,38 @@ public class UserGroupMock
         return this.mockObject.isAddedByLDAPImport();
     }
 
+    public void setUserGroupId(long param0) {
+    }
+
+    public long getParentUserGroupId() {
+        return this.mockObject.getParentUserGroupId();
+    }
+
     public void setAddedByLDAPImport(boolean param0) {
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public long getUserGroupId() {
+        return this.mockObject.getUserGroupId();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -197,6 +258,10 @@ public class UserGroupMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

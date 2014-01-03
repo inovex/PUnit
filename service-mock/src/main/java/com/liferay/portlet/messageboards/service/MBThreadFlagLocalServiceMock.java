@@ -5,13 +5,14 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
+import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.messageboards.model.MBThread;
 import com.liferay.portlet.messageboards.model.MBThreadFlag;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,50 +50,14 @@ public class MBThreadFlagLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public MBThreadFlag addMBThreadFlag(MBThreadFlag param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
     public MBThreadFlag createMBThreadFlag(long param0) {
         return this.mockObject.createMBThreadFlag(param0);
+    }
+
+    public MBThreadFlag deleteMBThreadFlag(MBThreadFlag param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteMBThreadFlag(param0);
     }
 
     public MBThreadFlag deleteMBThreadFlag(long param0)
@@ -101,10 +66,11 @@ public class MBThreadFlagLocalServiceMock
         return this.mockObject.deleteMBThreadFlag(param0);
     }
 
-    public MBThreadFlag deleteMBThreadFlag(MBThreadFlag param0)
+    public MBThreadFlag addMBThreadFlag(MBThreadFlag param0)
         throws SystemException
     {
-        return this.mockObject.deleteMBThreadFlag(param0);
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
     public MBThreadFlag fetchMBThreadFlag(long param0)
@@ -117,6 +83,30 @@ public class MBThreadFlagLocalServiceMock
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public MBThreadFlag fetchMBThreadFlagByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchMBThreadFlagByUuidAndCompanyId(param0, param1);
+    }
+
+    public MBThreadFlag fetchMBThreadFlagByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchMBThreadFlagByUuidAndGroupId(param0, param1);
+    }
+
+    public MBThreadFlag getMBThreadFlagByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMBThreadFlagByUuidAndCompanyId(param0, param1);
+    }
+
+    public MBThreadFlag getMBThreadFlagByUuidAndGroupId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMBThreadFlagByUuidAndGroupId(param0, param1);
     }
 
     public List<MBThreadFlag> getMBThreadFlags(int param0, int param1)
@@ -137,24 +127,18 @@ public class MBThreadFlagLocalServiceMock
         return this.mockObject.updateMBThreadFlag(param0);
     }
 
-    public MBThreadFlag updateMBThreadFlag(MBThreadFlag param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateMBThreadFlag(param0, param1);
-    }
-
-    public void addThreadFlag(long param0, MBThread param1)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteThreadFlag(long param0)
+    public void addThreadFlag(long param0, MBThread param1, ServiceContext param2)
         throws PortalException, SystemException
     {
     }
 
     public void deleteThreadFlag(MBThreadFlag param0)
         throws SystemException
+    {
+    }
+
+    public void deleteThreadFlag(long param0)
+        throws PortalException, SystemException
     {
     }
 
@@ -178,6 +162,47 @@ public class MBThreadFlagLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.hasThreadFlag(param0, param1);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

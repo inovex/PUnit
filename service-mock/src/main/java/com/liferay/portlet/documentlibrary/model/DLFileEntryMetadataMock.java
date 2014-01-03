@@ -5,11 +5,11 @@ import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.dynamicdatamapping.model.DDMStructure;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -40,12 +40,6 @@ public class DLFileEntryMetadataMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.documentlibrary.model.DLFileEntryMetadata.class));
     }
 
-    public DLFileVersion getFileVersion()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getFileVersion();
-    }
-
     public DDMStructure getDDMStructure()
         throws PortalException, SystemException
     {
@@ -56,6 +50,12 @@ public class DLFileEntryMetadataMock
         throws PortalException, SystemException
     {
         return this.mockObject.getFileEntryType();
+    }
+
+    public DLFileVersion getFileVersion()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getFileVersion();
     }
 
     public String toString() {
@@ -78,16 +78,6 @@ public class DLFileEntryMetadataMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -99,11 +89,7 @@ public class DLFileEntryMetadataMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -113,8 +99,10 @@ public class DLFileEntryMetadataMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<DLFileEntryMetadata> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public DLFileEntryMetadata toEscapedModel() {
@@ -125,32 +113,29 @@ public class DLFileEntryMetadataMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DLFileEntryMetadata> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
     public String getUuid() {
         return this.mockObject.getUuid();
     }
 
     public void setUuid(String param0) {
-    }
-
-    public long getFileEntryId() {
-        return this.mockObject.getFileEntryId();
-    }
-
-    public void setFileEntryId(long param0) {
-    }
-
-    public long getFileEntryTypeId() {
-        return this.mockObject.getFileEntryTypeId();
-    }
-
-    public void setFileEntryTypeId(long param0) {
-    }
-
-    public long getFileVersionId() {
-        return this.mockObject.getFileVersionId();
-    }
-
-    public void setFileVersionId(long param0) {
     }
 
     public long getFileEntryMetadataId() {
@@ -174,11 +159,36 @@ public class DLFileEntryMetadataMock
     public void setDDMStructureId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getFileEntryId() {
+        return this.mockObject.getFileEntryId();
+    }
+
+    public void setFileEntryId(long param0) {
+    }
+
+    public long getFileVersionId() {
+        return this.mockObject.getFileVersionId();
+    }
+
+    public void setFileVersionId(long param0) {
+    }
+
+    public long getFileEntryTypeId() {
+        return this.mockObject.getFileEntryTypeId();
+    }
+
+    public void setFileEntryTypeId(long param0) {
+    }
+
+    public DLFileEntryMetadata toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

@@ -4,12 +4,16 @@ package com.liferay.portlet.documentlibrary.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.repository.model.Folder;
+import com.liferay.portal.kernel.trash.TrashHandler;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
+import com.liferay.portlet.trash.model.TrashEntry;
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -40,12 +44,30 @@ public class DLFileShortcutMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.documentlibrary.model.DLFileShortcut.class));
     }
 
-    public Folder getFolder() {
+    public String getToTitle() {
+        return this.mockObject.getToTitle();
+    }
+
+    public DLFolder getDLFolder()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDLFolder();
+    }
+
+    public Folder getFolder()
+        throws PortalException, SystemException
+    {
         return this.mockObject.getFolder();
     }
 
-    public String getToTitle() {
-        return this.mockObject.getToTitle();
+    public boolean isInHiddenFolder() {
+        return this.mockObject.isInHiddenFolder();
+    }
+
+    public String buildTreePath()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.buildTreePath();
     }
 
     public String toString() {
@@ -68,14 +90,22 @@ public class DLFileShortcutMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public long getFolderId() {
+        return this.mockObject.getFolderId();
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -89,11 +119,7 @@ public class DLFileShortcutMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -103,8 +129,10 @@ public class DLFileShortcutMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<DLFileShortcut> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public DLFileShortcut toEscapedModel() {
@@ -115,18 +143,22 @@ public class DLFileShortcutMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DLFileShortcut> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -166,18 +198,65 @@ public class DLFileShortcutMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public TrashEntry getTrashEntry()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTrashEntry();
     }
 
-    public void setGroupId(long param0) {
+    public long getTrashEntryClassPK() {
+        return this.mockObject.getTrashEntryClassPK();
     }
 
-    public int getStatus() {
-        return this.mockObject.getStatus();
+    public TrashHandler getTrashHandler() {
+        return this.mockObject.getTrashHandler();
     }
 
-    public void setStatus(int param0) {
+    public boolean isInTrash() {
+        return this.mockObject.isInTrash();
+    }
+
+    public boolean isInTrashContainer() {
+        return this.mockObject.isInTrashContainer();
+    }
+
+    public void setFolderId(long param0) {
+    }
+
+    public void setRepositoryId(long param0) {
+    }
+
+    public long getFileShortcutId() {
+        return this.mockObject.getFileShortcutId();
+    }
+
+    public void setFileShortcutId(long param0) {
+    }
+
+    public long getToFileEntryId() {
+        return this.mockObject.getToFileEntryId();
+    }
+
+    public void setToFileEntryId(long param0) {
+    }
+
+    public boolean getActive() {
+        return this.mockObject.getActive();
+    }
+
+    public boolean isActive() {
+        return this.mockObject.isActive();
+    }
+
+    public void setActive(boolean param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public DLFileShortcut toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public long getStatusByUserId() {
@@ -246,39 +325,32 @@ public class DLFileShortcutMock
         return this.mockObject.isScheduled();
     }
 
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setTreePath(String param0) {
+    }
+
+    public String getTreePath() {
+        return this.mockObject.getTreePath();
+    }
+
     public long getRepositoryId() {
         return this.mockObject.getRepositoryId();
     }
 
-    public void setRepositoryId(long param0) {
-    }
-
-    public long getFolderId() {
-        return this.mockObject.getFolderId();
-    }
-
-    public void setFolderId(long param0) {
-    }
-
-    public long getFileShortcutId() {
-        return this.mockObject.getFileShortcutId();
-    }
-
-    public void setFileShortcutId(long param0) {
-    }
-
-    public long getToFileEntryId() {
-        return this.mockObject.getToFileEntryId();
-    }
-
-    public void setToFileEntryId(long param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -292,7 +364,16 @@ public class DLFileShortcutMock
         return this.mockObject.getModelClassName();
     }
 
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
+    }
+
     public void persist()
+        throws SystemException
+    {
+    }
+
+    public void updateTreePath(String param0)
         throws SystemException
     {
     }

@@ -4,7 +4,10 @@ package com.liferay.portlet.documentlibrary.service;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
@@ -13,7 +16,6 @@ import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.documentlibrary.model.DLFileEntry;
 import com.liferay.portlet.documentlibrary.model.DLFileEntryType;
 import com.liferay.portlet.documentlibrary.model.DLFolder;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -57,70 +59,16 @@ public class DLFileEntryTypeLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public DLFileEntryType fetchDLFileEntryType(long param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return (_serviceObjects.get(param0));
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public DLFileEntryType fetchDLFileEntryTypeByUuidAndCompanyId(String param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public int searchCount(long param0, long[] param1, String param2, boolean param3)
-        throws SystemException
-    {
-        return this.mockObject.searchCount(param0, param1, param2, param3);
-    }
-
-    public long getDefaultFileEntryTypeId(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getDefaultFileEntryTypeId(param0);
-    }
-
-    public DLFileEntryType getFileEntryType(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getFileEntryType(param0);
-    }
-
-    public DLFileEntryType getFileEntryType(long param0, String param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getFileEntryType(param0, param1);
-    }
-
-    public DLFileEntryType addDLFileEntryType(DLFileEntryType param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
+        return this.mockObject.fetchDLFileEntryTypeByUuidAndCompanyId(param0, param1);
     }
 
     public DLFileEntryType createDLFileEntryType(long param0) {
@@ -139,16 +87,173 @@ public class DLFileEntryTypeLocalServiceMock
         return this.mockObject.deleteDLFileEntryType(param0);
     }
 
-    public DLFileEntryType fetchDLFileEntryType(long param0)
+    public DLFileEntryType addDLFileEntryType(DLFileEntryType param0)
         throws SystemException
     {
-        return (_serviceObjects.get(param0));
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public int getDLFolderDLFileEntryTypesCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getDLFolderDLFileEntryTypesCount(param0);
+    }
+
+    public boolean hasDLFolderDLFileEntryType(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.hasDLFolderDLFileEntryType(param0, param1);
+    }
+
+    public boolean hasDLFolderDLFileEntryTypes(long param0)
+        throws SystemException
+    {
+        return this.mockObject.hasDLFolderDLFileEntryTypes(param0);
+    }
+
+    public void setDLFolderDLFileEntryTypes(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void addDDMStructureDLFileEntryType(long param0, long param1)
+        throws SystemException
+    {
+    }
+
+    public void addDDMStructureDLFileEntryType(long param0, DLFileEntryType param1)
+        throws SystemException
+    {
+    }
+
+    public void addDDMStructureDLFileEntryTypes(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void addDDMStructureDLFileEntryTypes(long param0, List<DLFileEntryType> param1)
+        throws SystemException
+    {
+    }
+
+    public void clearDDMStructureDLFileEntryTypes(long param0)
+        throws SystemException
+    {
+    }
+
+    public void deleteDDMStructureDLFileEntryType(long param0, DLFileEntryType param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteDDMStructureDLFileEntryType(long param0, long param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteDDMStructureDLFileEntryTypes(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteDDMStructureDLFileEntryTypes(long param0, List<DLFileEntryType> param1)
+        throws SystemException
+    {
+    }
+
+    public List<DLFileEntryType> getDDMStructureDLFileEntryTypes(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getDDMStructureDLFileEntryTypes(param0, param1, param2);
+    }
+
+    public List<DLFileEntryType> getDDMStructureDLFileEntryTypes(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getDDMStructureDLFileEntryTypes(param0);
+    }
+
+    public List<DLFileEntryType> getDDMStructureDLFileEntryTypes(long param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.getDDMStructureDLFileEntryTypes(param0, param1, param2, param3);
+    }
+
+    public int getDDMStructureDLFileEntryTypesCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getDDMStructureDLFileEntryTypesCount(param0);
+    }
+
+    public boolean hasDDMStructureDLFileEntryType(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.hasDDMStructureDLFileEntryType(param0, param1);
+    }
+
+    public boolean hasDDMStructureDLFileEntryTypes(long param0)
+        throws SystemException
+    {
+        return this.mockObject.hasDDMStructureDLFileEntryTypes(param0);
+    }
+
+    public void setDDMStructureDLFileEntryTypes(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public DLFileEntryType addFileEntryType(long param0, long param1, String param2, Map<Locale, String> param3, Map<Locale, String> param4, long[] param5, ServiceContext param6)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addFileEntryType(param0, param1, param2, param3, param4, param5, param6);
+    }
+
+    public DLFileEntryType addFileEntryType(long param0, long param1, String param2, String param3, long[] param4, ServiceContext param5)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addFileEntryType(param0, param1, param2, param3, param4, param5);
+    }
+
+    public void cascadeFileEntryTypes(long param0, DLFolder param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public DLFileEntryType getFileEntryType(long param0, String param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getFileEntryType(param0, param1);
+    }
+
+    public DLFileEntryType getFileEntryType(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getFileEntryType(param0);
+    }
+
+    public long getDefaultFileEntryTypeId(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDefaultFileEntryTypeId(param0);
+    }
+
+    public DLFileEntryType fetchDLFileEntryTypeByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchDLFileEntryTypeByUuidAndGroupId(param0, param1);
     }
 
     public DLFileEntryType getDLFileEntryType(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public DLFileEntryType getDLFileEntryTypeByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDLFileEntryTypeByUuidAndCompanyId(param0, param1);
     }
 
     public DLFileEntryType getDLFileEntryTypeByUuidAndGroupId(String param0, long param1)
@@ -175,21 +280,67 @@ public class DLFileEntryTypeLocalServiceMock
         return this.mockObject.updateDLFileEntryType(param0);
     }
 
-    public DLFileEntryType updateDLFileEntryType(DLFileEntryType param0, boolean param1)
+    public void addDLFolderDLFileEntryType(long param0, DLFileEntryType param1)
         throws SystemException
     {
-        return this.mockObject.updateDLFileEntryType(param0, param1);
     }
 
-    public DLFileEntryType addFileEntryType(long param0, long param1, String param2, String param3, long[] param4, ServiceContext param5)
-        throws PortalException, SystemException
+    public void addDLFolderDLFileEntryType(long param0, long param1)
+        throws SystemException
     {
-        return this.mockObject.addFileEntryType(param0, param1, param2, param3, param4, param5);
     }
 
-    public void cascadeFileEntryTypes(long param0, DLFolder param1)
-        throws PortalException, SystemException
+    public void addDLFolderDLFileEntryTypes(long param0, long[] param1)
+        throws SystemException
     {
+    }
+
+    public void addDLFolderDLFileEntryTypes(long param0, List<DLFileEntryType> param1)
+        throws SystemException
+    {
+    }
+
+    public void clearDLFolderDLFileEntryTypes(long param0)
+        throws SystemException
+    {
+    }
+
+    public void deleteDLFolderDLFileEntryType(long param0, DLFileEntryType param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteDLFolderDLFileEntryType(long param0, long param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteDLFolderDLFileEntryTypes(long param0, List<DLFileEntryType> param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteDLFolderDLFileEntryTypes(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public List<DLFileEntryType> getDLFolderDLFileEntryTypes(long param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.getDLFolderDLFileEntryTypes(param0, param1, param2, param3);
+    }
+
+    public List<DLFileEntryType> getDLFolderDLFileEntryTypes(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getDLFolderDLFileEntryTypes(param0);
+    }
+
+    public List<DLFileEntryType> getDLFolderDLFileEntryTypes(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getDLFolderDLFileEntryTypes(param0, param1, param2);
     }
 
     public void deleteFileEntryType(DLFileEntryType param0)
@@ -202,6 +353,12 @@ public class DLFileEntryTypeLocalServiceMock
     {
     }
 
+    public int searchCount(long param0, long[] param1, String param2, boolean param3)
+        throws SystemException
+    {
+        return this.mockObject.searchCount(param0, param1, param2, param3);
+    }
+
     public void deleteFileEntryTypes(long param0)
         throws PortalException, SystemException
     {
@@ -211,6 +368,12 @@ public class DLFileEntryTypeLocalServiceMock
         throws SystemException
     {
         return this.mockObject.fetchFileEntryType(param0);
+    }
+
+    public DLFileEntryType fetchFileEntryType(long param0, String param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchFileEntryType(param0, param1);
     }
 
     public List<DLFileEntryType> getFileEntryTypes(long[] param0)
@@ -241,9 +404,55 @@ public class DLFileEntryTypeLocalServiceMock
     {
     }
 
+    public void updateFileEntryType(long param0, long param1, Map<Locale, String> param2, Map<Locale, String> param3, long[] param4, ServiceContext param5)
+        throws PortalException, SystemException
+    {
+    }
+
     public void updateFolderFileEntryTypes(DLFolder param0, List<Long> param1, long param2, ServiceContext param3)
         throws PortalException, SystemException
     {
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

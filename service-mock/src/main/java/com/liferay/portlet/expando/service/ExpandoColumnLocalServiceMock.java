@@ -6,12 +6,12 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.expando.model.ExpandoColumn;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,39 +49,169 @@ public class ExpandoColumnLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public ExpandoColumn updateExpandoColumn(ExpandoColumn param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return this.mockObject.updateExpandoColumn(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public void deleteColumns(long param0, String param1, String param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteColumns(long param0, long param1, String param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteColumns(long param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+    public ExpandoColumn getColumn(long param0, String param1, String param2, String param3)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+        return this.mockObject.getColumn(param0, param1, param2, param3);
     }
 
-    public long dynamicQueryCount(DynamicQuery param0)
+    public ExpandoColumn getColumn(long param0, String param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQueryCount(param0);
+        return this.mockObject.getColumn(param0, param1);
     }
 
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
+    public ExpandoColumn getColumn(long param0, long param1, String param2, String param3)
+        throws SystemException
+    {
+        return this.mockObject.getColumn(param0, param1, param2, param3);
     }
 
-    public void setBeanIdentifier(String param0) {
+    public ExpandoColumn getColumn(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getColumn(param0);
+    }
+
+    public List<ExpandoColumn> getColumns(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getColumns(param0);
+    }
+
+    public List<ExpandoColumn> getColumns(long param0, String param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getColumns(param0, param1, param2);
+    }
+
+    public List<ExpandoColumn> getColumns(long param0, Collection<String> param1)
+        throws SystemException
+    {
+        return this.mockObject.getColumns(param0, param1);
+    }
+
+    public List<ExpandoColumn> getColumns(long param0, long param1, String param2, Collection<String> param3)
+        throws SystemException
+    {
+        return this.mockObject.getColumns(param0, param1, param2, param3);
+    }
+
+    public List<ExpandoColumn> getColumns(long param0, long param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getColumns(param0, param1, param2);
+    }
+
+    public List<ExpandoColumn> getColumns(long param0, String param1, String param2, Collection<String> param3)
+        throws SystemException
+    {
+        return this.mockObject.getColumns(param0, param1, param2, param3);
+    }
+
+    public int getColumnsCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getColumnsCount(param0);
+    }
+
+    public int getColumnsCount(long param0, String param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getColumnsCount(param0, param1, param2);
+    }
+
+    public int getColumnsCount(long param0, long param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getColumnsCount(param0, param1, param2);
+    }
+
+    public ExpandoColumn getDefaultTableColumn(long param0, String param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getDefaultTableColumn(param0, param1, param2);
+    }
+
+    public ExpandoColumn getDefaultTableColumn(long param0, long param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getDefaultTableColumn(param0, param1, param2);
+    }
+
+    public List<ExpandoColumn> getDefaultTableColumns(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getDefaultTableColumns(param0, param1);
+    }
+
+    public List<ExpandoColumn> getDefaultTableColumns(long param0, String param1)
+        throws SystemException
+    {
+        return this.mockObject.getDefaultTableColumns(param0, param1);
+    }
+
+    public int getDefaultTableColumnsCount(long param0, String param1)
+        throws SystemException
+    {
+        return this.mockObject.getDefaultTableColumnsCount(param0, param1);
+    }
+
+    public int getDefaultTableColumnsCount(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getDefaultTableColumnsCount(param0, param1);
+    }
+
+    public ExpandoColumn updateColumn(long param0, String param1, int param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateColumn(param0, param1, param2);
+    }
+
+    public ExpandoColumn updateColumn(long param0, String param1, int param2, Object param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateColumn(param0, param1, param2, param3);
+    }
+
+    public ExpandoColumn updateTypeSettings(long param0, String param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateTypeSettings(param0, param1);
+    }
+
+    public ExpandoColumn addColumn(long param0, String param1, int param2, Object param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addColumn(param0, param1, param2, param3);
+    }
+
+    public ExpandoColumn addColumn(long param0, String param1, int param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addColumn(param0, param1, param2);
     }
 
     public ExpandoColumn addExpandoColumn(ExpandoColumn param0)
@@ -131,41 +261,12 @@ public class ExpandoColumnLocalServiceMock
         return this.mockObject.getExpandoColumnsCount();
     }
 
-    public ExpandoColumn updateExpandoColumn(ExpandoColumn param0)
-        throws SystemException
-    {
-        return this.mockObject.updateExpandoColumn(param0);
-    }
-
-    public ExpandoColumn updateExpandoColumn(ExpandoColumn param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateExpandoColumn(param0, param1);
-    }
-
-    public ExpandoColumn addColumn(long param0, String param1, int param2)
+    public void deleteColumn(long param0, String param1, String param2, String param3)
         throws PortalException, SystemException
-    {
-        return this.mockObject.addColumn(param0, param1, param2);
-    }
-
-    public ExpandoColumn addColumn(long param0, String param1, int param2, Object param3)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addColumn(param0, param1, param2, param3);
-    }
-
-    public void deleteColumn(ExpandoColumn param0)
-        throws SystemException
     {
     }
 
     public void deleteColumn(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteColumn(long param0, long param1, String param2, String param3)
         throws PortalException, SystemException
     {
     }
@@ -175,156 +276,55 @@ public class ExpandoColumnLocalServiceMock
     {
     }
 
-    public void deleteColumn(long param0, String param1, String param2, String param3)
+    public void deleteColumn(ExpandoColumn param0)
+        throws SystemException
+    {
+    }
+
+    public void deleteColumn(long param0, long param1, String param2, String param3)
         throws PortalException, SystemException
     {
     }
 
-    public void deleteColumns(long param0)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
         throws SystemException
     {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
-    public void deleteColumns(long param0, long param1, String param2)
-        throws PortalException, SystemException
-    {
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
     }
 
-    public void deleteColumns(long param0, String param1, String param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public ExpandoColumn getColumn(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getColumn(param0);
-    }
-
-    public ExpandoColumn getColumn(long param0, long param1, String param2, String param3)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
-        return this.mockObject.getColumn(param0, param1, param2, param3);
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
     }
 
-    public ExpandoColumn getColumn(long param0, String param1)
+    public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.getColumn(param0, param1);
+        return this.mockObject.dynamicQuery(param0);
     }
 
-    public ExpandoColumn getColumn(long param0, String param1, String param2, String param3)
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
         throws SystemException
     {
-        return this.mockObject.getColumn(param0, param1, param2, param3);
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
-    public List<ExpandoColumn> getColumns(long param0)
+    public long dynamicQueryCount(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.getColumns(param0);
+        return this.mockObject.dynamicQueryCount(param0);
     }
 
-    public List<ExpandoColumn> getColumns(long param0, Collection<String> param1)
-        throws SystemException
-    {
-        return this.mockObject.getColumns(param0, param1);
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
     }
 
-    public List<ExpandoColumn> getColumns(long param0, long param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getColumns(param0, param1, param2);
-    }
-
-    public List<ExpandoColumn> getColumns(long param0, long param1, String param2, Collection<String> param3)
-        throws SystemException
-    {
-        return this.mockObject.getColumns(param0, param1, param2, param3);
-    }
-
-    public List<ExpandoColumn> getColumns(long param0, String param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getColumns(param0, param1, param2);
-    }
-
-    public List<ExpandoColumn> getColumns(long param0, String param1, String param2, Collection<String> param3)
-        throws SystemException
-    {
-        return this.mockObject.getColumns(param0, param1, param2, param3);
-    }
-
-    public int getColumnsCount(long param0)
-        throws SystemException
-    {
-        return this.mockObject.getColumnsCount(param0);
-    }
-
-    public int getColumnsCount(long param0, long param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getColumnsCount(param0, param1, param2);
-    }
-
-    public int getColumnsCount(long param0, String param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getColumnsCount(param0, param1, param2);
-    }
-
-    public ExpandoColumn getDefaultTableColumn(long param0, long param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getDefaultTableColumn(param0, param1, param2);
-    }
-
-    public ExpandoColumn getDefaultTableColumn(long param0, String param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getDefaultTableColumn(param0, param1, param2);
-    }
-
-    public List<ExpandoColumn> getDefaultTableColumns(long param0, long param1)
-        throws SystemException
-    {
-        return this.mockObject.getDefaultTableColumns(param0, param1);
-    }
-
-    public List<ExpandoColumn> getDefaultTableColumns(long param0, String param1)
-        throws SystemException
-    {
-        return this.mockObject.getDefaultTableColumns(param0, param1);
-    }
-
-    public int getDefaultTableColumnsCount(long param0, long param1)
-        throws SystemException
-    {
-        return this.mockObject.getDefaultTableColumnsCount(param0, param1);
-    }
-
-    public int getDefaultTableColumnsCount(long param0, String param1)
-        throws SystemException
-    {
-        return this.mockObject.getDefaultTableColumnsCount(param0, param1);
-    }
-
-    public ExpandoColumn updateColumn(long param0, String param1, int param2)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateColumn(param0, param1, param2);
-    }
-
-    public ExpandoColumn updateColumn(long param0, String param1, int param2, Object param3)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateColumn(param0, param1, param2, param3);
-    }
-
-    public ExpandoColumn updateTypeSettings(long param0, String param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateTypeSettings(param0, param1);
+    public void setBeanIdentifier(String param0) {
     }
 
 }

@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.Team;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -55,68 +55,179 @@ public class TeamLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public List<Team> getTeams(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getTeams(param0, param1);
-    }
-
     public int searchCount(long param0, String param1, String param2, LinkedHashMap<String, Object> param3)
         throws SystemException
     {
         return this.mockObject.searchCount(param0, param1, param2, param3);
     }
 
-    public Team addTeam(Team param0)
+    public void clearUserTeams(long param0)
         throws SystemException
     {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
     }
 
-    public Team addTeam(long param0, long param1, String param2, String param3)
+    public void deleteUserTeam(long param0, Team param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteUserTeam(long param0, long param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteUserTeams(long param0, List<Team> param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteUserTeams(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public List<Team> getUserTeams(long param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.getUserTeams(param0, param1, param2, param3);
+    }
+
+    public List<Team> getUserTeams(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getUserTeams(param0, param1, param2);
+    }
+
+    public List<Team> getUserTeams(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getUserTeams(param0, param1);
+    }
+
+    public List<Team> getUserTeams(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getUserTeams(param0);
+    }
+
+    public int getUserTeamsCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getUserTeamsCount(param0);
+    }
+
+    public boolean hasUserTeam(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.hasUserTeam(param0, param1);
+    }
+
+    public boolean hasUserTeams(long param0)
+        throws SystemException
+    {
+        return this.mockObject.hasUserTeams(param0);
+    }
+
+    public void setUserTeams(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void addUserGroupTeam(long param0, Team param1)
+        throws SystemException
+    {
+    }
+
+    public void addUserGroupTeam(long param0, long param1)
+        throws SystemException
+    {
+    }
+
+    public void addUserGroupTeams(long param0, List<Team> param1)
+        throws SystemException
+    {
+    }
+
+    public void addUserGroupTeams(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void clearUserGroupTeams(long param0)
+        throws SystemException
+    {
+    }
+
+    public void deleteUserGroupTeam(long param0, long param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteUserGroupTeam(long param0, Team param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteUserGroupTeams(long param0, List<Team> param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteUserGroupTeams(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public List<Team> getUserGroupTeams(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getUserGroupTeams(param0);
+    }
+
+    public List<Team> getUserGroupTeams(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getUserGroupTeams(param0, param1, param2);
+    }
+
+    public List<Team> getUserGroupTeams(long param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.getUserGroupTeams(param0, param1, param2, param3);
+    }
+
+    public int getUserGroupTeamsCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getUserGroupTeamsCount(param0);
+    }
+
+    public boolean hasUserGroupTeam(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.hasUserGroupTeam(param0, param1);
+    }
+
+    public boolean hasUserGroupTeams(long param0)
+        throws SystemException
+    {
+        return this.mockObject.hasUserGroupTeams(param0);
+    }
+
+    public void setUserGroupTeams(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteTeams(long param0)
         throws PortalException, SystemException
     {
-        return this.mockObject.addTeam(param0, param1, param2, param3);
     }
 
-    public Team createTeam(long param0) {
-        return this.mockObject.createTeam(param0);
+    public List<Team> getGroupTeams(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getGroupTeams(param0);
     }
 
     public Team deleteTeam(long param0)
@@ -131,14 +242,12 @@ public class TeamLocalServiceMock
         return this.mockObject.deleteTeam(param0);
     }
 
-    public Team fetchTeam(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
+    public Team createTeam(long param0) {
+        return this.mockObject.createTeam(param0);
     }
 
-    public Team getTeam(long param0)
-        throws PortalException, SystemException
+    public Team fetchTeam(long param0)
+        throws SystemException
     {
         return (_serviceObjects.get(param0));
     }
@@ -149,22 +258,29 @@ public class TeamLocalServiceMock
         return this.mockObject.getTeam(param0, param1);
     }
 
+    public Team getTeam(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public Team addTeam(long param0, long param1, String param2, String param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addTeam(param0, param1, param2, param3);
+    }
+
+    public Team addTeam(Team param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
     public int getTeamsCount()
         throws SystemException
     {
         return this.mockObject.getTeamsCount();
-    }
-
-    public Team updateTeam(Team param0)
-        throws SystemException
-    {
-        return this.mockObject.updateTeam(param0);
-    }
-
-    public Team updateTeam(Team param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateTeam(param0, param1);
     }
 
     public Team updateTeam(long param0, String param1, String param2)
@@ -173,33 +289,77 @@ public class TeamLocalServiceMock
         return this.mockObject.updateTeam(param0, param1, param2);
     }
 
-    public void deleteTeams(long param0)
-        throws PortalException, SystemException
+    public Team updateTeam(Team param0)
+        throws SystemException
+    {
+        return this.mockObject.updateTeam(param0);
+    }
+
+    public void addUserTeam(long param0, long param1)
+        throws SystemException
     {
     }
 
-    public List<Team> getGroupTeams(long param0)
+    public void addUserTeam(long param0, Team param1)
         throws SystemException
     {
-        return this.mockObject.getGroupTeams(param0);
     }
 
-    public List<Team> getUserTeams(long param0)
+    public void addUserTeams(long param0, List<Team> param1)
         throws SystemException
     {
-        return this.mockObject.getUserTeams(param0);
     }
 
-    public List<Team> getUserTeams(long param0, long param1)
+    public void addUserTeams(long param0, long[] param1)
         throws SystemException
     {
-        return this.mockObject.getUserTeams(param0, param1);
     }
 
-    public boolean hasUserTeam(long param0, long param1)
+    public List<Team> getTeams(int param0, int param1)
         throws SystemException
     {
-        return this.mockObject.hasUserTeam(param0, param1);
+        return this.mockObject.getTeams(param0, param1);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

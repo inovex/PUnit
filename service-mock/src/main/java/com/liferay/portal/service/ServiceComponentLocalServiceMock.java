@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import javax.servlet.ServletContext;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.ServiceComponent;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,46 +49,20 @@ public class ServiceComponentLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public void destroyServiceComponent(ServletContext param0, ClassLoader param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
+    public ServiceComponent initServiceComponent(ServletContext param0, ClassLoader param1, String param2, long param3, long param4, boolean param5)
+        throws PortalException, SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
+        return this.mockObject.initServiceComponent(param0, param1, param2, param3, param4, param5);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
+    public void upgradeDB(ClassLoader param0, String param1, long param2, boolean param3, ServiceComponent param4, String param5, String param6, String param7)
+        throws Exception
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public ServiceComponent addServiceComponent(ServiceComponent param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
     }
 
     public ServiceComponent createServiceComponent(long param0) {
@@ -137,31 +111,57 @@ public class ServiceComponentLocalServiceMock
         return this.mockObject.updateServiceComponent(param0);
     }
 
-    public ServiceComponent updateServiceComponent(ServiceComponent param0, boolean param1)
+    public ServiceComponent addServiceComponent(ServiceComponent param0)
         throws SystemException
     {
-        return this.mockObject.updateServiceComponent(param0, param1);
-    }
-
-    public void destroyServiceComponent(ServletContext param0, ClassLoader param1)
-        throws SystemException
-    {
-    }
-
-    public ServiceComponent initServiceComponent(ServletContext param0, ClassLoader param1, String param2, long param3, long param4, boolean param5)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.initServiceComponent(param0, param1, param2, param3, param4, param5);
-    }
-
-    public void upgradeDB(ClassLoader param0, String param1, long param2, boolean param3, ServiceComponent param4, String param5, String param6, String param7)
-        throws Exception
-    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
     public void verifyDB()
         throws SystemException
     {
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

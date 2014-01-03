@@ -7,7 +7,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -65,16 +64,6 @@ public class ReleaseMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -86,22 +75,20 @@ public class ReleaseMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<Release> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public Release toEscapedModel() {
@@ -112,11 +99,22 @@ public class ReleaseMock
         return this.mockObject.toXmlString();
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Release> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -124,31 +122,6 @@ public class ReleaseMock
     }
 
     public void setModifiedDate(Date param0) {
-    }
-
-    public String getServletContextName() {
-        return this.mockObject.getServletContextName();
-    }
-
-    public void setServletContextName(String param0) {
-    }
-
-    public long getReleaseId() {
-        return this.mockObject.getReleaseId();
-    }
-
-    public void setReleaseId(long param0) {
-    }
-
-    public int getBuildNumber() {
-        return this.mockObject.getBuildNumber();
-    }
-
-    public void setBuildNumber(int param0) {
-    }
-
-    public Date getBuildDate() {
-        return this.mockObject.getBuildDate();
     }
 
     public void setBuildDate(Date param0) {
@@ -172,11 +145,47 @@ public class ReleaseMock
     public void setTestString(String param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getReleaseId() {
+        return this.mockObject.getReleaseId();
+    }
+
+    public void setReleaseId(long param0) {
+    }
+
+    public int getBuildNumber() {
+        return this.mockObject.getBuildNumber();
+    }
+
+    public void setBuildNumber(int param0) {
+    }
+
+    public Date getBuildDate() {
+        return this.mockObject.getBuildDate();
+    }
+
+    public void setServletContextName(String param0) {
+    }
+
+    public Release toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public String getServletContextName() {
+        return this.mockObject.getServletContextName();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

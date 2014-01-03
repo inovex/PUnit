@@ -6,13 +6,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.UserTracker;
 import com.liferay.portal.model.UserTrackerPath;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -50,66 +50,18 @@ public class UserTrackerLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public UserTracker addUserTracker(UserTracker param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public UserTracker addUserTracker(long param0, long param1, Date param2, String param3, String param4, String param5, String param6, List<UserTrackerPath> param7)
-        throws SystemException
-    {
-        return this.mockObject.addUserTracker(param0, param1, param2, param3, param4, param5, param6, param7);
-    }
-
     public UserTracker createUserTracker(long param0) {
         return this.mockObject.createUserTracker(param0);
     }
 
-    public UserTracker deleteUserTracker(long param0)
-        throws PortalException, SystemException
+    public UserTracker deleteUserTracker(UserTracker param0)
+        throws SystemException
     {
         return this.mockObject.deleteUserTracker(param0);
     }
 
-    public UserTracker deleteUserTracker(UserTracker param0)
-        throws SystemException
+    public UserTracker deleteUserTracker(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deleteUserTracker(param0);
     }
@@ -126,16 +78,29 @@ public class UserTrackerLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
+    public List<UserTracker> getUserTrackers(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getUserTrackers(param0, param1, param2);
+    }
+
     public List<UserTracker> getUserTrackers(int param0, int param1)
         throws SystemException
     {
         return this.mockObject.getUserTrackers(param0, param1);
     }
 
-    public List<UserTracker> getUserTrackers(long param0, int param1, int param2)
+    public UserTracker addUserTracker(UserTracker param0)
         throws SystemException
     {
-        return this.mockObject.getUserTrackers(param0, param1, param2);
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public UserTracker addUserTracker(long param0, long param1, Date param2, String param3, String param4, String param5, String param6, List<UserTrackerPath> param7)
+        throws SystemException
+    {
+        return this.mockObject.addUserTracker(param0, param1, param2, param3, param4, param5, param6, param7);
     }
 
     public int getUserTrackersCount()
@@ -150,10 +115,45 @@ public class UserTrackerLocalServiceMock
         return this.mockObject.updateUserTracker(param0);
     }
 
-    public UserTracker updateUserTracker(UserTracker param0, boolean param1)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
         throws SystemException
     {
-        return this.mockObject.updateUserTracker(param0, param1);
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

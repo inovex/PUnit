@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.Lock;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -42,13 +42,19 @@ public class LockLocalServiceMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.service.LockLocalService.class));
     }
 
-    public Lock lock(long param0, String param1, long param2, String param3, boolean param4, long param5)
-        throws PortalException, SystemException
+    public Lock lock(String param0, String param1, String param2, String param3, boolean param4)
+        throws SystemException
     {
-        return this.mockObject.lock(param0, param1, param2, param3, param4, param5);
+        return this.mockObject.lock(param0, param1, param2, param3, param4);
     }
 
-    public Lock lock(long param0, String param1, String param2, String param3, boolean param4, long param5)
+    public Lock lock(String param0, String param1, String param2, String param3)
+        throws SystemException
+    {
+        return this.mockObject.lock(param0, param1, param2, param3);
+    }
+
+    public Lock lock(long param0, String param1, long param2, String param3, boolean param4, long param5)
         throws PortalException, SystemException
     {
         return this.mockObject.lock(param0, param1, param2, param3, param4, param5);
@@ -60,23 +66,19 @@ public class LockLocalServiceMock
         return this.mockObject.lock(param0, param1, param2, param3);
     }
 
-    public Lock lock(String param0, String param1, String param2, String param3, boolean param4)
+    public Lock lock(String param0, String param1, String param2)
         throws SystemException
     {
-        return this.mockObject.lock(param0, param1, param2, param3, param4);
+        return this.mockObject.lock(param0, param1, param2);
+    }
+
+    public Lock lock(long param0, String param1, String param2, String param3, boolean param4, long param5)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.lock(param0, param1, param2, param3, param4, param5);
     }
 
     public void clear()
-        throws SystemException
-    {
-    }
-
-    public void unlock(String param0, long param1)
-        throws SystemException
-    {
-    }
-
-    public void unlock(String param0, String param1)
         throws SystemException
     {
     }
@@ -86,10 +88,19 @@ public class LockLocalServiceMock
     {
     }
 
-    public boolean isLocked(String param0, long param1)
+    public void unlock(String param0, long param1)
         throws SystemException
     {
-        return this.mockObject.isLocked(param0, param1);
+    }
+
+    public void unlock(String param0, String param1, String param2)
+        throws SystemException
+    {
+    }
+
+    public void unlock(String param0, String param1)
+        throws SystemException
+    {
     }
 
     public boolean isLocked(String param0, String param1)
@@ -98,10 +109,10 @@ public class LockLocalServiceMock
         return this.mockObject.isLocked(param0, param1);
     }
 
-    public Lock refresh(String param0, long param1)
-        throws PortalException, SystemException
+    public boolean isLocked(String param0, long param1)
+        throws SystemException
     {
-        return this.mockObject.refresh(param0, param1);
+        return this.mockObject.isLocked(param0, param1);
     }
 
     public PersistedModel getPersistedModel(Serializable param0)
@@ -110,68 +121,10 @@ public class LockLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public Lock fetchLockByUuidAndCompanyId(String param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public Lock addLock(Lock param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public Lock createLock(long param0) {
-        return this.mockObject.createLock(param0);
-    }
-
-    public Lock deleteLock(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteLock(param0);
-    }
-
-    public Lock deleteLock(Lock param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteLock(param0);
-    }
-
-    public Lock fetchLock(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
+        return this.mockObject.fetchLockByUuidAndCompanyId(param0, param1);
     }
 
     public Lock getLock(long param0)
@@ -192,6 +145,12 @@ public class LockLocalServiceMock
         return this.mockObject.getLock(param0, param1);
     }
 
+    public Lock getLockByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getLockByUuidAndCompanyId(param0, param1);
+    }
+
     public List<Lock> getLocks(int param0, int param1)
         throws SystemException
     {
@@ -210,16 +169,80 @@ public class LockLocalServiceMock
         return this.mockObject.updateLock(param0);
     }
 
-    public Lock updateLock(Lock param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateLock(param0, param1);
-    }
-
-    public Lock getLockByUuid(String param0)
+    public Lock refresh(String param0, long param1, long param2)
         throws PortalException, SystemException
     {
-        return this.mockObject.getLockByUuid(param0);
+        return this.mockObject.refresh(param0, param1, param2);
+    }
+
+    public Lock createLock(long param0) {
+        return this.mockObject.createLock(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
+    }
+
+    public Lock deleteLock(Lock param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteLock(param0);
+    }
+
+    public Lock deleteLock(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteLock(param0);
+    }
+
+    public Lock fetchLock(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public Lock addLock(Lock param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
     public boolean hasLock(long param0, String param1, long param2)

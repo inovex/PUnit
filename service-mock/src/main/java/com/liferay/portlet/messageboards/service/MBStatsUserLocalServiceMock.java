@@ -6,12 +6,12 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.messageboards.model.MBStatsUser;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,44 +49,10 @@ public class MBStatsUserLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public MBStatsUser getStatsUser(long param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public void deleteStatsUser(long param0)
-        throws PortalException, SystemException
-    {
+        return this.mockObject.getStatsUser(param0, param1);
     }
 
     public void deleteStatsUser(MBStatsUser param0)
@@ -94,10 +60,9 @@ public class MBStatsUserLocalServiceMock
     {
     }
 
-    public MBStatsUser getStatsUser(long param0, long param1)
-        throws SystemException
+    public void deleteStatsUser(long param0)
+        throws PortalException, SystemException
     {
-        return this.mockObject.getStatsUser(param0, param1);
     }
 
     public MBStatsUser updateStatsUser(long param0, long param1)
@@ -106,17 +71,22 @@ public class MBStatsUserLocalServiceMock
         return this.mockObject.updateStatsUser(param0, param1);
     }
 
+    public MBStatsUser updateStatsUser(long param0, long param1, int param2, Date param3)
+        throws SystemException
+    {
+        return this.mockObject.updateStatsUser(param0, param1, param2, param3);
+    }
+
     public MBStatsUser updateStatsUser(long param0, long param1, Date param2)
         throws SystemException
     {
         return this.mockObject.updateStatsUser(param0, param1, param2);
     }
 
-    public MBStatsUser addMBStatsUser(MBStatsUser param0)
+    public MBStatsUser fetchMBStatsUser(long param0)
         throws SystemException
     {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
+        return (_serviceObjects.get(param0));
     }
 
     public MBStatsUser createMBStatsUser(long param0) {
@@ -135,16 +105,11 @@ public class MBStatsUserLocalServiceMock
         return this.mockObject.deleteMBStatsUser(param0);
     }
 
-    public MBStatsUser fetchMBStatsUser(long param0)
+    public MBStatsUser addMBStatsUser(MBStatsUser param0)
         throws SystemException
     {
-        return (_serviceObjects.get(param0));
-    }
-
-    public MBStatsUser getMBStatsUser(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
     public List<MBStatsUser> getMBStatsUsers(int param0, int param1)
@@ -165,18 +130,6 @@ public class MBStatsUserLocalServiceMock
         return this.mockObject.updateMBStatsUser(param0);
     }
 
-    public MBStatsUser updateMBStatsUser(MBStatsUser param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateMBStatsUser(param0, param1);
-    }
-
-    public MBStatsUser addStatsUser(long param0, long param1)
-        throws SystemException
-    {
-        return this.mockObject.addStatsUser(param0, param1);
-    }
-
     public void deleteStatsUsersByGroupId(long param0)
         throws SystemException
     {
@@ -185,6 +138,18 @@ public class MBStatsUserLocalServiceMock
     public void deleteStatsUsersByUserId(long param0)
         throws SystemException
     {
+    }
+
+    public Date getLastPostDateByUserId(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getLastPostDateByUserId(param0, param1);
+    }
+
+    public long getMessageCountByGroupId(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getMessageCountByGroupId(param0);
     }
 
     public long getMessageCountByUserId(long param0)
@@ -209,6 +174,59 @@ public class MBStatsUserLocalServiceMock
         throws SystemException
     {
         return this.mockObject.getStatsUsersByUserId(param0);
+    }
+
+    public MBStatsUser getMBStatsUser(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public MBStatsUser addStatsUser(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.addStatsUser(param0, param1);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

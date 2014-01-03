@@ -4,10 +4,10 @@ package com.liferay.portlet.shopping.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -58,14 +58,11 @@ public class ShoppingItemPriceMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public int getStatus() {
+        return this.mockObject.getStatus();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -79,11 +76,7 @@ public class ShoppingItemPriceMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -93,8 +86,10 @@ public class ShoppingItemPriceMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<ShoppingItemPrice> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public ShoppingItemPrice toEscapedModel() {
@@ -105,25 +100,22 @@ public class ShoppingItemPriceMock
         return this.mockObject.toXmlString();
     }
 
-    public int getStatus() {
-        return this.mockObject.getStatus();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setStatus(int param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public double getDiscount() {
-        return this.mockObject.getDiscount();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setDiscount(double param0) {
+    public void setNew(boolean param0) {
     }
 
-    public long getItemId() {
-        return this.mockObject.getItemId();
-    }
-
-    public void setItemId(long param0) {
+    public CacheModel<ShoppingItemPrice> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public int getMinQuantity() {
@@ -183,11 +175,29 @@ public class ShoppingItemPriceMock
     public void setItemPriceId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getItemId() {
+        return this.mockObject.getItemId();
+    }
+
+    public double getDiscount() {
+        return this.mockObject.getDiscount();
+    }
+
+    public void setDiscount(double param0) {
+    }
+
+    public void setItemId(long param0) {
+    }
+
+    public ShoppingItemPrice toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

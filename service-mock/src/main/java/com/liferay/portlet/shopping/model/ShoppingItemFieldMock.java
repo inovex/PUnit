@@ -4,10 +4,10 @@ package com.liferay.portlet.shopping.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -36,9 +36,6 @@ public class ShoppingItemFieldMock
 
     public void initMockObject() {
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.shopping.model.ShoppingItemField.class));
-    }
-
-    public void setValues(String param0) {
     }
 
     public String[] getValuesArray() {
@@ -71,22 +68,16 @@ public class ShoppingItemFieldMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
+    public String getValues() {
+        return this.mockObject.getValues();
     }
 
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
     public boolean isCachedModel() {
@@ -100,22 +91,20 @@ public class ShoppingItemFieldMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<ShoppingItemField> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public ShoppingItemField toEscapedModel() {
@@ -126,11 +115,26 @@ public class ShoppingItemFieldMock
         return this.mockObject.toXmlString();
     }
 
-    public void setDescription(String param0) {
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public String getValues() {
-        return this.mockObject.getValues();
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ShoppingItemField> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public long getItemId() {
+        return this.mockObject.getItemId();
     }
 
     public long getItemFieldId() {
@@ -140,18 +144,24 @@ public class ShoppingItemFieldMock
     public void setItemFieldId(long param0) {
     }
 
-    public long getItemId() {
-        return this.mockObject.getItemId();
+    public void setItemId(long param0) {
     }
 
-    public void setItemId(long param0) {
+    public void setValues(String param0) {
+    }
+
+    public ShoppingItemField toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

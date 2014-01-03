@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.PortletItem;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,39 +48,46 @@ public class PortletItemLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public PortletItem fetchPortletItem(long param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return (_serviceObjects.get(param0));
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public PortletItem getPortletItem(long param0, String param1, String param2, String param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPortletItem(param0, param1, param2, param3);
+    }
+
+    public PortletItem getPortletItem(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public List<PortletItem> getPortletItems(int param0, int param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
+        return this.mockObject.getPortletItems(param0, param1);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+    public List<PortletItem> getPortletItems(long param0, String param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+        return this.mockObject.getPortletItems(param0, param1);
     }
 
-    public long dynamicQueryCount(DynamicQuery param0)
+    public List<PortletItem> getPortletItems(long param0, String param1, String param2)
         throws SystemException
     {
-        return this.mockObject.dynamicQueryCount(param0);
+        return this.mockObject.getPortletItems(param0, param1, param2);
     }
 
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
+    public int getPortletItemsCount()
+        throws SystemException
+    {
+        return this.mockObject.getPortletItemsCount();
     }
 
     public PortletItem addPortletItem(PortletItem param0)
@@ -112,64 +119,57 @@ public class PortletItemLocalServiceMock
         return this.mockObject.deletePortletItem(param0);
     }
 
-    public PortletItem fetchPortletItem(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public PortletItem getPortletItem(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public PortletItem getPortletItem(long param0, String param1, String param2, String param3)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getPortletItem(param0, param1, param2, param3);
-    }
-
-    public List<PortletItem> getPortletItems(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getPortletItems(param0, param1);
-    }
-
-    public List<PortletItem> getPortletItems(long param0, String param1)
-        throws SystemException
-    {
-        return this.mockObject.getPortletItems(param0, param1);
-    }
-
-    public List<PortletItem> getPortletItems(long param0, String param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getPortletItems(param0, param1, param2);
-    }
-
-    public int getPortletItemsCount()
-        throws SystemException
-    {
-        return this.mockObject.getPortletItemsCount();
-    }
-
     public PortletItem updatePortletItem(PortletItem param0)
         throws SystemException
     {
         return this.mockObject.updatePortletItem(param0);
     }
 
-    public PortletItem updatePortletItem(PortletItem param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updatePortletItem(param0, param1);
-    }
-
     public PortletItem updatePortletItem(long param0, long param1, String param2, String param3, String param4)
         throws PortalException, SystemException
     {
         return this.mockObject.updatePortletItem(param0, param1, param2, param3, param4);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

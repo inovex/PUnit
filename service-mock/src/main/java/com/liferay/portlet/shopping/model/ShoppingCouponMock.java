@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -39,16 +39,16 @@ public class ShoppingCouponMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.shopping.model.ShoppingCoupon.class));
     }
 
-    public boolean hasValidDateRange() {
-        return this.mockObject.hasValidDateRange();
-    }
-
     public boolean hasValidEndDate() {
         return this.mockObject.hasValidEndDate();
     }
 
     public boolean hasValidStartDate() {
         return this.mockObject.hasValidStartDate();
+    }
+
+    public boolean hasValidDateRange() {
+        return this.mockObject.hasValidDateRange();
     }
 
     public String toString() {
@@ -74,22 +74,19 @@ public class ShoppingCouponMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -103,22 +100,20 @@ public class ShoppingCouponMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<ShoppingCoupon> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public ShoppingCoupon toEscapedModel() {
@@ -129,18 +124,22 @@ public class ShoppingCouponMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ShoppingCoupon> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -155,6 +154,13 @@ public class ShoppingCouponMock
     }
 
     public void setUserId(long param0) {
+    }
+
+    public Date getStartDate() {
+        return this.mockObject.getStartDate();
+    }
+
+    public void setStartDate(Date param0) {
     }
 
     public String getUserName() {
@@ -173,57 +179,11 @@ public class ShoppingCouponMock
     public void setUserName(String param0) {
     }
 
-    public boolean getActive() {
-        return this.mockObject.getActive();
-    }
-
-    public boolean isActive() {
-        return this.mockObject.isActive();
-    }
-
-    public void setActive(boolean param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public Date getStartDate() {
-        return this.mockObject.getStartDate();
-    }
-
-    public void setStartDate(Date param0) {
-    }
-
     public Date getEndDate() {
         return this.mockObject.getEndDate();
     }
 
     public void setEndDate(Date param0) {
-    }
-
-    public long getCouponId() {
-        return this.mockObject.getCouponId();
-    }
-
-    public void setCouponId(long param0) {
-    }
-
-    public String getCode() {
-        return this.mockObject.getCode();
-    }
-
-    public void setCode(String param0) {
-    }
-
-    public String getLimitCategories() {
-        return this.mockObject.getLimitCategories();
     }
 
     public void setLimitCategories(String param0) {
@@ -243,6 +203,24 @@ public class ShoppingCouponMock
     public void setMinOrder(double param0) {
     }
 
+    public void setCouponId(long param0) {
+    }
+
+    public String getCode() {
+        return this.mockObject.getCode();
+    }
+
+    public void setCode(String param0) {
+    }
+
+    public String getLimitCategories() {
+        return this.mockObject.getLimitCategories();
+    }
+
+    public long getCouponId() {
+        return this.mockObject.getCouponId();
+    }
+
     public double getDiscount() {
         return this.mockObject.getDiscount();
     }
@@ -257,11 +235,43 @@ public class ShoppingCouponMock
     public void setDiscountType(String param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public boolean getActive() {
+        return this.mockObject.getActive();
+    }
+
+    public boolean isActive() {
+        return this.mockObject.isActive();
+    }
+
+    public void setActive(boolean param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public ShoppingCoupon toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

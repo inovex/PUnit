@@ -6,9 +6,9 @@ import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.UnicodeProperties;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -47,15 +47,8 @@ public class ExpandoColumnMock
         return this.mockObject.getDisplayName(param0);
     }
 
-    public String getTypeSettings() {
-        return this.mockObject.getTypeSettings();
-    }
-
     public UnicodeProperties getTypeSettingsProperties() {
         return this.mockObject.getTypeSettingsProperties();
-    }
-
-    public void setTypeSettings(String param0) {
     }
 
     public void setTypeSettingsProperties(UnicodeProperties param0) {
@@ -92,16 +85,6 @@ public class ExpandoColumnMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -113,11 +96,7 @@ public class ExpandoColumnMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -127,8 +106,10 @@ public class ExpandoColumnMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<ExpandoColumn> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public ExpandoColumn toEscapedModel() {
@@ -139,14 +120,32 @@ public class ExpandoColumnMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setType(int param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ExpandoColumn> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public void setTableId(long param0) {
+    }
+
+    public String getDefaultData() {
+        return this.mockObject.getDefaultData();
+    }
+
+    public void setDefaultData(String param0) {
     }
 
     public long getColumnId() {
@@ -160,21 +159,32 @@ public class ExpandoColumnMock
         return this.mockObject.getTableId();
     }
 
-    public void setTableId(long param0) {
+    public void setType(int param0) {
     }
 
-    public String getDefaultData() {
-        return this.mockObject.getDefaultData();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public void setDefaultData(String param0) {
+    public ExpandoColumn toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public String getTypeSettings() {
+        return this.mockObject.getTypeSettings();
+    }
+
+    public void setTypeSettings(String param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

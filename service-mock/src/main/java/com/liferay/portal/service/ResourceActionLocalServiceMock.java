@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.ResourceAction;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,41 +48,6 @@ public class ResourceActionLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
     public ResourceAction addResourceAction(ResourceAction param0)
         throws SystemException
     {
@@ -106,14 +71,14 @@ public class ResourceActionLocalServiceMock
         return this.mockObject.deleteResourceAction(param0);
     }
 
+    public ResourceAction fetchResourceAction(String param0, String param1) {
+        return this.mockObject.fetchResourceAction(param0, param1);
+    }
+
     public ResourceAction fetchResourceAction(long param0)
         throws SystemException
     {
         return (_serviceObjects.get(param0));
-    }
-
-    public ResourceAction fetchResourceAction(String param0, String param1) {
-        return this.mockObject.fetchResourceAction(param0, param1);
     }
 
     public ResourceAction getResourceAction(long param0)
@@ -128,16 +93,16 @@ public class ResourceActionLocalServiceMock
         return this.mockObject.getResourceAction(param0, param1);
     }
 
-    public List<ResourceAction> getResourceActions(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getResourceActions(param0, param1);
-    }
-
     public List<ResourceAction> getResourceActions(String param0)
         throws SystemException
     {
         return this.mockObject.getResourceActions(param0);
+    }
+
+    public List<ResourceAction> getResourceActions(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getResourceActions(param0, param1);
     }
 
     public int getResourceActionsCount()
@@ -152,17 +117,6 @@ public class ResourceActionLocalServiceMock
         return this.mockObject.updateResourceAction(param0);
     }
 
-    public ResourceAction updateResourceAction(ResourceAction param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateResourceAction(param0, param1);
-    }
-
-    public void checkResourceActions()
-        throws SystemException
-    {
-    }
-
     public void checkResourceActions(String param0, List<String> param1)
         throws SystemException
     {
@@ -171,6 +125,52 @@ public class ResourceActionLocalServiceMock
     public void checkResourceActions(String param0, List<String> param1, boolean param2)
         throws SystemException
     {
+    }
+
+    public void checkResourceActions()
+        throws SystemException
+    {
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

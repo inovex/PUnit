@@ -8,10 +8,14 @@ import java.util.Map;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.trash.TrashHandler;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
+import com.liferay.portlet.trash.model.TrashEntry;
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -46,13 +50,10 @@ public class JournalArticleMock
         return this.mockObject.getAvailableLocales();
     }
 
-    public Map<Locale, String> getTitleMap() {
-        return this.mockObject.getTitleMap();
-    }
-
-    public void prepareLocalizedFieldsForImport(Locale param0)
-        throws LocaleException
+    public JournalFolder getFolder()
+        throws PortalException, SystemException
     {
+        return this.mockObject.getFolder();
     }
 
     public String getSmallImageType()
@@ -64,8 +65,22 @@ public class JournalArticleMock
     public void setSmallImageType(String param0) {
     }
 
+    public boolean hasApprovedVersion()
+        throws SystemException
+    {
+        return this.mockObject.hasApprovedVersion();
+    }
+
+    public boolean isTemplateDriven() {
+        return this.mockObject.isTemplateDriven();
+    }
+
     public String getDefaultLocale() {
         return this.mockObject.getDefaultLocale();
+    }
+
+    public String getArticleImageURL(ThemeDisplay param0) {
+        return this.mockObject.getArticleImageURL(param0);
     }
 
     public JournalArticleResource getArticleResource()
@@ -84,8 +99,10 @@ public class JournalArticleMock
         return this.mockObject.getContentByLocale(param0);
     }
 
-    public boolean isTemplateDriven() {
-        return this.mockObject.isTemplateDriven();
+    public String buildTreePath()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.buildTreePath();
     }
 
     public String toString() {
@@ -120,15 +137,23 @@ public class JournalArticleMock
         return this.mockObject.getContent();
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
+    public long getPrimaryKey() {
+        return this.mockObject.getPrimaryKey();
+    }
+
+    public String getDescription(Locale param0, boolean param1) {
+        return this.mockObject.getDescription(param0, param1);
     }
 
     public String getDescription(Locale param0) {
         return this.mockObject.getDescription(param0);
     }
 
-    public String getDescription(Locale param0, boolean param1) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
+    }
+
+    public String getDescription(String param0, boolean param1) {
         return this.mockObject.getDescription(param0, param1);
     }
 
@@ -136,22 +161,22 @@ public class JournalArticleMock
         return this.mockObject.getDescription(param0);
     }
 
-    public String getDescription(String param0, boolean param1) {
-        return this.mockObject.getDescription(param0, param1);
+    public void setGroupId(long param0) {
     }
 
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
+    public long getFolderId() {
+        return this.mockObject.getFolderId();
     }
 
-    public void setPrimaryKey(long param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public int getStatus() {
+        return this.mockObject.getStatus();
     }
 
-    public void setNew(boolean param0) {
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -165,22 +190,20 @@ public class JournalArticleMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<JournalArticle> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public JournalArticle toEscapedModel() {
@@ -191,28 +214,22 @@ public class JournalArticleMock
         return this.mockObject.toXmlString();
     }
 
-    public long getClassPK() {
-        return this.mockObject.getClassPK();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setClassName(String param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setClassPK(long param0) {
+    public void setNew(boolean param0) {
     }
 
-    public void setCompanyId(long param0) {
-    }
-
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
-    }
-
-    public void setCreateDate(Date param0) {
+    public CacheModel<JournalArticle> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -236,15 +253,40 @@ public class JournalArticleMock
     public void setUuid(String param0) {
     }
 
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
+    }
+
+    public void setContent(String param0) {
+    }
+
+    public Date getDisplayDate() {
+        return this.mockObject.getDisplayDate();
+    }
+
+    public void setDisplayDate(Date param0) {
+    }
+
+    public String getUrlTitle() {
+        return this.mockObject.getUrlTitle();
+    }
+
+    public String getStructureId() {
+        return this.mockObject.getStructureId();
+    }
+
+    public void setStructureId(String param0) {
+    }
+
+    public String getTemplateId() {
+        return this.mockObject.getTemplateId();
+    }
+
+    public void setTemplateId(String param0) {
     }
 
     public String getUserName() {
         return this.mockObject.getUserName();
-    }
-
-    public void setId(long param0) {
     }
 
     public String getUserUuid()
@@ -259,45 +301,127 @@ public class JournalArticleMock
     public void setUserName(String param0) {
     }
 
+    public void setUrlTitle(String param0) {
+    }
+
+    public boolean getSmallImage() {
+        return this.mockObject.getSmallImage();
+    }
+
+    public boolean isSmallImage() {
+        return this.mockObject.isSmallImage();
+    }
+
+    public void setSmallImage(boolean param0) {
+    }
+
+    public long getSmallImageId() {
+        return this.mockObject.getSmallImageId();
+    }
+
+    public void setSmallImageId(long param0) {
+    }
+
+    public String getSmallImageURL() {
+        return this.mockObject.getSmallImageURL();
+    }
+
+    public void setSmallImageURL(String param0) {
+    }
+
+    public TrashEntry getTrashEntry()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTrashEntry();
+    }
+
+    public long getTrashEntryClassPK() {
+        return this.mockObject.getTrashEntryClassPK();
+    }
+
+    public TrashHandler getTrashHandler() {
+        return this.mockObject.getTrashHandler();
+    }
+
+    public boolean isInTrash() {
+        return this.mockObject.isInTrash();
+    }
+
+    public boolean isInTrashContainer() {
+        return this.mockObject.isInTrashContainer();
+    }
+
+    public boolean getIndexable() {
+        return this.mockObject.getIndexable();
+    }
+
+    public void setResourcePrimKey(long param0) {
+    }
+
+    public boolean isResourceMain() {
+        return this.mockObject.isResourceMain();
+    }
+
+    public Date getReviewDate() {
+        return this.mockObject.getReviewDate();
+    }
+
+    public void setReviewDate(Date param0) {
+    }
+
+    public void setIndexable(boolean param0) {
+    }
+
+    public void setFolderId(long param0) {
+    }
+
+    public String getArticleId() {
+        return this.mockObject.getArticleId();
+    }
+
+    public void setArticleId(String param0) {
+    }
+
+    public long getResourcePrimKey() {
+        return this.mockObject.getResourcePrimKey();
+    }
+
+    public boolean isIndexable() {
+        return this.mockObject.isIndexable();
+    }
+
+    public void setVersion(double param0) {
+    }
+
     public void setType(String param0) {
+    }
+
+    public void setId(long param0) {
+    }
+
+    public String getLayoutUuid() {
+        return this.mockObject.getLayoutUuid();
+    }
+
+    public void setLayoutUuid(String param0) {
+    }
+
+    public double getVersion() {
+        return this.mockObject.getVersion();
+    }
+
+    public Date getExpirationDate() {
+        return this.mockObject.getExpirationDate();
+    }
+
+    public void setExpirationDate(Date param0) {
     }
 
     public void setClassNameId(long param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public void setDescription(String param0, Locale param1) {
-    }
-
-    public void setDescription(String param0, Locale param1, Locale param2) {
-    }
-
-    public int getStatus() {
-        return this.mockObject.getStatus();
-    }
-
-    public void setStatus(int param0) {
-    }
-
-    public String getTitle() {
-        return this.mockObject.getTitle();
-    }
-
-    public String getTitle(Locale param0) {
-        return this.mockObject.getTitle(param0);
-    }
-
-    public String getTitle(Locale param0, boolean param1) {
-        return this.mockObject.getTitle(param0, param1);
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getTitle(String param0) {
@@ -308,6 +432,18 @@ public class JournalArticleMock
         return this.mockObject.getTitle(param0, param1);
     }
 
+    public String getTitle(Locale param0, boolean param1) {
+        return this.mockObject.getTitle(param0, param1);
+    }
+
+    public String getTitle() {
+        return this.mockObject.getTitle();
+    }
+
+    public String getTitle(Locale param0) {
+        return this.mockObject.getTitle(param0);
+    }
+
     public String getTitleCurrentLanguageId() {
         return this.mockObject.getTitleCurrentLanguageId();
     }
@@ -316,13 +452,17 @@ public class JournalArticleMock
         return this.mockObject.getTitleCurrentValue();
     }
 
+    public Map<Locale, String> getTitleMap() {
+        return this.mockObject.getTitleMap();
+    }
+
+    public void setTitle(String param0, Locale param1, Locale param2) {
+    }
+
     public void setTitle(String param0) {
     }
 
     public void setTitle(String param0, Locale param1) {
-    }
-
-    public void setTitle(String param0, Locale param1, Locale param2) {
     }
 
     public void setTitleCurrentLanguageId(String param0) {
@@ -353,6 +493,28 @@ public class JournalArticleMock
     }
 
     public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
+    }
+
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
+    public void prepareLocalizedFieldsForImport(Locale param0)
+        throws LocaleException
+    {
+    }
+
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
+    }
+
+    public JournalArticle toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public long getStatusByUserId() {
@@ -421,124 +583,47 @@ public class JournalArticleMock
         return this.mockObject.isScheduled();
     }
 
-    public Date getExpirationDate() {
-        return this.mockObject.getExpirationDate();
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public void setExpirationDate(Date param0) {
+    public void setCreateDate(Date param0) {
     }
 
-    public double getVersion() {
-        return this.mockObject.getVersion();
+    public void setClassName(String param0) {
     }
 
-    public void setContent(String param0) {
+    public void setClassPK(long param0) {
     }
 
-    public Date getDisplayDate() {
-        return this.mockObject.getDisplayDate();
+    public void setCompanyId(long param0) {
     }
 
-    public void setDisplayDate(Date param0) {
+    public void setTreePath(String param0) {
     }
 
-    public String getLayoutUuid() {
-        return this.mockObject.getLayoutUuid();
+    public void setDescription(String param0) {
     }
 
-    public void setLayoutUuid(String param0) {
+    public void setDescription(String param0, Locale param1, Locale param2) {
     }
 
-    public String getUrlTitle() {
-        return this.mockObject.getUrlTitle();
+    public void setDescription(String param0, Locale param1) {
     }
 
-    public void setUrlTitle(String param0) {
+    public String getTreePath() {
+        return this.mockObject.getTreePath();
     }
 
-    public boolean getSmallImage() {
-        return this.mockObject.getSmallImage();
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
-    public boolean isSmallImage() {
-        return this.mockObject.isSmallImage();
-    }
-
-    public void setSmallImage(boolean param0) {
-    }
-
-    public long getSmallImageId() {
-        return this.mockObject.getSmallImageId();
-    }
-
-    public void setSmallImageId(long param0) {
-    }
-
-    public String getSmallImageURL() {
-        return this.mockObject.getSmallImageURL();
-    }
-
-    public void setSmallImageURL(String param0) {
-    }
-
-    public void setVersion(double param0) {
-    }
-
-    public String getStructureId() {
-        return this.mockObject.getStructureId();
-    }
-
-    public void setStructureId(String param0) {
-    }
-
-    public String getTemplateId() {
-        return this.mockObject.getTemplateId();
-    }
-
-    public void setTemplateId(String param0) {
-    }
-
-    public String getArticleId() {
-        return this.mockObject.getArticleId();
-    }
-
-    public void setArticleId(String param0) {
-    }
-
-    public long getResourcePrimKey() {
-        return this.mockObject.getResourcePrimKey();
-    }
-
-    public void setResourcePrimKey(long param0) {
-    }
-
-    public boolean isResourceMain() {
-        return this.mockObject.isResourceMain();
-    }
-
-    public Date getReviewDate() {
-        return this.mockObject.getReviewDate();
-    }
-
-    public void setReviewDate(Date param0) {
-    }
-
-    public boolean getIndexable() {
-        return this.mockObject.getIndexable();
-    }
-
-    public boolean isIndexable() {
-        return this.mockObject.isIndexable();
-    }
-
-    public void setIndexable(boolean param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -552,7 +637,16 @@ public class JournalArticleMock
         return this.mockObject.getModelClassName();
     }
 
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
+    }
+
     public void persist()
+        throws SystemException
+    {
+    }
+
+    public void updateTreePath(String param0)
         throws SystemException
     {
     }

@@ -7,7 +7,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -58,16 +57,6 @@ public class PasswordTrackerMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -79,22 +68,20 @@ public class PasswordTrackerMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<PasswordTracker> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public PasswordTracker toEscapedModel() {
@@ -105,11 +92,22 @@ public class PasswordTrackerMock
         return this.mockObject.toXmlString();
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<PasswordTracker> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getUserId() {
@@ -117,6 +115,13 @@ public class PasswordTrackerMock
     }
 
     public void setUserId(long param0) {
+    }
+
+    public long getPasswordTrackerId() {
+        return this.mockObject.getPasswordTrackerId();
+    }
+
+    public void setPasswordTrackerId(long param0) {
     }
 
     public String getUserUuid()
@@ -135,18 +140,22 @@ public class PasswordTrackerMock
     public void setPassword(String param0) {
     }
 
-    public long getPasswordTrackerId() {
-        return this.mockObject.getPasswordTrackerId();
+    public PasswordTracker toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setPasswordTrackerId(long param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

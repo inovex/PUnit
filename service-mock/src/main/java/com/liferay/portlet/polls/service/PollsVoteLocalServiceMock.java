@@ -5,13 +5,13 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.polls.model.PollsVote;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,60 +49,14 @@ public class PollsVoteLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public PollsVote deletePollsVote(PollsVote param0)
         throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public PollsVote addPollsVote(PollsVote param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public PollsVote createPollsVote(long param0) {
-        return this.mockObject.createPollsVote(param0);
-    }
-
-    public PollsVote deletePollsVote(long param0)
-        throws PortalException, SystemException
     {
         return this.mockObject.deletePollsVote(param0);
     }
 
-    public PollsVote deletePollsVote(PollsVote param0)
-        throws SystemException
+    public PollsVote deletePollsVote(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deletePollsVote(param0);
     }
@@ -113,10 +67,34 @@ public class PollsVoteLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
+    public PollsVote fetchPollsVoteByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchPollsVoteByUuidAndCompanyId(param0, param1);
+    }
+
     public PollsVote getPollsVote(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public PollsVote fetchPollsVoteByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchPollsVoteByUuidAndGroupId(param0, param1);
+    }
+
+    public PollsVote getPollsVoteByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPollsVoteByUuidAndCompanyId(param0, param1);
+    }
+
+    public PollsVote getPollsVoteByUuidAndGroupId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPollsVoteByUuidAndGroupId(param0, param1);
     }
 
     public List<PollsVote> getPollsVotes(int param0, int param1)
@@ -137,16 +115,27 @@ public class PollsVoteLocalServiceMock
         return this.mockObject.updatePollsVote(param0);
     }
 
-    public PollsVote updatePollsVote(PollsVote param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updatePollsVote(param0, param1);
-    }
-
     public PollsVote addVote(long param0, long param1, long param2, ServiceContext param3)
         throws PortalException, SystemException
     {
         return this.mockObject.addVote(param0, param1, param2, param3);
+    }
+
+    public PollsVote getVote(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getVote(param0, param1);
+    }
+
+    public PollsVote addPollsVote(PollsVote param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public PollsVote createPollsVote(long param0) {
+        return this.mockObject.createPollsVote(param0);
     }
 
     public List<PollsVote> getChoiceVotes(long param0, int param1, int param2)
@@ -173,10 +162,45 @@ public class PollsVoteLocalServiceMock
         return this.mockObject.getQuestionVotesCount(param0);
     }
 
-    public PollsVote getVote(long param0, long param1)
-        throws PortalException, SystemException
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
     {
-        return this.mockObject.getVote(param0, param1);
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

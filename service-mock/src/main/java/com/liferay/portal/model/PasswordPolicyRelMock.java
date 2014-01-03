@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -61,16 +60,6 @@ public class PasswordPolicyRelMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -82,22 +71,20 @@ public class PasswordPolicyRelMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<PasswordPolicyRel> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public PasswordPolicyRel toEscapedModel() {
@@ -108,18 +95,33 @@ public class PasswordPolicyRelMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<PasswordPolicyRel> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
     public long getClassPK() {
         return this.mockObject.getClassPK();
     }
 
-    public void setClassName(String param0) {
+    public long getPasswordPolicyRelId() {
+        return this.mockObject.getPasswordPolicyRelId();
     }
 
-    public void setClassPK(long param0) {
-    }
-
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
+    public void setPasswordPolicyRelId(long param0) {
     }
 
     public void setClassNameId(long param0) {
@@ -132,18 +134,25 @@ public class PasswordPolicyRelMock
     public void setPasswordPolicyId(long param0) {
     }
 
-    public long getPasswordPolicyRelId() {
-        return this.mockObject.getPasswordPolicyRelId();
+    public PasswordPolicyRel toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setPasswordPolicyRelId(long param0) {
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

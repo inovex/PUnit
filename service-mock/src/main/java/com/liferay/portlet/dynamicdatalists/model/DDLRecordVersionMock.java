@@ -6,10 +6,10 @@ import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -40,6 +40,12 @@ public class DDLRecordVersionMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.dynamicdatalists.model.DDLRecordVersion.class));
     }
 
+    public DDLRecordSet getRecordSet()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getRecordSet();
+    }
+
     public DDLRecord getRecord()
         throws PortalException, SystemException
     {
@@ -66,14 +72,18 @@ public class DDLRecordVersionMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
-    public void setNew(boolean param0) {
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -87,11 +97,7 @@ public class DDLRecordVersionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -101,8 +107,10 @@ public class DDLRecordVersionMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<DDLRecordVersion> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public DDLRecordVersion toEscapedModel() {
@@ -113,18 +121,22 @@ public class DDLRecordVersionMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DDLRecordVersion> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getUserId() {
@@ -132,6 +144,13 @@ public class DDLRecordVersionMock
     }
 
     public void setUserId(long param0) {
+    }
+
+    public long getDDMStorageId() {
+        return this.mockObject.getDDMStorageId();
+    }
+
+    public void setDDMStorageId(long param0) {
     }
 
     public String getUserName() {
@@ -150,18 +169,47 @@ public class DDLRecordVersionMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public void setVersion(String param0) {
     }
 
-    public void setGroupId(long param0) {
+    public String getVersion() {
+        return this.mockObject.getVersion();
     }
 
-    public int getStatus() {
-        return this.mockObject.getStatus();
+    public void setRecordId(long param0) {
     }
 
-    public void setStatus(int param0) {
+    public long getRecordVersionId() {
+        return this.mockObject.getRecordVersionId();
+    }
+
+    public void setRecordVersionId(long param0) {
+    }
+
+    public long getRecordId() {
+        return this.mockObject.getRecordId();
+    }
+
+    public long getRecordSetId() {
+        return this.mockObject.getRecordSetId();
+    }
+
+    public void setRecordSetId(long param0) {
+    }
+
+    public int getDisplayIndex() {
+        return this.mockObject.getDisplayIndex();
+    }
+
+    public void setDisplayIndex(int param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public DDLRecordVersion toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public long getStatusByUserId() {
@@ -230,53 +278,21 @@ public class DDLRecordVersionMock
         return this.mockObject.isScheduled();
     }
 
-    public String getVersion() {
-        return this.mockObject.getVersion();
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public void setVersion(String param0) {
+    public void setCreateDate(Date param0) {
     }
 
-    public long getDDMStorageId() {
-        return this.mockObject.getDDMStorageId();
+    public void setCompanyId(long param0) {
     }
 
-    public void setDDMStorageId(long param0) {
-    }
-
-    public long getRecordId() {
-        return this.mockObject.getRecordId();
-    }
-
-    public void setRecordId(long param0) {
-    }
-
-    public long getRecordSetId() {
-        return this.mockObject.getRecordSetId();
-    }
-
-    public void setRecordSetId(long param0) {
-    }
-
-    public int getDisplayIndex() {
-        return this.mockObject.getDisplayIndex();
-    }
-
-    public void setDisplayIndex(int param0) {
-    }
-
-    public long getRecordVersionId() {
-        return this.mockObject.getRecordVersionId();
-    }
-
-    public void setRecordVersionId(long param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

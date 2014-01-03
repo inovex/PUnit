@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -60,22 +59,23 @@ public class LayoutBranchMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
+    public boolean getMaster() {
+        return this.mockObject.getMaster();
     }
 
     public boolean isCachedModel() {
@@ -89,22 +89,20 @@ public class LayoutBranchMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<LayoutBranch> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public LayoutBranch toEscapedModel() {
@@ -115,11 +113,22 @@ public class LayoutBranchMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<LayoutBranch> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getPlid() {
@@ -152,18 +161,16 @@ public class LayoutBranchMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public long getLayoutBranchId() {
         return this.mockObject.getLayoutBranchId();
+    }
+
+    public boolean isMaster() {
+        return this.mockObject.isMaster();
     }
 
     public void setLayoutBranchId(long param0) {
@@ -176,22 +183,24 @@ public class LayoutBranchMock
     public void setLayoutSetBranchId(long param0) {
     }
 
-    public boolean getMaster() {
-        return this.mockObject.getMaster();
-    }
-
-    public boolean isMaster() {
-        return this.mockObject.isMaster();
-    }
-
     public void setMaster(boolean param0) {
+    }
+
+    public LayoutBranch toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

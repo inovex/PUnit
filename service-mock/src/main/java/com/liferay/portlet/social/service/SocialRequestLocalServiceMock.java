@@ -5,13 +5,13 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portlet.social.model.SocialRequest;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,14 +49,55 @@ public class SocialRequestLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
+    public boolean hasRequest(long param0, String param1, long param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.hasRequest(param0, param1, param2, param3, param4);
+    }
+
+    public boolean hasRequest(long param0, String param1, long param2, int param3, long param4, int param5)
+        throws SystemException
+    {
+        return this.mockObject.hasRequest(param0, param1, param2, param3, param4, param5);
+    }
+
+    public SocialRequest addSocialRequest(SocialRequest param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public SocialRequest createSocialRequest(long param0) {
+        return this.mockObject.createSocialRequest(param0);
+    }
+
+    public SocialRequest deleteSocialRequest(SocialRequest param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteSocialRequest(param0);
+    }
+
+    public SocialRequest deleteSocialRequest(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteSocialRequest(param0);
+    }
+
+    public SocialRequest addRequest(long param0, long param1, String param2, long param3, int param4, String param5, long param6)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addRequest(param0, param1, param2, param3, param4, param5, param6);
+    }
+
     public DynamicQuery dynamicQuery() {
         return this.mockObject.dynamicQuery();
     }
 
-    public List dynamicQuery(DynamicQuery param0)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
     }
 
     public List dynamicQuery(DynamicQuery param0, int param1, int param2)
@@ -65,10 +106,16 @@ public class SocialRequestLocalServiceMock
         return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+    public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
     public long dynamicQueryCount(DynamicQuery param0)
@@ -84,39 +131,34 @@ public class SocialRequestLocalServiceMock
     public void setBeanIdentifier(String param0) {
     }
 
-    public SocialRequest addSocialRequest(SocialRequest param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public SocialRequest createSocialRequest(long param0) {
-        return this.mockObject.createSocialRequest(param0);
-    }
-
-    public SocialRequest deleteSocialRequest(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteSocialRequest(param0);
-    }
-
-    public SocialRequest deleteSocialRequest(SocialRequest param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteSocialRequest(param0);
-    }
-
     public SocialRequest fetchSocialRequest(long param0)
         throws SystemException
     {
         return (_serviceObjects.get(param0));
     }
 
+    public SocialRequest fetchSocialRequestByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchSocialRequestByUuidAndCompanyId(param0, param1);
+    }
+
+    public SocialRequest fetchSocialRequestByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchSocialRequestByUuidAndGroupId(param0, param1);
+    }
+
     public SocialRequest getSocialRequest(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public SocialRequest getSocialRequestByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getSocialRequestByUuidAndCompanyId(param0, param1);
     }
 
     public SocialRequest getSocialRequestByUuidAndGroupId(String param0, long param1)
@@ -143,18 +185,6 @@ public class SocialRequestLocalServiceMock
         return this.mockObject.updateSocialRequest(param0);
     }
 
-    public SocialRequest updateSocialRequest(SocialRequest param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateSocialRequest(param0, param1);
-    }
-
-    public SocialRequest addRequest(long param0, long param1, String param2, long param3, int param4, String param5, long param6)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addRequest(param0, param1, param2, param3, param4, param5, param6);
-    }
-
     public void deleteReceiverUserRequests(long param0)
         throws SystemException
     {
@@ -175,16 +205,16 @@ public class SocialRequestLocalServiceMock
     {
     }
 
-    public List<SocialRequest> getReceiverUserRequests(long param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.getReceiverUserRequests(param0, param1, param2);
-    }
-
     public List<SocialRequest> getReceiverUserRequests(long param0, int param1, int param2, int param3)
         throws SystemException
     {
         return this.mockObject.getReceiverUserRequests(param0, param1, param2, param3);
+    }
+
+    public List<SocialRequest> getReceiverUserRequests(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getReceiverUserRequests(param0, param1, param2);
     }
 
     public int getReceiverUserRequestsCount(long param0)
@@ -199,16 +229,16 @@ public class SocialRequestLocalServiceMock
         return this.mockObject.getReceiverUserRequestsCount(param0, param1);
     }
 
-    public List<SocialRequest> getUserRequests(long param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.getUserRequests(param0, param1, param2);
-    }
-
     public List<SocialRequest> getUserRequests(long param0, int param1, int param2, int param3)
         throws SystemException
     {
         return this.mockObject.getUserRequests(param0, param1, param2, param3);
+    }
+
+    public List<SocialRequest> getUserRequests(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getUserRequests(param0, param1, param2);
     }
 
     public int getUserRequestsCount(long param0)
@@ -221,18 +251,6 @@ public class SocialRequestLocalServiceMock
         throws SystemException
     {
         return this.mockObject.getUserRequestsCount(param0, param1);
-    }
-
-    public boolean hasRequest(long param0, String param1, long param2, int param3, int param4)
-        throws SystemException
-    {
-        return this.mockObject.hasRequest(param0, param1, param2, param3, param4);
-    }
-
-    public boolean hasRequest(long param0, String param1, long param2, int param3, long param4, int param5)
-        throws SystemException
-    {
-        return this.mockObject.hasRequest(param0, param1, param2, param3, param4, param5);
     }
 
     public SocialRequest updateRequest(long param0, int param1, ThemeDisplay param2)

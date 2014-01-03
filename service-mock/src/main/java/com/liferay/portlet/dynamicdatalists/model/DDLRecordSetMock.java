@@ -9,12 +9,13 @@ import java.util.Map;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.dynamicdatamapping.model.DDMStructure;
 import com.liferay.portlet.dynamicdatamapping.storage.Fields;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -57,16 +58,16 @@ public class DDLRecordSetMock
         return this.mockObject.getDDMStructure(param0);
     }
 
-    public List<DDLRecord> getRecords()
-        throws SystemException
-    {
-        return this.mockObject.getRecords();
-    }
-
     public List<Fields> getRecordsFieldsList()
         throws PortalException, SystemException
     {
         return this.mockObject.getRecordsFieldsList();
+    }
+
+    public List<DDLRecord> getRecords()
+        throws SystemException
+    {
+        return this.mockObject.getRecords();
     }
 
     public String toString() {
@@ -85,11 +86,7 @@ public class DDLRecordSetMock
         return this.mockObject.compareTo(param0);
     }
 
-    public String getName() {
-        return this.mockObject.getName();
-    }
-
-    public String getName(Locale param0) {
+    public String getName(String param0) {
         return this.mockObject.getName(param0);
     }
 
@@ -97,33 +94,29 @@ public class DDLRecordSetMock
         return this.mockObject.getName(param0, param1);
     }
 
-    public String getName(String param0) {
-        return this.mockObject.getName(param0);
-    }
-
     public String getName(String param0, boolean param1) {
         return this.mockObject.getName(param0, param1);
     }
 
-    public void setName(String param0) {
+    public String getName(Locale param0) {
+        return this.mockObject.getName(param0);
     }
 
-    public void setName(String param0, Locale param1) {
+    public String getName() {
+        return this.mockObject.getName();
     }
 
     public void setName(String param0, Locale param1, Locale param2) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
+    public void setName(String param0, Locale param1) {
     }
 
-    public String getDescription(Locale param0) {
-        return this.mockObject.getDescription(param0);
+    public void setName(String param0) {
     }
 
-    public String getDescription(Locale param0, boolean param1) {
-        return this.mockObject.getDescription(param0, param1);
+    public long getPrimaryKey() {
+        return this.mockObject.getPrimaryKey();
     }
 
     public String getDescription(String param0) {
@@ -134,18 +127,23 @@ public class DDLRecordSetMock
         return this.mockObject.getDescription(param0, param1);
     }
 
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription(Locale param0, boolean param1) {
+        return this.mockObject.getDescription(param0, param1);
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public String getDescription(Locale param0) {
+        return this.mockObject.getDescription(param0);
     }
 
-    public void setNew(boolean param0) {
+    public void setGroupId(long param0) {
+    }
+
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -159,22 +157,20 @@ public class DDLRecordSetMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<DDLRecordSet> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public DDLRecordSet toEscapedModel() {
@@ -185,22 +181,22 @@ public class DDLRecordSetMock
         return this.mockObject.toXmlString();
     }
 
-    public int getScope() {
-        return this.mockObject.getScope();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setCompanyId(long param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public void setNew(boolean param0) {
     }
 
-    public void setCreateDate(Date param0) {
+    public CacheModel<DDLRecordSet> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -224,6 +220,13 @@ public class DDLRecordSetMock
     public void setUuid(String param0) {
     }
 
+    public long getDDMStructureId() {
+        return this.mockObject.getDDMStructureId();
+    }
+
+    public void setDDMStructureId(long param0) {
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -240,20 +243,32 @@ public class DDLRecordSetMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public String getRecordSetKey() {
+        return this.mockObject.getRecordSetKey();
     }
 
-    public void setGroupId(long param0) {
+    public void setRecordSetKey(String param0) {
     }
 
-    public void setDescription(String param0) {
+    public int getMinDisplayRows() {
+        return this.mockObject.getMinDisplayRows();
     }
 
-    public void setDescription(String param0, Locale param1) {
+    public void setMinDisplayRows(int param0) {
     }
 
-    public void setDescription(String param0, Locale param1, Locale param2) {
+    public void setScope(int param0) {
+    }
+
+    public long getRecordSetId() {
+        return this.mockObject.getRecordSetId();
+    }
+
+    public void setRecordSetId(long param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getNameCurrentLanguageId() {
@@ -264,11 +279,11 @@ public class DDLRecordSetMock
         return this.mockObject.getNameCurrentValue();
     }
 
-    public Map<Locale, String> getNameMap() {
-        return this.mockObject.getNameMap();
+    public void setNameCurrentLanguageId(String param0) {
     }
 
-    public void setNameCurrentLanguageId(String param0) {
+    public Map<Locale, String> getNameMap() {
+        return this.mockObject.getNameMap();
     }
 
     public void setNameMap(Map<Locale, String> param0) {
@@ -298,47 +313,56 @@ public class DDLRecordSetMock
     public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
     }
 
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
     public void prepareLocalizedFieldsForImport(Locale param0)
         throws LocaleException
     {
     }
 
-    public void setScope(int param0) {
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
     }
 
-    public long getDDMStructureId() {
-        return this.mockObject.getDDMStructureId();
+    public DDLRecordSet toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setDDMStructureId(long param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public long getRecordSetId() {
-        return this.mockObject.getRecordSetId();
+    public void setCreateDate(Date param0) {
     }
 
-    public void setRecordSetId(long param0) {
+    public void setCompanyId(long param0) {
     }
 
-    public String getRecordSetKey() {
-        return this.mockObject.getRecordSetKey();
+    public int getScope() {
+        return this.mockObject.getScope();
     }
 
-    public void setRecordSetKey(String param0) {
+    public void setDescription(String param0, Locale param1, Locale param2) {
     }
 
-    public int getMinDisplayRows() {
-        return this.mockObject.getMinDisplayRows();
+    public void setDescription(String param0) {
     }
 
-    public void setMinDisplayRows(int param0) {
+    public void setDescription(String param0, Locale param1) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -350,6 +374,10 @@ public class DDLRecordSetMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

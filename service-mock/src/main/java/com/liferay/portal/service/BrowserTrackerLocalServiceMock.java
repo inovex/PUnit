@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.BrowserTracker;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,6 +48,12 @@ public class BrowserTrackerLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
     public DynamicQuery dynamicQuery() {
         return this.mockObject.dynamicQuery();
     }
@@ -58,16 +64,16 @@ public class BrowserTrackerLocalServiceMock
         return this.mockObject.dynamicQuery(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
     public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
         return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
     public long dynamicQueryCount(DynamicQuery param0)
@@ -81,35 +87,6 @@ public class BrowserTrackerLocalServiceMock
     }
 
     public void setBeanIdentifier(String param0) {
-    }
-
-    public BrowserTracker addBrowserTracker(BrowserTracker param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public BrowserTracker createBrowserTracker(long param0) {
-        return this.mockObject.createBrowserTracker(param0);
-    }
-
-    public BrowserTracker deleteBrowserTracker(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteBrowserTracker(param0);
-    }
-
-    public BrowserTracker deleteBrowserTracker(BrowserTracker param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteBrowserTracker(param0);
-    }
-
-    public BrowserTracker fetchBrowserTracker(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
     }
 
     public BrowserTracker getBrowserTracker(long param0)
@@ -142,12 +119,6 @@ public class BrowserTrackerLocalServiceMock
         return this.mockObject.updateBrowserTracker(param0);
     }
 
-    public BrowserTracker updateBrowserTracker(BrowserTracker param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateBrowserTracker(param0, param1);
-    }
-
     public BrowserTracker updateBrowserTracker(long param0, long param1)
         throws SystemException
     {
@@ -157,6 +128,35 @@ public class BrowserTrackerLocalServiceMock
     public void deleteUserBrowserTracker(long param0)
         throws SystemException
     {
+    }
+
+    public BrowserTracker addBrowserTracker(BrowserTracker param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public BrowserTracker createBrowserTracker(long param0) {
+        return this.mockObject.createBrowserTracker(param0);
+    }
+
+    public BrowserTracker deleteBrowserTracker(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteBrowserTracker(param0);
+    }
+
+    public BrowserTracker deleteBrowserTracker(BrowserTracker param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteBrowserTracker(param0);
+    }
+
+    public BrowserTracker fetchBrowserTracker(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
     }
 
 }

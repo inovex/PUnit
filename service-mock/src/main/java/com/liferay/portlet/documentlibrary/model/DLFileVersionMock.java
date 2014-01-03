@@ -7,11 +7,12 @@ import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.UnicodeProperties;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -42,21 +43,15 @@ public class DLFileVersionMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.documentlibrary.model.DLFileVersion.class));
     }
 
-    public ExpandoBridge getExpandoBridge() {
-        return this.mockObject.getExpandoBridge();
-    }
-
-    public String getIcon() {
-        return this.mockObject.getIcon();
-    }
-
     public DLFileEntry getFileEntry()
         throws PortalException, SystemException
     {
         return this.mockObject.getFileEntry();
     }
 
-    public DLFolder getFolder() {
+    public DLFolder getFolder()
+        throws PortalException, SystemException
+    {
         return this.mockObject.getFolder();
     }
 
@@ -66,18 +61,21 @@ public class DLFileVersionMock
         return this.mockObject.getContentStream(param0);
     }
 
-    public String getExtraSettings() {
-        return this.mockObject.getExtraSettings();
-    }
-
     public UnicodeProperties getExtraSettingsProperties() {
         return this.mockObject.getExtraSettingsProperties();
     }
 
-    public void setExtraSettings(String param0) {
+    public void setExtraSettingsProperties(UnicodeProperties param0) {
     }
 
-    public void setExtraSettingsProperties(UnicodeProperties param0) {
+    public String getIcon() {
+        return this.mockObject.getIcon();
+    }
+
+    public String buildTreePath()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.buildTreePath();
     }
 
     public String toString() {
@@ -103,22 +101,34 @@ public class DLFileVersionMock
     public void setSize(long param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
+    public String getExtension() {
+        return this.mockObject.getExtension();
     }
 
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getFolderId() {
+        return this.mockObject.getFolderId();
+    }
+
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -132,18 +142,20 @@ public class DLFileVersionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
+    public void setPrimaryKey(long param0) {
     }
 
-    public void setPrimaryKeyObj(Serializable param0) {
+    public ExpandoBridge getExpandoBridge() {
+        return this.mockObject.getExpandoBridge();
     }
 
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<DLFileVersion> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public DLFileVersion toEscapedModel() {
@@ -154,18 +166,22 @@ public class DLFileVersionMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DLFileVersion> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -189,6 +205,13 @@ public class DLFileVersionMock
     public void setUuid(String param0) {
     }
 
+    public String getChangeLog() {
+        return this.mockObject.getChangeLog();
+    }
+
+    public void setExtension(String param0) {
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -205,21 +228,66 @@ public class DLFileVersionMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public long getFileEntryId() {
+        return this.mockObject.getFileEntryId();
     }
 
-    public void setGroupId(long param0) {
+    public void setFileEntryId(long param0) {
     }
 
-    public void setDescription(String param0) {
+    public String getExtraSettings() {
+        return this.mockObject.getExtraSettings();
     }
 
-    public int getStatus() {
-        return this.mockObject.getStatus();
+    public long getFileVersionId() {
+        return this.mockObject.getFileVersionId();
     }
 
-    public void setStatus(int param0) {
+    public void setFileVersionId(long param0) {
+    }
+
+    public String getChecksum() {
+        return this.mockObject.getChecksum();
+    }
+
+    public void setExtraSettings(String param0) {
+    }
+
+    public long getFileEntryTypeId() {
+        return this.mockObject.getFileEntryTypeId();
+    }
+
+    public void setFileEntryTypeId(long param0) {
+    }
+
+    public void setChecksum(String param0) {
+    }
+
+    public void setFolderId(long param0) {
+    }
+
+    public void setVersion(String param0) {
+    }
+
+    public void setMimeType(String param0) {
+    }
+
+    public void setRepositoryId(long param0) {
+    }
+
+    public String getVersion() {
+        return this.mockObject.getVersion();
+    }
+
+    public void setChangeLog(String param0) {
+    }
+
+    public String getMimeType() {
+        return this.mockObject.getMimeType();
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getTitle() {
@@ -227,6 +295,10 @@ public class DLFileVersionMock
     }
 
     public void setTitle(String param0) {
+    }
+
+    public DLFileVersion toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public long getStatusByUserId() {
@@ -295,74 +367,35 @@ public class DLFileVersionMock
         return this.mockObject.isScheduled();
     }
 
-    public String getExtension() {
-        return this.mockObject.getExtension();
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public void setExtension(String param0) {
+    public void setCreateDate(Date param0) {
     }
 
-    public String getMimeType() {
-        return this.mockObject.getMimeType();
+    public void setCompanyId(long param0) {
     }
 
-    public String getChangeLog() {
-        return this.mockObject.getChangeLog();
+    public void setTreePath(String param0) {
     }
 
-    public String getVersion() {
-        return this.mockObject.getVersion();
+    public void setDescription(String param0) {
     }
 
-    public void setChangeLog(String param0) {
+    public String getTreePath() {
+        return this.mockObject.getTreePath();
     }
 
     public long getRepositoryId() {
         return this.mockObject.getRepositoryId();
     }
 
-    public void setRepositoryId(long param0) {
-    }
-
-    public void setMimeType(String param0) {
-    }
-
-    public long getFolderId() {
-        return this.mockObject.getFolderId();
-    }
-
-    public void setFolderId(long param0) {
-    }
-
-    public void setVersion(String param0) {
-    }
-
-    public long getFileEntryId() {
-        return this.mockObject.getFileEntryId();
-    }
-
-    public void setFileEntryId(long param0) {
-    }
-
-    public long getFileEntryTypeId() {
-        return this.mockObject.getFileEntryTypeId();
-    }
-
-    public void setFileEntryTypeId(long param0) {
-    }
-
-    public long getFileVersionId() {
-        return this.mockObject.getFileVersionId();
-    }
-
-    public void setFileVersionId(long param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -376,7 +409,16 @@ public class DLFileVersionMock
         return this.mockObject.getModelClassName();
     }
 
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
+    }
+
     public void persist()
+        throws SystemException
+    {
+    }
+
+    public void updateTreePath(String param0)
         throws SystemException
     {
     }

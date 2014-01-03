@@ -6,10 +6,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -46,16 +46,16 @@ public class SCProductEntryMock
         return this.mockObject.getLicenses();
     }
 
-    public List<SCProductScreenshot> getScreenshots()
-        throws SystemException
-    {
-        return this.mockObject.getScreenshots();
-    }
-
     public SCProductVersion getLatestVersion()
         throws SystemException
     {
         return this.mockObject.getLatestVersion();
+    }
+
+    public List<SCProductScreenshot> getScreenshots()
+        throws SystemException
+    {
+        return this.mockObject.getScreenshots();
     }
 
     public String toString() {
@@ -89,14 +89,11 @@ public class SCProductEntryMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -110,22 +107,20 @@ public class SCProductEntryMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<SCProductEntry> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public SCProductEntry toEscapedModel() {
@@ -136,18 +131,22 @@ public class SCProductEntryMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<SCProductEntry> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -162,6 +161,22 @@ public class SCProductEntryMock
     }
 
     public void setUserId(long param0) {
+    }
+
+    public String getAuthor() {
+        return this.mockObject.getAuthor();
+    }
+
+    public String getLongDescription() {
+        return this.mockObject.getLongDescription();
+    }
+
+    public String getPageURL() {
+        return this.mockObject.getPageURL();
+    }
+
+    public String getTags() {
+        return this.mockObject.getTags();
     }
 
     public String getUserName() {
@@ -183,31 +198,8 @@ public class SCProductEntryMock
     public void setType(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public String getAuthor() {
-        return this.mockObject.getAuthor();
-    }
-
-    public String getLongDescription() {
-        return this.mockObject.getLongDescription();
-    }
-
-    public String getPageURL() {
-        return this.mockObject.getPageURL();
-    }
-
     public String getShortDescription() {
         return this.mockObject.getShortDescription();
-    }
-
-    public String getTags() {
-        return this.mockObject.getTags();
     }
 
     public void setAuthor(String param0) {
@@ -223,6 +215,10 @@ public class SCProductEntryMock
     }
 
     public void setTags(String param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public long getProductEntryId() {
@@ -246,11 +242,25 @@ public class SCProductEntryMock
     public void setRepoArtifactId(String param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public SCProductEntry toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

@@ -6,13 +6,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.notifications.NotificationEvent;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.UserNotificationEvent;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -50,46 +50,8 @@ public class UserNotificationEventLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public UserNotificationEvent addUserNotificationEvent(UserNotificationEvent param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
+    public UserNotificationEvent createUserNotificationEvent(long param0) {
+        return this.mockObject.createUserNotificationEvent(param0);
     }
 
     public UserNotificationEvent addUserNotificationEvent(long param0, NotificationEvent param1)
@@ -104,8 +66,11 @@ public class UserNotificationEventLocalServiceMock
         return this.mockObject.addUserNotificationEvent(param0, param1, param2, param3, param4, param5, param6);
     }
 
-    public UserNotificationEvent createUserNotificationEvent(long param0) {
-        return this.mockObject.createUserNotificationEvent(param0);
+    public UserNotificationEvent addUserNotificationEvent(UserNotificationEvent param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
     public UserNotificationEvent deleteUserNotificationEvent(long param0)
@@ -120,7 +85,7 @@ public class UserNotificationEventLocalServiceMock
         return this.mockObject.deleteUserNotificationEvent(param0);
     }
 
-    public void deleteUserNotificationEvent(String param0)
+    public void deleteUserNotificationEvent(String param0, long param1)
         throws SystemException
     {
     }
@@ -131,10 +96,22 @@ public class UserNotificationEventLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
+    public UserNotificationEvent fetchUserNotificationEventByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchUserNotificationEventByUuidAndCompanyId(param0, param1);
+    }
+
     public UserNotificationEvent getUserNotificationEvent(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public UserNotificationEvent getUserNotificationEventByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getUserNotificationEventByUuidAndCompanyId(param0, param1);
     }
 
     public List<UserNotificationEvent> getUserNotificationEvents(int param0, int param1)
@@ -149,10 +126,10 @@ public class UserNotificationEventLocalServiceMock
         return this.mockObject.getUserNotificationEvents(param0);
     }
 
-    public List<UserNotificationEvent> getUserNotificationEvents(long param0, boolean param1)
+    public List<UserNotificationEvent> getUserNotificationEvents(long param0, int param1, int param2)
         throws SystemException
     {
-        return this.mockObject.getUserNotificationEvents(param0, param1);
+        return this.mockObject.getUserNotificationEvents(param0, param1, param2);
     }
 
     public List<UserNotificationEvent> getUserNotificationEvents(long param0, boolean param1, int param2, int param3)
@@ -161,16 +138,10 @@ public class UserNotificationEventLocalServiceMock
         return this.mockObject.getUserNotificationEvents(param0, param1, param2, param3);
     }
 
-    public List<UserNotificationEvent> getUserNotificationEvents(long param0, int param1, int param2)
+    public List<UserNotificationEvent> getUserNotificationEvents(long param0, boolean param1)
         throws SystemException
     {
-        return this.mockObject.getUserNotificationEvents(param0, param1, param2);
-    }
-
-    public int getUserNotificationEventsCount()
-        throws SystemException
-    {
-        return this.mockObject.getUserNotificationEventsCount();
+        return this.mockObject.getUserNotificationEvents(param0, param1);
     }
 
     public int getUserNotificationEventsCount(long param0)
@@ -179,10 +150,22 @@ public class UserNotificationEventLocalServiceMock
         return this.mockObject.getUserNotificationEventsCount(param0);
     }
 
+    public int getUserNotificationEventsCount()
+        throws SystemException
+    {
+        return this.mockObject.getUserNotificationEventsCount();
+    }
+
     public int getUserNotificationEventsCount(long param0, boolean param1)
         throws SystemException
     {
         return this.mockObject.getUserNotificationEventsCount(param0, param1);
+    }
+
+    public UserNotificationEvent updateUserNotificationEvent(String param0, long param1, boolean param2)
+        throws SystemException
+    {
+        return this.mockObject.updateUserNotificationEvent(param0, param1, param2);
     }
 
     public UserNotificationEvent updateUserNotificationEvent(UserNotificationEvent param0)
@@ -191,33 +174,98 @@ public class UserNotificationEventLocalServiceMock
         return this.mockObject.updateUserNotificationEvent(param0);
     }
 
-    public UserNotificationEvent updateUserNotificationEvent(UserNotificationEvent param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateUserNotificationEvent(param0, param1);
-    }
-
-    public UserNotificationEvent updateUserNotificationEvent(String param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateUserNotificationEvent(param0, param1);
-    }
-
     public List<UserNotificationEvent> addUserNotificationEvents(long param0, Collection<NotificationEvent> param1)
         throws PortalException, SystemException
     {
         return this.mockObject.addUserNotificationEvents(param0, param1);
     }
 
-    public void deleteUserNotificationEvents(Collection<String> param0)
+    public void deleteUserNotificationEvents(Collection<String> param0, long param1)
         throws SystemException
     {
     }
 
-    public List<UserNotificationEvent> updateUserNotificationEvents(Collection<String> param0, boolean param1)
+    public List<UserNotificationEvent> getArchivedUserNotificationEvents(long param0, boolean param1)
         throws SystemException
     {
-        return this.mockObject.updateUserNotificationEvents(param0, param1);
+        return this.mockObject.getArchivedUserNotificationEvents(param0, param1);
+    }
+
+    public List<UserNotificationEvent> getArchivedUserNotificationEvents(long param0, boolean param1, int param2, int param3)
+        throws SystemException
+    {
+        return this.mockObject.getArchivedUserNotificationEvents(param0, param1, param2, param3);
+    }
+
+    public int getArchivedUserNotificationEventsCount(long param0, boolean param1)
+        throws SystemException
+    {
+        return this.mockObject.getArchivedUserNotificationEventsCount(param0, param1);
+    }
+
+    public List<UserNotificationEvent> getDeliveredUserNotificationEvents(long param0, boolean param1)
+        throws SystemException
+    {
+        return this.mockObject.getDeliveredUserNotificationEvents(param0, param1);
+    }
+
+    public List<UserNotificationEvent> getDeliveredUserNotificationEvents(long param0, boolean param1, int param2, int param3)
+        throws SystemException
+    {
+        return this.mockObject.getDeliveredUserNotificationEvents(param0, param1, param2, param3);
+    }
+
+    public int getDeliveredUserNotificationEventsCount(long param0, boolean param1)
+        throws SystemException
+    {
+        return this.mockObject.getDeliveredUserNotificationEventsCount(param0, param1);
+    }
+
+    public List<UserNotificationEvent> updateUserNotificationEvents(Collection<String> param0, long param1, boolean param2)
+        throws SystemException
+    {
+        return this.mockObject.updateUserNotificationEvents(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

@@ -7,7 +7,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -76,16 +75,6 @@ public class AccountMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -97,22 +86,20 @@ public class AccountMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<Account> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public Account toEscapedModel() {
@@ -123,18 +110,22 @@ public class AccountMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Account> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -153,25 +144,6 @@ public class AccountMock
 
     public String getUserName() {
         return this.mockObject.getUserName();
-    }
-
-    public long getAccountId() {
-        return this.mockObject.getAccountId();
-    }
-
-    public void setAccountId(long param0) {
-    }
-
-    public String getUserUuid()
-        throws SystemException
-    {
-        return this.mockObject.getUserUuid();
-    }
-
-    public void setUserUuid(String param0) {
-    }
-
-    public void setUserName(String param0) {
     }
 
     public long getParentAccountId() {
@@ -197,6 +169,25 @@ public class AccountMock
 
     public String getLegalType() {
         return this.mockObject.getLegalType();
+    }
+
+    public long getAccountId() {
+        return this.mockObject.getAccountId();
+    }
+
+    public void setAccountId(long param0) {
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
     }
 
     public void setLegalType(String param0) {
@@ -226,14 +217,22 @@ public class AccountMock
     public void setType(String param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public void resetOriginalValues() {
+    public Account toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setModelAttributes(Map<String, Object> param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public Class<?> getModelClass() {
@@ -242,6 +241,16 @@ public class AccountMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
+    }
+
+    public void setModelAttributes(Map<String, Object> param0) {
     }
 
     public void persist()

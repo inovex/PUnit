@@ -5,13 +5,14 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.search.Hits;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.bookmarks.model.BookmarksEntry;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -43,6 +44,12 @@ public class BookmarksEntryLocalServiceMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.bookmarks.service.BookmarksEntryLocalService.class));
     }
 
+    public Hits search(long param0, long param1, long param2, int param3, int param4, int param5)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5);
+    }
+
     public BookmarksEntry addEntry(long param0, long param1, long param2, String param3, String param4, String param5, ServiceContext param6)
         throws PortalException, SystemException
     {
@@ -67,60 +74,16 @@ public class BookmarksEntryLocalServiceMock
         return this.mockObject.getEntries(param0, param1, param2, param3, param4);
     }
 
+    public List<BookmarksEntry> getEntries(long param0, long param1, int param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.getEntries(param0, param1, param2, param3, param4);
+    }
+
     public PersistedModel getPersistedModel(Serializable param0)
         throws PortalException, SystemException
     {
         return this.mockObject.getPersistedModel(param0);
-    }
-
-    public void deleteEntry(BookmarksEntry param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteEntry(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public void updateAsset(long param0, BookmarksEntry param1, long[] param2, String[] param3, long[] param4)
-        throws PortalException, SystemException
-    {
     }
 
     public int getEntriesCount(long param0, long param1)
@@ -129,15 +92,10 @@ public class BookmarksEntryLocalServiceMock
         return this.mockObject.getEntriesCount(param0, param1);
     }
 
-    public BookmarksEntry updateEntry(long param0, long param1, long param2, long param3, String param4, String param5, String param6, ServiceContext param7)
-        throws PortalException, SystemException
+    public int getEntriesCount(long param0, long param1, int param2)
+        throws SystemException
     {
-        return this.mockObject.updateEntry(param0, param1, param2, param3, param4, param5, param6, param7);
-    }
-
-    public void deleteEntries(long param0, long param1)
-        throws PortalException, SystemException
-    {
+        return this.mockObject.getEntriesCount(param0, param1, param2);
     }
 
     public List<BookmarksEntry> getGroupEntries(long param0, int param1, int param2)
@@ -170,21 +128,26 @@ public class BookmarksEntryLocalServiceMock
         return this.mockObject.getNoAssetEntries();
     }
 
-    public BookmarksEntry addBookmarksEntry(BookmarksEntry param0)
-        throws SystemException
+    public BookmarksEntry moveEntryToTrash(long param0, BookmarksEntry param1)
+        throws PortalException, SystemException
     {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
+        return this.mockObject.moveEntryToTrash(param0, param1);
+    }
+
+    public BookmarksEntry moveEntryToTrash(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.moveEntryToTrash(param0, param1);
+    }
+
+    public BookmarksEntry restoreEntryFromTrash(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.restoreEntryFromTrash(param0, param1);
     }
 
     public BookmarksEntry createBookmarksEntry(long param0) {
         return this.mockObject.createBookmarksEntry(param0);
-    }
-
-    public BookmarksEntry deleteBookmarksEntry(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteBookmarksEntry(param0);
     }
 
     public BookmarksEntry deleteBookmarksEntry(BookmarksEntry param0)
@@ -193,16 +156,47 @@ public class BookmarksEntryLocalServiceMock
         return this.mockObject.deleteBookmarksEntry(param0);
     }
 
+    public BookmarksEntry deleteBookmarksEntry(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteBookmarksEntry(param0);
+    }
+
+    public BookmarksEntry addBookmarksEntry(BookmarksEntry param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
     public BookmarksEntry fetchBookmarksEntry(long param0)
         throws SystemException
     {
         return (_serviceObjects.get(param0));
     }
 
+    public BookmarksEntry fetchBookmarksEntryByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchBookmarksEntryByUuidAndCompanyId(param0, param1);
+    }
+
+    public BookmarksEntry fetchBookmarksEntryByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchBookmarksEntryByUuidAndGroupId(param0, param1);
+    }
+
     public BookmarksEntry getBookmarksEntry(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public BookmarksEntry getBookmarksEntryByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getBookmarksEntryByUuidAndCompanyId(param0, param1);
     }
 
     public BookmarksEntry getBookmarksEntryByUuidAndGroupId(String param0, long param1)
@@ -229,22 +223,129 @@ public class BookmarksEntryLocalServiceMock
         return this.mockObject.updateBookmarksEntry(param0);
     }
 
-    public BookmarksEntry updateBookmarksEntry(BookmarksEntry param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateBookmarksEntry(param0, param1);
-    }
-
     public int getFoldersEntriesCount(long param0, List<Long> param1)
         throws SystemException
     {
         return this.mockObject.getFoldersEntriesCount(param0, param1);
     }
 
+    public BookmarksEntry moveEntryFromTrash(long param0, long param1, long param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.moveEntryFromTrash(param0, param1, param2);
+    }
+
+    public void subscribeEntry(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void unsubscribeEntry(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void rebuildTree(long param0)
+        throws SystemException
+    {
+    }
+
+    public BookmarksEntry moveEntry(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.moveEntry(param0, param1);
+    }
+
     public BookmarksEntry openEntry(long param0, long param1)
         throws PortalException, SystemException
     {
         return this.mockObject.openEntry(param0, param1);
+    }
+
+    public BookmarksEntry openEntry(long param0, BookmarksEntry param1)
+        throws SystemException
+    {
+        return this.mockObject.openEntry(param0, param1);
+    }
+
+    public void deleteEntries(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteEntries(long param0, long param1, boolean param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public BookmarksEntry updateEntry(long param0, long param1, long param2, long param3, String param4, String param5, String param6, ServiceContext param7)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateEntry(param0, param1, param2, param3, param4, param5, param6, param7);
+    }
+
+    public void updateAsset(long param0, BookmarksEntry param1, long[] param2, String[] param3, long[] param4)
+        throws PortalException, SystemException
+    {
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
+    }
+
+    public BookmarksEntry updateStatus(long param0, BookmarksEntry param1, int param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateStatus(param0, param1, param2);
+    }
+
+    public BookmarksEntry deleteEntry(BookmarksEntry param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteEntry(param0);
+    }
+
+    public BookmarksEntry deleteEntry(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteEntry(param0);
     }
 
 }

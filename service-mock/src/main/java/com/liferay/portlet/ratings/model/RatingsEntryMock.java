@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -63,16 +63,6 @@ public class RatingsEntryMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -84,22 +74,20 @@ public class RatingsEntryMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<RatingsEntry> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public RatingsEntry toEscapedModel() {
@@ -110,28 +98,22 @@ public class RatingsEntryMock
         return this.mockObject.toXmlString();
     }
 
-    public long getClassPK() {
-        return this.mockObject.getClassPK();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setClassName(String param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setClassPK(long param0) {
+    public void setNew(boolean param0) {
     }
 
-    public void setCompanyId(long param0) {
-    }
-
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
-    }
-
-    public void setCreateDate(Date param0) {
+    public CacheModel<RatingsEntry> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -148,8 +130,15 @@ public class RatingsEntryMock
     public void setUserId(long param0) {
     }
 
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
+    }
+
+    public void setEntryId(long param0) {
+    }
+
+    public long getEntryId() {
+        return this.mockObject.getEntryId();
     }
 
     public String getUserName() {
@@ -168,31 +157,42 @@ public class RatingsEntryMock
     public void setUserName(String param0) {
     }
 
-    public void setClassNameId(long param0) {
-    }
-
-    public long getEntryId() {
-        return this.mockObject.getEntryId();
-    }
-
-    public void setEntryId(long param0) {
+    public void setScore(double param0) {
     }
 
     public double getScore() {
         return this.mockObject.getScore();
     }
 
-    public void setScore(double param0) {
+    public void setClassNameId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public void resetOriginalValues() {
+    public RatingsEntry toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setModelAttributes(Map<String, Object> param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public Class<?> getModelClass() {
@@ -201,6 +201,16 @@ public class RatingsEntryMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
+    }
+
+    public void setModelAttributes(Map<String, Object> param0) {
     }
 
     public void persist()

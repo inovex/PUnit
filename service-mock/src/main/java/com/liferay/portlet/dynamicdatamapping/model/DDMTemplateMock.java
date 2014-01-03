@@ -8,10 +8,12 @@ import java.util.Map;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -42,10 +44,17 @@ public class DDMTemplateMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.dynamicdatamapping.model.DDMTemplate.class));
     }
 
-    public DDMStructure getStructure()
+    public String getWebDavURL(ThemeDisplay param0, String param1) {
+        return this.mockObject.getWebDavURL(param0, param1);
+    }
+
+    public String getSmallImageType()
         throws PortalException, SystemException
     {
-        return this.mockObject.getStructure();
+        return this.mockObject.getSmallImageType();
+    }
+
+    public void setSmallImageType(String param0) {
     }
 
     public String toString() {
@@ -68,20 +77,20 @@ public class DDMTemplateMock
         return this.mockObject.getName();
     }
 
-    public String getName(Locale param0) {
-        return this.mockObject.getName(param0);
-    }
-
     public String getName(Locale param0, boolean param1) {
         return this.mockObject.getName(param0, param1);
     }
 
-    public String getName(String param0) {
+    public String getName(Locale param0) {
         return this.mockObject.getName(param0);
     }
 
     public String getName(String param0, boolean param1) {
         return this.mockObject.getName(param0, param1);
+    }
+
+    public String getName(String param0) {
+        return this.mockObject.getName(param0);
     }
 
     public String getLanguage() {
@@ -91,26 +100,26 @@ public class DDMTemplateMock
     public void setName(String param0) {
     }
 
-    public void setName(String param0, Locale param1) {
+    public void setName(String param0, Locale param1, Locale param2) {
     }
 
-    public void setName(String param0, Locale param1, Locale param2) {
+    public void setName(String param0, Locale param1) {
     }
 
     public String getType() {
         return this.mockObject.getType();
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
+    public String getClassName() {
+        return this.mockObject.getClassName();
     }
 
-    public String getDescription(Locale param0) {
-        return this.mockObject.getDescription(param0);
+    public String getScript() {
+        return this.mockObject.getScript();
     }
 
-    public String getDescription(Locale param0, boolean param1) {
-        return this.mockObject.getDescription(param0, param1);
+    public long getPrimaryKey() {
+        return this.mockObject.getPrimaryKey();
     }
 
     public String getDescription(String param0) {
@@ -121,18 +130,23 @@ public class DDMTemplateMock
         return this.mockObject.getDescription(param0, param1);
     }
 
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
+    public String getDescription(Locale param0, boolean param1) {
+        return this.mockObject.getDescription(param0, param1);
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription(Locale param0) {
+        return this.mockObject.getDescription(param0);
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public void setNew(boolean param0) {
+    public void setGroupId(long param0) {
+    }
+
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -146,11 +160,7 @@ public class DDMTemplateMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -160,8 +170,10 @@ public class DDMTemplateMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<DDMTemplate> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public DDMTemplate toEscapedModel() {
@@ -172,18 +184,22 @@ public class DDMTemplateMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DDMTemplate> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -207,6 +223,48 @@ public class DDMTemplateMock
     public void setUuid(String param0) {
     }
 
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
+    }
+
+    public long getTemplateId() {
+        return this.mockObject.getTemplateId();
+    }
+
+    public void setTemplateId(long param0) {
+    }
+
+    public String getTemplateKey() {
+        return this.mockObject.getTemplateKey();
+    }
+
+    public String getMode() {
+        return this.mockObject.getMode();
+    }
+
+    public void setTemplateKey(String param0) {
+    }
+
+    public void setMode(String param0) {
+    }
+
+    public void setLanguage(String param0) {
+    }
+
+    public void setScript(String param0) {
+    }
+
+    public boolean getCacheable() {
+        return this.mockObject.getCacheable();
+    }
+
+    public boolean isCacheable() {
+        return this.mockObject.isCacheable();
+    }
+
+    public void setCacheable(boolean param0) {
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -223,23 +281,39 @@ public class DDMTemplateMock
     public void setUserName(String param0) {
     }
 
+    public boolean getSmallImage() {
+        return this.mockObject.getSmallImage();
+    }
+
+    public boolean isSmallImage() {
+        return this.mockObject.isSmallImage();
+    }
+
+    public void setSmallImage(boolean param0) {
+    }
+
+    public long getSmallImageId() {
+        return this.mockObject.getSmallImageId();
+    }
+
+    public void setSmallImageId(long param0) {
+    }
+
+    public String getSmallImageURL() {
+        return this.mockObject.getSmallImageURL();
+    }
+
+    public void setSmallImageURL(String param0) {
+    }
+
     public void setType(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public void setClassNameId(long param0) {
     }
 
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public void setDescription(String param0, Locale param1) {
-    }
-
-    public void setDescription(String param0, Locale param1, Locale param2) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getNameCurrentLanguageId() {
@@ -250,17 +324,17 @@ public class DDMTemplateMock
         return this.mockObject.getNameCurrentValue();
     }
 
+    public void setNameCurrentLanguageId(String param0) {
+    }
+
     public Map<Locale, String> getNameMap() {
         return this.mockObject.getNameMap();
     }
 
-    public void setNameCurrentLanguageId(String param0) {
+    public void setNameMap(Map<Locale, String> param0, Locale param1) {
     }
 
     public void setNameMap(Map<Locale, String> param0) {
-    }
-
-    public void setNameMap(Map<Locale, String> param0, Locale param1) {
     }
 
     public String getDescriptionCurrentLanguageId() {
@@ -278,10 +352,23 @@ public class DDMTemplateMock
     public void setDescriptionCurrentLanguageId(String param0) {
     }
 
+    public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
+    }
+
     public void setDescriptionMap(Map<Locale, String> param0) {
     }
 
-    public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
     }
 
     public void prepareLocalizedFieldsForImport(Locale param0)
@@ -289,42 +376,44 @@ public class DDMTemplateMock
     {
     }
 
-    public long getStructureId() {
-        return this.mockObject.getStructureId();
+    public DDMTemplate toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setStructureId(long param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public long getTemplateId() {
-        return this.mockObject.getTemplateId();
+    public void setCreateDate(Date param0) {
     }
 
-    public void setTemplateId(long param0) {
+    public void setClassName(String param0) {
     }
 
-    public String getMode() {
-        return this.mockObject.getMode();
+    public void setClassPK(long param0) {
     }
 
-    public void setMode(String param0) {
+    public void setCompanyId(long param0) {
     }
 
-    public void setLanguage(String param0) {
+    public void setDescription(String param0) {
     }
 
-    public String getScript() {
-        return this.mockObject.getScript();
+    public void setDescription(String param0, Locale param1) {
     }
 
-    public void setScript(String param0) {
+    public void setDescription(String param0, Locale param1, Locale param2) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -336,6 +425,10 @@ public class DDMTemplateMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

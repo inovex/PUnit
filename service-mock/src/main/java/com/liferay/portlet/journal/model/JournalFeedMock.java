@@ -5,10 +5,11 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -70,22 +71,19 @@ public class JournalFeedMock
         return this.mockObject.getType();
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -99,11 +97,7 @@ public class JournalFeedMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -113,8 +107,10 @@ public class JournalFeedMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<JournalFeed> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public JournalFeed toEscapedModel() {
@@ -125,18 +121,22 @@ public class JournalFeedMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<JournalFeed> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -160,11 +160,22 @@ public class JournalFeedMock
     public void setUuid(String param0) {
     }
 
-    public String getUserName() {
-        return this.mockObject.getUserName();
+    public String getStructureId() {
+        return this.mockObject.getStructureId();
     }
 
-    public void setId(long param0) {
+    public void setStructureId(String param0) {
+    }
+
+    public String getTemplateId() {
+        return this.mockObject.getTemplateId();
+    }
+
+    public void setTemplateId(String param0) {
+    }
+
+    public String getUserName() {
+        return this.mockObject.getUserName();
     }
 
     public String getUserUuid()
@@ -182,14 +193,7 @@ public class JournalFeedMock
     public void setType(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
+    public void setId(long param0) {
     }
 
     public String getOrderByCol() {
@@ -200,24 +204,6 @@ public class JournalFeedMock
         return this.mockObject.getOrderByType();
     }
 
-    public String getStructureId() {
-        return this.mockObject.getStructureId();
-    }
-
-    public void setStructureId(String param0) {
-    }
-
-    public String getTemplateId() {
-        return this.mockObject.getTemplateId();
-    }
-
-    public void setTemplateId(String param0) {
-    }
-
-    public String getFeedId() {
-        return this.mockObject.getFeedId();
-    }
-
     public void setFeedId(String param0) {
     }
 
@@ -226,6 +212,10 @@ public class JournalFeedMock
     }
 
     public void setRendererTemplateId(String param0) {
+    }
+
+    public String getFeedId() {
+        return this.mockObject.getFeedId();
     }
 
     public int getDelta() {
@@ -262,11 +252,11 @@ public class JournalFeedMock
     public void setContentField(String param0) {
     }
 
-    public String getFeedType() {
-        return this.mockObject.getFeedType();
+    public String getFeedFormat() {
+        return this.mockObject.getFeedFormat();
     }
 
-    public void setFeedType(String param0) {
+    public void setFeedFormat(String param0) {
     }
 
     public double getFeedVersion() {
@@ -276,11 +266,32 @@ public class JournalFeedMock
     public void setFeedVersion(double param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public JournalFeed toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -292,6 +303,10 @@ public class JournalFeedMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

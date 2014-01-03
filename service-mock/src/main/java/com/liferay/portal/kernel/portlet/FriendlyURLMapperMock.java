@@ -2,7 +2,6 @@
 package com.liferay.portal.kernel.portlet;
 
 import java.util.Map;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -33,17 +32,6 @@ public class FriendlyURLMapperMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.kernel.portlet.FriendlyURLMapper.class));
     }
 
-    public String getPortletId() {
-        return this.mockObject.getPortletId();
-    }
-
-    public void setPortletId(String param0) {
-    }
-
-    public String buildPath(LiferayPortletURL param0) {
-        return this.mockObject.buildPath(param0);
-    }
-
     public String getMapping() {
         return this.mockObject.getMapping();
     }
@@ -70,6 +58,17 @@ public class FriendlyURLMapperMock
     }
 
     public void setRouter(Router param0) {
+    }
+
+    public String buildPath(LiferayPortletURL param0) {
+        return this.mockObject.buildPath(param0);
+    }
+
+    public String getPortletId() {
+        return this.mockObject.getPortletId();
+    }
+
+    public void setPortletId(String param0) {
     }
 
 }

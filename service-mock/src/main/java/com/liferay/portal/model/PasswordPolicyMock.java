@@ -5,9 +5,9 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -61,22 +61,12 @@ public class PasswordPolicyMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
     public boolean isCachedModel() {
@@ -90,22 +80,20 @@ public class PasswordPolicyMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<PasswordPolicy> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public PasswordPolicy toEscapedModel() {
@@ -116,18 +104,22 @@ public class PasswordPolicyMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<PasswordPolicy> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -144,41 +136,11 @@ public class PasswordPolicyMock
     public void setUserId(long param0) {
     }
 
-    public String getUserName() {
-        return this.mockObject.getUserName();
+    public String getUuid() {
+        return this.mockObject.getUuid();
     }
 
-    public String getUserUuid()
-        throws SystemException
-    {
-        return this.mockObject.getUserUuid();
-    }
-
-    public void setUserUuid(String param0) {
-    }
-
-    public void setUserName(String param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public boolean getLockout() {
-        return this.mockObject.getLockout();
-    }
-
-    public boolean isLockout() {
-        return this.mockObject.isLockout();
-    }
-
-    public void setLockout(boolean param0) {
-    }
-
-    public long getPasswordPolicyId() {
-        return this.mockObject.getPasswordPolicyId();
-    }
-
-    public void setPasswordPolicyId(long param0) {
+    public void setUuid(String param0) {
     }
 
     public boolean getDefaultPolicy() {
@@ -212,10 +174,6 @@ public class PasswordPolicyMock
     }
 
     public void setChangeRequired(boolean param0) {
-    }
-
-    public long getMinAge() {
-        return this.mockObject.getMinAge();
     }
 
     public void setMinAge(long param0) {
@@ -257,6 +215,41 @@ public class PasswordPolicyMock
     public void setMinLength(int param0) {
     }
 
+    public String getUserName() {
+        return this.mockObject.getUserName();
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public boolean getLockout() {
+        return this.mockObject.getLockout();
+    }
+
+    public boolean isLockout() {
+        return this.mockObject.isLockout();
+    }
+
+    public void setLockout(boolean param0) {
+    }
+
+    public long getPasswordPolicyId() {
+        return this.mockObject.getPasswordPolicyId();
+    }
+
     public int getMinLowerCase() {
         return this.mockObject.getMinLowerCase();
     }
@@ -283,6 +276,13 @@ public class PasswordPolicyMock
     }
 
     public void setMinUpperCase(int param0) {
+    }
+
+    public String getRegex() {
+        return this.mockObject.getRegex();
+    }
+
+    public void setRegex(String param0) {
     }
 
     public boolean getHistory() {
@@ -374,11 +374,35 @@ public class PasswordPolicyMock
     public void setResetTicketMaxAge(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setPasswordPolicyId(long param0) {
+    }
+
+    public long getMinAge() {
+        return this.mockObject.getMinAge();
+    }
+
+    public PasswordPolicy toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -390,6 +414,10 @@ public class PasswordPolicyMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

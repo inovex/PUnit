@@ -4,10 +4,10 @@ package com.liferay.portlet.softwarecatalog.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -65,14 +65,11 @@ public class SCProductScreenshotMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -86,11 +83,7 @@ public class SCProductScreenshotMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -100,8 +93,10 @@ public class SCProductScreenshotMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<SCProductScreenshot> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public SCProductScreenshot toEscapedModel() {
@@ -112,32 +107,33 @@ public class SCProductScreenshotMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<SCProductScreenshot> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
     public long getCompanyId() {
         return this.mockObject.getCompanyId();
     }
 
-    public void setCompanyId(long param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public long getProductEntryId() {
-        return this.mockObject.getProductEntryId();
-    }
-
-    public void setProductEntryId(long param0) {
+    public void setProductScreenshotId(long param0) {
     }
 
     public long getProductScreenshotId() {
         return this.mockObject.getProductScreenshotId();
-    }
-
-    public void setProductScreenshotId(long param0) {
     }
 
     public long getThumbnailId() {
@@ -154,11 +150,25 @@ public class SCProductScreenshotMock
     public void setFullImageId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getProductEntryId() {
+        return this.mockObject.getProductEntryId();
+    }
+
+    public void setProductEntryId(long param0) {
+    }
+
+    public SCProductScreenshot toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

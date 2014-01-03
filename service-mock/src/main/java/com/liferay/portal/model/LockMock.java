@@ -7,7 +7,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -38,16 +37,16 @@ public class LockMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.Lock.class));
     }
 
-    public boolean isExpired() {
-        return this.mockObject.isExpired();
-    }
-
     public long getExpirationTime() {
         return this.mockObject.getExpirationTime();
     }
 
     public boolean isNeverExpires() {
         return this.mockObject.isNeverExpires();
+    }
+
+    public boolean isExpired() {
+        return this.mockObject.isExpired();
     }
 
     public String toString() {
@@ -82,16 +81,6 @@ public class LockMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -103,22 +92,20 @@ public class LockMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<Lock> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public Lock toEscapedModel() {
@@ -129,21 +116,22 @@ public class LockMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setClassName(String param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setCompanyId(long param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public void setNew(boolean param0) {
     }
 
-    public void setCreateDate(Date param0) {
+    public CacheModel<Lock> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getUserId() {
@@ -176,13 +164,6 @@ public class LockMock
     public void setUserName(String param0) {
     }
 
-    public void setKey(String param0) {
-    }
-
-    public long getLockId() {
-        return this.mockObject.getLockId();
-    }
-
     public void setLockId(long param0) {
     }
 
@@ -204,14 +185,42 @@ public class LockMock
         return this.mockObject.getExpirationDate();
     }
 
+    public long getLockId() {
+        return this.mockObject.getLockId();
+    }
+
     public void setExpirationDate(Date param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public void setKey(String param0) {
+    }
+
+    public Lock toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

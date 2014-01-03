@@ -9,10 +9,11 @@ import java.util.Map;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,14 +50,6 @@ public class AssetCategoryMock
         return this.mockObject.getAncestors();
     }
 
-    public String getTitle(String param0) {
-        return this.mockObject.getTitle(param0);
-    }
-
-    public String getTitle(String param0, boolean param1) {
-        return this.mockObject.getTitle(param0, param1);
-    }
-
     public boolean isRootCategory() {
         return this.mockObject.isRootCategory();
     }
@@ -84,38 +77,35 @@ public class AssetCategoryMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
-    public String getDescription(Locale param0) {
-        return this.mockObject.getDescription(param0);
-    }
-
-    public String getDescription(Locale param0, boolean param1) {
-        return this.mockObject.getDescription(param0, param1);
+    public long getPrimaryKey() {
+        return this.mockObject.getPrimaryKey();
     }
 
     public String getDescription(String param0) {
         return this.mockObject.getDescription(param0);
     }
 
+    public String getDescription(Locale param0) {
+        return this.mockObject.getDescription(param0);
+    }
+
+    public String getDescription() {
+        return this.mockObject.getDescription();
+    }
+
     public String getDescription(String param0, boolean param1) {
         return this.mockObject.getDescription(param0, param1);
     }
 
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
+    public String getDescription(Locale param0, boolean param1) {
+        return this.mockObject.getDescription(param0, param1);
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -129,22 +119,20 @@ public class AssetCategoryMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<AssetCategory> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public AssetCategory toEscapedModel() {
@@ -155,18 +143,22 @@ public class AssetCategoryMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<AssetCategory> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -188,106 +180,6 @@ public class AssetCategoryMock
     }
 
     public void setUuid(String param0) {
-    }
-
-    public String getUserName() {
-        return this.mockObject.getUserName();
-    }
-
-    public String getUserUuid()
-        throws SystemException
-    {
-        return this.mockObject.getUserUuid();
-    }
-
-    public void setUserUuid(String param0) {
-    }
-
-    public void setUserName(String param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public void setDescription(String param0, Locale param1) {
-    }
-
-    public void setDescription(String param0, Locale param1, Locale param2) {
-    }
-
-    public String getTitle() {
-        return this.mockObject.getTitle();
-    }
-
-    public String getTitle(Locale param0) {
-        return this.mockObject.getTitle(param0);
-    }
-
-    public String getTitle(Locale param0, boolean param1) {
-        return this.mockObject.getTitle(param0, param1);
-    }
-
-    public String getTitleCurrentLanguageId() {
-        return this.mockObject.getTitleCurrentLanguageId();
-    }
-
-    public String getTitleCurrentValue() {
-        return this.mockObject.getTitleCurrentValue();
-    }
-
-    public Map<Locale, String> getTitleMap() {
-        return this.mockObject.getTitleMap();
-    }
-
-    public void setTitle(String param0) {
-    }
-
-    public void setTitle(String param0, Locale param1) {
-    }
-
-    public void setTitle(String param0, Locale param1, Locale param2) {
-    }
-
-    public void setTitleCurrentLanguageId(String param0) {
-    }
-
-    public void setTitleMap(Map<Locale, String> param0) {
-    }
-
-    public void setTitleMap(Map<Locale, String> param0, Locale param1) {
-    }
-
-    public String getDescriptionCurrentLanguageId() {
-        return this.mockObject.getDescriptionCurrentLanguageId();
-    }
-
-    public String getDescriptionCurrentValue() {
-        return this.mockObject.getDescriptionCurrentValue();
-    }
-
-    public Map<Locale, String> getDescriptionMap() {
-        return this.mockObject.getDescriptionMap();
-    }
-
-    public void setDescriptionCurrentLanguageId(String param0) {
-    }
-
-    public void setDescriptionMap(Map<Locale, String> param0) {
-    }
-
-    public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
-    }
-
-    public void prepareLocalizedFieldsForImport(Locale param0)
-        throws LocaleException
-    {
     }
 
     public long getCategoryId() {
@@ -325,11 +217,143 @@ public class AssetCategoryMock
     public void setVocabularyId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public String getUserName() {
+        return this.mockObject.getUserName();
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public String getTitle() {
+        return this.mockObject.getTitle();
+    }
+
+    public String getTitle(Locale param0, boolean param1) {
+        return this.mockObject.getTitle(param0, param1);
+    }
+
+    public String getTitle(Locale param0) {
+        return this.mockObject.getTitle(param0);
+    }
+
+    public String getTitle(String param0) {
+        return this.mockObject.getTitle(param0);
+    }
+
+    public String getTitle(String param0, boolean param1) {
+        return this.mockObject.getTitle(param0, param1);
+    }
+
+    public String getTitleCurrentLanguageId() {
+        return this.mockObject.getTitleCurrentLanguageId();
+    }
+
+    public String getTitleCurrentValue() {
+        return this.mockObject.getTitleCurrentValue();
+    }
+
+    public Map<Locale, String> getTitleMap() {
+        return this.mockObject.getTitleMap();
+    }
+
+    public void setTitle(String param0, Locale param1, Locale param2) {
+    }
+
+    public void setTitle(String param0, Locale param1) {
+    }
+
+    public void setTitle(String param0) {
+    }
+
+    public void setTitleCurrentLanguageId(String param0) {
+    }
+
+    public void setTitleMap(Map<Locale, String> param0) {
+    }
+
+    public void setTitleMap(Map<Locale, String> param0, Locale param1) {
+    }
+
+    public String getDescriptionCurrentLanguageId() {
+        return this.mockObject.getDescriptionCurrentLanguageId();
+    }
+
+    public String getDescriptionCurrentValue() {
+        return this.mockObject.getDescriptionCurrentValue();
+    }
+
+    public Map<Locale, String> getDescriptionMap() {
+        return this.mockObject.getDescriptionMap();
+    }
+
+    public void setDescriptionCurrentLanguageId(String param0) {
+    }
+
+    public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
+    }
+
+    public void setDescriptionMap(Map<Locale, String> param0) {
+    }
+
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
+    public void prepareLocalizedFieldsForImport(Locale param0)
+        throws LocaleException
+    {
+    }
+
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
+    }
+
+    public AssetCategory toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0, Locale param1, Locale param2) {
+    }
+
+    public void setDescription(String param0, Locale param1) {
+    }
+
+    public void setDescription(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -341,6 +365,10 @@ public class AssetCategoryMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

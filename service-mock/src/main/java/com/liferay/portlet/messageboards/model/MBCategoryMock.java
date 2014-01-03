@@ -7,10 +7,13 @@ import java.util.List;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.trash.TrashHandler;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
+import com.liferay.portlet.trash.model.TrashEntry;
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -47,14 +50,20 @@ public class MBCategoryMock
         return this.mockObject.getAncestors();
     }
 
-    public boolean isRoot() {
-        return this.mockObject.isRoot();
-    }
-
     public List<Long> getAncestorCategoryIds()
         throws PortalException, SystemException
     {
         return this.mockObject.getAncestorCategoryIds();
+    }
+
+    public MBCategory getParentCategory()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getParentCategory();
+    }
+
+    public boolean isRoot() {
+        return this.mockObject.isRoot();
     }
 
     public String toString() {
@@ -80,22 +89,26 @@ public class MBCategoryMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -109,11 +122,7 @@ public class MBCategoryMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -123,8 +132,10 @@ public class MBCategoryMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<MBCategory> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public MBCategory toEscapedModel() {
@@ -135,18 +146,22 @@ public class MBCategoryMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<MBCategory> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -170,6 +185,48 @@ public class MBCategoryMock
     public void setUuid(String param0) {
     }
 
+    public long getCategoryId() {
+        return this.mockObject.getCategoryId();
+    }
+
+    public void setCategoryId(long param0) {
+    }
+
+    public long getParentCategoryId() {
+        return this.mockObject.getParentCategoryId();
+    }
+
+    public void setParentCategoryId(long param0) {
+    }
+
+    public String getDisplayStyle() {
+        return this.mockObject.getDisplayStyle();
+    }
+
+    public void setDisplayStyle(String param0) {
+    }
+
+    public int getThreadCount() {
+        return this.mockObject.getThreadCount();
+    }
+
+    public void setLastPostDate(Date param0) {
+    }
+
+    public long getContainerModelId() {
+        return this.mockObject.getContainerModelId();
+    }
+
+    public void setContainerModelId(long param0) {
+    }
+
+    public long getParentContainerModelId() {
+        return this.mockObject.getParentContainerModelId();
+    }
+
+    public void setParentContainerModelId(long param0) {
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -186,46 +243,30 @@ public class MBCategoryMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public String getContainerModelName() {
+        return this.mockObject.getContainerModelName();
     }
 
-    public void setGroupId(long param0) {
+    public TrashEntry getTrashEntry()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTrashEntry();
     }
 
-    public void setDescription(String param0) {
+    public long getTrashEntryClassPK() {
+        return this.mockObject.getTrashEntryClassPK();
     }
 
-    public long getCategoryId() {
-        return this.mockObject.getCategoryId();
+    public TrashHandler getTrashHandler() {
+        return this.mockObject.getTrashHandler();
     }
 
-    public void setCategoryId(long param0) {
+    public boolean isInTrash() {
+        return this.mockObject.isInTrash();
     }
 
-    public long getParentCategoryId() {
-        return this.mockObject.getParentCategoryId();
-    }
-
-    public void setParentCategoryId(long param0) {
-    }
-
-    public Date getLastPostDate() {
-        return this.mockObject.getLastPostDate();
-    }
-
-    public void setLastPostDate(Date param0) {
-    }
-
-    public String getDisplayStyle() {
-        return this.mockObject.getDisplayStyle();
-    }
-
-    public void setDisplayStyle(String param0) {
-    }
-
-    public int getThreadCount() {
-        return this.mockObject.getThreadCount();
+    public boolean isInTrashContainer() {
+        return this.mockObject.isInTrashContainer();
     }
 
     public void setThreadCount(int param0) {
@@ -238,11 +279,102 @@ public class MBCategoryMock
     public void setMessageCount(int param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public MBCategory toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public long getStatusByUserId() {
+        return this.mockObject.getStatusByUserId();
+    }
+
+    public void setStatusByUserId(long param0) {
+    }
+
+    public String getStatusByUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getStatusByUserUuid();
+    }
+
+    public void setStatusByUserUuid(String param0) {
+    }
+
+    public String getStatusByUserName() {
+        return this.mockObject.getStatusByUserName();
+    }
+
+    public void setStatusByUserName(String param0) {
+    }
+
+    public Date getStatusDate() {
+        return this.mockObject.getStatusDate();
+    }
+
+    public void setStatusDate(Date param0) {
+    }
+
+    public boolean getApproved() {
+        return this.mockObject.getApproved();
+    }
+
+    public boolean isApproved() {
+        return this.mockObject.isApproved();
+    }
+
+    public boolean isDenied() {
+        return this.mockObject.isDenied();
+    }
+
+    public boolean isDraft() {
+        return this.mockObject.isDraft();
+    }
+
+    public boolean isExpired() {
+        return this.mockObject.isExpired();
+    }
+
+    public boolean isInactive() {
+        return this.mockObject.isInactive();
+    }
+
+    public boolean isIncomplete() {
+        return this.mockObject.isIncomplete();
+    }
+
+    public boolean isPending() {
+        return this.mockObject.isPending();
+    }
+
+    public boolean isScheduled() {
+        return this.mockObject.isScheduled();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public Date getLastPostDate() {
+        return this.mockObject.getLastPostDate();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -254,6 +386,10 @@ public class MBCategoryMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

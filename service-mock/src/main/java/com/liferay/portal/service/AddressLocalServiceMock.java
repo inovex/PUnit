@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.Address;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -54,39 +54,10 @@ public class AddressLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
+    public Address addAddress(long param0, String param1, long param2, String param3, String param4, String param5, String param6, String param7, long param8, long param9, int param10, boolean param11, boolean param12, ServiceContext param13)
+        throws PortalException, SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
+        return this.mockObject.addAddress(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13);
     }
 
     public Address addAddress(Address param0)
@@ -102,8 +73,10 @@ public class AddressLocalServiceMock
         return this.mockObject.addAddress(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12);
     }
 
-    public Address createAddress(long param0) {
-        return this.mockObject.createAddress(param0);
+    public Address fetchAddress(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
     }
 
     public Address deleteAddress(long param0)
@@ -118,22 +91,10 @@ public class AddressLocalServiceMock
         return this.mockObject.deleteAddress(param0);
     }
 
-    public Address fetchAddress(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
     public List<Address> getAddresses(int param0, int param1)
         throws SystemException
     {
         return this.mockObject.getAddresses(param0, param1);
-    }
-
-    public List<Address> getAddresses()
-        throws SystemException
-    {
-        return this.mockObject.getAddresses();
     }
 
     public List<Address> getAddresses(long param0, String param1, long param2)
@@ -142,22 +103,28 @@ public class AddressLocalServiceMock
         return this.mockObject.getAddresses(param0, param1, param2);
     }
 
+    public List<Address> getAddresses()
+        throws SystemException
+    {
+        return this.mockObject.getAddresses();
+    }
+
+    public Address fetchAddressByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchAddressByUuidAndCompanyId(param0, param1);
+    }
+
+    public Address getAddressByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getAddressByUuidAndCompanyId(param0, param1);
+    }
+
     public int getAddressesCount()
         throws SystemException
     {
         return this.mockObject.getAddressesCount();
-    }
-
-    public Address updateAddress(Address param0)
-        throws SystemException
-    {
-        return this.mockObject.updateAddress(param0);
-    }
-
-    public Address updateAddress(Address param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateAddress(param0, param1);
     }
 
     public Address updateAddress(long param0, String param1, String param2, String param3, String param4, String param5, long param6, long param7, int param8, boolean param9, boolean param10)
@@ -166,9 +133,60 @@ public class AddressLocalServiceMock
         return this.mockObject.updateAddress(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10);
     }
 
+    public Address updateAddress(Address param0)
+        throws SystemException
+    {
+        return this.mockObject.updateAddress(param0);
+    }
+
     public void deleteAddresses(long param0, String param1, long param2)
         throws SystemException
     {
+    }
+
+    public Address createAddress(long param0) {
+        return this.mockObject.createAddress(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

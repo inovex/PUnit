@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -57,14 +56,8 @@ public class PortletPreferencesMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public int getOwnerType() {
+        return this.mockObject.getOwnerType();
     }
 
     public boolean isCachedModel() {
@@ -78,22 +71,20 @@ public class PortletPreferencesMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<PortletPreferences> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public PortletPreferences toEscapedModel() {
@@ -104,8 +95,22 @@ public class PortletPreferencesMock
         return this.mockObject.toXmlString();
     }
 
-    public int getOwnerType() {
-        return this.mockObject.getOwnerType();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<PortletPreferences> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getPlid() {
@@ -115,19 +120,11 @@ public class PortletPreferencesMock
     public void setPlid(long param0) {
     }
 
-    public String getPortletId() {
-        return this.mockObject.getPortletId();
+    public long getPortletPreferencesId() {
+        return this.mockObject.getPortletPreferencesId();
     }
 
-    public String getPreferences() {
-        return this.mockObject.getPreferences();
-    }
-
-    public void setPortletId(String param0) {
-    }
-
-    public long getOwnerId() {
-        return this.mockObject.getOwnerId();
+    public void setPortletPreferencesId(long param0) {
     }
 
     public void setOwnerId(long param0) {
@@ -139,18 +136,30 @@ public class PortletPreferencesMock
     public void setPreferences(String param0) {
     }
 
-    public long getPortletPreferencesId() {
-        return this.mockObject.getPortletPreferencesId();
+    public long getOwnerId() {
+        return this.mockObject.getOwnerId();
     }
 
-    public void setPortletPreferencesId(long param0) {
+    public String getPortletId() {
+        return this.mockObject.getPortletId();
+    }
+
+    public PortletPreferences toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public String getPreferences() {
+        return this.mockObject.getPreferences();
+    }
+
+    public void setPortletId(String param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

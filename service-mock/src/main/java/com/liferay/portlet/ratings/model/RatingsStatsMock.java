@@ -4,10 +4,10 @@ package com.liferay.portlet.ratings.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -62,16 +62,6 @@ public class RatingsStatsMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -83,11 +73,7 @@ public class RatingsStatsMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -97,8 +83,10 @@ public class RatingsStatsMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<RatingsStats> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public RatingsStats toEscapedModel() {
@@ -109,35 +97,26 @@ public class RatingsStatsMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<RatingsStats> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
     public long getClassPK() {
         return this.mockObject.getClassPK();
-    }
-
-    public void setClassName(String param0) {
-    }
-
-    public void setClassPK(long param0) {
-    }
-
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
-    }
-
-    public void setClassNameId(long param0) {
-    }
-
-    public long getStatsId() {
-        return this.mockObject.getStatsId();
-    }
-
-    public void setStatsId(long param0) {
-    }
-
-    public int getTotalEntries() {
-        return this.mockObject.getTotalEntries();
-    }
-
-    public void setTotalEntries(int param0) {
     }
 
     public double getTotalScore() {
@@ -154,11 +133,42 @@ public class RatingsStatsMock
     public void setAverageScore(double param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setStatsId(long param0) {
+    }
+
+    public int getTotalEntries() {
+        return this.mockObject.getTotalEntries();
+    }
+
+    public void setTotalEntries(int param0) {
+    }
+
+    public long getStatsId() {
+        return this.mockObject.getStatsId();
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
+    public RatingsStats toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

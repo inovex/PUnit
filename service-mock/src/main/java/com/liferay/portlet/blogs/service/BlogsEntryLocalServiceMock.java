@@ -7,13 +7,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
+import com.liferay.portal.kernel.dao.orm.QueryDefinition;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.blogs.model.BlogsEntry;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -51,16 +52,16 @@ public class BlogsEntryLocalServiceMock
         return this.mockObject.addEntry(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15, param16);
     }
 
-    public BlogsEntry getEntry(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getEntry(param0);
-    }
-
     public BlogsEntry getEntry(long param0, String param1)
         throws PortalException, SystemException
     {
         return this.mockObject.getEntry(param0, param1);
+    }
+
+    public BlogsEntry getEntry(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getEntry(param0);
     }
 
     public PersistedModel getPersistedModel(Serializable param0)
@@ -69,14 +70,339 @@ public class BlogsEntryLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public void deleteEntry(BlogsEntry param0)
+    public List<BlogsEntry> getCompanyEntries(long param0, Date param1, QueryDefinition param2)
+        throws SystemException
+    {
+        return this.mockObject.getCompanyEntries(param0, param1, param2);
+    }
+
+    public List<BlogsEntry> getCompanyEntries(long param0, Date param1, int param2, int param3, int param4, OrderByComparator param5)
+        throws SystemException
+    {
+        return this.mockObject.getCompanyEntries(param0, param1, param2, param3, param4, param5);
+    }
+
+    public List<BlogsEntry> getCompanyEntries(long param0, Date param1, int param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.getCompanyEntries(param0, param1, param2, param3, param4);
+    }
+
+    public int getCompanyEntriesCount(long param0, Date param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getCompanyEntriesCount(param0, param1, param2);
+    }
+
+    public int getCompanyEntriesCount(long param0, Date param1, QueryDefinition param2)
+        throws SystemException
+    {
+        return this.mockObject.getCompanyEntriesCount(param0, param1, param2);
+    }
+
+    public BlogsEntry createBlogsEntry(long param0) {
+        return this.mockObject.createBlogsEntry(param0);
+    }
+
+    public BlogsEntry deleteBlogsEntry(BlogsEntry param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteBlogsEntry(param0);
+    }
+
+    public BlogsEntry deleteBlogsEntry(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteBlogsEntry(param0);
+    }
+
+    public BlogsEntry fetchBlogsEntry(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public BlogsEntry fetchBlogsEntryByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchBlogsEntryByUuidAndCompanyId(param0, param1);
+    }
+
+    public BlogsEntry fetchBlogsEntryByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchBlogsEntryByUuidAndGroupId(param0, param1);
+    }
+
+    public BlogsEntry getBlogsEntry(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public BlogsEntry getBlogsEntryByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getBlogsEntryByUuidAndCompanyId(param0, param1);
+    }
+
+    public BlogsEntry getBlogsEntryByUuidAndGroupId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getBlogsEntryByUuidAndGroupId(param0, param1);
+    }
+
+    public List<BlogsEntry> getBlogsEntries(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getBlogsEntries(param0, param1);
+    }
+
+    public BlogsEntry addBlogsEntry(BlogsEntry param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public BlogsEntry[] getEntriesPrevAndNext(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getEntriesPrevAndNext(param0);
+    }
+
+    public List<BlogsEntry> getGroupEntries(long param0, int param1, int param2, int param3, OrderByComparator param4)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntries(param0, param1, param2, param3, param4);
+    }
+
+    public List<BlogsEntry> getGroupEntries(long param0, int param1, int param2, int param3)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntries(param0, param1, param2, param3);
+    }
+
+    public List<BlogsEntry> getGroupEntries(long param0, Date param1, QueryDefinition param2)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntries(param0, param1, param2);
+    }
+
+    public List<BlogsEntry> getGroupEntries(long param0, Date param1, int param2, int param3, int param4, OrderByComparator param5)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntries(param0, param1, param2, param3, param4, param5);
+    }
+
+    public List<BlogsEntry> getGroupEntries(long param0, Date param1, int param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntries(param0, param1, param2, param3, param4);
+    }
+
+    public List<BlogsEntry> getGroupEntries(long param0, QueryDefinition param1)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntries(param0, param1);
+    }
+
+    public int getGroupEntriesCount(long param0, Date param1, QueryDefinition param2)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntriesCount(param0, param1, param2);
+    }
+
+    public int getGroupEntriesCount(long param0, QueryDefinition param1)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntriesCount(param0, param1);
+    }
+
+    public int getGroupEntriesCount(long param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntriesCount(param0, param1);
+    }
+
+    public int getGroupEntriesCount(long param0, Date param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getGroupEntriesCount(param0, param1, param2);
+    }
+
+    public List<BlogsEntry> getGroupsEntries(long param0, long param1, Date param2, int param3, int param4, int param5)
+        throws SystemException
+    {
+        return this.mockObject.getGroupsEntries(param0, param1, param2, param3, param4, param5);
+    }
+
+    public List<BlogsEntry> getGroupsEntries(long param0, long param1, Date param2, QueryDefinition param3)
+        throws SystemException
+    {
+        return this.mockObject.getGroupsEntries(param0, param1, param2, param3);
+    }
+
+    public List<BlogsEntry> getGroupUserEntries(long param0, long param1, Date param2, int param3, int param4, int param5)
+        throws SystemException
+    {
+        return this.mockObject.getGroupUserEntries(param0, param1, param2, param3, param4, param5);
+    }
+
+    public List<BlogsEntry> getGroupUserEntries(long param0, long param1, Date param2, QueryDefinition param3)
+        throws SystemException
+    {
+        return this.mockObject.getGroupUserEntries(param0, param1, param2, param3);
+    }
+
+    public List<BlogsEntry> getGroupUserEntries(long param0, long param1, Date param2, int param3, int param4, int param5, OrderByComparator param6)
+        throws SystemException
+    {
+        return this.mockObject.getGroupUserEntries(param0, param1, param2, param3, param4, param5, param6);
+    }
+
+    public int getGroupUserEntriesCount(long param0, long param1, Date param2, QueryDefinition param3)
+        throws SystemException
+    {
+        return this.mockObject.getGroupUserEntriesCount(param0, param1, param2, param3);
+    }
+
+    public int getGroupUserEntriesCount(long param0, long param1, Date param2, int param3)
+        throws SystemException
+    {
+        return this.mockObject.getGroupUserEntriesCount(param0, param1, param2, param3);
+    }
+
+    public List<BlogsEntry> getNoAssetEntries()
+        throws SystemException
+    {
+        return this.mockObject.getNoAssetEntries();
+    }
+
+    public List<BlogsEntry> getOrganizationEntries(long param0, Date param1, int param2, int param3, int param4, OrderByComparator param5)
+        throws SystemException
+    {
+        return this.mockObject.getOrganizationEntries(param0, param1, param2, param3, param4, param5);
+    }
+
+    public List<BlogsEntry> getOrganizationEntries(long param0, Date param1, int param2, int param3, int param4)
+        throws SystemException
+    {
+        return this.mockObject.getOrganizationEntries(param0, param1, param2, param3, param4);
+    }
+
+    public List<BlogsEntry> getOrganizationEntries(long param0, Date param1, QueryDefinition param2)
+        throws SystemException
+    {
+        return this.mockObject.getOrganizationEntries(param0, param1, param2);
+    }
+
+    public int getOrganizationEntriesCount(long param0, Date param1, QueryDefinition param2)
+        throws SystemException
+    {
+        return this.mockObject.getOrganizationEntriesCount(param0, param1, param2);
+    }
+
+    public int getOrganizationEntriesCount(long param0, Date param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getOrganizationEntriesCount(param0, param1, param2);
+    }
+
+    public void moveEntriesToTrash(long param0, long param1)
         throws PortalException, SystemException
     {
     }
 
-    public void deleteEntry(long param0)
+    public BlogsEntry moveEntryToTrash(long param0, BlogsEntry param1)
         throws PortalException, SystemException
     {
+        return this.mockObject.moveEntryToTrash(param0, param1);
+    }
+
+    public BlogsEntry moveEntryToTrash(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.moveEntryToTrash(param0, param1);
+    }
+
+    public void restoreEntryFromTrash(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void updateEntryResources(BlogsEntry param0, String[] param1, String[] param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void unsubscribe(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void checkEntries()
+        throws PortalException, SystemException
+    {
+    }
+
+    public int getBlogsEntriesCount()
+        throws SystemException
+    {
+        return this.mockObject.getBlogsEntriesCount();
+    }
+
+    public BlogsEntry updateBlogsEntry(BlogsEntry param0)
+        throws SystemException
+    {
+        return this.mockObject.updateBlogsEntry(param0);
+    }
+
+    public void addEntryResources(BlogsEntry param0, boolean param1, boolean param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void addEntryResources(long param0, String[] param1, String[] param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void addEntryResources(long param0, boolean param1, boolean param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void addEntryResources(BlogsEntry param0, String[] param1, String[] param2)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteEntries(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public BlogsEntry updateEntry(long param0, long param1, String param2, String param3, String param4, int param5, int param6, int param7, int param8, int param9, boolean param10, boolean param11, String[] param12, boolean param13, String param14, String param15, InputStream param16, ServiceContext param17)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateEntry(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15, param16, param17);
+    }
+
+    public void subscribe(long param0, long param1)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void updateAsset(long param0, BlogsEntry param1, long[] param2, String[] param3, long[] param4)
+        throws PortalException, SystemException
+    {
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
     }
 
     public DynamicQuery dynamicQuery() {
@@ -95,10 +421,10 @@ public class BlogsEntryLocalServiceMock
         return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
     public long dynamicQueryCount(DynamicQuery param0)
@@ -114,237 +440,18 @@ public class BlogsEntryLocalServiceMock
     public void setBeanIdentifier(String param0) {
     }
 
-    public void updateAsset(long param0, BlogsEntry param1, long[] param2, String[] param3, long[] param4)
-        throws PortalException, SystemException
-    {
-    }
-
     public BlogsEntry updateStatus(long param0, long param1, int param2, ServiceContext param3)
         throws PortalException, SystemException
     {
         return this.mockObject.updateStatus(param0, param1, param2, param3);
     }
 
-    public void checkEntries()
+    public void deleteEntry(long param0)
         throws PortalException, SystemException
     {
     }
 
-    public BlogsEntry updateEntry(long param0, long param1, String param2, String param3, String param4, int param5, int param6, int param7, int param8, int param9, boolean param10, boolean param11, String[] param12, boolean param13, String param14, String param15, InputStream param16, ServiceContext param17)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateEntry(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15, param16, param17);
-    }
-
-    public List<BlogsEntry> getCompanyEntries(long param0, Date param1, int param2, int param3, int param4)
-        throws SystemException
-    {
-        return this.mockObject.getCompanyEntries(param0, param1, param2, param3, param4);
-    }
-
-    public List<BlogsEntry> getCompanyEntries(long param0, Date param1, int param2, int param3, int param4, OrderByComparator param5)
-        throws SystemException
-    {
-        return this.mockObject.getCompanyEntries(param0, param1, param2, param3, param4, param5);
-    }
-
-    public int getCompanyEntriesCount(long param0, Date param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.getCompanyEntriesCount(param0, param1, param2);
-    }
-
-    public BlogsEntry addBlogsEntry(BlogsEntry param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public BlogsEntry createBlogsEntry(long param0) {
-        return this.mockObject.createBlogsEntry(param0);
-    }
-
-    public BlogsEntry deleteBlogsEntry(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteBlogsEntry(param0);
-    }
-
-    public BlogsEntry deleteBlogsEntry(BlogsEntry param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteBlogsEntry(param0);
-    }
-
-    public BlogsEntry fetchBlogsEntry(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public BlogsEntry getBlogsEntry(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public BlogsEntry getBlogsEntryByUuidAndGroupId(String param0, long param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getBlogsEntryByUuidAndGroupId(param0, param1);
-    }
-
-    public List<BlogsEntry> getBlogsEntries(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getBlogsEntries(param0, param1);
-    }
-
-    public int getBlogsEntriesCount()
-        throws SystemException
-    {
-        return this.mockObject.getBlogsEntriesCount();
-    }
-
-    public BlogsEntry updateBlogsEntry(BlogsEntry param0)
-        throws SystemException
-    {
-        return this.mockObject.updateBlogsEntry(param0);
-    }
-
-    public BlogsEntry updateBlogsEntry(BlogsEntry param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateBlogsEntry(param0, param1);
-    }
-
-    public void addEntryResources(BlogsEntry param0, boolean param1, boolean param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void addEntryResources(BlogsEntry param0, String[] param1, String[] param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void addEntryResources(long param0, boolean param1, boolean param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void addEntryResources(long param0, String[] param1, String[] param2)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteEntries(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public BlogsEntry[] getEntriesPrevAndNext(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getEntriesPrevAndNext(param0);
-    }
-
-    public List<BlogsEntry> getGroupEntries(long param0, Date param1, int param2, int param3, int param4)
-        throws SystemException
-    {
-        return this.mockObject.getGroupEntries(param0, param1, param2, param3, param4);
-    }
-
-    public List<BlogsEntry> getGroupEntries(long param0, Date param1, int param2, int param3, int param4, OrderByComparator param5)
-        throws SystemException
-    {
-        return this.mockObject.getGroupEntries(param0, param1, param2, param3, param4, param5);
-    }
-
-    public List<BlogsEntry> getGroupEntries(long param0, int param1, int param2, int param3)
-        throws SystemException
-    {
-        return this.mockObject.getGroupEntries(param0, param1, param2, param3);
-    }
-
-    public List<BlogsEntry> getGroupEntries(long param0, int param1, int param2, int param3, OrderByComparator param4)
-        throws SystemException
-    {
-        return this.mockObject.getGroupEntries(param0, param1, param2, param3, param4);
-    }
-
-    public int getGroupEntriesCount(long param0, Date param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.getGroupEntriesCount(param0, param1, param2);
-    }
-
-    public int getGroupEntriesCount(long param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getGroupEntriesCount(param0, param1);
-    }
-
-    public List<BlogsEntry> getGroupsEntries(long param0, long param1, Date param2, int param3, int param4, int param5)
-        throws SystemException
-    {
-        return this.mockObject.getGroupsEntries(param0, param1, param2, param3, param4, param5);
-    }
-
-    public List<BlogsEntry> getGroupUserEntries(long param0, long param1, Date param2, int param3, int param4, int param5)
-        throws SystemException
-    {
-        return this.mockObject.getGroupUserEntries(param0, param1, param2, param3, param4, param5);
-    }
-
-    public List<BlogsEntry> getGroupUserEntries(long param0, long param1, Date param2, int param3, int param4, int param5, OrderByComparator param6)
-        throws SystemException
-    {
-        return this.mockObject.getGroupUserEntries(param0, param1, param2, param3, param4, param5, param6);
-    }
-
-    public int getGroupUserEntriesCount(long param0, long param1, Date param2, int param3)
-        throws SystemException
-    {
-        return this.mockObject.getGroupUserEntriesCount(param0, param1, param2, param3);
-    }
-
-    public List<BlogsEntry> getNoAssetEntries()
-        throws SystemException
-    {
-        return this.mockObject.getNoAssetEntries();
-    }
-
-    public List<BlogsEntry> getOrganizationEntries(long param0, Date param1, int param2, int param3, int param4)
-        throws SystemException
-    {
-        return this.mockObject.getOrganizationEntries(param0, param1, param2, param3, param4);
-    }
-
-    public List<BlogsEntry> getOrganizationEntries(long param0, Date param1, int param2, int param3, int param4, OrderByComparator param5)
-        throws SystemException
-    {
-        return this.mockObject.getOrganizationEntries(param0, param1, param2, param3, param4, param5);
-    }
-
-    public int getOrganizationEntriesCount(long param0, Date param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.getOrganizationEntriesCount(param0, param1, param2);
-    }
-
-    public void subscribe(long param0, long param1)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void unsubscribe(long param0, long param1)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void updateEntryResources(BlogsEntry param0, String[] param1, String[] param2)
+    public void deleteEntry(BlogsEntry param0)
         throws PortalException, SystemException
     {
     }

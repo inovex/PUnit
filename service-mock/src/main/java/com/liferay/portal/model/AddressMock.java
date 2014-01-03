@@ -5,9 +5,9 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -74,16 +74,6 @@ public class AddressMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -95,22 +85,20 @@ public class AddressMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<Address> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public Address toEscapedModel() {
@@ -121,28 +109,22 @@ public class AddressMock
         return this.mockObject.toXmlString();
     }
 
-    public long getClassPK() {
-        return this.mockObject.getClassPK();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setClassName(String param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setClassPK(long param0) {
+    public void setNew(boolean param0) {
     }
 
-    public void setCompanyId(long param0) {
-    }
-
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
-    }
-
-    public void setCreateDate(Date param0) {
+    public CacheModel<Address> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -159,8 +141,15 @@ public class AddressMock
     public void setUserId(long param0) {
     }
 
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
+    public String getUuid() {
+        return this.mockObject.getUuid();
+    }
+
+    public void setUuid(String param0) {
+    }
+
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
     }
 
     public String getUserName() {
@@ -181,26 +170,6 @@ public class AddressMock
 
     public long getAddressId() {
         return this.mockObject.getAddressId();
-    }
-
-    public void setAddressId(long param0) {
-    }
-
-    public void setClassNameId(long param0) {
-    }
-
-    public String getStreet1() {
-        return this.mockObject.getStreet1();
-    }
-
-    public void setStreet1(String param0) {
-    }
-
-    public String getStreet2() {
-        return this.mockObject.getStreet2();
-    }
-
-    public void setStreet2(String param0) {
     }
 
     public String getStreet3() {
@@ -267,11 +236,59 @@ public class AddressMock
     public void setPrimary(boolean param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setAddressId(long param0) {
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
+    public String getStreet1() {
+        return this.mockObject.getStreet1();
+    }
+
+    public void setStreet1(String param0) {
+    }
+
+    public String getStreet2() {
+        return this.mockObject.getStreet2();
+    }
+
+    public void setStreet2(String param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public Address toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -283,6 +300,10 @@ public class AddressMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

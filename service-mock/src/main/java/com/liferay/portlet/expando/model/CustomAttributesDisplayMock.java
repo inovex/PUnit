@@ -2,7 +2,6 @@
 package com.liferay.portlet.expando.model;
 
 import com.liferay.portal.theme.ThemeDisplay;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -37,6 +36,10 @@ public class CustomAttributesDisplayMock
         return this.mockObject.getClassName();
     }
 
+    public String getIconPath(ThemeDisplay param0) {
+        return this.mockObject.getIconPath(param0);
+    }
+
     public String getPortletId() {
         return this.mockObject.getPortletId();
     }
@@ -45,10 +48,6 @@ public class CustomAttributesDisplayMock
     }
 
     public void setPortletId(String param0) {
-    }
-
-    public String getIconPath(ThemeDisplay param0) {
-        return this.mockObject.getIconPath(param0);
     }
 
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
@@ -15,7 +16,6 @@ import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.Resource;
 import com.liferay.portal.model.ResourceAction;
 import com.liferay.portal.model.ResourcePermission;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -58,65 +58,14 @@ public class ResourcePermissionLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public ResourcePermission deleteResourcePermission(ResourcePermission param0)
         throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public ResourcePermission addResourcePermission(ResourcePermission param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public void addResourcePermission(long param0, String param1, int param2, String param3, long param4, String param5)
-        throws PortalException, SystemException
-    {
-    }
-
-    public ResourcePermission createResourcePermission(long param0) {
-        return this.mockObject.createResourcePermission(param0);
-    }
-
-    public ResourcePermission deleteResourcePermission(long param0)
-        throws PortalException, SystemException
     {
         return this.mockObject.deleteResourcePermission(param0);
     }
 
-    public ResourcePermission deleteResourcePermission(ResourcePermission param0)
-        throws SystemException
+    public ResourcePermission deleteResourcePermission(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deleteResourcePermission(param0);
     }
@@ -127,22 +76,16 @@ public class ResourcePermissionLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
-    public ResourcePermission getResourcePermission(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
     public ResourcePermission getResourcePermission(long param0, String param1, int param2, String param3, long param4)
         throws PortalException, SystemException
     {
         return this.mockObject.getResourcePermission(param0, param1, param2, param3, param4);
     }
 
-    public List<ResourcePermission> getResourcePermissions(int param0, int param1)
-        throws SystemException
+    public ResourcePermission getResourcePermission(long param0)
+        throws PortalException, SystemException
     {
-        return this.mockObject.getResourcePermissions(param0, param1);
+        return (_serviceObjects.get(param0));
     }
 
     public List<ResourcePermission> getResourcePermissions(long param0, String param1, int param2, String param3)
@@ -151,10 +94,10 @@ public class ResourcePermissionLocalServiceMock
         return this.mockObject.getResourcePermissions(param0, param1, param2, param3);
     }
 
-    public int getResourcePermissionsCount()
+    public List<ResourcePermission> getResourcePermissions(int param0, int param1)
         throws SystemException
     {
-        return this.mockObject.getResourcePermissionsCount();
+        return this.mockObject.getResourcePermissions(param0, param1);
     }
 
     public int getResourcePermissionsCount(long param0, String param1, int param2, String param3)
@@ -163,16 +106,16 @@ public class ResourcePermissionLocalServiceMock
         return this.mockObject.getResourcePermissionsCount(param0, param1, param2, param3);
     }
 
+    public int getResourcePermissionsCount()
+        throws SystemException
+    {
+        return this.mockObject.getResourcePermissionsCount();
+    }
+
     public ResourcePermission updateResourcePermission(ResourcePermission param0)
         throws SystemException
     {
         return this.mockObject.updateResourcePermission(param0);
-    }
-
-    public ResourcePermission updateResourcePermission(ResourcePermission param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateResourcePermission(param0, param1);
     }
 
     public void addResourcePermissions(String param0, String param1, int param2, long param3)
@@ -202,16 +145,30 @@ public class ResourcePermissionLocalServiceMock
         return this.mockObject.getAvailableResourcePermissionActionIds(param0, param1, param2, param3, param4, param5);
     }
 
+    public ResourcePermission createResourcePermission(long param0) {
+        return this.mockObject.createResourcePermission(param0);
+    }
+
+    public ResourcePermission addResourcePermission(ResourcePermission param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public void addResourcePermission(long param0, String param1, int param2, String param3, long param4, String param5)
+        throws PortalException, SystemException
+    {
+    }
+
+    public boolean hasActionId(ResourcePermission param0, ResourceAction param1) {
+        return this.mockObject.hasActionId(param0, param1);
+    }
+
     public List<ResourcePermission> getResourceResourcePermissions(long param0, long param1, String param2, String param3)
         throws SystemException
     {
         return this.mockObject.getResourceResourcePermissions(param0, param1, param2, param3);
-    }
-
-    public List<ResourcePermission> getRoleResourcePermissions(long param0)
-        throws SystemException
-    {
-        return this.mockObject.getRoleResourcePermissions(param0);
     }
 
     public List<ResourcePermission> getRoleResourcePermissions(long param0, int[] param1, int param2, int param3)
@@ -220,26 +177,28 @@ public class ResourcePermissionLocalServiceMock
         return this.mockObject.getRoleResourcePermissions(param0, param1, param2, param3);
     }
 
+    public List<ResourcePermission> getRoleResourcePermissions(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getRoleResourcePermissions(param0);
+    }
+
     public List<ResourcePermission> getScopeResourcePermissions(int[] param0)
         throws SystemException
     {
         return this.mockObject.getScopeResourcePermissions(param0);
     }
 
-    public boolean hasActionId(ResourcePermission param0, ResourceAction param1) {
-        return this.mockObject.hasActionId(param0, param1);
+    public boolean hasResourcePermission(long param0, String param1, int param2, String param3, long param4, String param5)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.hasResourcePermission(param0, param1, param2, param3, param4, param5);
     }
 
     public boolean hasResourcePermission(List<Resource> param0, long[] param1, String param2)
         throws PortalException, SystemException
     {
         return this.mockObject.hasResourcePermission(param0, param1, param2);
-    }
-
-    public boolean hasResourcePermission(long param0, String param1, int param2, String param3, long param4, String param5)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.hasResourcePermission(param0, param1, param2, param3, param4, param5);
     }
 
     public boolean hasResourcePermission(long param0, String param1, int param2, String param3, long[] param4, String param5)
@@ -288,6 +247,47 @@ public class ResourcePermissionLocalServiceMock
     public void setResourcePermissions(long param0, String param1, int param2, String param3, Map<Long, String[]> param4)
         throws PortalException, SystemException
     {
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

@@ -7,7 +7,6 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.persistence.UserGroupGroupRolePK;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -58,14 +57,11 @@ public class UserGroupGroupRoleMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(UserGroupGroupRolePK param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -79,22 +75,20 @@ public class UserGroupGroupRoleMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(UserGroupGroupRolePK param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<UserGroupGroupRole> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public UserGroupGroupRole toEscapedModel() {
@@ -105,18 +99,22 @@ public class UserGroupGroupRoleMock
         return this.mockObject.toXmlString();
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setGroupId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public long getUserGroupId() {
-        return this.mockObject.getUserGroupId();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setUserGroupId(long param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<UserGroupGroupRole> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getRoleId() {
@@ -126,11 +124,22 @@ public class UserGroupGroupRoleMock
     public void setRoleId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public UserGroupGroupRole toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setUserGroupId(long param0) {
+    }
+
+    public long getUserGroupId() {
+        return this.mockObject.getUserGroupId();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

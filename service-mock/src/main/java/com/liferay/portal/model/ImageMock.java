@@ -7,7 +7,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -38,11 +37,11 @@ public class ImageMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.Image.class));
     }
 
-    public byte[] getTextObj() {
-        return this.mockObject.getTextObj();
+    public void setTextObj(byte[] param0) {
     }
 
-    public void setTextObj(byte[] param0) {
+    public byte[] getTextObj() {
+        return this.mockObject.getTextObj();
     }
 
     public String toString() {
@@ -76,16 +75,6 @@ public class ImageMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -97,22 +86,20 @@ public class ImageMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<Image> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public Image toEscapedModel() {
@@ -121,6 +108,24 @@ public class ImageMock
 
     public String toXmlString() {
         return this.mockObject.toXmlString();
+    }
+
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Image> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -133,18 +138,7 @@ public class ImageMock
     public void setType(String param0) {
     }
 
-    public long getImageId() {
-        return this.mockObject.getImageId();
-    }
-
     public void setImageId(long param0) {
-    }
-
-    public String getText() {
-        return this.mockObject.getText();
-    }
-
-    public void setText(String param0) {
     }
 
     public int getHeight() {
@@ -161,11 +155,19 @@ public class ImageMock
     public void setWidth(int param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getImageId() {
+        return this.mockObject.getImageId();
+    }
+
+    public Image toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

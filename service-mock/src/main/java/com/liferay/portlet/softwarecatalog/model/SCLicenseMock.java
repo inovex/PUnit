@@ -4,10 +4,10 @@ package com.liferay.portlet.softwarecatalog.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -65,16 +65,6 @@ public class SCLicenseMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -86,22 +76,20 @@ public class SCLicenseMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<SCLicense> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public SCLicense toEscapedModel() {
@@ -110,6 +98,31 @@ public class SCLicenseMock
 
     public String toXmlString() {
         return this.mockObject.toXmlString();
+    }
+
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<SCLicense> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public String getUrl() {
+        return this.mockObject.getUrl();
+    }
+
+    public void setUrl(String param0) {
     }
 
     public boolean getActive() {
@@ -121,17 +134,6 @@ public class SCLicenseMock
     }
 
     public void setActive(boolean param0) {
-    }
-
-    public String getUrl() {
-        return this.mockObject.getUrl();
-    }
-
-    public void setUrl(String param0) {
-    }
-
-    public long getLicenseId() {
-        return this.mockObject.getLicenseId();
     }
 
     public void setLicenseId(long param0) {
@@ -148,6 +150,10 @@ public class SCLicenseMock
     public void setOpenSource(boolean param0) {
     }
 
+    public long getLicenseId() {
+        return this.mockObject.getLicenseId();
+    }
+
     public boolean getRecommended() {
         return this.mockObject.getRecommended();
     }
@@ -159,11 +165,15 @@ public class SCLicenseMock
     public void setRecommended(boolean param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public SCLicense toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

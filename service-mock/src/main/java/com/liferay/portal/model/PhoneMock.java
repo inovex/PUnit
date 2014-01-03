@@ -6,9 +6,9 @@ import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -69,18 +69,12 @@ public class PhoneMock
         return this.mockObject.getNumber();
     }
 
+    public String getExtension() {
+        return this.mockObject.getExtension();
+    }
+
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
-    }
-
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
     }
 
     public boolean isCachedModel() {
@@ -94,22 +88,20 @@ public class PhoneMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<Phone> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public Phone toEscapedModel() {
@@ -120,28 +112,22 @@ public class PhoneMock
         return this.mockObject.toXmlString();
     }
 
-    public long getClassPK() {
-        return this.mockObject.getClassPK();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setClassName(String param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setClassPK(long param0) {
+    public void setNew(boolean param0) {
     }
 
-    public void setCompanyId(long param0) {
-    }
-
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
-    }
-
-    public void setCreateDate(Date param0) {
+    public CacheModel<Phone> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -158,8 +144,25 @@ public class PhoneMock
     public void setUserId(long param0) {
     }
 
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
+    public String getUuid() {
+        return this.mockObject.getUuid();
+    }
+
+    public void setUuid(String param0) {
+    }
+
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
+    }
+
+    public void setPhoneId(long param0) {
+    }
+
+    public void setExtension(String param0) {
+    }
+
+    public long getPhoneId() {
+        return this.mockObject.getPhoneId();
     }
 
     public String getUserName() {
@@ -176,9 +179,6 @@ public class PhoneMock
     }
 
     public void setUserName(String param0) {
-    }
-
-    public void setClassNameId(long param0) {
     }
 
     public int getTypeId() {
@@ -202,25 +202,42 @@ public class PhoneMock
     public void setNumber(String param0) {
     }
 
-    public long getPhoneId() {
-        return this.mockObject.getPhoneId();
+    public void setClassNameId(long param0) {
     }
 
-    public void setPhoneId(long param0) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public String getExtension() {
-        return this.mockObject.getExtension();
+    public Phone toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setExtension(String param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -232,6 +249,10 @@ public class PhoneMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

@@ -7,7 +7,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -58,14 +57,11 @@ public class MembershipRequestMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -79,11 +75,7 @@ public class MembershipRequestMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -93,8 +85,10 @@ public class MembershipRequestMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<MembershipRequest> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public MembershipRequest toEscapedModel() {
@@ -105,18 +99,22 @@ public class MembershipRequestMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<MembershipRequest> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getUserId() {
@@ -135,11 +133,20 @@ public class MembershipRequestMock
     public void setUserUuid(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public void setReplierUserId(long param0) {
     }
 
-    public void setGroupId(long param0) {
+    public String getReplierUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getReplierUserUuid();
+    }
+
+    public void setReplierUserUuid(String param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getComments() {
@@ -149,11 +156,8 @@ public class MembershipRequestMock
     public void setComments(String param0) {
     }
 
-    public int getStatusId() {
-        return this.mockObject.getStatusId();
-    }
-
-    public void setStatusId(int param0) {
+    public MembershipRequest toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public long getMembershipRequestId() {
@@ -170,10 +174,6 @@ public class MembershipRequestMock
     public void setReplyComments(String param0) {
     }
 
-    public Date getReplyDate() {
-        return this.mockObject.getReplyDate();
-    }
-
     public void setReplyDate(Date param0) {
     }
 
@@ -181,23 +181,32 @@ public class MembershipRequestMock
         return this.mockObject.getReplierUserId();
     }
 
-    public void setReplierUserId(long param0) {
+    public Date getReplyDate() {
+        return this.mockObject.getReplyDate();
     }
 
-    public String getReplierUserUuid()
-        throws SystemException
-    {
-        return this.mockObject.getReplierUserUuid();
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public void setReplierUserUuid(String param0) {
+    public void setCreateDate(Date param0) {
+    }
+
+    public int getStatusId() {
+        return this.mockObject.getStatusId();
+    }
+
+    public void setStatusId(int param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

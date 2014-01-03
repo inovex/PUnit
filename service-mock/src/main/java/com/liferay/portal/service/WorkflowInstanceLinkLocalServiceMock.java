@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.WorkflowInstanceLink;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -55,39 +55,16 @@ public class WorkflowInstanceLinkLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public List<WorkflowInstanceLink> getWorkflowInstanceLinks(long param0, long param1, String param2, long param3)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return this.mockObject.getWorkflowInstanceLinks(param0, param1, param2, param3);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public List<WorkflowInstanceLink> getWorkflowInstanceLinks(int param0, int param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
+        return this.mockObject.getWorkflowInstanceLinks(param0, param1);
     }
 
     public WorkflowInstanceLink addWorkflowInstanceLink(WorkflowInstanceLink param0)
@@ -103,63 +80,6 @@ public class WorkflowInstanceLinkLocalServiceMock
         return this.mockObject.addWorkflowInstanceLink(param0, param1, param2, param3, param4, param5);
     }
 
-    public WorkflowInstanceLink createWorkflowInstanceLink(long param0) {
-        return this.mockObject.createWorkflowInstanceLink(param0);
-    }
-
-    public WorkflowInstanceLink deleteWorkflowInstanceLink(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteWorkflowInstanceLink(param0);
-    }
-
-    public WorkflowInstanceLink deleteWorkflowInstanceLink(WorkflowInstanceLink param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteWorkflowInstanceLink(param0);
-    }
-
-    public void deleteWorkflowInstanceLink(long param0, long param1, String param2, long param3)
-        throws PortalException, SystemException
-    {
-    }
-
-    public WorkflowInstanceLink fetchWorkflowInstanceLink(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public WorkflowInstanceLink fetchWorkflowInstanceLink(long param0, long param1, String param2, long param3)
-        throws SystemException
-    {
-        return this.mockObject.fetchWorkflowInstanceLink(param0, param1, param2, param3);
-    }
-
-    public WorkflowInstanceLink getWorkflowInstanceLink(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public WorkflowInstanceLink getWorkflowInstanceLink(long param0, long param1, String param2, long param3)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getWorkflowInstanceLink(param0, param1, param2, param3);
-    }
-
-    public List<WorkflowInstanceLink> getWorkflowInstanceLinks(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getWorkflowInstanceLinks(param0, param1);
-    }
-
-    public List<WorkflowInstanceLink> getWorkflowInstanceLinks(long param0, long param1, String param2, long param3)
-        throws SystemException
-    {
-        return this.mockObject.getWorkflowInstanceLinks(param0, param1, param2, param3);
-    }
-
     public int getWorkflowInstanceLinksCount()
         throws SystemException
     {
@@ -170,12 +90,6 @@ public class WorkflowInstanceLinkLocalServiceMock
         throws SystemException
     {
         return this.mockObject.updateWorkflowInstanceLink(param0);
-    }
-
-    public WorkflowInstanceLink updateWorkflowInstanceLink(WorkflowInstanceLink param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateWorkflowInstanceLink(param0, param1);
     }
 
     public void deleteWorkflowInstanceLinks(long param0, long param1, String param2, long param3)
@@ -203,6 +117,93 @@ public class WorkflowInstanceLinkLocalServiceMock
     public void updateClassPK(long param0, long param1, String param2, long param3, long param4)
         throws PortalException, SystemException
     {
+    }
+
+    public WorkflowInstanceLink deleteWorkflowInstanceLink(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteWorkflowInstanceLink(param0);
+    }
+
+    public WorkflowInstanceLink deleteWorkflowInstanceLink(WorkflowInstanceLink param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteWorkflowInstanceLink(param0);
+    }
+
+    public WorkflowInstanceLink deleteWorkflowInstanceLink(long param0, long param1, String param2, long param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteWorkflowInstanceLink(param0, param1, param2, param3);
+    }
+
+    public WorkflowInstanceLink fetchWorkflowInstanceLink(long param0, long param1, String param2, long param3)
+        throws SystemException
+    {
+        return this.mockObject.fetchWorkflowInstanceLink(param0, param1, param2, param3);
+    }
+
+    public WorkflowInstanceLink fetchWorkflowInstanceLink(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public WorkflowInstanceLink getWorkflowInstanceLink(long param0, long param1, String param2, long param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getWorkflowInstanceLink(param0, param1, param2, param3);
+    }
+
+    public WorkflowInstanceLink getWorkflowInstanceLink(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public WorkflowInstanceLink createWorkflowInstanceLink(long param0) {
+        return this.mockObject.createWorkflowInstanceLink(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

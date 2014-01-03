@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.Shard;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,39 +48,22 @@ public class ShardLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public int getShardsCount()
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return this.mockObject.getShardsCount();
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public Shard updateShard(Shard param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
+        return this.mockObject.updateShard(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+    public Shard addShard(String param0, long param1, String param2)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
+        return this.mockObject.addShard(param0, param1, param2);
     }
 
     public Shard addShard(Shard param0)
@@ -90,24 +73,18 @@ public class ShardLocalServiceMock
         return param0;
     }
 
-    public Shard addShard(String param0, long param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.addShard(param0, param1, param2);
-    }
-
     public Shard createShard(long param0) {
         return this.mockObject.createShard(param0);
     }
 
-    public Shard deleteShard(long param0)
-        throws PortalException, SystemException
+    public Shard deleteShard(Shard param0)
+        throws SystemException
     {
         return this.mockObject.deleteShard(param0);
     }
 
-    public Shard deleteShard(Shard param0)
-        throws SystemException
+    public Shard deleteShard(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deleteShard(param0);
     }
@@ -136,22 +113,45 @@ public class ShardLocalServiceMock
         return this.mockObject.getShards(param0, param1);
     }
 
-    public int getShardsCount()
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
         throws SystemException
     {
-        return this.mockObject.getShardsCount();
+        return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
-    public Shard updateShard(Shard param0)
+    public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.updateShard(param0);
+        return this.mockObject.dynamicQuery(param0);
     }
 
-    public Shard updateShard(Shard param0, boolean param1)
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
-        return this.mockObject.updateShard(param0, param1);
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

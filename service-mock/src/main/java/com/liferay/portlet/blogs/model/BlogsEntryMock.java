@@ -6,10 +6,14 @@ import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.trash.TrashHandler;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
+import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
+import com.liferay.portlet.trash.model.TrashEntry;
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -40,8 +44,8 @@ public class BlogsEntryMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.blogs.model.BlogsEntry.class));
     }
 
-    public boolean isVisible() {
-        return this.mockObject.isVisible();
+    public String getEntryImageURL(ThemeDisplay param0) {
+        return this.mockObject.getEntryImageURL(param0);
     }
 
     public String getSmallImageType()
@@ -51,6 +55,10 @@ public class BlogsEntryMock
     }
 
     public void setSmallImageType(String param0) {
+    }
+
+    public boolean isVisible() {
+        return this.mockObject.isVisible();
     }
 
     public String toString() {
@@ -73,22 +81,26 @@ public class BlogsEntryMock
         return this.mockObject.getContent();
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -102,11 +114,7 @@ public class BlogsEntryMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -116,8 +124,10 @@ public class BlogsEntryMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<BlogsEntry> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public BlogsEntry toEscapedModel() {
@@ -128,18 +138,22 @@ public class BlogsEntryMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<BlogsEntry> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -163,6 +177,27 @@ public class BlogsEntryMock
     public void setUuid(String param0) {
     }
 
+    public void setEntryId(long param0) {
+    }
+
+    public void setContent(String param0) {
+    }
+
+    public Date getDisplayDate() {
+        return this.mockObject.getDisplayDate();
+    }
+
+    public void setDisplayDate(Date param0) {
+    }
+
+    public long getEntryId() {
+        return this.mockObject.getEntryId();
+    }
+
+    public String getUrlTitle() {
+        return this.mockObject.getUrlTitle();
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -179,21 +214,87 @@ public class BlogsEntryMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public boolean getAllowPingbacks() {
+        return this.mockObject.getAllowPingbacks();
     }
 
-    public void setGroupId(long param0) {
+    public boolean isAllowPingbacks() {
+        return this.mockObject.isAllowPingbacks();
     }
 
-    public void setDescription(String param0) {
+    public void setAllowPingbacks(boolean param0) {
     }
 
-    public int getStatus() {
-        return this.mockObject.getStatus();
+    public boolean getAllowTrackbacks() {
+        return this.mockObject.getAllowTrackbacks();
     }
 
-    public void setStatus(int param0) {
+    public void setUrlTitle(String param0) {
+    }
+
+    public boolean isAllowTrackbacks() {
+        return this.mockObject.isAllowTrackbacks();
+    }
+
+    public void setAllowTrackbacks(boolean param0) {
+    }
+
+    public String getTrackbacks() {
+        return this.mockObject.getTrackbacks();
+    }
+
+    public void setTrackbacks(String param0) {
+    }
+
+    public boolean getSmallImage() {
+        return this.mockObject.getSmallImage();
+    }
+
+    public boolean isSmallImage() {
+        return this.mockObject.isSmallImage();
+    }
+
+    public void setSmallImage(boolean param0) {
+    }
+
+    public long getSmallImageId() {
+        return this.mockObject.getSmallImageId();
+    }
+
+    public void setSmallImageId(long param0) {
+    }
+
+    public String getSmallImageURL() {
+        return this.mockObject.getSmallImageURL();
+    }
+
+    public void setSmallImageURL(String param0) {
+    }
+
+    public TrashEntry getTrashEntry()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTrashEntry();
+    }
+
+    public long getTrashEntryClassPK() {
+        return this.mockObject.getTrashEntryClassPK();
+    }
+
+    public TrashHandler getTrashHandler() {
+        return this.mockObject.getTrashHandler();
+    }
+
+    public boolean isInTrash() {
+        return this.mockObject.isInTrash();
+    }
+
+    public boolean isInTrashContainer() {
+        return this.mockObject.isInTrashContainer();
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getTitle() {
@@ -201,6 +302,10 @@ public class BlogsEntryMock
     }
 
     public void setTitle(String param0) {
+    }
+
+    public BlogsEntry toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public long getStatusByUserId() {
@@ -269,89 +374,24 @@ public class BlogsEntryMock
         return this.mockObject.isScheduled();
     }
 
-    public long getEntryId() {
-        return this.mockObject.getEntryId();
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public void setEntryId(long param0) {
+    public void setCreateDate(Date param0) {
     }
 
-    public void setContent(String param0) {
+    public void setCompanyId(long param0) {
     }
 
-    public Date getDisplayDate() {
-        return this.mockObject.getDisplayDate();
+    public void setDescription(String param0) {
     }
 
-    public void setDisplayDate(Date param0) {
-    }
-
-    public String getUrlTitle() {
-        return this.mockObject.getUrlTitle();
-    }
-
-    public void setUrlTitle(String param0) {
-    }
-
-    public boolean getAllowPingbacks() {
-        return this.mockObject.getAllowPingbacks();
-    }
-
-    public boolean isAllowPingbacks() {
-        return this.mockObject.isAllowPingbacks();
-    }
-
-    public void setAllowPingbacks(boolean param0) {
-    }
-
-    public boolean getAllowTrackbacks() {
-        return this.mockObject.getAllowTrackbacks();
-    }
-
-    public boolean isAllowTrackbacks() {
-        return this.mockObject.isAllowTrackbacks();
-    }
-
-    public void setAllowTrackbacks(boolean param0) {
-    }
-
-    public String getTrackbacks() {
-        return this.mockObject.getTrackbacks();
-    }
-
-    public void setTrackbacks(String param0) {
-    }
-
-    public boolean getSmallImage() {
-        return this.mockObject.getSmallImage();
-    }
-
-    public boolean isSmallImage() {
-        return this.mockObject.isSmallImage();
-    }
-
-    public void setSmallImage(boolean param0) {
-    }
-
-    public long getSmallImageId() {
-        return this.mockObject.getSmallImageId();
-    }
-
-    public void setSmallImageId(long param0) {
-    }
-
-    public String getSmallImageURL() {
-        return this.mockObject.getSmallImageURL();
-    }
-
-    public void setSmallImageURL(String param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -363,6 +403,10 @@ public class BlogsEntryMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

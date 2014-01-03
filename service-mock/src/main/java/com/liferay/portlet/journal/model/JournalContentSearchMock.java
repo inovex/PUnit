@@ -4,10 +4,10 @@ package com.liferay.portlet.journal.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -58,14 +58,11 @@ public class JournalContentSearchMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -79,11 +76,7 @@ public class JournalContentSearchMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -93,8 +86,10 @@ public class JournalContentSearchMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<JournalContentSearch> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public JournalContentSearch toEscapedModel() {
@@ -105,22 +100,51 @@ public class JournalContentSearchMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<JournalContentSearch> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public long getContentSearchId() {
+        return this.mockObject.getContentSearchId();
+    }
+
+    public void setContentSearchId(long param0) {
+    }
+
+    public String getArticleId() {
+        return this.mockObject.getArticleId();
+    }
+
+    public void setArticleId(String param0) {
     }
 
     public String getPortletId() {
         return this.mockObject.getPortletId();
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public void setGroupId(long param0) {
+    public long getLayoutId() {
+        return this.mockObject.getLayoutId();
+    }
+
+    public void setLayoutId(long param0) {
     }
 
     public boolean getPrivateLayout() {
@@ -134,35 +158,21 @@ public class JournalContentSearchMock
     public void setPrivateLayout(boolean param0) {
     }
 
-    public long getLayoutId() {
-        return this.mockObject.getLayoutId();
+    public JournalContentSearch toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setLayoutId(long param0) {
+    public void setCompanyId(long param0) {
     }
 
     public void setPortletId(String param0) {
     }
 
-    public String getArticleId() {
-        return this.mockObject.getArticleId();
-    }
-
-    public void setArticleId(String param0) {
-    }
-
-    public long getContentSearchId() {
-        return this.mockObject.getContentSearchId();
-    }
-
-    public void setContentSearchId(long param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

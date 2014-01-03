@@ -7,7 +7,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -69,14 +68,11 @@ public class PortletItemMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -90,11 +86,7 @@ public class PortletItemMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -104,8 +96,10 @@ public class PortletItemMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<PortletItem> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public PortletItem toEscapedModel() {
@@ -116,21 +110,22 @@ public class PortletItemMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setClassName(String param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setCompanyId(long param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public void setNew(boolean param0) {
     }
 
-    public void setCreateDate(Date param0) {
+    public CacheModel<PortletItem> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -145,14 +140,6 @@ public class PortletItemMock
     }
 
     public void setUserId(long param0) {
-    }
-
-    public String getPortletId() {
-        return this.mockObject.getPortletId();
-    }
-
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
     }
 
     public String getUserName() {
@@ -171,19 +158,6 @@ public class PortletItemMock
     public void setUserName(String param0) {
     }
 
-    public void setClassNameId(long param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setPortletId(String param0) {
-    }
-
     public long getPortletItemId() {
         return this.mockObject.getPortletItemId();
     }
@@ -191,11 +165,46 @@ public class PortletItemMock
     public void setPortletItemId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public String getPortletId() {
+        return this.mockObject.getPortletId();
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public PortletItem toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setPortletId(String param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

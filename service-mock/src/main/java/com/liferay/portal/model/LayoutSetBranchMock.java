@@ -9,7 +9,6 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.UnicodeProperties;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -46,6 +45,37 @@ public class LayoutSetBranchMock
         return this.mockObject.getGroup();
     }
 
+    public long getLiveLogoId() {
+        return this.mockObject.getLiveLogoId();
+    }
+
+    public UnicodeProperties getSettingsProperties() {
+        return this.mockObject.getSettingsProperties();
+    }
+
+    public String getSettingsProperty(String param0) {
+        return this.mockObject.getSettingsProperty(param0);
+    }
+
+    public ColorScheme getWapColorScheme()
+        throws SystemException
+    {
+        return this.mockObject.getWapColorScheme();
+    }
+
+    public boolean isLayoutSetPrototypeLinkActive() {
+        return this.mockObject.isLayoutSetPrototypeLinkActive();
+    }
+
+    public void setSettingsProperties(UnicodeProperties param0) {
+    }
+
+    public Theme getWapTheme()
+        throws SystemException
+    {
+        return this.mockObject.getWapTheme();
+    }
+
     public ColorScheme getColorScheme()
         throws SystemException
     {
@@ -66,44 +96,6 @@ public class LayoutSetBranchMock
         throws SystemException
     {
         return this.mockObject.getThemeSetting(param0, param1);
-    }
-
-    public String getSettings() {
-        return this.mockObject.getSettings();
-    }
-
-    public long getLiveLogoId() {
-        return this.mockObject.getLiveLogoId();
-    }
-
-    public UnicodeProperties getSettingsProperties() {
-        return this.mockObject.getSettingsProperties();
-    }
-
-    public String getSettingsProperty(String param0) {
-        return this.mockObject.getSettingsProperty(param0);
-    }
-
-    public ColorScheme getWapColorScheme()
-        throws SystemException
-    {
-        return this.mockObject.getWapColorScheme();
-    }
-
-    public Theme getWapTheme()
-        throws SystemException
-    {
-        return this.mockObject.getWapTheme();
-    }
-
-    public boolean isLayoutSetPrototypeLinkActive() {
-        return this.mockObject.isLayoutSetPrototypeLinkActive();
-    }
-
-    public void setSettings(String param0) {
-    }
-
-    public void setSettingsProperties(UnicodeProperties param0) {
     }
 
     public String toString() {
@@ -129,22 +121,23 @@ public class LayoutSetBranchMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
+    public boolean getMaster() {
+        return this.mockObject.getMaster();
     }
 
     public boolean isCachedModel() {
@@ -158,11 +151,7 @@ public class LayoutSetBranchMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -172,8 +161,10 @@ public class LayoutSetBranchMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<LayoutSetBranch> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public LayoutSetBranch toEscapedModel() {
@@ -184,18 +175,22 @@ public class LayoutSetBranchMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<LayoutSetBranch> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -228,29 +223,8 @@ public class LayoutSetBranchMock
     public void setUserName(String param0) {
     }
 
-    public long getLogoId() {
-        return this.mockObject.getLogoId();
-    }
-
-    public void setLogoId(long param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public String getColorSchemeId() {
-        return this.mockObject.getColorSchemeId();
-    }
-
-    public String getThemeId() {
-        return this.mockObject.getThemeId();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public boolean getPrivateLayout() {
@@ -262,10 +236,6 @@ public class LayoutSetBranchMock
     }
 
     public void setPrivateLayout(boolean param0) {
-    }
-
-    public boolean getLogo() {
-        return this.mockObject.getLogo();
     }
 
     public boolean isLogo() {
@@ -302,6 +272,9 @@ public class LayoutSetBranchMock
     public void setCss(String param0) {
     }
 
+    public void setSettings(String param0) {
+    }
+
     public String getLayoutSetPrototypeUuid() {
         return this.mockObject.getLayoutSetPrototypeUuid();
     }
@@ -320,6 +293,17 @@ public class LayoutSetBranchMock
     public void setLayoutSetPrototypeLinkEnabled(boolean param0) {
     }
 
+    public long getLogoId() {
+        return this.mockObject.getLogoId();
+    }
+
+    public void setLogoId(long param0) {
+    }
+
+    public boolean isMaster() {
+        return this.mockObject.isMaster();
+    }
+
     public long getLayoutSetBranchId() {
         return this.mockObject.getLayoutSetBranchId();
     }
@@ -327,22 +311,47 @@ public class LayoutSetBranchMock
     public void setLayoutSetBranchId(long param0) {
     }
 
-    public boolean getMaster() {
-        return this.mockObject.getMaster();
-    }
-
-    public boolean isMaster() {
-        return this.mockObject.isMaster();
-    }
-
     public void setMaster(boolean param0) {
+    }
+
+    public LayoutSetBranch toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public String getColorSchemeId() {
+        return this.mockObject.getColorSchemeId();
+    }
+
+    public boolean getLogo() {
+        return this.mockObject.getLogo();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public String getThemeId() {
+        return this.mockObject.getThemeId();
+    }
+
+    public String getSettings() {
+        return this.mockObject.getSettings();
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

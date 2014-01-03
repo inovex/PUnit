@@ -1,19 +1,20 @@
 
 package com.liferay.portlet.dynamicdatamapping.service;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.dynamicdatamapping.model.DDMTemplate;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -45,16 +46,28 @@ public class DDMTemplateLocalServiceMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.dynamicdatamapping.service.DDMTemplateLocalService.class));
     }
 
-    public List<DDMTemplate> search(long param0, long param1, long param2, String param3, String param4, String param5, int param6, int param7, OrderByComparator param8)
+    public List<DDMTemplate> search(long param0, long[] param1, long[] param2, long[] param3, String param4, String param5, String param6, int param7, int param8, OrderByComparator param9)
         throws SystemException
     {
-        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6, param7, param8);
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
     }
 
-    public List<DDMTemplate> search(long param0, long param1, long param2, String param3, String param4, String param5, String param6, String param7, boolean param8, int param9, int param10, OrderByComparator param11)
+    public List<DDMTemplate> search(long param0, long[] param1, long[] param2, long[] param3, String param4, String param5, String param6, String param7, String param8, boolean param9, int param10, int param11, OrderByComparator param12)
         throws SystemException
     {
-        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11);
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12);
+    }
+
+    public List<DDMTemplate> search(long param0, long param1, long param2, long param3, String param4, String param5, String param6, int param7, int param8, OrderByComparator param9)
+        throws SystemException
+    {
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
+    }
+
+    public List<DDMTemplate> search(long param0, long param1, long param2, long param3, String param4, String param5, String param6, String param7, String param8, boolean param9, int param10, int param11, OrderByComparator param12)
+        throws SystemException
+    {
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12);
     }
 
     public PersistedModel getPersistedModel(Serializable param0)
@@ -63,51 +76,16 @@ public class DDMTemplateLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public List<DDMTemplate> getTemplates(long param0, long param1, long param2, String param3)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return this.mockObject.getTemplates(param0, param1, param2, param3);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public List<DDMTemplate> getTemplates(long param0, long param1, long param2)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public int searchCount(long param0, long param1, long param2, String param3, String param4, String param5)
-        throws SystemException
-    {
-        return this.mockObject.searchCount(param0, param1, param2, param3, param4, param5);
-    }
-
-    public int searchCount(long param0, long param1, long param2, String param3, String param4, String param5, String param6, String param7, boolean param8)
-        throws SystemException
-    {
-        return this.mockObject.searchCount(param0, param1, param2, param3, param4, param5, param6, param7, param8);
+        return this.mockObject.getTemplates(param0, param1, param2);
     }
 
     public List<DDMTemplate> getTemplates(long param0)
@@ -116,16 +94,40 @@ public class DDMTemplateLocalServiceMock
         return this.mockObject.getTemplates(param0);
     }
 
-    public List<DDMTemplate> getTemplates(long param0, String param1)
+    public List<DDMTemplate> getTemplates(long param0, long param1)
         throws SystemException
     {
         return this.mockObject.getTemplates(param0, param1);
     }
 
-    public List<DDMTemplate> getTemplates(long param0, String param1, String param2)
+    public List<DDMTemplate> getTemplates(long param0, long param1, long param2, String param3, String param4)
         throws SystemException
     {
-        return this.mockObject.getTemplates(param0, param1, param2);
+        return this.mockObject.getTemplates(param0, param1, param2, param3, param4);
+    }
+
+    public int searchCount(long param0, long[] param1, long[] param2, long[] param3, String param4, String param5, String param6, String param7, String param8, boolean param9)
+        throws SystemException
+    {
+        return this.mockObject.searchCount(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
+    }
+
+    public int searchCount(long param0, long[] param1, long[] param2, long[] param3, String param4, String param5, String param6)
+        throws SystemException
+    {
+        return this.mockObject.searchCount(param0, param1, param2, param3, param4, param5, param6);
+    }
+
+    public int searchCount(long param0, long param1, long param2, long param3, String param4, String param5, String param6, String param7, String param8, boolean param9)
+        throws SystemException
+    {
+        return this.mockObject.searchCount(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
+    }
+
+    public int searchCount(long param0, long param1, long param2, long param3, String param4, String param5, String param6)
+        throws SystemException
+    {
+        return this.mockObject.searchCount(param0, param1, param2, param3, param4, param5, param6);
     }
 
     public DDMTemplate addDDMTemplate(DDMTemplate param0)
@@ -135,8 +137,115 @@ public class DDMTemplateLocalServiceMock
         return param0;
     }
 
-    public DDMTemplate createDDMTemplate(long param0) {
-        return this.mockObject.createDDMTemplate(param0);
+    public List<DDMTemplate> copyTemplates(long param0, long param1, long param2, long param3, String param4, ServiceContext param5)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.copyTemplates(param0, param1, param2, param3, param4, param5);
+    }
+
+    public void deleteTemplate(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteTemplate(DDMTemplate param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteTemplates(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public DDMTemplate fetchTemplate(long param0, long param1, String param2, boolean param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.fetchTemplate(param0, param1, param2, param3);
+    }
+
+    public DDMTemplate fetchTemplate(long param0, long param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.fetchTemplate(param0, param1, param2);
+    }
+
+    public DDMTemplate getTemplateBySmallImageId(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTemplateBySmallImageId(param0);
+    }
+
+    public List<DDMTemplate> getTemplatesByClassPK(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesByClassPK(param0, param1);
+    }
+
+    public List<DDMTemplate> getTemplatesByClassPK(long param0, long param1, int param2, int param3)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesByClassPK(param0, param1, param2, param3);
+    }
+
+    public List<DDMTemplate> getTemplatesByClassPK(long[] param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesByClassPK(param0, param1);
+    }
+
+    public int getTemplatesByClassPKCount(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesByClassPKCount(param0, param1);
+    }
+
+    public List<DDMTemplate> getTemplatesByStructureClassNameId(long param0, long param1, int param2, int param3, OrderByComparator param4)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesByStructureClassNameId(param0, param1, param2, param3, param4);
+    }
+
+    public int getTemplatesByStructureClassNameIdCount(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesByStructureClassNameIdCount(param0, param1);
+    }
+
+    public int getTemplatesCount(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesCount(param0, param1);
+    }
+
+    public int getTemplatesCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesCount(param0);
+    }
+
+    public int getTemplatesCount(long param0, long param1, long param2)
+        throws SystemException
+    {
+        return this.mockObject.getTemplatesCount(param0, param1, param2);
+    }
+
+    public DDMTemplate updateTemplate(long param0, long param1, Map<Locale, String> param2, Map<Locale, String> param3, String param4, String param5, String param6, String param7, boolean param8, boolean param9, String param10, File param11, ServiceContext param12)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateTemplate(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12);
+    }
+
+    public DDMTemplate addTemplate(long param0, long param1, long param2, long param3, String param4, Map<Locale, String> param5, Map<Locale, String> param6, String param7, String param8, String param9, String param10, boolean param11, boolean param12, String param13, File param14, ServiceContext param15)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addTemplate(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15);
+    }
+
+    public DDMTemplate addTemplate(long param0, long param1, long param2, long param3, Map<Locale, String> param4, Map<Locale, String> param5, String param6, String param7, String param8, String param9, ServiceContext param10)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addTemplate(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10);
     }
 
     public DDMTemplate deleteDDMTemplate(long param0)
@@ -157,10 +266,103 @@ public class DDMTemplateLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
+    public DDMTemplate getTemplate(long param0, long param1, String param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTemplate(param0, param1, param2);
+    }
+
+    public DDMTemplate getTemplate(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTemplate(param0);
+    }
+
+    public DDMTemplate getTemplate(long param0, long param1, String param2, boolean param3)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTemplate(param0, param1, param2, param3);
+    }
+
+    public DDMTemplate copyTemplate(long param0, long param1, Map<Locale, String> param2, Map<Locale, String> param3, ServiceContext param4)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.copyTemplate(param0, param1, param2, param3, param4);
+    }
+
+    public DDMTemplate copyTemplate(long param0, long param1, ServiceContext param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.copyTemplate(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
+    }
+
+    public DDMTemplate createDDMTemplate(long param0) {
+        return this.mockObject.createDDMTemplate(param0);
+    }
+
+    public DDMTemplate fetchDDMTemplateByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchDDMTemplateByUuidAndCompanyId(param0, param1);
+    }
+
+    public DDMTemplate fetchDDMTemplateByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchDDMTemplateByUuidAndGroupId(param0, param1);
+    }
+
     public DDMTemplate getDDMTemplate(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public DDMTemplate getDDMTemplateByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDDMTemplateByUuidAndCompanyId(param0, param1);
     }
 
     public DDMTemplate getDDMTemplateByUuidAndGroupId(String param0, long param1)
@@ -187,18 +389,6 @@ public class DDMTemplateLocalServiceMock
         return this.mockObject.updateDDMTemplate(param0);
     }
 
-    public DDMTemplate updateDDMTemplate(DDMTemplate param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateDDMTemplate(param0, param1);
-    }
-
-    public DDMTemplate addTemplate(long param0, long param1, long param2, Map<Locale, String> param3, Map<Locale, String> param4, String param5, String param6, String param7, String param8, ServiceContext param9)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addTemplate(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
-    }
-
     public void addTemplateResources(DDMTemplate param0, boolean param1, boolean param2)
         throws PortalException, SystemException
     {
@@ -207,39 +397,6 @@ public class DDMTemplateLocalServiceMock
     public void addTemplateResources(DDMTemplate param0, String[] param1, String[] param2)
         throws PortalException, SystemException
     {
-    }
-
-    public List<DDMTemplate> copyTemplates(long param0, long param1, long param2, String param3, ServiceContext param4)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.copyTemplates(param0, param1, param2, param3, param4);
-    }
-
-    public void deleteTemplate(DDMTemplate param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteTemplate(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteTemplates(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public DDMTemplate getTemplate(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getTemplate(param0);
-    }
-
-    public DDMTemplate updateTemplate(long param0, Map<Locale, String> param1, Map<Locale, String> param2, String param3, String param4, String param5, String param6, ServiceContext param7)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateTemplate(param0, param1, param2, param3, param4, param5, param6, param7);
     }
 
 }

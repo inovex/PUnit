@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -75,16 +75,6 @@ public class DDMStorageLinkMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -96,22 +86,20 @@ public class DDMStorageLinkMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<DDMStorageLink> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public DDMStorageLink toEscapedModel() {
@@ -122,14 +110,22 @@ public class DDMStorageLinkMock
         return this.mockObject.toXmlString();
     }
 
-    public long getClassPK() {
-        return this.mockObject.getClassPK();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setClassName(String param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setClassPK(long param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DDMStorageLink> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public String getUuid() {
@@ -139,11 +135,8 @@ public class DDMStorageLinkMock
     public void setUuid(String param0) {
     }
 
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
-    }
-
-    public void setClassNameId(long param0) {
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
     }
 
     public long getStructureId() {
@@ -160,11 +153,28 @@ public class DDMStorageLinkMock
     public void setStorageLinkId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setClassNameId(long param0) {
+    }
+
+    public DDMStorageLink toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

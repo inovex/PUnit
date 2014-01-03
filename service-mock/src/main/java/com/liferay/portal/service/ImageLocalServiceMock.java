@@ -7,12 +7,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.Image;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -50,14 +50,113 @@ public class ImageLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
+    public Image createImage(long param0) {
+        return this.mockObject.createImage(param0);
+    }
+
+    public Image deleteImage(Image param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteImage(param0);
+    }
+
+    public Image deleteImage(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteImage(param0);
+    }
+
+    public Image addImage(Image param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public Image fetchImage(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public Image getImage(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public List<Image> getImages()
+        throws SystemException
+    {
+        return this.mockObject.getImages();
+    }
+
+    public List<Image> getImages(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getImages(param0, param1);
+    }
+
+    public int getImagesCount()
+        throws SystemException
+    {
+        return this.mockObject.getImagesCount();
+    }
+
+    public Image updateImage(long param0, byte[] param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateImage(param0, param1);
+    }
+
+    public Image updateImage(Image param0)
+        throws SystemException
+    {
+        return this.mockObject.updateImage(param0);
+    }
+
+    public Image updateImage(long param0, File param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateImage(param0, param1);
+    }
+
+    public Image updateImage(long param0, byte[] param1, String param2, int param3, int param4, int param5)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateImage(param0, param1, param2, param3, param4, param5);
+    }
+
+    public Image updateImage(long param0, InputStream param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateImage(param0, param1);
+    }
+
+    public Image updateImage(long param0, InputStream param1, boolean param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateImage(param0, param1, param2);
+    }
+
+    public Image getImageOrDefault(long param0) {
+        return this.mockObject.getImageOrDefault(param0);
+    }
+
+    public List<Image> getImagesBySize(int param0)
+        throws SystemException
+    {
+        return this.mockObject.getImagesBySize(param0);
     }
 
     public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
         return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
     }
 
     public List dynamicQuery(DynamicQuery param0, int param1, int param2)
@@ -70,6 +169,12 @@ public class ImageLocalServiceMock
         throws SystemException
     {
         return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
     public long dynamicQueryCount(DynamicQuery param0)
@@ -87,159 +192,6 @@ public class ImageLocalServiceMock
 
     public Image getCompanyLogo(long param0) {
         return this.mockObject.getCompanyLogo(param0);
-    }
-
-    public Image addImage(Image param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public Image createImage(long param0) {
-        return this.mockObject.createImage(param0);
-    }
-
-    public Image deleteImage(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteImage(param0);
-    }
-
-    public Image deleteImage(Image param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteImage(param0);
-    }
-
-    public Image fetchImage(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public Image getImage(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public Image getImage(byte[] param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getImage(param0);
-    }
-
-    public Image getImage(File param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getImage(param0);
-    }
-
-    public Image getImage(InputStream param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getImage(param0);
-    }
-
-    public Image getImage(InputStream param0, boolean param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getImage(param0, param1);
-    }
-
-    public List<Image> getImages(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getImages(param0, param1);
-    }
-
-    public List<Image> getImages()
-        throws SystemException
-    {
-        return this.mockObject.getImages();
-    }
-
-    public int getImagesCount()
-        throws SystemException
-    {
-        return this.mockObject.getImagesCount();
-    }
-
-    public Image updateImage(Image param0)
-        throws SystemException
-    {
-        return this.mockObject.updateImage(param0);
-    }
-
-    public Image updateImage(Image param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateImage(param0, param1);
-    }
-
-    public Image updateImage(long param0, byte[] param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateImage(param0, param1);
-    }
-
-    public Image updateImage(long param0, byte[] param1, String param2, int param3, int param4, int param5)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateImage(param0, param1, param2, param3, param4, param5);
-    }
-
-    public Image updateImage(long param0, File param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateImage(param0, param1);
-    }
-
-    public Image updateImage(long param0, InputStream param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateImage(param0, param1);
-    }
-
-    public Image updateImage(long param0, InputStream param1, boolean param2)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateImage(param0, param1, param2);
-    }
-
-    public Image getDefaultCompanyLogo() {
-        return this.mockObject.getDefaultCompanyLogo();
-    }
-
-    public Image getDefaultOrganizationLogo() {
-        return this.mockObject.getDefaultOrganizationLogo();
-    }
-
-    public Image getDefaultSpacer() {
-        return this.mockObject.getDefaultSpacer();
-    }
-
-    public Image getDefaultUserFemalePortrait() {
-        return this.mockObject.getDefaultUserFemalePortrait();
-    }
-
-    public Image getDefaultUserMalePortrait() {
-        return this.mockObject.getDefaultUserMalePortrait();
-    }
-
-    public Image getImageOrDefault(long param0) {
-        return this.mockObject.getImageOrDefault(param0);
-    }
-
-    public List<Image> getImagesBySize(int param0)
-        throws SystemException
-    {
-        return this.mockObject.getImagesBySize(param0);
-    }
-
-    public boolean isNullOrDefaultSpacer(byte[] param0) {
-        return this.mockObject.isNullOrDefaultSpacer(param0);
     }
 
 }

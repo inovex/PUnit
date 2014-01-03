@@ -4,10 +4,10 @@ package com.liferay.portlet.social.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -73,14 +73,15 @@ public class SocialActivityCounterMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
-    public void setNew(boolean param0) {
+    public int getOwnerType() {
+        return this.mockObject.getOwnerType();
     }
 
     public boolean isCachedModel() {
@@ -94,11 +95,7 @@ public class SocialActivityCounterMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -108,8 +105,10 @@ public class SocialActivityCounterMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<SocialActivityCounter> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public SocialActivityCounter toEscapedModel() {
@@ -120,16 +119,51 @@ public class SocialActivityCounterMock
         return this.mockObject.toXmlString();
     }
 
-    public int getOwnerType() {
-        return this.mockObject.getOwnerType();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<SocialActivityCounter> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getClassPK() {
         return this.mockObject.getClassPK();
     }
 
+    public void setOwnerType(int param0) {
+    }
+
+    public boolean getActive() {
+        return this.mockObject.getActive();
+    }
+
+    public boolean isActive() {
+        return this.mockObject.isActive();
+    }
+
+    public void setActive(boolean param0) {
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
     public long getCompanyId() {
         return this.mockObject.getCompanyId();
+    }
+
+    public SocialActivityCounter toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void setClassName(String param0) {
@@ -139,30 +173,6 @@ public class SocialActivityCounterMock
     }
 
     public void setCompanyId(long param0) {
-    }
-
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
-    }
-
-    public void setClassNameId(long param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setOwnerType(int param0) {
-    }
-
-    public long getActivityCounterId() {
-        return this.mockObject.getActivityCounterId();
-    }
-
-    public void setActivityCounterId(long param0) {
     }
 
     public int getCurrentValue() {
@@ -197,14 +207,25 @@ public class SocialActivityCounterMock
         return this.mockObject.getEndPeriod();
     }
 
+    public long getActivityCounterId() {
+        return this.mockObject.getActivityCounterId();
+    }
+
+    public void setActivityCounterId(long param0) {
+    }
+
     public void setEndPeriod(int param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

@@ -10,6 +10,8 @@ import javax.portlet.WindowState;
 import com.liferay.portal.kernel.atom.AtomCollectionAdapter;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.lar.PortletDataHandler;
+import com.liferay.portal.kernel.lar.StagedModelDataHandler;
+import com.liferay.portal.kernel.notifications.UserNotificationHandler;
 import com.liferay.portal.kernel.plugin.PluginPackage;
 import com.liferay.portal.kernel.poller.PollerProcessor;
 import com.liferay.portal.kernel.pop.MessageListener;
@@ -20,6 +22,8 @@ import com.liferay.portal.kernel.scheduler.SchedulerEntry;
 import com.liferay.portal.kernel.search.Indexer;
 import com.liferay.portal.kernel.search.OpenSearch;
 import com.liferay.portal.kernel.servlet.URLEncoder;
+import com.liferay.portal.kernel.template.TemplateHandler;
+import com.liferay.portal.kernel.trash.TrashHandler;
 import com.liferay.portal.kernel.webdav.WebDAVStorage;
 import com.liferay.portal.kernel.workflow.WorkflowHandler;
 import com.liferay.portal.kernel.xml.QName;
@@ -32,7 +36,6 @@ import com.liferay.portlet.expando.model.CustomAttributesDisplay;
 import com.liferay.portlet.expando.model.ExpandoBridge;
 import com.liferay.portlet.social.model.SocialActivityInterpreter;
 import com.liferay.portlet.social.model.SocialRequestInterpreter;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -67,14 +70,6 @@ public class PortletMock
         return this.mockObject.equals(param0);
     }
 
-    public Object clone() {
-        return this.mockObject.clone();
-    }
-
-    public int compareTo(Portlet param0) {
-        return this.mockObject.compareTo(param0);
-    }
-
     public boolean isStatic() {
         return this.mockObject.isStatic();
     }
@@ -97,60 +92,545 @@ public class PortletMock
     public void setResourceBundle(String param0) {
     }
 
-    public String getRootPortletId() {
-        return this.mockObject.getRootPortletId();
+    public long getUserId() {
+        return this.mockObject.getUserId();
     }
 
-    public String getPreferencesValidator() {
-        return this.mockObject.getPreferencesValidator();
+    public boolean getShowPortletAccessDenied() {
+        return this.mockObject.getShowPortletAccessDenied();
     }
 
-    public boolean getSystem() {
-        return this.mockObject.getSystem();
+    public boolean getShowPortletInactive() {
+        return this.mockObject.getShowPortletInactive();
     }
 
-    public boolean isSystem() {
-        return this.mockObject.isSystem();
+    public List<String> getSocialActivityInterpreterClasses() {
+        return this.mockObject.getSocialActivityInterpreterClasses();
     }
 
-    public void setSystem(boolean param0) {
+    public List<SocialActivityInterpreter> getSocialActivityInterpreterInstances() {
+        return this.mockObject.getSocialActivityInterpreterInstances();
     }
 
-    public String getStaticResourcePath() {
-        return this.mockObject.getStaticResourcePath();
+    public String getSocialRequestInterpreterClass() {
+        return this.mockObject.getSocialRequestInterpreterClass();
     }
 
-    public String getContextPath() {
-        return this.mockObject.getContextPath();
+    public SocialRequestInterpreter getSocialRequestInterpreterInstance() {
+        return this.mockObject.getSocialRequestInterpreterInstance();
     }
 
-    public String getVirtualPath() {
-        return this.mockObject.getVirtualPath();
+    public List<String> getStagedModelDataHandlerClasses() {
+        return this.mockObject.getStagedModelDataHandlerClasses();
     }
 
-    public void setVirtualPath(String param0) {
+    public List<StagedModelDataHandler<?>> getStagedModelDataHandlerInstances() {
+        return this.mockObject.getStagedModelDataHandlerInstances();
     }
 
-    public PluginSetting getDefaultPluginSetting() {
-        return this.mockObject.getDefaultPluginSetting();
+    public boolean getStatic() {
+        return this.mockObject.getStatic();
     }
 
-    public String getPluginId() {
-        return this.mockObject.getPluginId();
+    public boolean getStaticEnd() {
+        return this.mockObject.getStaticEnd();
     }
 
-    public PluginPackage getPluginPackage() {
-        return this.mockObject.getPluginPackage();
+    public boolean getStaticStart() {
+        return this.mockObject.getStaticStart();
     }
 
-    public String getPluginType() {
-        return this.mockObject.getPluginType();
+    public String getStrutsPath() {
+        return this.mockObject.getStrutsPath();
     }
 
-    public void setDefaultPluginSetting(PluginSetting param0) {
+    public Set<String> getSupportedLocales() {
+        return this.mockObject.getSupportedLocales();
     }
 
-    public void setPluginPackage(PluginPackage param0) {
+    public String getTemplateHandlerClass() {
+        return this.mockObject.getTemplateHandlerClass();
+    }
+
+    public TemplateHandler getTemplateHandlerInstance() {
+        return this.mockObject.getTemplateHandlerInstance();
+    }
+
+    public List<String> getTrashHandlerClasses() {
+        return this.mockObject.getTrashHandlerClasses();
+    }
+
+    public List<TrashHandler> getTrashHandlerInstances() {
+        return this.mockObject.getTrashHandlerInstances();
+    }
+
+    public boolean getUndeployedPortlet() {
+        return this.mockObject.getUndeployedPortlet();
+    }
+
+    public Set<String> getUnlinkedRoles() {
+        return this.mockObject.getUnlinkedRoles();
+    }
+
+    public String getURLEncoderClass() {
+        return this.mockObject.getURLEncoderClass();
+    }
+
+    public URLEncoder getURLEncoderInstance() {
+        return this.mockObject.getURLEncoderInstance();
+    }
+
+    public boolean getUseDefaultTemplate() {
+        return this.mockObject.getUseDefaultTemplate();
+    }
+
+    public String getUserNotificationDefinitions() {
+        return this.mockObject.getUserNotificationDefinitions();
+    }
+
+    public List<String> getUserNotificationHandlerClasses() {
+        return this.mockObject.getUserNotificationHandlerClasses();
+    }
+
+    public List<UserNotificationHandler> getUserNotificationHandlerInstances() {
+        return this.mockObject.getUserNotificationHandlerInstances();
+    }
+
+    public String getUserPrincipalStrategy() {
+        return this.mockObject.getUserPrincipalStrategy();
+    }
+
+    public String getWebDAVStorageClass() {
+        return this.mockObject.getWebDAVStorageClass();
+    }
+
+    public WebDAVStorage getWebDAVStorageInstance() {
+        return this.mockObject.getWebDAVStorageInstance();
+    }
+
+    public String getWebDAVStorageToken() {
+        return this.mockObject.getWebDAVStorageToken();
+    }
+
+    public Map<String, Set<String>> getWindowStates() {
+        return this.mockObject.getWindowStates();
+    }
+
+    public List<String> getWorkflowHandlerClasses() {
+        return this.mockObject.getWorkflowHandlerClasses();
+    }
+
+    public List<WorkflowHandler> getWorkflowHandlerInstances() {
+        return this.mockObject.getWorkflowHandlerInstances();
+    }
+
+    public String getXmlRpcMethodClass() {
+        return this.mockObject.getXmlRpcMethodClass();
+    }
+
+    public Method getXmlRpcMethodInstance() {
+        return this.mockObject.getXmlRpcMethodInstance();
+    }
+
+    public boolean hasAddPortletPermission(long param0) {
+        return this.mockObject.hasAddPortletPermission(param0);
+    }
+
+    public boolean hasMultipleMimeTypes() {
+        return this.mockObject.hasMultipleMimeTypes();
+    }
+
+    public boolean hasPortletMode(String param0, PortletMode param1) {
+        return this.mockObject.hasPortletMode(param0, param1);
+    }
+
+    public boolean hasWindowState(String param0, WindowState param1) {
+        return this.mockObject.hasWindowState(param0, param1);
+    }
+
+    public boolean isActionURLRedirect() {
+        return this.mockObject.isActionURLRedirect();
+    }
+
+    public boolean isAddDefaultResource() {
+        return this.mockObject.isAddDefaultResource();
+    }
+
+    public boolean isAjaxable() {
+        return this.mockObject.isAjaxable();
+    }
+
+    public boolean isInclude() {
+        return this.mockObject.isInclude();
+    }
+
+    public boolean isInstanceable() {
+        return this.mockObject.isInstanceable();
+    }
+
+    public boolean isLayoutCacheable() {
+        return this.mockObject.isLayoutCacheable();
+    }
+
+    public boolean isMaximizeEdit() {
+        return this.mockObject.isMaximizeEdit();
+    }
+
+    public boolean isMaximizeHelp() {
+        return this.mockObject.isMaximizeHelp();
+    }
+
+    public boolean isPopUpPrint() {
+        return this.mockObject.isPopUpPrint();
+    }
+
+    public boolean isPreferencesCompanyWide() {
+        return this.mockObject.isPreferencesCompanyWide();
+    }
+
+    public boolean isPreferencesOwnedByGroup() {
+        return this.mockObject.isPreferencesOwnedByGroup();
+    }
+
+    public boolean isPreferencesUniquePerLayout() {
+        return this.mockObject.isPreferencesUniquePerLayout();
+    }
+
+    public boolean isPrivateRequestAttributes() {
+        return this.mockObject.isPrivateRequestAttributes();
+    }
+
+    public boolean isPrivateSessionAttributes() {
+        return this.mockObject.isPrivateSessionAttributes();
+    }
+
+    public boolean isReady() {
+        return this.mockObject.isReady();
+    }
+
+    public boolean isRemoteable() {
+        return this.mockObject.isRemoteable();
+    }
+
+    public boolean isRequiresNamespacedParameters() {
+        return this.mockObject.isRequiresNamespacedParameters();
+    }
+
+    public boolean isRestoreCurrentView() {
+        return this.mockObject.isRestoreCurrentView();
+    }
+
+    public boolean isScopeable() {
+        return this.mockObject.isScopeable();
+    }
+
+    public boolean isShowPortletAccessDenied() {
+        return this.mockObject.isShowPortletAccessDenied();
+    }
+
+    public boolean isShowPortletInactive() {
+        return this.mockObject.isShowPortletInactive();
+    }
+
+    public boolean isStaticEnd() {
+        return this.mockObject.isStaticEnd();
+    }
+
+    public boolean isStaticStart() {
+        return this.mockObject.isStaticStart();
+    }
+
+    public boolean isUndeployedPortlet() {
+        return this.mockObject.isUndeployedPortlet();
+    }
+
+    public boolean isUseDefaultTemplate() {
+        return this.mockObject.isUseDefaultTemplate();
+    }
+
+    public void linkRoles() {
+    }
+
+    public void setActionTimeout(int param0) {
+    }
+
+    public void setActionURLRedirect(boolean param0) {
+    }
+
+    public void setAddDefaultResource(boolean param0) {
+    }
+
+    public void setAjaxable(boolean param0) {
+    }
+
+    public void setAssetRendererFactoryClasses(List<String> param0) {
+    }
+
+    public void setAtomCollectionAdapterClasses(List<String> param0) {
+    }
+
+    public void setAutopropagatedParameters(Set<String> param0) {
+    }
+
+    public void setConfigurationActionClass(String param0) {
+    }
+
+    public void setControlPanelEntryCategory(String param0) {
+    }
+
+    public void setControlPanelEntryClass(String param0) {
+    }
+
+    public void setControlPanelEntryWeight(double param0) {
+    }
+
+    public void setCssClassWrapper(String param0) {
+    }
+
+    public void setCustomAttributesDisplayClasses(List<String> param0) {
+    }
+
+    public void setDDMDisplayClass(String param0) {
+    }
+
+    public void setDefaultPreferences(String param0) {
+    }
+
+    public void setDisplayName(String param0) {
+    }
+
+    public void setExpCache(Integer param0) {
+    }
+
+    public void setFacebookIntegration(String param0) {
+    }
+
+    public void setFooterPortalCss(List<String> param0) {
+    }
+
+    public void setFooterPortalJavaScript(List<String> param0) {
+    }
+
+    public void setFooterPortletCss(List<String> param0) {
+    }
+
+    public void setFooterPortletJavaScript(List<String> param0) {
+    }
+
+    public void setFriendlyURLMapperClass(String param0) {
+    }
+
+    public void setFriendlyURLMapping(String param0) {
+    }
+
+    public void setFriendlyURLRoutes(String param0) {
+    }
+
+    public void setHeaderPortalCss(List<String> param0) {
+    }
+
+    public void setHeaderPortalJavaScript(List<String> param0) {
+    }
+
+    public void setHeaderPortletCss(List<String> param0) {
+    }
+
+    public void setHeaderPortletJavaScript(List<String> param0) {
+    }
+
+    public void setIcon(String param0) {
+    }
+
+    public void setInclude(boolean param0) {
+    }
+
+    public void setIndexerClasses(List<String> param0) {
+    }
+
+    public void setInitParams(Map<String, String> param0) {
+    }
+
+    public void setInstanceable(boolean param0) {
+    }
+
+    public void setLayoutCacheable(boolean param0) {
+    }
+
+    public void setMaximizeEdit(boolean param0) {
+    }
+
+    public void setMaximizeHelp(boolean param0) {
+    }
+
+    public void setOpenSearchClass(String param0) {
+    }
+
+    public void setParentStrutsPath(String param0) {
+    }
+
+    public void setPermissionPropagatorClass(String param0) {
+    }
+
+    public void setPollerProcessorClass(String param0) {
+    }
+
+    public void setPopMessageListenerClass(String param0) {
+    }
+
+    public void setPopUpPrint(boolean param0) {
+    }
+
+    public void setPortletApp(PortletApp param0) {
+    }
+
+    public void setPortletClass(String param0) {
+    }
+
+    public void setPortletDataHandlerClass(String param0) {
+    }
+
+    public void setPortletFilters(Map<String, PortletFilter> param0) {
+    }
+
+    public void setPortletInfo(PortletInfo param0) {
+    }
+
+    public void setPortletLayoutListenerClass(String param0) {
+    }
+
+    public void setPortletModes(Map<String, Set<String>> param0) {
+    }
+
+    public void setPortletName(String param0) {
+    }
+
+    public void setPortletURLClass(String param0) {
+    }
+
+    public void setPreferencesCompanyWide(boolean param0) {
+    }
+
+    public void setPreferencesOwnedByGroup(boolean param0) {
+    }
+
+    public void setPreferencesUniquePerLayout(boolean param0) {
+    }
+
+    public void setPreferencesValidator(String param0) {
+    }
+
+    public void setPrivateRequestAttributes(boolean param0) {
+    }
+
+    public void setPrivateSessionAttributes(boolean param0) {
+    }
+
+    public void setProcessingEvents(Set<QName> param0) {
+    }
+
+    public void setPublicRenderParameters(Set<PublicRenderParameter> param0) {
+    }
+
+    public void setPublishingEvents(Set<QName> param0) {
+    }
+
+    public void setReady(boolean param0) {
+    }
+
+    public void setRemoteable(boolean param0) {
+    }
+
+    public void setRenderTimeout(int param0) {
+    }
+
+    public void setRenderWeight(int param0) {
+    }
+
+    public void setRequiresNamespacedParameters(boolean param0) {
+    }
+
+    public void setRestoreCurrentView(boolean param0) {
+    }
+
+    public void setRoleMappers(Map<String, String> param0) {
+    }
+
+    public void setSchedulerEntries(List<SchedulerEntry> param0) {
+    }
+
+    public void setScopeable(boolean param0) {
+    }
+
+    public void setShowPortletAccessDenied(boolean param0) {
+    }
+
+    public void setShowPortletInactive(boolean param0) {
+    }
+
+    public void setSocialActivityInterpreterClasses(List<String> param0) {
+    }
+
+    public void setSocialRequestInterpreterClass(String param0) {
+    }
+
+    public void setStagedModelDataHandlerClasses(List<String> param0) {
+    }
+
+    public void setStatic(boolean param0) {
+    }
+
+    public void setStaticStart(boolean param0) {
+    }
+
+    public void setStrutsPath(String param0) {
+    }
+
+    public void setSupportedLocales(Set<String> param0) {
+    }
+
+    public void setTemplateHandlerClass(String param0) {
+    }
+
+    public void setTrashHandlerClasses(List<String> param0) {
+    }
+
+    public void setUndeployedPortlet(boolean param0) {
+    }
+
+    public void setUnlinkedRoles(Set<String> param0) {
+    }
+
+    public void setURLEncoderClass(String param0) {
+    }
+
+    public void setUseDefaultTemplate(boolean param0) {
+    }
+
+    public void setUserNotificationDefinitions(String param0) {
+    }
+
+    public void setUserNotificationHandlerClasses(List<String> param0) {
+    }
+
+    public void setUserPrincipalStrategy(String param0) {
+    }
+
+    public void setWebDAVStorageClass(String param0) {
+    }
+
+    public void setWebDAVStorageToken(String param0) {
+    }
+
+    public void setWindowStates(Map<String, Set<String>> param0) {
+    }
+
+    public void setWorkflowHandlerClasses(List<String> param0) {
+    }
+
+    public void setXmlRpcMethodClass(String param0) {
+    }
+
+    public void setRolesArray(String[] param0) {
     }
 
     public String[] getRolesArray() {
@@ -161,98 +641,8 @@ public class PortletMock
         return this.mockObject.hasRoleWithName(param0);
     }
 
-    public void setRoles(String param0) {
-    }
-
-    public void setRolesArray(String[] param0) {
-    }
-
-    public PortletApp getPortletApp() {
-        return this.mockObject.getPortletApp();
-    }
-
-    public void addProcessingEvent(QName param0) {
-    }
-
-    public void addPublicRenderParameter(PublicRenderParameter param0) {
-    }
-
-    public void addPublishingEvent(QName param0) {
-    }
-
-    public void addSchedulerEntry(SchedulerEntry param0) {
-    }
-
-    public int getActionTimeout() {
-        return this.mockObject.getActionTimeout();
-    }
-
-    public boolean getActionURLRedirect() {
-        return this.mockObject.getActionURLRedirect();
-    }
-
-    public boolean getAddDefaultResource() {
-        return this.mockObject.getAddDefaultResource();
-    }
-
     public boolean getAjaxable() {
         return this.mockObject.getAjaxable();
-    }
-
-    public Set<String> getAllPortletModes() {
-        return this.mockObject.getAllPortletModes();
-    }
-
-    public Set<String> getAllWindowStates() {
-        return this.mockObject.getAllWindowStates();
-    }
-
-    public List<String> getAssetRendererFactoryClasses() {
-        return this.mockObject.getAssetRendererFactoryClasses();
-    }
-
-    public List<AssetRendererFactory> getAssetRendererFactoryInstances() {
-        return this.mockObject.getAssetRendererFactoryInstances();
-    }
-
-    public List<String> getAtomCollectionAdapterClasses() {
-        return this.mockObject.getAtomCollectionAdapterClasses();
-    }
-
-    public List<AtomCollectionAdapter<?>> getAtomCollectionAdapterInstances() {
-        return this.mockObject.getAtomCollectionAdapterInstances();
-    }
-
-    public Set<String> getAutopropagatedParameters() {
-        return this.mockObject.getAutopropagatedParameters();
-    }
-
-    public Portlet getClonedInstance(String param0) {
-        return this.mockObject.getClonedInstance(param0);
-    }
-
-    public String getConfigurationActionClass() {
-        return this.mockObject.getConfigurationActionClass();
-    }
-
-    public ConfigurationAction getConfigurationActionInstance() {
-        return this.mockObject.getConfigurationActionInstance();
-    }
-
-    public String getControlPanelEntryCategory() {
-        return this.mockObject.getControlPanelEntryCategory();
-    }
-
-    public String getControlPanelEntryClass() {
-        return this.mockObject.getControlPanelEntryClass();
-    }
-
-    public ControlPanelEntry getControlPanelEntryInstance() {
-        return this.mockObject.getControlPanelEntryInstance();
-    }
-
-    public double getControlPanelEntryWeight() {
-        return this.mockObject.getControlPanelEntryWeight();
     }
 
     public String getCssClassWrapper() {
@@ -267,12 +657,12 @@ public class PortletMock
         return this.mockObject.getCustomAttributesDisplayInstances();
     }
 
-    public String getDefaultPreferences() {
-        return this.mockObject.getDefaultPreferences();
+    public String getDDMDisplayClass() {
+        return this.mockObject.getDDMDisplayClass();
     }
 
-    public Integer getExpCache() {
-        return this.mockObject.getExpCache();
+    public String getDefaultPreferences() {
+        return this.mockObject.getDefaultPreferences();
     }
 
     public String getFacebookIntegration() {
@@ -475,12 +865,12 @@ public class PortletMock
         return this.mockObject.getProcessingEvents();
     }
 
-    public PublicRenderParameter getPublicRenderParameter(String param0) {
-        return this.mockObject.getPublicRenderParameter(param0);
-    }
-
     public PublicRenderParameter getPublicRenderParameter(String param0, String param1) {
         return this.mockObject.getPublicRenderParameter(param0, param1);
+    }
+
+    public PublicRenderParameter getPublicRenderParameter(String param0) {
+        return this.mockObject.getPublicRenderParameter(param0);
     }
 
     public Set<PublicRenderParameter> getPublicRenderParameters() {
@@ -527,477 +917,152 @@ public class PortletMock
         return this.mockObject.getScopeable();
     }
 
-    public boolean getShowPortletAccessDenied() {
-        return this.mockObject.getShowPortletAccessDenied();
+    public PortletApp getPortletApp() {
+        return this.mockObject.getPortletApp();
     }
 
-    public boolean getShowPortletInactive() {
-        return this.mockObject.getShowPortletInactive();
+    public List<AtomCollectionAdapter<?>> getAtomCollectionAdapterInstances() {
+        return this.mockObject.getAtomCollectionAdapterInstances();
     }
 
-    public String getSocialActivityInterpreterClass() {
-        return this.mockObject.getSocialActivityInterpreterClass();
+    public Integer getExpCache() {
+        return this.mockObject.getExpCache();
     }
 
-    public SocialActivityInterpreter getSocialActivityInterpreterInstance() {
-        return this.mockObject.getSocialActivityInterpreterInstance();
+    public void addProcessingEvent(QName param0) {
     }
 
-    public String getSocialRequestInterpreterClass() {
-        return this.mockObject.getSocialRequestInterpreterClass();
+    public void addPublicRenderParameter(PublicRenderParameter param0) {
     }
 
-    public SocialRequestInterpreter getSocialRequestInterpreterInstance() {
-        return this.mockObject.getSocialRequestInterpreterInstance();
+    public void addPublishingEvent(QName param0) {
     }
 
-    public boolean getStatic() {
-        return this.mockObject.getStatic();
+    public void addSchedulerEntry(SchedulerEntry param0) {
     }
 
-    public boolean getStaticEnd() {
-        return this.mockObject.getStaticEnd();
+    public int getActionTimeout() {
+        return this.mockObject.getActionTimeout();
     }
 
-    public boolean getStaticStart() {
-        return this.mockObject.getStaticStart();
+    public boolean getActionURLRedirect() {
+        return this.mockObject.getActionURLRedirect();
     }
 
-    public String getStrutsPath() {
-        return this.mockObject.getStrutsPath();
+    public boolean getAddDefaultResource() {
+        return this.mockObject.getAddDefaultResource();
     }
 
-    public Set<String> getSupportedLocales() {
-        return this.mockObject.getSupportedLocales();
+    public Set<String> getAllPortletModes() {
+        return this.mockObject.getAllPortletModes();
     }
 
-    public boolean getUndeployedPortlet() {
-        return this.mockObject.getUndeployedPortlet();
+    public Set<String> getAllWindowStates() {
+        return this.mockObject.getAllWindowStates();
     }
 
-    public Set<String> getUnlinkedRoles() {
-        return this.mockObject.getUnlinkedRoles();
+    public List<String> getAssetRendererFactoryClasses() {
+        return this.mockObject.getAssetRendererFactoryClasses();
     }
 
-    public String getURLEncoderClass() {
-        return this.mockObject.getURLEncoderClass();
+    public List<AssetRendererFactory> getAssetRendererFactoryInstances() {
+        return this.mockObject.getAssetRendererFactoryInstances();
     }
 
-    public URLEncoder getURLEncoderInstance() {
-        return this.mockObject.getURLEncoderInstance();
+    public List<String> getAtomCollectionAdapterClasses() {
+        return this.mockObject.getAtomCollectionAdapterClasses();
     }
 
-    public boolean getUseDefaultTemplate() {
-        return this.mockObject.getUseDefaultTemplate();
+    public Set<String> getAutopropagatedParameters() {
+        return this.mockObject.getAutopropagatedParameters();
     }
 
-    public String getUserPrincipalStrategy() {
-        return this.mockObject.getUserPrincipalStrategy();
+    public Portlet getClonedInstance(String param0) {
+        return this.mockObject.getClonedInstance(param0);
     }
 
-    public String getWebDAVStorageClass() {
-        return this.mockObject.getWebDAVStorageClass();
+    public String getConfigurationActionClass() {
+        return this.mockObject.getConfigurationActionClass();
     }
 
-    public WebDAVStorage getWebDAVStorageInstance() {
-        return this.mockObject.getWebDAVStorageInstance();
+    public ConfigurationAction getConfigurationActionInstance() {
+        return this.mockObject.getConfigurationActionInstance();
     }
 
-    public String getWebDAVStorageToken() {
-        return this.mockObject.getWebDAVStorageToken();
+    public String getContextName() {
+        return this.mockObject.getContextName();
     }
 
-    public Map<String, Set<String>> getWindowStates() {
-        return this.mockObject.getWindowStates();
+    public String getControlPanelEntryCategory() {
+        return this.mockObject.getControlPanelEntryCategory();
     }
 
-    public List<String> getWorkflowHandlerClasses() {
-        return this.mockObject.getWorkflowHandlerClasses();
+    public String getControlPanelEntryClass() {
+        return this.mockObject.getControlPanelEntryClass();
     }
 
-    public List<WorkflowHandler> getWorkflowHandlerInstances() {
-        return this.mockObject.getWorkflowHandlerInstances();
+    public ControlPanelEntry getControlPanelEntryInstance() {
+        return this.mockObject.getControlPanelEntryInstance();
     }
 
-    public String getXmlRpcMethodClass() {
-        return this.mockObject.getXmlRpcMethodClass();
+    public double getControlPanelEntryWeight() {
+        return this.mockObject.getControlPanelEntryWeight();
     }
 
-    public Method getXmlRpcMethodInstance() {
-        return this.mockObject.getXmlRpcMethodInstance();
+    public String getVirtualPath() {
+        return this.mockObject.getVirtualPath();
     }
 
-    public boolean hasAddPortletPermission(long param0) {
-        return this.mockObject.hasAddPortletPermission(param0);
+    public void setVirtualPath(String param0) {
     }
 
-    public boolean hasMultipleMimeTypes() {
-        return this.mockObject.hasMultipleMimeTypes();
+    public PluginSetting getDefaultPluginSetting() {
+        return this.mockObject.getDefaultPluginSetting();
     }
 
-    public boolean hasPortletMode(String param0, PortletMode param1) {
-        return this.mockObject.hasPortletMode(param0, param1);
+    public String getPluginId() {
+        return this.mockObject.getPluginId();
     }
 
-    public boolean hasWindowState(String param0, WindowState param1) {
-        return this.mockObject.hasWindowState(param0, param1);
+    public PluginPackage getPluginPackage() {
+        return this.mockObject.getPluginPackage();
     }
 
-    public boolean isActionURLRedirect() {
-        return this.mockObject.isActionURLRedirect();
+    public String getPluginType() {
+        return this.mockObject.getPluginType();
     }
 
-    public boolean isAddDefaultResource() {
-        return this.mockObject.isAddDefaultResource();
+    public void setDefaultPluginSetting(PluginSetting param0) {
     }
 
-    public boolean isAjaxable() {
-        return this.mockObject.isAjaxable();
+    public void setPluginPackage(PluginPackage param0) {
     }
 
-    public boolean isInclude() {
-        return this.mockObject.isInclude();
+    public String getRootPortletId() {
+        return this.mockObject.getRootPortletId();
     }
 
-    public boolean isInstanceable() {
-        return this.mockObject.isInstanceable();
+    public boolean getSystem() {
+        return this.mockObject.getSystem();
     }
 
-    public boolean isLayoutCacheable() {
-        return this.mockObject.isLayoutCacheable();
+    public boolean isSystem() {
+        return this.mockObject.isSystem();
     }
 
-    public boolean isMaximizeEdit() {
-        return this.mockObject.isMaximizeEdit();
+    public void setSystem(boolean param0) {
     }
 
-    public boolean isMaximizeHelp() {
-        return this.mockObject.isMaximizeHelp();
+    public String getPreferencesValidator() {
+        return this.mockObject.getPreferencesValidator();
     }
 
-    public boolean isPopUpPrint() {
-        return this.mockObject.isPopUpPrint();
+    public String getStaticResourcePath() {
+        return this.mockObject.getStaticResourcePath();
     }
 
-    public boolean isPreferencesCompanyWide() {
-        return this.mockObject.isPreferencesCompanyWide();
-    }
-
-    public boolean isPreferencesOwnedByGroup() {
-        return this.mockObject.isPreferencesOwnedByGroup();
-    }
-
-    public boolean isPreferencesUniquePerLayout() {
-        return this.mockObject.isPreferencesUniquePerLayout();
-    }
-
-    public boolean isPrivateRequestAttributes() {
-        return this.mockObject.isPrivateRequestAttributes();
-    }
-
-    public boolean isPrivateSessionAttributes() {
-        return this.mockObject.isPrivateSessionAttributes();
-    }
-
-    public boolean isReady() {
-        return this.mockObject.isReady();
-    }
-
-    public boolean isRemoteable() {
-        return this.mockObject.isRemoteable();
-    }
-
-    public boolean isRestoreCurrentView() {
-        return this.mockObject.isRestoreCurrentView();
-    }
-
-    public boolean isScopeable() {
-        return this.mockObject.isScopeable();
-    }
-
-    public boolean isShowPortletAccessDenied() {
-        return this.mockObject.isShowPortletAccessDenied();
-    }
-
-    public boolean isShowPortletInactive() {
-        return this.mockObject.isShowPortletInactive();
-    }
-
-    public boolean isStaticEnd() {
-        return this.mockObject.isStaticEnd();
-    }
-
-    public boolean isStaticStart() {
-        return this.mockObject.isStaticStart();
-    }
-
-    public boolean isUndeployedPortlet() {
-        return this.mockObject.isUndeployedPortlet();
-    }
-
-    public boolean isUseDefaultTemplate() {
-        return this.mockObject.isUseDefaultTemplate();
-    }
-
-    public void linkRoles() {
-    }
-
-    public void setActionTimeout(int param0) {
-    }
-
-    public void setActionURLRedirect(boolean param0) {
-    }
-
-    public void setAddDefaultResource(boolean param0) {
-    }
-
-    public void setAjaxable(boolean param0) {
-    }
-
-    public void setAssetRendererFactoryClasses(List<String> param0) {
-    }
-
-    public void setAtomCollectionAdapterClasses(List<String> param0) {
-    }
-
-    public void setAutopropagatedParameters(Set<String> param0) {
-    }
-
-    public void setConfigurationActionClass(String param0) {
-    }
-
-    public void setControlPanelEntryCategory(String param0) {
-    }
-
-    public void setControlPanelEntryClass(String param0) {
-    }
-
-    public void setControlPanelEntryWeight(double param0) {
-    }
-
-    public void setCssClassWrapper(String param0) {
-    }
-
-    public void setCustomAttributesDisplayClasses(List<String> param0) {
-    }
-
-    public void setDefaultPreferences(String param0) {
-    }
-
-    public void setDisplayName(String param0) {
-    }
-
-    public void setExpCache(Integer param0) {
-    }
-
-    public void setFacebookIntegration(String param0) {
-    }
-
-    public void setFooterPortalCss(List<String> param0) {
-    }
-
-    public void setFooterPortalJavaScript(List<String> param0) {
-    }
-
-    public void setFooterPortletCss(List<String> param0) {
-    }
-
-    public void setFooterPortletJavaScript(List<String> param0) {
-    }
-
-    public void setFriendlyURLMapperClass(String param0) {
-    }
-
-    public void setFriendlyURLMapping(String param0) {
-    }
-
-    public void setFriendlyURLRoutes(String param0) {
-    }
-
-    public void setHeaderPortalCss(List<String> param0) {
-    }
-
-    public void setHeaderPortalJavaScript(List<String> param0) {
-    }
-
-    public void setHeaderPortletCss(List<String> param0) {
-    }
-
-    public void setHeaderPortletJavaScript(List<String> param0) {
-    }
-
-    public void setIcon(String param0) {
-    }
-
-    public void setInclude(boolean param0) {
-    }
-
-    public void setIndexerClasses(List<String> param0) {
-    }
-
-    public void setInitParams(Map<String, String> param0) {
-    }
-
-    public void setInstanceable(boolean param0) {
-    }
-
-    public void setLayoutCacheable(boolean param0) {
-    }
-
-    public void setMaximizeEdit(boolean param0) {
-    }
-
-    public void setMaximizeHelp(boolean param0) {
-    }
-
-    public void setOpenSearchClass(String param0) {
-    }
-
-    public void setParentStrutsPath(String param0) {
-    }
-
-    public void setPermissionPropagatorClass(String param0) {
-    }
-
-    public void setPollerProcessorClass(String param0) {
-    }
-
-    public void setPopMessageListenerClass(String param0) {
-    }
-
-    public void setPopUpPrint(boolean param0) {
-    }
-
-    public void setPortletApp(PortletApp param0) {
-    }
-
-    public void setPortletClass(String param0) {
-    }
-
-    public void setPortletDataHandlerClass(String param0) {
-    }
-
-    public void setPortletFilters(Map<String, PortletFilter> param0) {
-    }
-
-    public void setPortletInfo(PortletInfo param0) {
-    }
-
-    public void setPortletLayoutListenerClass(String param0) {
-    }
-
-    public void setPortletModes(Map<String, Set<String>> param0) {
-    }
-
-    public void setPortletName(String param0) {
-    }
-
-    public void setPortletURLClass(String param0) {
-    }
-
-    public void setPreferencesCompanyWide(boolean param0) {
-    }
-
-    public void setPreferencesOwnedByGroup(boolean param0) {
-    }
-
-    public void setPreferencesUniquePerLayout(boolean param0) {
-    }
-
-    public void setPreferencesValidator(String param0) {
-    }
-
-    public void setPrivateRequestAttributes(boolean param0) {
-    }
-
-    public void setPrivateSessionAttributes(boolean param0) {
-    }
-
-    public void setProcessingEvents(Set<QName> param0) {
-    }
-
-    public void setPublicRenderParameters(Set<PublicRenderParameter> param0) {
-    }
-
-    public void setPublishingEvents(Set<QName> param0) {
-    }
-
-    public void setReady(boolean param0) {
-    }
-
-    public void setRemoteable(boolean param0) {
-    }
-
-    public void setRenderTimeout(int param0) {
-    }
-
-    public void setRenderWeight(int param0) {
-    }
-
-    public void setRestoreCurrentView(boolean param0) {
-    }
-
-    public void setRoleMappers(Map<String, String> param0) {
-    }
-
-    public void setSchedulerEntries(List<SchedulerEntry> param0) {
-    }
-
-    public void setScopeable(boolean param0) {
-    }
-
-    public void setShowPortletAccessDenied(boolean param0) {
-    }
-
-    public void setShowPortletInactive(boolean param0) {
-    }
-
-    public void setSocialActivityInterpreterClass(String param0) {
-    }
-
-    public void setSocialRequestInterpreterClass(String param0) {
-    }
-
-    public void setStatic(boolean param0) {
-    }
-
-    public void setStaticStart(boolean param0) {
-    }
-
-    public void setStrutsPath(String param0) {
-    }
-
-    public void setSupportedLocales(Set<String> param0) {
-    }
-
-    public void setUndeployedPortlet(boolean param0) {
-    }
-
-    public void setUnlinkedRoles(Set<String> param0) {
-    }
-
-    public void setURLEncoderClass(String param0) {
-    }
-
-    public void setUseDefaultTemplate(boolean param0) {
-    }
-
-    public void setUserPrincipalStrategy(String param0) {
-    }
-
-    public void setWebDAVStorageClass(String param0) {
-    }
-
-    public void setWebDAVStorageToken(String param0) {
-    }
-
-    public void setWindowStates(Map<String, Set<String>> param0) {
-    }
-
-    public void setWorkflowHandlerClasses(List<String> param0) {
-    }
-
-    public void setXmlRpcMethodClass(String param0) {
+    public String getContextPath() {
+        return this.mockObject.getContextPath();
     }
 
     public String toString() {
@@ -1008,22 +1073,20 @@ public class PortletMock
         return this.mockObject.hashCode();
     }
 
+    public Object clone() {
+        return this.mockObject.clone();
+    }
+
+    public int compareTo(Portlet param0) {
+        return this.mockObject.compareTo(param0);
+    }
+
     public long getId() {
         return this.mockObject.getId();
     }
 
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
-    }
-
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
     }
 
     public boolean isCachedModel() {
@@ -1037,22 +1100,20 @@ public class PortletMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<Portlet> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public Portlet toEscapedModel() {
@@ -1063,18 +1124,32 @@ public class PortletMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Portlet> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public void setRoles(String param0) {
+    }
+
+    public void setId(long param0) {
     }
 
     public String getPortletId() {
         return this.mockObject.getPortletId();
-    }
-
-    public void setId(long param0) {
     }
 
     public boolean getActive() {
@@ -1088,18 +1163,29 @@ public class PortletMock
     public void setActive(boolean param0) {
     }
 
-    public String getRoles() {
-        return this.mockObject.getRoles();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public Portlet toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public void setPortletId(String param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public String getRoles() {
+        return this.mockObject.getRoles();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

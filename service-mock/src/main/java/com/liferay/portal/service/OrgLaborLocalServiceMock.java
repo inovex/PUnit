@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.OrgLabor;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,39 +48,40 @@ public class OrgLaborLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public OrgLabor fetchOrgLabor(long param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return (_serviceObjects.get(param0));
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public List<OrgLabor> getOrgLabors(long param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
+        return this.mockObject.getOrgLabors(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+    public List<OrgLabor> getOrgLabors(int param0, int param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+        return this.mockObject.getOrgLabors(param0, param1);
     }
 
-    public long dynamicQueryCount(DynamicQuery param0)
+    public int getOrgLaborsCount()
         throws SystemException
     {
-        return this.mockObject.dynamicQueryCount(param0);
+        return this.mockObject.getOrgLaborsCount();
     }
 
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
+    public OrgLabor updateOrgLabor(OrgLabor param0)
+        throws SystemException
+    {
+        return this.mockObject.updateOrgLabor(param0);
     }
 
-    public void setBeanIdentifier(String param0) {
+    public OrgLabor updateOrgLabor(long param0, int param1, int param2, int param3, int param4, int param5, int param6, int param7, int param8, int param9, int param10, int param11, int param12, int param13, int param14, int param15)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.updateOrgLabor(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15);
     }
 
     public OrgLabor addOrgLabor(OrgLabor param0)
@@ -96,14 +97,49 @@ public class OrgLaborLocalServiceMock
         return this.mockObject.addOrgLabor(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15);
     }
 
-    public OrgLabor createOrgLabor(long param0) {
-        return this.mockObject.createOrgLabor(param0);
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
     }
 
-    public OrgLabor deleteOrgLabor(long param0)
-        throws PortalException, SystemException
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
     {
-        return this.mockObject.deleteOrgLabor(param0);
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
+    }
+
+    public OrgLabor createOrgLabor(long param0) {
+        return this.mockObject.createOrgLabor(param0);
     }
 
     public OrgLabor deleteOrgLabor(OrgLabor param0)
@@ -112,52 +148,16 @@ public class OrgLaborLocalServiceMock
         return this.mockObject.deleteOrgLabor(param0);
     }
 
-    public OrgLabor fetchOrgLabor(long param0)
-        throws SystemException
+    public OrgLabor deleteOrgLabor(long param0)
+        throws PortalException, SystemException
     {
-        return (_serviceObjects.get(param0));
+        return this.mockObject.deleteOrgLabor(param0);
     }
 
     public OrgLabor getOrgLabor(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
-    }
-
-    public List<OrgLabor> getOrgLabors(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getOrgLabors(param0, param1);
-    }
-
-    public List<OrgLabor> getOrgLabors(long param0)
-        throws SystemException
-    {
-        return this.mockObject.getOrgLabors(param0);
-    }
-
-    public int getOrgLaborsCount()
-        throws SystemException
-    {
-        return this.mockObject.getOrgLaborsCount();
-    }
-
-    public OrgLabor updateOrgLabor(OrgLabor param0)
-        throws SystemException
-    {
-        return this.mockObject.updateOrgLabor(param0);
-    }
-
-    public OrgLabor updateOrgLabor(OrgLabor param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateOrgLabor(param0, param1);
-    }
-
-    public OrgLabor updateOrgLabor(long param0, int param1, int param2, int param3, int param4, int param5, int param6, int param7, int param8, int param9, int param10, int param11, int param12, int param13, int param14, int param15)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.updateOrgLabor(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15);
     }
 
 }

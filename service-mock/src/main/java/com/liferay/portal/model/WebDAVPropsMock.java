@@ -9,7 +9,6 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.xml.QName;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -45,13 +44,19 @@ public class WebDAVPropsMock
     {
     }
 
+    public Set<QName> getPropsSet()
+        throws Exception
+    {
+        return this.mockObject.getPropsSet();
+    }
+
     public String getText(String param0, String param1, String param2)
         throws Exception
     {
         return this.mockObject.getText(param0, param1, param2);
     }
 
-    public void addProp(String param0, String param1, String param2)
+    public void removeProp(String param0, String param1, String param2)
         throws Exception
     {
     }
@@ -61,17 +66,7 @@ public class WebDAVPropsMock
     {
     }
 
-    public String getProps() {
-        return this.mockObject.getProps();
-    }
-
-    public Set<QName> getPropsSet()
-        throws Exception
-    {
-        return this.mockObject.getPropsSet();
-    }
-
-    public void removeProp(String param0, String param1, String param2)
+    public void addProp(String param0, String param1, String param2)
         throws Exception
     {
     }
@@ -100,16 +95,6 @@ public class WebDAVPropsMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -121,11 +106,7 @@ public class WebDAVPropsMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -135,8 +116,10 @@ public class WebDAVPropsMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<WebDAVProps> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public WebDAVProps toEscapedModel() {
@@ -147,12 +130,65 @@ public class WebDAVPropsMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<WebDAVProps> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public Date getModifiedDate() {
+        return this.mockObject.getModifiedDate();
+    }
+
+    public void setModifiedDate(Date param0) {
+    }
+
     public long getClassPK() {
         return this.mockObject.getClassPK();
     }
 
+    public void setWebDavPropsId(long param0) {
+    }
+
+    public long getWebDavPropsId() {
+        return this.mockObject.getWebDavPropsId();
+    }
+
+    public void setProps(String param0) {
+    }
+
+    public String getProps() {
+        return this.mockObject.getProps();
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
     public long getCompanyId() {
         return this.mockObject.getCompanyId();
+    }
+
+    public WebDAVProps toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
     }
 
     public void setClassName(String param0) {
@@ -164,42 +200,15 @@ public class WebDAVPropsMock
     public void setCompanyId(long param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
-    }
-
-    public void setCreateDate(Date param0) {
-    }
-
-    public Date getModifiedDate() {
-        return this.mockObject.getModifiedDate();
-    }
-
-    public void setModifiedDate(Date param0) {
-    }
-
     public long getClassNameId() {
         return this.mockObject.getClassNameId();
     }
 
-    public void setClassNameId(long param0) {
-    }
-
-    public long getWebDavPropsId() {
-        return this.mockObject.getWebDavPropsId();
-    }
-
-    public void setWebDavPropsId(long param0) {
-    }
-
-    public void setProps(String param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.MembershipRequest;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -54,67 +54,16 @@ public class MembershipRequestLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
     public int searchCount(long param0, int param1)
         throws SystemException
     {
         return this.mockObject.searchCount(param0, param1);
     }
 
-    public void updateStatus(long param0, long param1, String param2, int param3, boolean param4, ServiceContext param5)
-        throws PortalException, SystemException
-    {
-    }
-
-    public MembershipRequest addMembershipRequest(MembershipRequest param0)
+    public MembershipRequest updateMembershipRequest(MembershipRequest param0)
         throws SystemException
     {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public MembershipRequest addMembershipRequest(long param0, long param1, String param2, ServiceContext param3)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addMembershipRequest(param0, param1, param2, param3);
-    }
-
-    public MembershipRequest createMembershipRequest(long param0) {
-        return this.mockObject.createMembershipRequest(param0);
+        return this.mockObject.updateMembershipRequest(param0);
     }
 
     public MembershipRequest deleteMembershipRequest(long param0)
@@ -159,24 +108,70 @@ public class MembershipRequestLocalServiceMock
         return this.mockObject.getMembershipRequestsCount();
     }
 
-    public MembershipRequest updateMembershipRequest(MembershipRequest param0)
+    public MembershipRequest addMembershipRequest(MembershipRequest param0)
         throws SystemException
     {
-        return this.mockObject.updateMembershipRequest(param0);
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
-    public MembershipRequest updateMembershipRequest(MembershipRequest param0, boolean param1)
-        throws SystemException
+    public MembershipRequest addMembershipRequest(long param0, long param1, String param2, ServiceContext param3)
+        throws PortalException, SystemException
     {
-        return this.mockObject.updateMembershipRequest(param0, param1);
+        return this.mockObject.addMembershipRequest(param0, param1, param2, param3);
     }
 
-    public void deleteMembershipRequests(long param0)
+    public MembershipRequest createMembershipRequest(long param0) {
+        return this.mockObject.createMembershipRequest(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
         throws SystemException
     {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
     public void deleteMembershipRequests(long param0, int param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteMembershipRequests(long param0)
         throws SystemException
     {
     }
@@ -190,6 +185,11 @@ public class MembershipRequestLocalServiceMock
         throws SystemException
     {
         return this.mockObject.hasMembershipRequest(param0, param1, param2);
+    }
+
+    public void updateStatus(long param0, long param1, String param2, int param3, boolean param4, ServiceContext param5)
+        throws PortalException, SystemException
+    {
     }
 
 }

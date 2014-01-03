@@ -7,7 +7,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -42,6 +41,10 @@ public class ContactMock
         return this.mockObject.getFullName();
     }
 
+    public boolean isUser() {
+        return this.mockObject.isUser();
+    }
+
     public String toString() {
         return this.mockObject.toString();
     }
@@ -58,18 +61,12 @@ public class ContactMock
         return this.mockObject.compareTo(param0);
     }
 
+    public String getClassName() {
+        return this.mockObject.getClassName();
+    }
+
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
-    }
-
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
     }
 
     public boolean isCachedModel() {
@@ -83,22 +80,20 @@ public class ContactMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<Contact> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public Contact toEscapedModel() {
@@ -109,18 +104,22 @@ public class ContactMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Contact> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -135,6 +134,10 @@ public class ContactMock
     }
 
     public void setUserId(long param0) {
+    }
+
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
     }
 
     public String getUserName() {
@@ -160,51 +163,29 @@ public class ContactMock
     public void setUserName(String param0) {
     }
 
-    public Date getBirthday() {
-        return this.mockObject.getBirthday();
+    public void setClassNameId(long param0) {
     }
 
-    public boolean getMale() {
-        return this.mockObject.getMale();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public String getEmailAddress() {
+        return this.mockObject.getEmailAddress();
     }
 
     public boolean isMale() {
         return this.mockObject.isMale();
     }
 
-    public long getContactId() {
-        return this.mockObject.getContactId();
-    }
-
     public void setContactId(long param0) {
     }
 
-    public String getFirstName() {
-        return this.mockObject.getFirstName();
-    }
-
-    public void setFirstName(String param0) {
-    }
-
-    public String getMiddleName() {
-        return this.mockObject.getMiddleName();
-    }
-
-    public void setMiddleName(String param0) {
-    }
-
-    public String getLastName() {
-        return this.mockObject.getLastName();
-    }
-
-    public void setLastName(String param0) {
-    }
-
-    public String getJobTitle() {
-        return this.mockObject.getJobTitle();
-    }
-
     public void setJobTitle(String param0) {
+    }
+
+    public long getContactId() {
+        return this.mockObject.getContactId();
     }
 
     public long getParentContactId() {
@@ -212,10 +193,6 @@ public class ContactMock
     }
 
     public void setParentContactId(long param0) {
-    }
-
-    public int getPrefixId() {
-        return this.mockObject.getPrefixId();
     }
 
     public void setPrefixId(int param0) {
@@ -232,6 +209,45 @@ public class ContactMock
     }
 
     public void setBirthday(Date param0) {
+    }
+
+    public int getPrefixId() {
+        return this.mockObject.getPrefixId();
+    }
+
+    public String getYmSn() {
+        return this.mockObject.getYmSn();
+    }
+
+    public void setYmSn(String param0) {
+    }
+
+    public String getEmployeeStatusId() {
+        return this.mockObject.getEmployeeStatusId();
+    }
+
+    public void setEmployeeStatusId(String param0) {
+    }
+
+    public String getEmployeeNumber() {
+        return this.mockObject.getEmployeeNumber();
+    }
+
+    public void setEmployeeNumber(String param0) {
+    }
+
+    public String getJobClass() {
+        return this.mockObject.getJobClass();
+    }
+
+    public void setJobClass(String param0) {
+    }
+
+    public String getHoursOfOperation() {
+        return this.mockObject.getHoursOfOperation();
+    }
+
+    public void setHoursOfOperation(String param0) {
     }
 
     public String getSmsSn() {
@@ -297,49 +313,64 @@ public class ContactMock
     public void setTwitterSn(String param0) {
     }
 
-    public String getYmSn() {
-        return this.mockObject.getYmSn();
+    public void setEmailAddress(String param0) {
     }
 
-    public void setYmSn(String param0) {
+    public String getFirstName() {
+        return this.mockObject.getFirstName();
     }
 
-    public String getEmployeeStatusId() {
-        return this.mockObject.getEmployeeStatusId();
+    public void setFirstName(String param0) {
     }
 
-    public void setEmployeeStatusId(String param0) {
+    public String getMiddleName() {
+        return this.mockObject.getMiddleName();
     }
 
-    public String getEmployeeNumber() {
-        return this.mockObject.getEmployeeNumber();
+    public void setMiddleName(String param0) {
     }
 
-    public void setEmployeeNumber(String param0) {
+    public String getLastName() {
+        return this.mockObject.getLastName();
     }
 
-    public String getJobClass() {
-        return this.mockObject.getJobClass();
+    public void setLastName(String param0) {
     }
 
-    public void setJobClass(String param0) {
+    public String getJobTitle() {
+        return this.mockObject.getJobTitle();
     }
 
-    public String getHoursOfOperation() {
-        return this.mockObject.getHoursOfOperation();
+    public Contact toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setHoursOfOperation(String param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setCreateDate(Date param0) {
     }
 
-    public void resetOriginalValues() {
+    public void setClassName(String param0) {
     }
 
-    public void setModelAttributes(Map<String, Object> param0) {
+    public void setClassPK(long param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public Date getBirthday() {
+        return this.mockObject.getBirthday();
+    }
+
+    public boolean getMale() {
+        return this.mockObject.getMale();
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public Class<?> getModelClass() {
@@ -348,6 +379,16 @@ public class ContactMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
+    }
+
+    public void setModelAttributes(Map<String, Object> param0) {
     }
 
     public void persist()

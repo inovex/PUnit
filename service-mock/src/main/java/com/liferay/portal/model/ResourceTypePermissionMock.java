@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -37,12 +36,12 @@ public class ResourceTypePermissionMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portal.model.ResourceTypePermission.class));
     }
 
-    public boolean isCompanyScope() {
-        return this.mockObject.isCompanyScope();
-    }
-
     public boolean isGroupScope() {
         return this.mockObject.isGroupScope();
+    }
+
+    public boolean isCompanyScope() {
+        return this.mockObject.isCompanyScope();
     }
 
     public String toString() {
@@ -72,14 +71,11 @@ public class ResourceTypePermissionMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -93,22 +89,20 @@ public class ResourceTypePermissionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<ResourceTypePermission> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public ResourceTypePermission toEscapedModel() {
@@ -119,22 +113,29 @@ public class ResourceTypePermissionMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setGroupId(long param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ResourceTypePermission> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getActionIds() {
         return this.mockObject.getActionIds();
+    }
+
+    public void setActionIds(long param0) {
     }
 
     public long getRoleId() {
@@ -144,9 +145,6 @@ public class ResourceTypePermissionMock
     public void setRoleId(long param0) {
     }
 
-    public void setActionIds(long param0) {
-    }
-
     public long getResourceTypePermissionId() {
         return this.mockObject.getResourceTypePermissionId();
     }
@@ -154,11 +152,22 @@ public class ResourceTypePermissionMock
     public void setResourceTypePermissionId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public ResourceTypePermission toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

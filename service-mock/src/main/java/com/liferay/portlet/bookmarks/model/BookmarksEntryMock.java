@@ -4,11 +4,15 @@ package com.liferay.portlet.bookmarks.model;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Map;
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.trash.TrashHandler;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
+import com.liferay.portlet.trash.model.TrashEntry;
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -39,8 +43,16 @@ public class BookmarksEntryMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.bookmarks.model.BookmarksEntry.class));
     }
 
-    public BookmarksFolder getFolder() {
+    public BookmarksFolder getFolder()
+        throws PortalException, SystemException
+    {
         return this.mockObject.getFolder();
+    }
+
+    public String buildTreePath()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.buildTreePath();
     }
 
     public String toString() {
@@ -73,22 +85,30 @@ public class BookmarksEntryMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getFolderId() {
+        return this.mockObject.getFolderId();
+    }
+
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -102,22 +122,20 @@ public class BookmarksEntryMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<BookmarksEntry> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public BookmarksEntry toEscapedModel() {
@@ -128,18 +146,22 @@ public class BookmarksEntryMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<BookmarksEntry> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -163,6 +185,20 @@ public class BookmarksEntryMock
     public void setUuid(String param0) {
     }
 
+    public void setEntryId(long param0) {
+    }
+
+    public long getEntryId() {
+        return this.mockObject.getEntryId();
+    }
+
+    public String getUrl() {
+        return this.mockObject.getUrl();
+    }
+
+    public void setUrl(String param0) {
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -179,42 +215,29 @@ public class BookmarksEntryMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public TrashEntry getTrashEntry()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTrashEntry();
     }
 
-    public void setGroupId(long param0) {
+    public long getTrashEntryClassPK() {
+        return this.mockObject.getTrashEntryClassPK();
     }
 
-    public void setDescription(String param0) {
+    public TrashHandler getTrashHandler() {
+        return this.mockObject.getTrashHandler();
     }
 
-    public long getResourceBlockId() {
-        return this.mockObject.getResourceBlockId();
+    public boolean isInTrash() {
+        return this.mockObject.isInTrash();
+    }
+
+    public boolean isInTrashContainer() {
+        return this.mockObject.isInTrashContainer();
     }
 
     public void setResourceBlockId(long param0) {
-    }
-
-    public String getUrl() {
-        return this.mockObject.getUrl();
-    }
-
-    public void setUrl(String param0) {
-    }
-
-    public long getEntryId() {
-        return this.mockObject.getEntryId();
-    }
-
-    public void setEntryId(long param0) {
-    }
-
-    public long getFolderId() {
-        return this.mockObject.getFolderId();
-    }
-
-    public void setFolderId(long param0) {
     }
 
     public int getVisits() {
@@ -224,11 +247,112 @@ public class BookmarksEntryMock
     public void setVisits(int param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setFolderId(long param0) {
+    }
+
+    public long getResourceBlockId() {
+        return this.mockObject.getResourceBlockId();
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public BookmarksEntry toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public long getStatusByUserId() {
+        return this.mockObject.getStatusByUserId();
+    }
+
+    public void setStatusByUserId(long param0) {
+    }
+
+    public String getStatusByUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getStatusByUserUuid();
+    }
+
+    public void setStatusByUserUuid(String param0) {
+    }
+
+    public String getStatusByUserName() {
+        return this.mockObject.getStatusByUserName();
+    }
+
+    public void setStatusByUserName(String param0) {
+    }
+
+    public Date getStatusDate() {
+        return this.mockObject.getStatusDate();
+    }
+
+    public void setStatusDate(Date param0) {
+    }
+
+    public boolean getApproved() {
+        return this.mockObject.getApproved();
+    }
+
+    public boolean isApproved() {
+        return this.mockObject.isApproved();
+    }
+
+    public boolean isDenied() {
+        return this.mockObject.isDenied();
+    }
+
+    public boolean isDraft() {
+        return this.mockObject.isDraft();
+    }
+
+    public boolean isExpired() {
+        return this.mockObject.isExpired();
+    }
+
+    public boolean isInactive() {
+        return this.mockObject.isInactive();
+    }
+
+    public boolean isIncomplete() {
+        return this.mockObject.isIncomplete();
+    }
+
+    public boolean isPending() {
+        return this.mockObject.isPending();
+    }
+
+    public boolean isScheduled() {
+        return this.mockObject.isScheduled();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setTreePath(String param0) {
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public String getTreePath() {
+        return this.mockObject.getTreePath();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -242,7 +366,16 @@ public class BookmarksEntryMock
         return this.mockObject.getModelClassName();
     }
 
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
+    }
+
     public void persist()
+        throws SystemException
+    {
+    }
+
+    public void updateTreePath(String param0)
         throws SystemException
     {
     }

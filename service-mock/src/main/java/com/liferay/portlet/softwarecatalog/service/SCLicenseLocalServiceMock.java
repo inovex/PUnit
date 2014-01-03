@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.softwarecatalog.model.SCLicense;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,45 +48,22 @@ public class SCLicenseLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
+    public SCLicense getSCLicense(long param0)
+        throws PortalException, SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
+        return (_serviceObjects.get(param0));
     }
 
     public List<SCLicense> getLicenses()
         throws SystemException
     {
         return this.mockObject.getLicenses();
+    }
+
+    public List<SCLicense> getLicenses(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getLicenses(param0, param1);
     }
 
     public List<SCLicense> getLicenses(boolean param0, boolean param1)
@@ -99,23 +76,6 @@ public class SCLicenseLocalServiceMock
         throws SystemException
     {
         return this.mockObject.getLicenses(param0, param1, param2, param3);
-    }
-
-    public List<SCLicense> getLicenses(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getLicenses(param0, param1);
-    }
-
-    public SCLicense addSCLicense(SCLicense param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public SCLicense createSCLicense(long param0) {
-        return this.mockObject.createSCLicense(param0);
     }
 
     public SCLicense deleteSCLicense(long param0)
@@ -132,12 +92,6 @@ public class SCLicenseLocalServiceMock
 
     public SCLicense fetchSCLicense(long param0)
         throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public SCLicense getSCLicense(long param0)
-        throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
     }
@@ -160,20 +114,22 @@ public class SCLicenseLocalServiceMock
         return this.mockObject.updateSCLicense(param0);
     }
 
-    public SCLicense updateSCLicense(SCLicense param0, boolean param1)
+    public void addSCProductEntrySCLicense(long param0, long param1)
         throws SystemException
     {
-        return this.mockObject.updateSCLicense(param0, param1);
     }
 
-    public SCLicense addLicense(String param0, String param1, boolean param2, boolean param3, boolean param4)
-        throws PortalException, SystemException
+    public void addSCProductEntrySCLicense(long param0, SCLicense param1)
+        throws SystemException
     {
-        return this.mockObject.addLicense(param0, param1, param2, param3, param4);
     }
 
-    public void deleteLicense(long param0)
-        throws PortalException, SystemException
+    public SCLicense createSCLicense(long param0) {
+        return this.mockObject.createSCLicense(param0);
+    }
+
+    public void setSCProductEntrySCLicenses(long param0, long[] param1)
+        throws SystemException
     {
     }
 
@@ -182,22 +138,21 @@ public class SCLicenseLocalServiceMock
     {
     }
 
-    public SCLicense getLicense(long param0)
+    public void deleteLicense(long param0)
         throws PortalException, SystemException
     {
-        return this.mockObject.getLicense(param0);
-    }
-
-    public int getLicensesCount()
-        throws SystemException
-    {
-        return this.mockObject.getLicensesCount();
     }
 
     public int getLicensesCount(boolean param0, boolean param1)
         throws SystemException
     {
         return this.mockObject.getLicensesCount(param0, param1);
+    }
+
+    public int getLicensesCount()
+        throws SystemException
+    {
+        return this.mockObject.getLicensesCount();
     }
 
     public List<SCLicense> getProductEntryLicenses(long param0)
@@ -210,6 +165,137 @@ public class SCLicenseLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.updateLicense(param0, param1, param2, param3, param4, param5);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
+    }
+
+    public SCLicense addLicense(String param0, String param1, boolean param2, boolean param3, boolean param4)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addLicense(param0, param1, param2, param3, param4);
+    }
+
+    public SCLicense getLicense(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getLicense(param0);
+    }
+
+    public void addSCProductEntrySCLicenses(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void addSCProductEntrySCLicenses(long param0, List<SCLicense> param1)
+        throws SystemException
+    {
+    }
+
+    public void clearSCProductEntrySCLicenses(long param0)
+        throws SystemException
+    {
+    }
+
+    public void deleteSCProductEntrySCLicense(long param0, SCLicense param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteSCProductEntrySCLicense(long param0, long param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteSCProductEntrySCLicenses(long param0, long[] param1)
+        throws SystemException
+    {
+    }
+
+    public void deleteSCProductEntrySCLicenses(long param0, List<SCLicense> param1)
+        throws SystemException
+    {
+    }
+
+    public List<SCLicense> getSCProductEntrySCLicenses(long param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.getSCProductEntrySCLicenses(param0, param1, param2);
+    }
+
+    public List<SCLicense> getSCProductEntrySCLicenses(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getSCProductEntrySCLicenses(param0);
+    }
+
+    public List<SCLicense> getSCProductEntrySCLicenses(long param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.getSCProductEntrySCLicenses(param0, param1, param2, param3);
+    }
+
+    public int getSCProductEntrySCLicensesCount(long param0)
+        throws SystemException
+    {
+        return this.mockObject.getSCProductEntrySCLicensesCount(param0);
+    }
+
+    public boolean hasSCProductEntrySCLicense(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.hasSCProductEntrySCLicense(param0, param1);
+    }
+
+    public boolean hasSCProductEntrySCLicenses(long param0)
+        throws SystemException
+    {
+        return this.mockObject.hasSCProductEntrySCLicenses(param0);
+    }
+
+    public SCLicense addSCLicense(SCLicense param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
 }

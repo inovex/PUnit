@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -57,16 +56,6 @@ public class VirtualHostMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -78,22 +67,20 @@ public class VirtualHostMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<VirtualHost> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public VirtualHost toEscapedModel() {
@@ -104,39 +91,61 @@ public class VirtualHostMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public long getLayoutSetId() {
-        return this.mockObject.getLayoutSetId();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setLayoutSetId(long param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<VirtualHost> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public void setVirtualHostId(long param0) {
     }
 
     public long getVirtualHostId() {
         return this.mockObject.getVirtualHostId();
     }
 
-    public void setVirtualHostId(long param0) {
+    public void setHostname(String param0) {
     }
 
     public String getHostname() {
         return this.mockObject.getHostname();
     }
 
-    public void setHostname(String param0) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public void setLayoutSetId(long param0) {
+    }
+
+    public VirtualHost toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public long getLayoutSetId() {
+        return this.mockObject.getLayoutSetId();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

@@ -2,12 +2,14 @@
 package com.liferay.portlet.messageboards.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -62,14 +64,11 @@ public class MBDiscussionMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -83,11 +82,7 @@ public class MBDiscussionMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -97,8 +92,10 @@ public class MBDiscussionMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<MBDiscussion> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public MBDiscussion toEscapedModel() {
@@ -109,21 +106,63 @@ public class MBDiscussionMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<MBDiscussion> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public Date getModifiedDate() {
+        return this.mockObject.getModifiedDate();
+    }
+
+    public void setModifiedDate(Date param0) {
+    }
+
+    public long getUserId() {
+        return this.mockObject.getUserId();
+    }
+
+    public void setUserId(long param0) {
+    }
+
+    public String getUuid() {
+        return this.mockObject.getUuid();
+    }
+
+    public void setUuid(String param0) {
+    }
+
     public long getClassPK() {
         return this.mockObject.getClassPK();
     }
 
-    public void setClassName(String param0) {
+    public String getUserName() {
+        return this.mockObject.getUserName();
     }
 
-    public void setClassPK(long param0) {
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
     }
 
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
+    public void setUserUuid(String param0) {
     }
 
-    public void setClassNameId(long param0) {
+    public void setUserName(String param0) {
     }
 
     public long getDiscussionId() {
@@ -140,11 +179,42 @@ public class MBDiscussionMock
     public void setThreadId(long param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setClassNameId(long param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public MBDiscussion toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setClassName(String param0) {
+    }
+
+    public void setClassPK(long param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -156,6 +226,10 @@ public class MBDiscussionMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

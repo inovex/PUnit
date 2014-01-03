@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,9 +48,6 @@ public class ServiceComponentMock
         return this.mockObject.getTablesSQL();
     }
 
-    public void setData(String param0) {
-    }
-
     public String toString() {
         return this.mockObject.toString();
     }
@@ -76,16 +72,6 @@ public class ServiceComponentMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -97,22 +83,20 @@ public class ServiceComponentMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<ServiceComponent> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public ServiceComponent toEscapedModel() {
@@ -121,6 +105,34 @@ public class ServiceComponentMock
 
     public String toXmlString() {
         return this.mockObject.toXmlString();
+    }
+
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<ServiceComponent> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public long getServiceComponentId() {
+        return this.mockObject.getServiceComponentId();
+    }
+
+    public void setData(String param0) {
+    }
+
+    public void setBuildDate(long param0) {
     }
 
     public long getBuildNumber() {
@@ -134,13 +146,6 @@ public class ServiceComponentMock
         return this.mockObject.getBuildDate();
     }
 
-    public void setBuildDate(long param0) {
-    }
-
-    public long getServiceComponentId() {
-        return this.mockObject.getServiceComponentId();
-    }
-
     public void setServiceComponentId(long param0) {
     }
 
@@ -151,11 +156,15 @@ public class ServiceComponentMock
     public void setBuildNamespace(String param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public ServiceComponent toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

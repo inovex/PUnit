@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.journal.model.JournalArticleResource;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,74 +48,10 @@ public class JournalArticleResourceLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public JournalArticleResource fetchJournalArticleResourceByUuidAndGroupId(String param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public JournalArticleResource getArticleResource(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getArticleResource(param0);
-    }
-
-    public JournalArticleResource addJournalArticleResource(JournalArticleResource param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public JournalArticleResource createJournalArticleResource(long param0) {
-        return this.mockObject.createJournalArticleResource(param0);
-    }
-
-    public JournalArticleResource deleteJournalArticleResource(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteJournalArticleResource(param0);
-    }
-
-    public JournalArticleResource deleteJournalArticleResource(JournalArticleResource param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteJournalArticleResource(param0);
-    }
-
-    public JournalArticleResource fetchJournalArticleResource(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
+        return this.mockObject.fetchJournalArticleResourceByUuidAndGroupId(param0, param1);
     }
 
     public JournalArticleResource getJournalArticleResource(long param0)
@@ -148,21 +84,21 @@ public class JournalArticleResourceLocalServiceMock
         return this.mockObject.updateJournalArticleResource(param0);
     }
 
-    public JournalArticleResource updateJournalArticleResource(JournalArticleResource param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateJournalArticleResource(param0, param1);
-    }
-
     public void deleteArticleResource(long param0, String param1)
         throws PortalException, SystemException
     {
     }
 
-    public long getArticleResourcePrimKey(long param0, String param1)
+    public JournalArticleResource fetchArticleResource(long param0, String param1)
         throws SystemException
     {
-        return this.mockObject.getArticleResourcePrimKey(param0, param1);
+        return this.mockObject.fetchArticleResource(param0, param1);
+    }
+
+    public JournalArticleResource fetchArticleResource(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchArticleResource(param0, param1);
     }
 
     public long getArticleResourcePrimKey(String param0, long param1, String param2)
@@ -171,10 +107,92 @@ public class JournalArticleResourceLocalServiceMock
         return this.mockObject.getArticleResourcePrimKey(param0, param1, param2);
     }
 
+    public long getArticleResourcePrimKey(long param0, String param1)
+        throws SystemException
+    {
+        return this.mockObject.getArticleResourcePrimKey(param0, param1);
+    }
+
     public List<JournalArticleResource> getArticleResources(long param0)
         throws SystemException
     {
         return this.mockObject.getArticleResources(param0);
+    }
+
+    public JournalArticleResource addJournalArticleResource(JournalArticleResource param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public JournalArticleResource createJournalArticleResource(long param0) {
+        return this.mockObject.createJournalArticleResource(param0);
+    }
+
+    public JournalArticleResource deleteJournalArticleResource(JournalArticleResource param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteJournalArticleResource(param0);
+    }
+
+    public JournalArticleResource deleteJournalArticleResource(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteJournalArticleResource(param0);
+    }
+
+    public JournalArticleResource fetchJournalArticleResource(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public JournalArticleResource getArticleResource(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getArticleResource(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

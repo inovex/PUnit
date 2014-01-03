@@ -6,10 +6,11 @@ import java.util.Date;
 import java.util.Map;
 import com.liferay.portal.kernel.cal.TZSRecurrence;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -44,9 +45,6 @@ public class CalEventMock
         return this.mockObject.getRecurrenceObj();
     }
 
-    public void setRecurrence(String param0) {
-    }
-
     public void setRecurrenceObj(TZSRecurrence param0) {
     }
 
@@ -74,22 +72,19 @@ public class CalEventMock
         return this.mockObject.getType();
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -103,22 +98,20 @@ public class CalEventMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<CalEvent> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public CalEvent toEscapedModel() {
@@ -129,18 +122,22 @@ public class CalEventMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<CalEvent> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -164,58 +161,11 @@ public class CalEventMock
     public void setUuid(String param0) {
     }
 
-    public String getUserName() {
-        return this.mockObject.getUserName();
-    }
-
-    public String getUserUuid()
-        throws SystemException
-    {
-        return this.mockObject.getUserUuid();
-    }
-
-    public void setUserUuid(String param0) {
-    }
-
-    public void setUserName(String param0) {
-    }
-
-    public void setType(String param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public String getTitle() {
-        return this.mockObject.getTitle();
-    }
-
-    public void setTitle(String param0) {
-    }
-
     public Date getStartDate() {
         return this.mockObject.getStartDate();
     }
 
     public void setStartDate(Date param0) {
-    }
-
-    public Date getEndDate() {
-        return this.mockObject.getEndDate();
-    }
-
-    public void setEndDate(Date param0) {
-    }
-
-    public long getEventId() {
-        return this.mockObject.getEventId();
     }
 
     public void setEventId(long param0) {
@@ -236,6 +186,26 @@ public class CalEventMock
     }
 
     public void setDurationMinute(int param0) {
+    }
+
+    public long getEventId() {
+        return this.mockObject.getEventId();
+    }
+
+    public String getUserName() {
+        return this.mockObject.getUserName();
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
     }
 
     public boolean getAllDay() {
@@ -275,6 +245,9 @@ public class CalEventMock
         return this.mockObject.getRecurrence();
     }
 
+    public void setRecurrence(String param0) {
+    }
+
     public int getRemindBy() {
         return this.mockObject.getRemindBy();
     }
@@ -296,11 +269,49 @@ public class CalEventMock
     public void setSecondReminder(int param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setType(String param0) {
+    }
+
+    public Date getEndDate() {
+        return this.mockObject.getEndDate();
+    }
+
+    public void setEndDate(Date param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public String getTitle() {
+        return this.mockObject.getTitle();
+    }
+
+    public void setTitle(String param0) {
+    }
+
+    public CalEvent toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -312,6 +323,10 @@ public class CalEventMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

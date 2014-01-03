@@ -7,10 +7,13 @@ import java.util.List;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.trash.TrashHandler;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
+import com.liferay.portlet.trash.model.TrashEntry;
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -51,24 +54,20 @@ public class DLFolderMock
         return this.mockObject.isLocked();
     }
 
+    public List<Long> getAncestorFolderIds()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getAncestorFolderIds();
+    }
+
     public List<DLFolder> getAncestors()
         throws PortalException, SystemException
     {
         return this.mockObject.getAncestors();
     }
 
-    public boolean isRoot() {
-        return this.mockObject.isRoot();
-    }
-
-    public boolean hasLock() {
-        return this.mockObject.hasLock();
-    }
-
-    public DLFolder getParentFolder()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getParentFolder();
+    public boolean isInHiddenFolder() {
+        return this.mockObject.isInHiddenFolder();
     }
 
     public String[] getPathArray()
@@ -77,8 +76,22 @@ public class DLFolderMock
         return this.mockObject.getPathArray();
     }
 
+    public DLFolder getParentFolder()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getParentFolder();
+    }
+
     public boolean hasInheritableLock() {
         return this.mockObject.hasInheritableLock();
+    }
+
+    public boolean hasLock() {
+        return this.mockObject.hasLock();
+    }
+
+    public boolean isRoot() {
+        return this.mockObject.isRoot();
     }
 
     public String toString() {
@@ -104,22 +117,34 @@ public class DLFolderMock
     public void setName(String param0) {
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
+    public boolean isHidden() {
+        return this.mockObject.isHidden();
     }
 
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public void setGroupId(long param0) {
     }
 
-    public void setNew(boolean param0) {
+    public long getFolderId() {
+        return this.mockObject.getFolderId();
+    }
+
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -133,22 +158,20 @@ public class DLFolderMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<DLFolder> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public DLFolder toEscapedModel() {
@@ -159,18 +182,22 @@ public class DLFolderMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DLFolder> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -194,71 +221,6 @@ public class DLFolderMock
     public void setUuid(String param0) {
     }
 
-    public String getUserName() {
-        return this.mockObject.getUserName();
-    }
-
-    public String getUserUuid()
-        throws SystemException
-    {
-        return this.mockObject.getUserUuid();
-    }
-
-    public void setUserUuid(String param0) {
-    }
-
-    public void setUserName(String param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public long getRepositoryId() {
-        return this.mockObject.getRepositoryId();
-    }
-
-    public void setRepositoryId(long param0) {
-    }
-
-    public Date getLastPostDate() {
-        return this.mockObject.getLastPostDate();
-    }
-
-    public void setLastPostDate(Date param0) {
-    }
-
-    public long getFolderId() {
-        return this.mockObject.getFolderId();
-    }
-
-    public void setFolderId(long param0) {
-    }
-
-    public long getParentFolderId() {
-        return this.mockObject.getParentFolderId();
-    }
-
-    public void setParentFolderId(long param0) {
-    }
-
-    public boolean getMountPoint() {
-        return this.mockObject.getMountPoint();
-    }
-
-    public boolean isMountPoint() {
-        return this.mockObject.isMountPoint();
-    }
-
-    public void setMountPoint(boolean param0) {
-    }
-
     public long getDefaultFileEntryTypeId() {
         return this.mockObject.getDefaultFileEntryTypeId();
     }
@@ -277,11 +239,203 @@ public class DLFolderMock
     public void setOverrideFileEntryTypes(boolean param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setLastPostDate(Date param0) {
+    }
+
+    public void setParentFolderId(long param0) {
+    }
+
+    public long getContainerModelId() {
+        return this.mockObject.getContainerModelId();
+    }
+
+    public void setContainerModelId(long param0) {
+    }
+
+    public long getParentContainerModelId() {
+        return this.mockObject.getParentContainerModelId();
+    }
+
+    public void setParentContainerModelId(long param0) {
+    }
+
+    public String getUserName() {
+        return this.mockObject.getUserName();
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
+    }
+
+    public String getContainerModelName() {
+        return this.mockObject.getContainerModelName();
+    }
+
+    public TrashEntry getTrashEntry()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTrashEntry();
+    }
+
+    public long getTrashEntryClassPK() {
+        return this.mockObject.getTrashEntryClassPK();
+    }
+
+    public TrashHandler getTrashHandler() {
+        return this.mockObject.getTrashHandler();
+    }
+
+    public boolean isInTrash() {
+        return this.mockObject.isInTrash();
+    }
+
+    public boolean isInTrashContainer() {
+        return this.mockObject.isInTrashContainer();
+    }
+
+    public boolean getMountPoint() {
+        return this.mockObject.getMountPoint();
+    }
+
+    public void setFolderId(long param0) {
+    }
+
+    public void setRepositoryId(long param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public void setMountPoint(boolean param0) {
+    }
+
+    public boolean getHidden() {
+        return this.mockObject.getHidden();
+    }
+
+    public void setHidden(boolean param0) {
+    }
+
+    public DLFolder toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public long getStatusByUserId() {
+        return this.mockObject.getStatusByUserId();
+    }
+
+    public void setStatusByUserId(long param0) {
+    }
+
+    public String getStatusByUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getStatusByUserUuid();
+    }
+
+    public void setStatusByUserUuid(String param0) {
+    }
+
+    public String getStatusByUserName() {
+        return this.mockObject.getStatusByUserName();
+    }
+
+    public void setStatusByUserName(String param0) {
+    }
+
+    public Date getStatusDate() {
+        return this.mockObject.getStatusDate();
+    }
+
+    public void setStatusDate(Date param0) {
+    }
+
+    public boolean getApproved() {
+        return this.mockObject.getApproved();
+    }
+
+    public boolean isApproved() {
+        return this.mockObject.isApproved();
+    }
+
+    public boolean isDenied() {
+        return this.mockObject.isDenied();
+    }
+
+    public boolean isDraft() {
+        return this.mockObject.isDraft();
+    }
+
+    public boolean isExpired() {
+        return this.mockObject.isExpired();
+    }
+
+    public boolean isInactive() {
+        return this.mockObject.isInactive();
+    }
+
+    public boolean isIncomplete() {
+        return this.mockObject.isIncomplete();
+    }
+
+    public boolean isPending() {
+        return this.mockObject.isPending();
+    }
+
+    public boolean isScheduled() {
+        return this.mockObject.isScheduled();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setTreePath(String param0) {
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public String getTreePath() {
+        return this.mockObject.getTreePath();
+    }
+
+    public Date getLastPostDate() {
+        return this.mockObject.getLastPostDate();
+    }
+
+    public long getParentFolderId() {
+        return this.mockObject.getParentFolderId();
+    }
+
+    public long getRepositoryId() {
+        return this.mockObject.getRepositoryId();
+    }
+
+    public boolean isMountPoint() {
+        return this.mockObject.isMountPoint();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -295,7 +449,22 @@ public class DLFolderMock
         return this.mockObject.getModelClassName();
     }
 
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
+    }
+
     public void persist()
+        throws SystemException
+    {
+    }
+
+    public String buildTreePath()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.buildTreePath();
+    }
+
+    public void updateTreePath(String param0)
         throws SystemException
     {
     }

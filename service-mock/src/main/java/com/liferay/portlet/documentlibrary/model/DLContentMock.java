@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.sql.Blob;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -74,14 +74,11 @@ public class DLContentMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -95,11 +92,7 @@ public class DLContentMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -109,8 +102,10 @@ public class DLContentMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<DLContent> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public DLContent toEscapedModel() {
@@ -121,18 +116,38 @@ public class DLContentMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setGroupId(long param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DLContent> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public void setContentId(long param0) {
+    }
+
+    public void setVersion(String param0) {
+    }
+
+    public long getContentId() {
+        return this.mockObject.getContentId();
+    }
+
+    public void setData(Blob param0) {
+    }
+
+    public void setRepositoryId(long param0) {
     }
 
     public void setPath(String param0) {
@@ -142,31 +157,26 @@ public class DLContentMock
         return this.mockObject.getVersion();
     }
 
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public DLContent toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
     public long getRepositoryId() {
         return this.mockObject.getRepositoryId();
     }
 
-    public void setRepositoryId(long param0) {
-    }
-
-    public void setData(Blob param0) {
-    }
-
-    public long getContentId() {
-        return this.mockObject.getContentId();
-    }
-
-    public void setContentId(long param0) {
-    }
-
-    public void setVersion(String param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

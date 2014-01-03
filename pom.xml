@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.inovex.punit</groupId>
     <artifactId>punit</artifactId>
-    <version>6.1.1-SNAPSHOT</version>
+    <version>6.2.0-ga1-SNAPSHOT</version>
     <name>PUnit - Portlet Test Framework for Liferay</name>
     <packaging>pom</packaging>
 
     <properties>
-        <liferay.version>6.1.1</liferay.version>
+        <liferay.version>6.2.0-ga1</liferay.version>
         <spring.version>3.2.0.RELEASE</spring.version>
     </properties>
 
@@ -137,7 +137,7 @@
             <dependency>
                 <groupId>javax.mail</groupId>
                 <artifactId>mail</artifactId>
-                <version>1.4.1</version>                
+                <version>1.4.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -154,4 +154,12 @@
             <url>dav:http://archiva.inovex.de/archiva/repository/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>liferay.ce</id>
+            <url>https://repository.liferay.com/nexus/content/groups/liferay-ce</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 </project>

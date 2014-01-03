@@ -5,13 +5,13 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.repository.LocalRepository;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.UnicodeProperties;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,51 +49,16 @@ public class RepositoryLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public UnicodeProperties getTypeSettingsProperties(long param0)
+    public com.liferay.portal.model.Repository addRepository(long param0, long param1, long param2, long param3, String param4, String param5, String param6, UnicodeProperties param7, boolean param8, ServiceContext param9)
         throws PortalException, SystemException
     {
-        return this.mockObject.getTypeSettingsProperties(param0);
+        return this.mockObject.addRepository(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9);
     }
 
-    public com.liferay.portal.model.Repository getRepository(long param0)
+    public com.liferay.portal.model.Repository addRepository(long param0, long param1, long param2, long param3, String param4, String param5, String param6, UnicodeProperties param7, ServiceContext param8)
         throws PortalException, SystemException
     {
-        return (_serviceObjects.get(param0));
+        return this.mockObject.addRepository(param0, param1, param2, param3, param4, param5, param6, param7, param8);
     }
 
     public com.liferay.portal.model.Repository addRepository(com.liferay.portal.model.Repository param0)
@@ -101,12 +66,6 @@ public class RepositoryLocalServiceMock
     {
         _serviceObjects.put(param0.getPrimaryKey(), param0);
         return param0;
-    }
-
-    public long addRepository(long param0, long param1, long param2, long param3, String param4, String param5, String param6, UnicodeProperties param7, ServiceContext param8)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addRepository(param0, param1, param2, param3, param4, param5, param6, param7, param8);
     }
 
     public com.liferay.portal.model.Repository createRepository(long param0) {
@@ -125,10 +84,40 @@ public class RepositoryLocalServiceMock
         return this.mockObject.deleteRepository(param0);
     }
 
+    public com.liferay.portal.model.Repository fetchRepository(long param0, String param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchRepository(param0, param1);
+    }
+
+    public com.liferay.portal.model.Repository fetchRepository(long param0, String param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.fetchRepository(param0, param1, param2);
+    }
+
     public com.liferay.portal.model.Repository fetchRepository(long param0)
         throws SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public com.liferay.portal.model.Repository fetchRepositoryByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchRepositoryByUuidAndCompanyId(param0, param1);
+    }
+
+    public com.liferay.portal.model.Repository fetchRepositoryByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchRepositoryByUuidAndGroupId(param0, param1);
+    }
+
+    public com.liferay.portal.model.Repository getRepositoryByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getRepositoryByUuidAndCompanyId(param0, param1);
     }
 
     public com.liferay.portal.model.Repository getRepositoryByUuidAndGroupId(String param0, long param1)
@@ -149,21 +138,15 @@ public class RepositoryLocalServiceMock
         return this.mockObject.getRepositoriesCount();
     }
 
+    public void updateRepository(long param0, String param1, String param2)
+        throws PortalException, SystemException
+    {
+    }
+
     public com.liferay.portal.model.Repository updateRepository(com.liferay.portal.model.Repository param0)
         throws SystemException
     {
         return this.mockObject.updateRepository(param0);
-    }
-
-    public com.liferay.portal.model.Repository updateRepository(com.liferay.portal.model.Repository param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateRepository(param0, param1);
-    }
-
-    public void updateRepository(long param0, String param1, String param2)
-        throws PortalException, SystemException
-    {
     }
 
     public void checkRepository(long param0)
@@ -176,16 +159,16 @@ public class RepositoryLocalServiceMock
     {
     }
 
-    public LocalRepository getLocalRepositoryImpl(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getLocalRepositoryImpl(param0);
-    }
-
     public LocalRepository getLocalRepositoryImpl(long param0, long param1, long param2)
         throws PortalException, SystemException
     {
         return this.mockObject.getLocalRepositoryImpl(param0, param1, param2);
+    }
+
+    public LocalRepository getLocalRepositoryImpl(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getLocalRepositoryImpl(param0);
     }
 
     public com.liferay.portal.kernel.repository.Repository getRepositoryImpl(long param0)
@@ -198,6 +181,71 @@ public class RepositoryLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.getRepositoryImpl(param0, param1, param2);
+    }
+
+    public com.liferay.portal.model.Repository getRepository(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public com.liferay.portal.model.Repository getRepository(long param0, String param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getRepository(param0, param1);
+    }
+
+    public com.liferay.portal.model.Repository getRepository(long param0, String param1, String param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getRepository(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
+    }
+
+    public UnicodeProperties getTypeSettingsProperties(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTypeSettingsProperties(param0);
     }
 
 }

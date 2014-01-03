@@ -5,13 +5,13 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.polls.model.PollsChoice;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,39 +49,10 @@ public class PollsChoiceLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
+    public PollsChoice updateChoice(long param0, long param1, String param2, String param3, ServiceContext param4)
+        throws PortalException, SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
+        return this.mockObject.updateChoice(param0, param1, param2, param3, param4);
     }
 
     public PollsChoice addPollsChoice(PollsChoice param0)
@@ -93,6 +64,12 @@ public class PollsChoiceLocalServiceMock
 
     public PollsChoice createPollsChoice(long param0) {
         return this.mockObject.createPollsChoice(param0);
+    }
+
+    public PollsChoice fetchPollsChoiceByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchPollsChoiceByUuidAndCompanyId(param0, param1);
     }
 
     public PollsChoice deletePollsChoice(long param0)
@@ -113,10 +90,28 @@ public class PollsChoiceLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
+    public PollsChoice fetchPollsChoiceByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchPollsChoiceByUuidAndGroupId(param0, param1);
+    }
+
     public PollsChoice getPollsChoice(long param0)
         throws PortalException, SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public PollsChoice getPollsChoiceByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPollsChoiceByUuidAndCompanyId(param0, param1);
+    }
+
+    public PollsChoice getPollsChoiceByUuidAndGroupId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPollsChoiceByUuidAndGroupId(param0, param1);
     }
 
     public List<PollsChoice> getPollsChoices(int param0, int param1)
@@ -137,18 +132,6 @@ public class PollsChoiceLocalServiceMock
         return this.mockObject.updatePollsChoice(param0);
     }
 
-    public PollsChoice updatePollsChoice(PollsChoice param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updatePollsChoice(param0, param1);
-    }
-
-    public PollsChoice addChoice(long param0, String param1, String param2, ServiceContext param3)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addChoice(param0, param1, param2, param3);
-    }
-
     public PollsChoice getChoice(long param0)
         throws PortalException, SystemException
     {
@@ -167,10 +150,51 @@ public class PollsChoiceLocalServiceMock
         return this.mockObject.getChoicesCount(param0);
     }
 
-    public PollsChoice updateChoice(long param0, long param1, String param2, String param3)
+    public PollsChoice addChoice(long param0, long param1, String param2, String param3, ServiceContext param4)
         throws PortalException, SystemException
     {
-        return this.mockObject.updateChoice(param0, param1, param2, param3);
+        return this.mockObject.addChoice(param0, param1, param2, param3, param4);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

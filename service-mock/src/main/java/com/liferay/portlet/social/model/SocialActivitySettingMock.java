@@ -4,10 +4,10 @@ package com.liferay.portlet.social.model;
 import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -76,14 +76,11 @@ public class SocialActivitySettingMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -97,22 +94,20 @@ public class SocialActivitySettingMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<SocialActivitySetting> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public SocialActivitySetting toEscapedModel() {
@@ -123,8 +118,40 @@ public class SocialActivitySettingMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<SocialActivitySetting> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
     public long getCompanyId() {
         return this.mockObject.getCompanyId();
+    }
+
+    public long getActivitySettingId() {
+        return this.mockObject.getActivitySettingId();
+    }
+
+    public void setActivitySettingId(long param0) {
+    }
+
+    public SocialActivitySetting toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void setClassName(String param0) {
@@ -137,16 +164,6 @@ public class SocialActivitySettingMock
         return this.mockObject.getClassNameId();
     }
 
-    public void setClassNameId(long param0) {
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public void setGroupId(long param0) {
-    }
-
     public int getActivityType() {
         return this.mockObject.getActivityType();
     }
@@ -154,18 +171,11 @@ public class SocialActivitySettingMock
     public void setActivityType(int param0) {
     }
 
-    public long getActivitySettingId() {
-        return this.mockObject.getActivitySettingId();
-    }
-
-    public void setActivitySettingId(long param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

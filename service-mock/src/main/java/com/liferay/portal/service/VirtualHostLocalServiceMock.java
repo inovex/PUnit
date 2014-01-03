@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.VirtualHost;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,14 +48,75 @@ public class VirtualHostLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
+    public VirtualHost createVirtualHost(long param0) {
+        return this.mockObject.createVirtualHost(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0)
+    public VirtualHost deleteVirtualHost(VirtualHost param0)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return this.mockObject.deleteVirtualHost(param0);
+    }
+
+    public VirtualHost deleteVirtualHost(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteVirtualHost(param0);
+    }
+
+    public VirtualHost fetchVirtualHost(String param0)
+        throws SystemException
+    {
+        return this.mockObject.fetchVirtualHost(param0);
+    }
+
+    public VirtualHost fetchVirtualHost(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchVirtualHost(param0, param1);
+    }
+
+    public VirtualHost fetchVirtualHost(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public VirtualHost getVirtualHost(String param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getVirtualHost(param0);
+    }
+
+    public VirtualHost getVirtualHost(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public VirtualHost getVirtualHost(long param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getVirtualHost(param0, param1);
+    }
+
+    public List<VirtualHost> getVirtualHosts(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getVirtualHosts(param0, param1);
+    }
+
+    public int getVirtualHostsCount()
+        throws SystemException
+    {
+        return this.mockObject.getVirtualHostsCount();
+    }
+
+    public VirtualHost addVirtualHost(VirtualHost param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
     public List dynamicQuery(DynamicQuery param0, int param1, int param2)
@@ -64,10 +125,26 @@ public class VirtualHostLocalServiceMock
         return this.mockObject.dynamicQuery(param0, param1, param2);
     }
 
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
     public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
         return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
     }
 
     public long dynamicQueryCount(DynamicQuery param0)
@@ -89,87 +166,10 @@ public class VirtualHostLocalServiceMock
         return this.mockObject.updateVirtualHost(param0);
     }
 
-    public VirtualHost updateVirtualHost(VirtualHost param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateVirtualHost(param0, param1);
-    }
-
     public VirtualHost updateVirtualHost(long param0, long param1, String param2)
         throws SystemException
     {
         return this.mockObject.updateVirtualHost(param0, param1, param2);
-    }
-
-    public VirtualHost addVirtualHost(VirtualHost param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public VirtualHost createVirtualHost(long param0) {
-        return this.mockObject.createVirtualHost(param0);
-    }
-
-    public VirtualHost deleteVirtualHost(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteVirtualHost(param0);
-    }
-
-    public VirtualHost deleteVirtualHost(VirtualHost param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteVirtualHost(param0);
-    }
-
-    public VirtualHost fetchVirtualHost(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public VirtualHost fetchVirtualHost(long param0, long param1)
-        throws SystemException
-    {
-        return this.mockObject.fetchVirtualHost(param0, param1);
-    }
-
-    public VirtualHost fetchVirtualHost(String param0)
-        throws SystemException
-    {
-        return this.mockObject.fetchVirtualHost(param0);
-    }
-
-    public VirtualHost getVirtualHost(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public VirtualHost getVirtualHost(long param0, long param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getVirtualHost(param0, param1);
-    }
-
-    public VirtualHost getVirtualHost(String param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getVirtualHost(param0);
-    }
-
-    public List<VirtualHost> getVirtualHosts(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getVirtualHosts(param0, param1);
-    }
-
-    public int getVirtualHostsCount()
-        throws SystemException
-    {
-        return this.mockObject.getVirtualHostsCount();
     }
 
 }

@@ -5,10 +5,10 @@ import java.io.Serializable;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -69,16 +69,6 @@ public class DDMStructureLinkMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -90,22 +80,20 @@ public class DDMStructureLinkMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
-    public CacheModel<DDMStructureLink> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public DDMStructureLink toEscapedModel() {
@@ -116,8 +104,47 @@ public class DDMStructureLinkMock
         return this.mockObject.toXmlString();
     }
 
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
+    }
+
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<DDMStructureLink> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
     public long getClassPK() {
         return this.mockObject.getClassPK();
+    }
+
+    public long getStructureId() {
+        return this.mockObject.getStructureId();
+    }
+
+    public void setStructureId(long param0) {
+    }
+
+    public void setStructureLinkId(long param0) {
+    }
+
+    public long getStructureLinkId() {
+        return this.mockObject.getStructureLinkId();
+    }
+
+    public void setClassNameId(long param0) {
+    }
+
+    public DDMStructureLink toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public void setClassName(String param0) {
@@ -130,28 +157,11 @@ public class DDMStructureLinkMock
         return this.mockObject.getClassNameId();
     }
 
-    public void setClassNameId(long param0) {
-    }
-
-    public long getStructureId() {
-        return this.mockObject.getStructureId();
-    }
-
-    public void setStructureId(long param0) {
-    }
-
-    public long getStructureLinkId() {
-        return this.mockObject.getStructureLinkId();
-    }
-
-    public void setStructureLinkId(long param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

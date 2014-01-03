@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.ratings.model.RatingsStats;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,62 +48,15 @@ public class RatingsStatsLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public void deleteStats(String param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+    public RatingsStats addStats(long param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public RatingsStats addRatingsStats(RatingsStats param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public RatingsStats createRatingsStats(long param0) {
-        return this.mockObject.createRatingsStats(param0);
-    }
-
-    public RatingsStats deleteRatingsStats(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteRatingsStats(param0);
-    }
-
-    public RatingsStats deleteRatingsStats(RatingsStats param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteRatingsStats(param0);
+        return this.mockObject.addStats(param0, param1);
     }
 
     public RatingsStats fetchRatingsStats(long param0)
@@ -136,27 +89,16 @@ public class RatingsStatsLocalServiceMock
         return this.mockObject.updateRatingsStats(param0);
     }
 
-    public RatingsStats updateRatingsStats(RatingsStats param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateRatingsStats(param0, param1);
-    }
-
-    public RatingsStats addStats(long param0, long param1)
-        throws SystemException
-    {
-        return this.mockObject.addStats(param0, param1);
-    }
-
-    public void deleteStats(String param0, long param1)
-        throws SystemException
-    {
-    }
-
     public RatingsStats getStats(long param0)
         throws PortalException, SystemException
     {
         return this.mockObject.getStats(param0);
+    }
+
+    public RatingsStats getStats(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getStats(param0, param1);
     }
 
     public List<RatingsStats> getStats(String param0, List<Long> param1)
@@ -165,10 +107,68 @@ public class RatingsStatsLocalServiceMock
         return this.mockObject.getStats(param0, param1);
     }
 
-    public RatingsStats getStats(String param0, long param1)
+    public RatingsStats addRatingsStats(RatingsStats param0)
         throws SystemException
     {
-        return this.mockObject.getStats(param0, param1);
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public RatingsStats createRatingsStats(long param0) {
+        return this.mockObject.createRatingsStats(param0);
+    }
+
+    public RatingsStats deleteRatingsStats(RatingsStats param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteRatingsStats(param0);
+    }
+
+    public RatingsStats deleteRatingsStats(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteRatingsStats(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

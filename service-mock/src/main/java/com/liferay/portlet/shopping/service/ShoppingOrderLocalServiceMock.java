@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
@@ -12,7 +13,6 @@ import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.shopping.model.ShoppingCart;
 import com.liferay.portlet.shopping.model.ShoppingOrder;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -56,66 +56,39 @@ public class ShoppingOrderLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
     public int searchCount(long param0, long param1, long param2, String param3, String param4, String param5, String param6, String param7, String param8, String param9, String param10, boolean param11)
         throws SystemException
     {
         return this.mockObject.searchCount(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11);
     }
 
-    public ShoppingOrder addShoppingOrder(ShoppingOrder param0)
-        throws SystemException
+    public void deleteOrders(long param0)
+        throws PortalException, SystemException
     {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
+    }
+
+    public void deleteOrder(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
+    public void deleteOrder(ShoppingOrder param0)
+        throws PortalException, SystemException
+    {
     }
 
     public ShoppingOrder createShoppingOrder(long param0) {
         return this.mockObject.createShoppingOrder(param0);
     }
 
-    public ShoppingOrder deleteShoppingOrder(long param0)
-        throws PortalException, SystemException
+    public ShoppingOrder deleteShoppingOrder(ShoppingOrder param0)
+        throws SystemException
     {
         return this.mockObject.deleteShoppingOrder(param0);
     }
 
-    public ShoppingOrder deleteShoppingOrder(ShoppingOrder param0)
-        throws SystemException
+    public ShoppingOrder deleteShoppingOrder(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deleteShoppingOrder(param0);
     }
@@ -150,12 +123,6 @@ public class ShoppingOrderLocalServiceMock
         return this.mockObject.updateShoppingOrder(param0);
     }
 
-    public ShoppingOrder updateShoppingOrder(ShoppingOrder param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateShoppingOrder(param0, param1);
-    }
-
     public ShoppingOrder addLatestOrder(long param0, long param1)
         throws PortalException, SystemException
     {
@@ -163,21 +130,6 @@ public class ShoppingOrderLocalServiceMock
     }
 
     public void completeOrder(String param0, String param1, String param2, double param3, String param4, String param5, boolean param6, ServiceContext param7)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteOrder(long param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteOrder(ShoppingOrder param0)
-        throws PortalException, SystemException
-    {
-    }
-
-    public void deleteOrders(long param0)
         throws PortalException, SystemException
     {
     }
@@ -212,12 +164,12 @@ public class ShoppingOrderLocalServiceMock
         return this.mockObject.saveLatestOrder(param0);
     }
 
-    public void sendEmail(long param0, String param1, ServiceContext param2)
+    public void sendEmail(ShoppingOrder param0, String param1, ServiceContext param2)
         throws PortalException, SystemException
     {
     }
 
-    public void sendEmail(ShoppingOrder param0, String param1, ServiceContext param2)
+    public void sendEmail(long param0, String param1, ServiceContext param2)
         throws PortalException, SystemException
     {
     }
@@ -226,6 +178,47 @@ public class ShoppingOrderLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.updateLatestOrder(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15, param16, param17, param18, param19, param20, param21, param22, param23, param24, param25, param26, param27, param28, param29);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
     public ShoppingOrder updateOrder(long param0, String param1, String param2, double param3, String param4, String param5)
@@ -238,6 +231,13 @@ public class ShoppingOrderLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.updateOrder(param0, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12, param13, param14, param15, param16, param17, param18, param19, param20, param21, param22, param23, param24, param25, param26, param27, param28);
+    }
+
+    public ShoppingOrder addShoppingOrder(ShoppingOrder param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
     }
 
 }

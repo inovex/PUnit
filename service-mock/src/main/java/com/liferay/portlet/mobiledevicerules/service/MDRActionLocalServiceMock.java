@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
@@ -14,7 +15,6 @@ import com.liferay.portal.kernel.util.UnicodeProperties;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.mobiledevicerules.model.MDRAction;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -64,41 +64,6 @@ public class MDRActionLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
     public MDRAction addMDRAction(MDRAction param0)
         throws SystemException
     {
@@ -108,6 +73,12 @@ public class MDRActionLocalServiceMock
 
     public MDRAction createMDRAction(long param0) {
         return this.mockObject.createMDRAction(param0);
+    }
+
+    public MDRAction getMDRAction(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
     }
 
     public MDRAction deleteMDRAction(long param0)
@@ -128,10 +99,22 @@ public class MDRActionLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
-    public MDRAction getMDRAction(long param0)
+    public MDRAction fetchMDRActionByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchMDRActionByUuidAndCompanyId(param0, param1);
+    }
+
+    public MDRAction fetchMDRActionByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchMDRActionByUuidAndGroupId(param0, param1);
+    }
+
+    public MDRAction getMDRActionByUuidAndCompanyId(String param0, long param1)
         throws PortalException, SystemException
     {
-        return (_serviceObjects.get(param0));
+        return this.mockObject.getMDRActionByUuidAndCompanyId(param0, param1);
     }
 
     public MDRAction getMDRActionByUuidAndGroupId(String param0, long param1)
@@ -158,12 +141,6 @@ public class MDRActionLocalServiceMock
         return this.mockObject.updateMDRAction(param0);
     }
 
-    public MDRAction updateMDRAction(MDRAction param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateMDRAction(param0, param1);
-    }
-
     public MDRAction addAction(long param0, Map<Locale, String> param1, Map<Locale, String> param2, String param3, String param4, ServiceContext param5)
         throws PortalException, SystemException
     {
@@ -176,12 +153,12 @@ public class MDRActionLocalServiceMock
         return this.mockObject.addAction(param0, param1, param2, param3, param4, param5);
     }
 
-    public void deleteAction(long param0)
+    public void deleteAction(MDRAction param0)
         throws SystemException
     {
     }
 
-    public void deleteAction(MDRAction param0)
+    public void deleteAction(long param0)
         throws SystemException
     {
     }
@@ -219,6 +196,47 @@ public class MDRActionLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.updateAction(param0, param1, param2, param3, param4, param5);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.shopping.model.ShoppingItemField;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,41 +48,6 @@ public class ShoppingItemFieldLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
     public ShoppingItemField addShoppingItemField(ShoppingItemField param0)
         throws SystemException
     {
@@ -94,14 +59,14 @@ public class ShoppingItemFieldLocalServiceMock
         return this.mockObject.createShoppingItemField(param0);
     }
 
-    public ShoppingItemField deleteShoppingItemField(long param0)
-        throws PortalException, SystemException
+    public ShoppingItemField deleteShoppingItemField(ShoppingItemField param0)
+        throws SystemException
     {
         return this.mockObject.deleteShoppingItemField(param0);
     }
 
-    public ShoppingItemField deleteShoppingItemField(ShoppingItemField param0)
-        throws SystemException
+    public ShoppingItemField deleteShoppingItemField(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deleteShoppingItemField(param0);
     }
@@ -136,16 +101,51 @@ public class ShoppingItemFieldLocalServiceMock
         return this.mockObject.updateShoppingItemField(param0);
     }
 
-    public ShoppingItemField updateShoppingItemField(ShoppingItemField param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateShoppingItemField(param0, param1);
-    }
-
     public List<ShoppingItemField> getItemFields(long param0)
         throws SystemException
     {
         return this.mockObject.getItemFields(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

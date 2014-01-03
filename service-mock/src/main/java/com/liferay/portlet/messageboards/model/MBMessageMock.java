@@ -3,13 +3,19 @@ package com.liferay.portlet.messageboards.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.repository.model.FileEntry;
+import com.liferay.portal.kernel.repository.model.Folder;
+import com.liferay.portal.kernel.trash.TrashHandler;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
+import com.liferay.portlet.trash.model.TrashEntry;
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -40,32 +46,40 @@ public class MBMessageMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.messageboards.model.MBMessage.class));
     }
 
-    public String[] getAssetTagNames()
-        throws SystemException
-    {
-        return this.mockObject.getAssetTagNames();
-    }
-
-    public boolean isRoot() {
-        return this.mockObject.isRoot();
-    }
-
-    public MBCategory getCategory() {
-        return this.mockObject.getCategory();
-    }
-
-    public String getAttachmentsDir() {
-        return this.mockObject.getAttachmentsDir();
-    }
-
-    public String[] getAttachmentsFiles()
+    public List<FileEntry> getAttachmentsFileEntries(int param0, int param1)
         throws PortalException, SystemException
     {
-        return this.mockObject.getAttachmentsFiles();
+        return this.mockObject.getAttachmentsFileEntries(param0, param1);
     }
 
-    public String getBody(boolean param0) {
-        return this.mockObject.getBody(param0);
+    public List<FileEntry> getAttachmentsFileEntries()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getAttachmentsFileEntries();
+    }
+
+    public Folder addAttachmentsFolder()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addAttachmentsFolder();
+    }
+
+    public int getAttachmentsFileEntriesCount()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getAttachmentsFileEntriesCount();
+    }
+
+    public long getAttachmentsFolderId()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getAttachmentsFolderId();
+    }
+
+    public int getDeletedAttachmentsFileEntriesCount()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDeletedAttachmentsFileEntriesCount();
     }
 
     public MBThread getThread()
@@ -74,8 +88,10 @@ public class MBMessageMock
         return this.mockObject.getThread();
     }
 
-    public String getThreadAttachmentsDir() {
-        return this.mockObject.getThreadAttachmentsDir();
+    public long getThreadAttachmentsFolderId()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getThreadAttachmentsFolderId();
     }
 
     public String getWorkflowClassName() {
@@ -94,7 +110,39 @@ public class MBMessageMock
         return this.mockObject.isReply();
     }
 
-    public void setAttachmentsDir(String param0) {
+    public void setAttachmentsFolderId(long param0) {
+    }
+
+    public List<FileEntry> getDeletedAttachmentsFileEntries(int param0, int param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDeletedAttachmentsFileEntries(param0, param1);
+    }
+
+    public List<FileEntry> getDeletedAttachmentsFileEntries()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDeletedAttachmentsFileEntries();
+    }
+
+    public String getBody(boolean param0) {
+        return this.mockObject.getBody(param0);
+    }
+
+    public MBCategory getCategory()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getCategory();
+    }
+
+    public String[] getAssetTagNames()
+        throws SystemException
+    {
+        return this.mockObject.getAssetTagNames();
+    }
+
+    public boolean isRoot() {
+        return this.mockObject.isRoot();
     }
 
     public String toString() {
@@ -124,22 +172,22 @@ public class MBMessageMock
         return this.mockObject.getClassName();
     }
 
-    public boolean isAnonymous() {
-        return this.mockObject.isAnonymous();
-    }
-
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public void setGroupId(long param0) {
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
-    public void setNew(boolean param0) {
+    public int getStatus() {
+        return this.mockObject.getStatus();
+    }
+
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -153,22 +201,20 @@ public class MBMessageMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
-    public void setExpandoBridgeAttributes(ServiceContext param0) {
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
-    public CacheModel<MBMessage> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
     public MBMessage toEscapedModel() {
@@ -179,28 +225,22 @@ public class MBMessageMock
         return this.mockObject.toXmlString();
     }
 
-    public long getClassPK() {
-        return this.mockObject.getClassPK();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public void setClassName(String param0) {
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setClassPK(long param0) {
+    public void setNew(boolean param0) {
     }
 
-    public void setCompanyId(long param0) {
-    }
-
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
-    }
-
-    public void setCreateDate(Date param0) {
+    public CacheModel<MBMessage> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -224,8 +264,15 @@ public class MBMessageMock
     public void setUuid(String param0) {
     }
 
-    public long getClassNameId() {
-        return this.mockObject.getClassNameId();
+    public long getClassPK() {
+        return this.mockObject.getClassPK();
+    }
+
+    public long getCategoryId() {
+        return this.mockObject.getCategoryId();
+    }
+
+    public void setCategoryId(long param0) {
     }
 
     public String getUserName() {
@@ -244,25 +291,115 @@ public class MBMessageMock
     public void setUserName(String param0) {
     }
 
+    public boolean getAllowPingbacks() {
+        return this.mockObject.getAllowPingbacks();
+    }
+
+    public boolean isAllowPingbacks() {
+        return this.mockObject.isAllowPingbacks();
+    }
+
+    public void setAllowPingbacks(boolean param0) {
+    }
+
+    public TrashEntry getTrashEntry()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getTrashEntry();
+    }
+
+    public long getTrashEntryClassPK() {
+        return this.mockObject.getTrashEntryClassPK();
+    }
+
+    public TrashHandler getTrashHandler() {
+        return this.mockObject.getTrashHandler();
+    }
+
+    public boolean isInTrash() {
+        return this.mockObject.isInTrash();
+    }
+
+    public boolean isInTrashContainer() {
+        return this.mockObject.isInTrashContainer();
+    }
+
+    public void setMessageId(long param0) {
+    }
+
+    public long getRootMessageId() {
+        return this.mockObject.getRootMessageId();
+    }
+
+    public void setRootMessageId(long param0) {
+    }
+
+    public long getMessageId() {
+        return this.mockObject.getMessageId();
+    }
+
+    public long getParentMessageId() {
+        return this.mockObject.getParentMessageId();
+    }
+
+    public void setParentMessageId(long param0) {
+    }
+
+    public String getSubject() {
+        return this.mockObject.getSubject();
+    }
+
+    public void setSubject(String param0) {
+    }
+
+    public void setBody(String param0) {
+    }
+
+    public void setFormat(String param0) {
+    }
+
+    public boolean getAnonymous() {
+        return this.mockObject.getAnonymous();
+    }
+
+    public void setAnonymous(boolean param0) {
+    }
+
+    public boolean getAnswer() {
+        return this.mockObject.getAnswer();
+    }
+
+    public boolean isAnswer() {
+        return this.mockObject.isAnswer();
+    }
+
+    public void setAnswer(boolean param0) {
+    }
+
+    public boolean isAnonymous() {
+        return this.mockObject.isAnonymous();
+    }
+
+    public long getThreadId() {
+        return this.mockObject.getThreadId();
+    }
+
+    public void setThreadId(long param0) {
+    }
+
+    public String getBody() {
+        return this.mockObject.getBody();
+    }
+
     public void setClassNameId(long param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public void setGroupId(long param0) {
-    }
-
-    public int getStatus() {
-        return this.mockObject.getStatus();
-    }
-
-    public void setStatus(int param0) {
-    }
-
-    public String getFormat() {
-        return this.mockObject.getFormat();
+    public MBMessage toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
     public long getStatusByUserId() {
@@ -331,103 +468,35 @@ public class MBMessageMock
         return this.mockObject.isScheduled();
     }
 
-    public long getCategoryId() {
-        return this.mockObject.getCategoryId();
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public void setCategoryId(long param0) {
+    public void setCreateDate(Date param0) {
     }
 
-    public boolean getAllowPingbacks() {
-        return this.mockObject.getAllowPingbacks();
+    public void setClassName(String param0) {
     }
 
-    public boolean isAllowPingbacks() {
-        return this.mockObject.isAllowPingbacks();
+    public void setClassPK(long param0) {
     }
 
-    public void setAllowPingbacks(boolean param0) {
+    public void setCompanyId(long param0) {
     }
 
-    public long getThreadId() {
-        return this.mockObject.getThreadId();
+    public String getFormat() {
+        return this.mockObject.getFormat();
     }
 
-    public void setThreadId(long param0) {
+    public long getClassNameId() {
+        return this.mockObject.getClassNameId();
     }
 
-    public String getBody() {
-        return this.mockObject.getBody();
-    }
-
-    public long getMessageId() {
-        return this.mockObject.getMessageId();
-    }
-
-    public void setMessageId(long param0) {
-    }
-
-    public long getRootMessageId() {
-        return this.mockObject.getRootMessageId();
-    }
-
-    public void setRootMessageId(long param0) {
-    }
-
-    public long getParentMessageId() {
-        return this.mockObject.getParentMessageId();
-    }
-
-    public void setParentMessageId(long param0) {
-    }
-
-    public String getSubject() {
-        return this.mockObject.getSubject();
-    }
-
-    public void setSubject(String param0) {
-    }
-
-    public void setBody(String param0) {
-    }
-
-    public void setFormat(String param0) {
-    }
-
-    public boolean getAttachments() {
-        return this.mockObject.getAttachments();
-    }
-
-    public boolean isAttachments() {
-        return this.mockObject.isAttachments();
-    }
-
-    public void setAttachments(boolean param0) {
-    }
-
-    public boolean getAnonymous() {
-        return this.mockObject.getAnonymous();
-    }
-
-    public void setAnonymous(boolean param0) {
-    }
-
-    public boolean getAnswer() {
-        return this.mockObject.getAnswer();
-    }
-
-    public boolean isAnswer() {
-        return this.mockObject.isAnswer();
-    }
-
-    public void setAnswer(boolean param0) {
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -439,6 +508,10 @@ public class MBMessageMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

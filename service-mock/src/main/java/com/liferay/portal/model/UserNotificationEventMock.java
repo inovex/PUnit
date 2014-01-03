@@ -6,7 +6,6 @@ import java.util.Map;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -68,16 +67,6 @@ public class UserNotificationEventMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -89,11 +78,7 @@ public class UserNotificationEventMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -103,8 +88,10 @@ public class UserNotificationEventMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<UserNotificationEvent> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public UserNotificationEvent toEscapedModel() {
@@ -115,11 +102,22 @@ public class UserNotificationEventMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<UserNotificationEvent> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public long getUserId() {
@@ -136,6 +134,13 @@ public class UserNotificationEventMock
     public void setUuid(String param0) {
     }
 
+    public long getUserNotificationEventId() {
+        return this.mockObject.getUserNotificationEventId();
+    }
+
+    public void setUserNotificationEventId(long param0) {
+    }
+
     public String getUserUuid()
         throws SystemException
     {
@@ -145,21 +150,25 @@ public class UserNotificationEventMock
     public void setUserUuid(String param0) {
     }
 
-    public void setType(String param0) {
+    public void setDeliverBy(long param0) {
     }
 
-    public long getUserNotificationEventId() {
-        return this.mockObject.getUserNotificationEventId();
+    public boolean getDelivered() {
+        return this.mockObject.getDelivered();
     }
 
-    public void setUserNotificationEventId(long param0) {
+    public boolean isDelivered() {
+        return this.mockObject.isDelivered();
+    }
+
+    public void setDelivered(boolean param0) {
     }
 
     public long getDeliverBy() {
         return this.mockObject.getDeliverBy();
     }
 
-    public void setDeliverBy(long param0) {
+    public void setType(String param0) {
     }
 
     public String getPayload() {
@@ -180,11 +189,22 @@ public class UserNotificationEventMock
     public void setArchived(boolean param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
+    }
+
+    public UserNotificationEvent toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public void setCompanyId(long param0) {
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {

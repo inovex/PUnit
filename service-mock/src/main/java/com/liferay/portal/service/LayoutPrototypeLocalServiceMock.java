@@ -7,12 +7,12 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.LayoutPrototype;
 import com.liferay.portal.model.PersistedModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -56,71 +56,19 @@ public class LayoutPrototypeLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
     public int searchCount(long param0, Boolean param1)
         throws SystemException
     {
         return this.mockObject.searchCount(param0, param1);
     }
 
-    public LayoutPrototype addLayoutPrototype(LayoutPrototype param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public LayoutPrototype addLayoutPrototype(long param0, long param1, Map<Locale, String> param2, String param3, boolean param4)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.addLayoutPrototype(param0, param1, param2, param3, param4);
-    }
-
-    public LayoutPrototype createLayoutPrototype(long param0) {
-        return this.mockObject.createLayoutPrototype(param0);
-    }
-
-    public LayoutPrototype deleteLayoutPrototype(long param0)
+    public LayoutPrototype deleteLayoutPrototype(LayoutPrototype param0)
         throws PortalException, SystemException
     {
         return this.mockObject.deleteLayoutPrototype(param0);
     }
 
-    public LayoutPrototype deleteLayoutPrototype(LayoutPrototype param0)
+    public LayoutPrototype deleteLayoutPrototype(long param0)
         throws PortalException, SystemException
     {
         return this.mockObject.deleteLayoutPrototype(param0);
@@ -130,6 +78,18 @@ public class LayoutPrototypeLocalServiceMock
         throws SystemException
     {
         return (_serviceObjects.get(param0));
+    }
+
+    public LayoutPrototype fetchLayoutPrototypeByUuidAndCompanyId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchLayoutPrototypeByUuidAndCompanyId(param0, param1);
+    }
+
+    public LayoutPrototype getLayoutPrototypeByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getLayoutPrototypeByUuidAndCompanyId(param0, param1);
     }
 
     public LayoutPrototype getLayoutPrototype(long param0)
@@ -156,10 +116,10 @@ public class LayoutPrototypeLocalServiceMock
         return this.mockObject.updateLayoutPrototype(param0);
     }
 
-    public LayoutPrototype updateLayoutPrototype(LayoutPrototype param0, boolean param1)
-        throws SystemException
+    public LayoutPrototype updateLayoutPrototype(long param0, Map<Locale, String> param1, String param2, boolean param3, ServiceContext param4)
+        throws PortalException, SystemException
     {
-        return this.mockObject.updateLayoutPrototype(param0, param1);
+        return this.mockObject.updateLayoutPrototype(param0, param1, param2, param3, param4);
     }
 
     public LayoutPrototype updateLayoutPrototype(long param0, Map<Locale, String> param1, String param2, boolean param3)
@@ -168,10 +128,79 @@ public class LayoutPrototypeLocalServiceMock
         return this.mockObject.updateLayoutPrototype(param0, param1, param2, param3);
     }
 
+    public void deleteNondefaultLayoutPrototypes(long param0)
+        throws PortalException, SystemException
+    {
+    }
+
     public LayoutPrototype getLayoutPrototypeByUuid(String param0)
         throws PortalException, SystemException
     {
         return this.mockObject.getLayoutPrototypeByUuid(param0);
+    }
+
+    public LayoutPrototype createLayoutPrototype(long param0) {
+        return this.mockObject.createLayoutPrototype(param0);
+    }
+
+    public LayoutPrototype addLayoutPrototype(LayoutPrototype param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public LayoutPrototype addLayoutPrototype(long param0, long param1, Map<Locale, String> param2, String param3, boolean param4)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addLayoutPrototype(param0, param1, param2, param3, param4);
+    }
+
+    public LayoutPrototype addLayoutPrototype(long param0, long param1, Map<Locale, String> param2, String param3, boolean param4, ServiceContext param5)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.addLayoutPrototype(param0, param1, param2, param3, param4, param5);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

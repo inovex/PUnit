@@ -7,11 +7,12 @@ import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.UnicodeProperties;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -46,9 +47,6 @@ public class MDRRuleMock
         return this.mockObject.getTypeSettingsProperties();
     }
 
-    public void setTypeSettings(String param0) {
-    }
-
     public void setTypeSettingsProperties(UnicodeProperties param0) {
     }
 
@@ -68,6 +66,18 @@ public class MDRRuleMock
         return this.mockObject.compareTo(param0);
     }
 
+    public String getName(String param0) {
+        return this.mockObject.getName(param0);
+    }
+
+    public String getName(Locale param0, boolean param1) {
+        return this.mockObject.getName(param0, param1);
+    }
+
+    public String getName(String param0, boolean param1) {
+        return this.mockObject.getName(param0, param1);
+    }
+
     public String getName() {
         return this.mockObject.getName();
     }
@@ -76,41 +86,21 @@ public class MDRRuleMock
         return this.mockObject.getName(param0);
     }
 
-    public String getName(Locale param0, boolean param1) {
-        return this.mockObject.getName(param0, param1);
-    }
-
-    public String getName(String param0) {
-        return this.mockObject.getName(param0);
-    }
-
-    public String getName(String param0, boolean param1) {
-        return this.mockObject.getName(param0, param1);
-    }
-
-    public void setName(String param0) {
-    }
-
     public void setName(String param0, Locale param1) {
     }
 
     public void setName(String param0, Locale param1, Locale param2) {
     }
 
+    public void setName(String param0) {
+    }
+
     public String getType() {
         return this.mockObject.getType();
     }
 
-    public String getDescription() {
-        return this.mockObject.getDescription();
-    }
-
-    public String getDescription(Locale param0) {
-        return this.mockObject.getDescription(param0);
-    }
-
-    public String getDescription(Locale param0, boolean param1) {
-        return this.mockObject.getDescription(param0, param1);
+    public long getPrimaryKey() {
+        return this.mockObject.getPrimaryKey();
     }
 
     public String getDescription(String param0) {
@@ -121,18 +111,23 @@ public class MDRRuleMock
         return this.mockObject.getDescription(param0, param1);
     }
 
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
+    public String getDescription(Locale param0) {
+        return this.mockObject.getDescription(param0);
     }
 
-    public void setPrimaryKey(long param0) {
+    public String getDescription(Locale param0, boolean param1) {
+        return this.mockObject.getDescription(param0, param1);
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
+    public String getDescription() {
+        return this.mockObject.getDescription();
     }
 
-    public void setNew(boolean param0) {
+    public void setGroupId(long param0) {
+    }
+
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -146,11 +141,7 @@ public class MDRRuleMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -160,8 +151,10 @@ public class MDRRuleMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<MDRRule> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public MDRRule toEscapedModel() {
@@ -172,18 +165,22 @@ public class MDRRuleMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<MDRRule> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -207,6 +204,13 @@ public class MDRRuleMock
     public void setUuid(String param0) {
     }
 
+    public long getRuleGroupId() {
+        return this.mockObject.getRuleGroupId();
+    }
+
+    public void setRuleGroupId(long param0) {
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -226,24 +230,15 @@ public class MDRRuleMock
     public void setType(String param0) {
     }
 
-    public String getTypeSettings() {
-        return this.mockObject.getTypeSettings();
+    public long getRuleId() {
+        return this.mockObject.getRuleId();
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public void setRuleId(long param0) {
     }
 
-    public void setGroupId(long param0) {
-    }
-
-    public void setDescription(String param0) {
-    }
-
-    public void setDescription(String param0, Locale param1) {
-    }
-
-    public void setDescription(String param0, Locale param1, Locale param2) {
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getNameCurrentLanguageId() {
@@ -254,17 +249,17 @@ public class MDRRuleMock
         return this.mockObject.getNameCurrentValue();
     }
 
+    public void setNameCurrentLanguageId(String param0) {
+    }
+
     public Map<Locale, String> getNameMap() {
         return this.mockObject.getNameMap();
     }
 
-    public void setNameCurrentLanguageId(String param0) {
+    public void setNameMap(Map<Locale, String> param0, Locale param1) {
     }
 
     public void setNameMap(Map<Locale, String> param0) {
-    }
-
-    public void setNameMap(Map<Locale, String> param0, Locale param1) {
     }
 
     public String getDescriptionCurrentLanguageId() {
@@ -288,30 +283,59 @@ public class MDRRuleMock
     public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
     }
 
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
     public void prepareLocalizedFieldsForImport(Locale param0)
         throws LocaleException
     {
     }
 
-    public long getRuleGroupId() {
-        return this.mockObject.getRuleGroupId();
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
     }
 
-    public void setRuleGroupId(long param0) {
+    public MDRRule toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public long getRuleId() {
-        return this.mockObject.getRuleId();
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
     }
 
-    public void setRuleId(long param0) {
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public void setDescription(String param0, Locale param1, Locale param2) {
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public void setDescription(String param0, Locale param1) {
+    }
+
+    public String getTypeSettings() {
+        return this.mockObject.getTypeSettings();
+    }
+
+    public void setTypeSettings(String param0) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -323,6 +347,10 @@ public class MDRRuleMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

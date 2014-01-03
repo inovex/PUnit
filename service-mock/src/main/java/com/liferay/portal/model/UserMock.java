@@ -10,10 +10,11 @@ import java.util.Set;
 import java.util.TimeZone;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.util.RemotePreference;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,21 +49,26 @@ public class UserMock
         return this.mockObject.getTimeZone();
     }
 
-    public String getDigest() {
-        return this.mockObject.getDigest();
-    }
-
     public String getDigest(String param0) {
         return this.mockObject.getDigest(param0);
     }
 
-    public void setLanguageId(String param0) {
+    public long getGroupId()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getGroupId();
     }
 
     public Group getGroup()
         throws PortalException, SystemException
     {
         return this.mockObject.getGroup();
+    }
+
+    public List<Address> getAddresses()
+        throws SystemException
+    {
+        return this.mockObject.getAddresses();
     }
 
     public boolean hasPublicLayouts()
@@ -73,12 +79,6 @@ public class UserMock
 
     public Locale getLocale() {
         return this.mockObject.getLocale();
-    }
-
-    public List<Address> getAddresses()
-        throws SystemException
-    {
-        return this.mockObject.getAddresses();
     }
 
     public boolean isActive() {
@@ -95,202 +95,6 @@ public class UserMock
         throws PortalException, SystemException
     {
         return this.mockObject.hasCompanyMx(param0);
-    }
-
-    public int getPrivateLayoutsPageCount()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getPrivateLayoutsPageCount();
-    }
-
-    public int getPublicLayoutsPageCount()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getPublicLayoutsPageCount();
-    }
-
-    public boolean hasPrivateLayouts()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.hasPrivateLayouts();
-    }
-
-    public long getGroupId()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getGroupId();
-    }
-
-    public Date getBirthday()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getBirthday();
-    }
-
-    public String getCompanyMx()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getCompanyMx();
-    }
-
-    public Contact getContact()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getContact();
-    }
-
-    public String getDisplayEmailAddress() {
-        return this.mockObject.getDisplayEmailAddress();
-    }
-
-    public String getDisplayURL(String param0, String param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getDisplayURL(param0, param1);
-    }
-
-    public String getDisplayURL(ThemeDisplay param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getDisplayURL(param0);
-    }
-
-    public List<EmailAddress> getEmailAddresses()
-        throws SystemException
-    {
-        return this.mockObject.getEmailAddresses();
-    }
-
-    public boolean getFemale()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getFemale();
-    }
-
-    public String getFullName() {
-        return this.mockObject.getFullName();
-    }
-
-    public long[] getGroupIds()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getGroupIds();
-    }
-
-    public List<Group> getGroups()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getGroups();
-    }
-
-    public String getLogin()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getLogin();
-    }
-
-    public boolean getMale()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getMale();
-    }
-
-    public List<Group> getMySites()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getMySites();
-    }
-
-    public List<Group> getMySites(boolean param0, int param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getMySites(param0, param1);
-    }
-
-    public List<Group> getMySites(int param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getMySites(param0);
-    }
-
-    public List<Group> getMySites(String[] param0, boolean param1, int param2)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getMySites(param0, param1, param2);
-    }
-
-    public List<Group> getMySites(String[] param0, int param1)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getMySites(param0, param1);
-    }
-
-    public long[] getOrganizationIds()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getOrganizationIds();
-    }
-
-    public long[] getOrganizationIds(boolean param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getOrganizationIds(param0);
-    }
-
-    public List<Organization> getOrganizations()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getOrganizations();
-    }
-
-    public List<Organization> getOrganizations(boolean param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getOrganizations(param0);
-    }
-
-    public boolean getPasswordModified() {
-        return this.mockObject.getPasswordModified();
-    }
-
-    public PasswordPolicy getPasswordPolicy()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getPasswordPolicy();
-    }
-
-    public String getPasswordUnencrypted() {
-        return this.mockObject.getPasswordUnencrypted();
-    }
-
-    public List<Phone> getPhones()
-        throws SystemException
-    {
-        return this.mockObject.getPhones();
-    }
-
-    public String getPortraitURL(ThemeDisplay param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getPortraitURL(param0);
-    }
-
-    public Set<String> getReminderQueryQuestions()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getReminderQueryQuestions();
-    }
-
-    public long[] getRoleIds()
-        throws SystemException
-    {
-        return this.mockObject.getRoleIds();
-    }
-
-    public List<Role> getRoles()
-        throws SystemException
-    {
-        return this.mockObject.getRoles();
     }
 
     public long[] getTeamIds()
@@ -339,6 +143,14 @@ public class UserMock
         return this.mockObject.hasReminderQuery();
     }
 
+    public boolean isEmailAddressComplete() {
+        return this.mockObject.isEmailAddressComplete();
+    }
+
+    public boolean isEmailAddressVerificationComplete() {
+        return this.mockObject.isEmailAddressVerificationComplete();
+    }
+
     public boolean isFemale()
         throws PortalException, SystemException
     {
@@ -355,13 +167,277 @@ public class UserMock
         return this.mockObject.isPasswordModified();
     }
 
+    public boolean isReminderQueryComplete() {
+        return this.mockObject.isReminderQueryComplete();
+    }
+
+    public boolean isSetupComplete() {
+        return this.mockObject.isSetupComplete();
+    }
+
+    public boolean isTermsOfUseComplete() {
+        return this.mockObject.isTermsOfUseComplete();
+    }
+
     public void setPasswordModified(boolean param0) {
     }
 
     public void setPasswordUnencrypted(String param0) {
     }
 
-    public void setTimeZoneId(String param0) {
+    public String getFullName() {
+        return this.mockObject.getFullName();
+    }
+
+    public int getPrivateLayoutsPageCount()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPrivateLayoutsPageCount();
+    }
+
+    public int getPublicLayoutsPageCount()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPublicLayoutsPageCount();
+    }
+
+    public boolean hasPrivateLayouts()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.hasPrivateLayouts();
+    }
+
+    public void addRemotePreference(RemotePreference param0) {
+    }
+
+    public Date getBirthday()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getBirthday();
+    }
+
+    public String getCompanyMx()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getCompanyMx();
+    }
+
+    public Contact getContact()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getContact();
+    }
+
+    public String getDisplayEmailAddress() {
+        return this.mockObject.getDisplayEmailAddress();
+    }
+
+    public String getDisplayURL(ThemeDisplay param0, boolean param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDisplayURL(param0, param1);
+    }
+
+    public String getDisplayURL(String param0, String param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDisplayURL(param0, param1);
+    }
+
+    public String getDisplayURL(String param0, String param1, boolean param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDisplayURL(param0, param1, param2);
+    }
+
+    public String getDisplayURL(ThemeDisplay param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getDisplayURL(param0);
+    }
+
+    public List<EmailAddress> getEmailAddresses()
+        throws SystemException
+    {
+        return this.mockObject.getEmailAddresses();
+    }
+
+    public boolean getFemale()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getFemale();
+    }
+
+    public long[] getGroupIds()
+        throws SystemException
+    {
+        return this.mockObject.getGroupIds();
+    }
+
+    public List<Group> getGroups()
+        throws SystemException
+    {
+        return this.mockObject.getGroups();
+    }
+
+    public String getLogin()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getLogin();
+    }
+
+    public boolean getMale()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMale();
+    }
+
+    public List<Group> getMySiteGroups(String[] param0, boolean param1, int param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySiteGroups(param0, param1, param2);
+    }
+
+    public List<Group> getMySiteGroups(int param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySiteGroups(param0);
+    }
+
+    public List<Group> getMySiteGroups(boolean param0, int param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySiteGroups(param0, param1);
+    }
+
+    public List<Group> getMySiteGroups()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySiteGroups();
+    }
+
+    public List<Group> getMySiteGroups(String[] param0, int param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySiteGroups(param0, param1);
+    }
+
+    public List<Group> getMySites(String[] param0, int param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySites(param0, param1);
+    }
+
+    public List<Group> getMySites(String[] param0, boolean param1, int param2)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySites(param0, param1, param2);
+    }
+
+    public List<Group> getMySites(int param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySites(param0);
+    }
+
+    public List<Group> getMySites(boolean param0, int param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySites(param0, param1);
+    }
+
+    public List<Group> getMySites()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMySites();
+    }
+
+    public long[] getOrganizationIds(boolean param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getOrganizationIds(param0);
+    }
+
+    public long[] getOrganizationIds()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getOrganizationIds();
+    }
+
+    public List<Organization> getOrganizations()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getOrganizations();
+    }
+
+    public List<Organization> getOrganizations(boolean param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getOrganizations(param0);
+    }
+
+    public boolean getPasswordModified() {
+        return this.mockObject.getPasswordModified();
+    }
+
+    public PasswordPolicy getPasswordPolicy()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPasswordPolicy();
+    }
+
+    public String getPasswordUnencrypted() {
+        return this.mockObject.getPasswordUnencrypted();
+    }
+
+    public List<Phone> getPhones()
+        throws SystemException
+    {
+        return this.mockObject.getPhones();
+    }
+
+    public String getPortraitURL(ThemeDisplay param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getPortraitURL(param0);
+    }
+
+    public Set<String> getReminderQueryQuestions()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getReminderQueryQuestions();
+    }
+
+    public RemotePreference getRemotePreference(String param0) {
+        return this.mockObject.getRemotePreference(param0);
+    }
+
+    public Iterable<RemotePreference> getRemotePreferences() {
+        return this.mockObject.getRemotePreferences();
+    }
+
+    public long[] getRoleIds()
+        throws SystemException
+    {
+        return this.mockObject.getRoleIds();
+    }
+
+    public List<Role> getRoles()
+        throws SystemException
+    {
+        return this.mockObject.getRoles();
+    }
+
+    public List<Group> getSiteGroups(boolean param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getSiteGroups(param0);
+    }
+
+    public List<Group> getSiteGroups()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getSiteGroups();
     }
 
     public String toString() {
@@ -380,18 +456,19 @@ public class UserMock
         return this.mockObject.compareTo(param0);
     }
 
+    public String getDigest() {
+        return this.mockObject.getDigest();
+    }
+
     public long getPrimaryKey() {
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
+    public int getStatus() {
+        return this.mockObject.getStatus();
     }
 
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public void setStatus(int param0) {
     }
 
     public boolean isCachedModel() {
@@ -405,11 +482,7 @@ public class UserMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
@@ -419,8 +492,10 @@ public class UserMock
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<User> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public User toEscapedModel() {
@@ -431,22 +506,29 @@ public class UserMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<User> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public String getLanguageId() {
         return this.mockObject.getLanguageId();
+    }
+
+    public void setLanguageId(String param0) {
     }
 
     public Date getModifiedDate() {
@@ -479,23 +561,12 @@ public class UserMock
     public void setUserUuid(String param0) {
     }
 
-    public boolean getDefaultUser() {
-        return this.mockObject.getDefaultUser();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public String getEmailAddress() {
         return this.mockObject.getEmailAddress();
-    }
-
-    public boolean isDefaultUser() {
-        return this.mockObject.isDefaultUser();
-    }
-
-    public void setDefaultUser(boolean param0) {
-    }
-
-    public long getContactId() {
-        return this.mockObject.getContactId();
     }
 
     public void setContactId(long param0) {
@@ -510,129 +581,6 @@ public class UserMock
 
     public boolean getPasswordEncrypted() {
         return this.mockObject.getPasswordEncrypted();
-    }
-
-    public boolean isPasswordEncrypted() {
-        return this.mockObject.isPasswordEncrypted();
-    }
-
-    public void setPasswordEncrypted(boolean param0) {
-    }
-
-    public boolean getPasswordReset() {
-        return this.mockObject.getPasswordReset();
-    }
-
-    public boolean isPasswordReset() {
-        return this.mockObject.isPasswordReset();
-    }
-
-    public void setPasswordReset(boolean param0) {
-    }
-
-    public Date getPasswordModifiedDate() {
-        return this.mockObject.getPasswordModifiedDate();
-    }
-
-    public void setPasswordModifiedDate(Date param0) {
-    }
-
-    public void setDigest(String param0) {
-    }
-
-    public String getReminderQueryQuestion() {
-        return this.mockObject.getReminderQueryQuestion();
-    }
-
-    public void setReminderQueryQuestion(String param0) {
-    }
-
-    public String getReminderQueryAnswer() {
-        return this.mockObject.getReminderQueryAnswer();
-    }
-
-    public void setReminderQueryAnswer(String param0) {
-    }
-
-    public int getGraceLoginCount() {
-        return this.mockObject.getGraceLoginCount();
-    }
-
-    public void setGraceLoginCount(int param0) {
-    }
-
-    public String getScreenName() {
-        return this.mockObject.getScreenName();
-    }
-
-    public void setScreenName(String param0) {
-    }
-
-    public void setEmailAddress(String param0) {
-    }
-
-    public long getFacebookId() {
-        return this.mockObject.getFacebookId();
-    }
-
-    public void setFacebookId(long param0) {
-    }
-
-    public String getOpenId() {
-        return this.mockObject.getOpenId();
-    }
-
-    public void setOpenId(String param0) {
-    }
-
-    public long getPortraitId() {
-        return this.mockObject.getPortraitId();
-    }
-
-    public void setPortraitId(long param0) {
-    }
-
-    public String getTimeZoneId() {
-        return this.mockObject.getTimeZoneId();
-    }
-
-    public String getGreeting() {
-        return this.mockObject.getGreeting();
-    }
-
-    public void setGreeting(String param0) {
-    }
-
-    public String getComments() {
-        return this.mockObject.getComments();
-    }
-
-    public void setComments(String param0) {
-    }
-
-    public String getFirstName() {
-        return this.mockObject.getFirstName();
-    }
-
-    public void setFirstName(String param0) {
-    }
-
-    public String getMiddleName() {
-        return this.mockObject.getMiddleName();
-    }
-
-    public void setMiddleName(String param0) {
-    }
-
-    public String getLastName() {
-        return this.mockObject.getLastName();
-    }
-
-    public void setLastName(String param0) {
-    }
-
-    public String getJobTitle() {
-        return this.mockObject.getJobTitle();
     }
 
     public void setJobTitle(String param0) {
@@ -720,18 +668,173 @@ public class UserMock
     public void setEmailAddressVerified(boolean param0) {
     }
 
-    public int getStatus() {
-        return this.mockObject.getStatus();
+    public void setDefaultUser(boolean param0) {
     }
 
-    public void setStatus(int param0) {
+    public long getContactId() {
+        return this.mockObject.getContactId();
+    }
+
+    public boolean isPasswordEncrypted() {
+        return this.mockObject.isPasswordEncrypted();
+    }
+
+    public void setPasswordEncrypted(boolean param0) {
+    }
+
+    public boolean getPasswordReset() {
+        return this.mockObject.getPasswordReset();
+    }
+
+    public boolean isPasswordReset() {
+        return this.mockObject.isPasswordReset();
+    }
+
+    public void setPasswordReset(boolean param0) {
+    }
+
+    public Date getPasswordModifiedDate() {
+        return this.mockObject.getPasswordModifiedDate();
+    }
+
+    public void setPasswordModifiedDate(Date param0) {
+    }
+
+    public void setDigest(String param0) {
+    }
+
+    public String getReminderQueryQuestion() {
+        return this.mockObject.getReminderQueryQuestion();
+    }
+
+    public void setReminderQueryQuestion(String param0) {
+    }
+
+    public String getReminderQueryAnswer() {
+        return this.mockObject.getReminderQueryAnswer();
+    }
+
+    public void setReminderQueryAnswer(String param0) {
+    }
+
+    public int getGraceLoginCount() {
+        return this.mockObject.getGraceLoginCount();
+    }
+
+    public void setGraceLoginCount(int param0) {
+    }
+
+    public String getScreenName() {
+        return this.mockObject.getScreenName();
+    }
+
+    public void setScreenName(String param0) {
+    }
+
+    public void setEmailAddress(String param0) {
+    }
+
+    public long getFacebookId() {
+        return this.mockObject.getFacebookId();
+    }
+
+    public void setFacebookId(long param0) {
+    }
+
+    public long getLdapServerId() {
+        return this.mockObject.getLdapServerId();
+    }
+
+    public void setLdapServerId(long param0) {
+    }
+
+    public String getOpenId() {
+        return this.mockObject.getOpenId();
+    }
+
+    public void setOpenId(String param0) {
+    }
+
+    public long getPortraitId() {
+        return this.mockObject.getPortraitId();
+    }
+
+    public void setPortraitId(long param0) {
+    }
+
+    public String getTimeZoneId() {
+        return this.mockObject.getTimeZoneId();
+    }
+
+    public void setTimeZoneId(String param0) {
+    }
+
+    public String getGreeting() {
+        return this.mockObject.getGreeting();
+    }
+
+    public void setGreeting(String param0) {
+    }
+
+    public String getComments() {
+        return this.mockObject.getComments();
+    }
+
+    public void setComments(String param0) {
+    }
+
+    public String getFirstName() {
+        return this.mockObject.getFirstName();
+    }
+
+    public void setFirstName(String param0) {
+    }
+
+    public String getMiddleName() {
+        return this.mockObject.getMiddleName();
+    }
+
+    public void setMiddleName(String param0) {
+    }
+
+    public String getLastName() {
+        return this.mockObject.getLastName();
+    }
+
+    public void setLastName(String param0) {
+    }
+
+    public String getJobTitle() {
+        return this.mockObject.getJobTitle();
+    }
+
+    public User toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public boolean getDefaultUser() {
+        return this.mockObject.getDefaultUser();
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public boolean isDefaultUser() {
+        return this.mockObject.isDefaultUser();
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -743,6 +846,10 @@ public class UserMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

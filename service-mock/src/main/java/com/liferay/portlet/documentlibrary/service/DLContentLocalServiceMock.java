@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
@@ -13,7 +14,6 @@ import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.documentlibrary.NoSuchContentException;
 import com.liferay.portlet.documentlibrary.model.DLContent;
 import com.liferay.portlet.documentlibrary.model.DLContentDataBlobModel;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -63,58 +63,29 @@ public class DLContentLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public List<DLContent> getContents(long param0, long param1)
-        throws SystemException
-    {
-        return this.mockObject.getContents(param0, param1);
-    }
-
-    public List<DLContent> getContents(long param0, long param1, String param2)
-        throws SystemException
-    {
-        return this.mockObject.getContents(param0, param1, param2);
-    }
-
     public DLContent addDLContent(DLContent param0)
         throws SystemException
     {
         _serviceObjects.put(param0.getPrimaryKey(), param0);
         return param0;
+    }
+
+    public DLContent getDLContent(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public List<DLContent> getContentsByDirectory(long param0, long param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getContentsByDirectory(param0, param1, param2);
+    }
+
+    public boolean hasContent(long param0, long param1, String param2, String param3)
+        throws SystemException
+    {
+        return this.mockObject.hasContent(param0, param1, param2, param3);
     }
 
     public DLContent createDLContent(long param0) {
@@ -139,12 +110,6 @@ public class DLContentLocalServiceMock
         return (_serviceObjects.get(param0));
     }
 
-    public DLContent getDLContent(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
     public List<DLContent> getDLContents(int param0, int param1)
         throws SystemException
     {
@@ -157,21 +122,15 @@ public class DLContentLocalServiceMock
         return this.mockObject.getDLContentsCount();
     }
 
+    public void updateDLContent(long param0, long param1, long param2, String param3, String param4)
+        throws SystemException
+    {
+    }
+
     public DLContent updateDLContent(DLContent param0)
         throws SystemException
     {
         return this.mockObject.updateDLContent(param0);
-    }
-
-    public DLContent updateDLContent(DLContent param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateDLContent(param0, param1);
-    }
-
-    public void updateDLContent(long param0, long param1, long param2, String param3, String param4)
-        throws SystemException
-    {
     }
 
     public DLContentDataBlobModel getDataBlobModel(Serializable param0)
@@ -180,16 +139,16 @@ public class DLContentLocalServiceMock
         return this.mockObject.getDataBlobModel(param0);
     }
 
-    public DLContent addContent(long param0, long param1, String param2, String param3, byte[] param4)
-        throws SystemException
-    {
-        return this.mockObject.addContent(param0, param1, param2, param3, param4);
-    }
-
     public DLContent addContent(long param0, long param1, String param2, String param3, InputStream param4, long param5)
         throws SystemException
     {
         return this.mockObject.addContent(param0, param1, param2, param3, param4, param5);
+    }
+
+    public DLContent addContent(long param0, long param1, String param2, String param3, byte[] param4)
+        throws SystemException
+    {
+        return this.mockObject.addContent(param0, param1, param2, param3, param4);
     }
 
     public void deleteContent(long param0, long param1, String param2, String param3)
@@ -207,16 +166,57 @@ public class DLContentLocalServiceMock
     {
     }
 
-    public List<DLContent> getContentsByDirectory(long param0, long param1, String param2)
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
         throws SystemException
     {
-        return this.mockObject.getContentsByDirectory(param0, param1, param2);
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
     }
 
-    public boolean hasContent(long param0, long param1, String param2, String param3)
+    public List dynamicQuery(DynamicQuery param0)
         throws SystemException
     {
-        return this.mockObject.hasContent(param0, param1, param2, param3);
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public List<DLContent> getContents(long param0, long param1, String param2)
+        throws SystemException
+    {
+        return this.mockObject.getContents(param0, param1, param2);
+    }
+
+    public List<DLContent> getContents(long param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.getContents(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

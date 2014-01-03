@@ -3,15 +3,17 @@ package com.liferay.portlet.asset.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.LocaleException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.kernel.util.UnicodeProperties;
+import com.liferay.portal.model.BaseModel;
 import com.liferay.portal.model.CacheModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -42,34 +44,25 @@ public class AssetVocabularyMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.asset.model.AssetVocabulary.class));
     }
 
-    public String getSettings() {
-        return this.mockObject.getSettings();
+    public boolean isMultiValued() {
+        return this.mockObject.isMultiValued();
+    }
+
+    public List<AssetCategory> getCategories()
+        throws SystemException
+    {
+        return this.mockObject.getCategories();
+    }
+
+    public boolean isRequired(long param0) {
+        return this.mockObject.isRequired(param0);
     }
 
     public UnicodeProperties getSettingsProperties() {
         return this.mockObject.getSettingsProperties();
     }
 
-    public void setSettings(String param0) {
-    }
-
     public void setSettingsProperties(UnicodeProperties param0) {
-    }
-
-    public String getTitle(String param0) {
-        return this.mockObject.getTitle(param0);
-    }
-
-    public String getTitle(String param0, boolean param1) {
-        return this.mockObject.getTitle(param0, param1);
-    }
-
-    public boolean isMultiValued() {
-        return this.mockObject.isMultiValued();
-    }
-
-    public boolean isRequired(long param0) {
-        return this.mockObject.isRequired(param0);
     }
 
     public String toString() {
@@ -95,6 +88,18 @@ public class AssetVocabularyMock
     public void setName(String param0) {
     }
 
+    public long getPrimaryKey() {
+        return this.mockObject.getPrimaryKey();
+    }
+
+    public String getDescription(String param0) {
+        return this.mockObject.getDescription(param0);
+    }
+
+    public String getDescription(String param0, boolean param1) {
+        return this.mockObject.getDescription(param0, param1);
+    }
+
     public String getDescription() {
         return this.mockObject.getDescription();
     }
@@ -107,26 +112,11 @@ public class AssetVocabularyMock
         return this.mockObject.getDescription(param0, param1);
     }
 
-    public String getDescription(String param0) {
-        return this.mockObject.getDescription(param0);
+    public void setGroupId(long param0) {
     }
 
-    public String getDescription(String param0, boolean param1) {
-        return this.mockObject.getDescription(param0, param1);
-    }
-
-    public long getPrimaryKey() {
-        return this.mockObject.getPrimaryKey();
-    }
-
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
     }
 
     public boolean isCachedModel() {
@@ -140,22 +130,20 @@ public class AssetVocabularyMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<AssetVocabulary> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
     }
 
     public AssetVocabulary toEscapedModel() {
@@ -166,18 +154,22 @@ public class AssetVocabularyMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
     }
 
-    public Date getCreateDate() {
-        return this.mockObject.getCreateDate();
+    public boolean isNew() {
+        return this.mockObject.isNew();
     }
 
-    public void setCreateDate(Date param0) {
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<AssetVocabulary> toCacheModel() {
+        return this.mockObject.toCacheModel();
     }
 
     public Date getModifiedDate() {
@@ -201,6 +193,13 @@ public class AssetVocabularyMock
     public void setUuid(String param0) {
     }
 
+    public long getVocabularyId() {
+        return this.mockObject.getVocabularyId();
+    }
+
+    public void setVocabularyId(long param0) {
+    }
+
     public String getUserName() {
         return this.mockObject.getUserName();
     }
@@ -217,32 +216,28 @@ public class AssetVocabularyMock
     public void setUserName(String param0) {
     }
 
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
-    public void setGroupId(long param0) {
+    public String getTitle(Locale param0, boolean param1) {
+        return this.mockObject.getTitle(param0, param1);
     }
 
-    public void setDescription(String param0) {
+    public String getTitle(String param0) {
+        return this.mockObject.getTitle(param0);
     }
 
-    public void setDescription(String param0, Locale param1) {
-    }
-
-    public void setDescription(String param0, Locale param1, Locale param2) {
-    }
-
-    public String getTitle() {
-        return this.mockObject.getTitle();
+    public String getTitle(String param0, boolean param1) {
+        return this.mockObject.getTitle(param0, param1);
     }
 
     public String getTitle(Locale param0) {
         return this.mockObject.getTitle(param0);
     }
 
-    public String getTitle(Locale param0, boolean param1) {
-        return this.mockObject.getTitle(param0, param1);
+    public String getTitle() {
+        return this.mockObject.getTitle();
     }
 
     public String getTitleCurrentLanguageId() {
@@ -257,10 +252,10 @@ public class AssetVocabularyMock
         return this.mockObject.getTitleMap();
     }
 
-    public void setTitle(String param0) {
+    public void setTitle(String param0, Locale param1) {
     }
 
-    public void setTitle(String param0, Locale param1) {
+    public void setTitle(String param0) {
     }
 
     public void setTitle(String param0, Locale param1, Locale param2) {
@@ -269,10 +264,10 @@ public class AssetVocabularyMock
     public void setTitleCurrentLanguageId(String param0) {
     }
 
-    public void setTitleMap(Map<Locale, String> param0) {
+    public void setTitleMap(Map<Locale, String> param0, Locale param1) {
     }
 
-    public void setTitleMap(Map<Locale, String> param0, Locale param1) {
+    public void setTitleMap(Map<Locale, String> param0) {
     }
 
     public String getDescriptionCurrentLanguageId() {
@@ -296,23 +291,59 @@ public class AssetVocabularyMock
     public void setDescriptionMap(Map<Locale, String> param0, Locale param1) {
     }
 
+    public String[] getAvailableLanguageIds() {
+        return this.mockObject.getAvailableLanguageIds();
+    }
+
+    public String getDefaultLanguageId() {
+        return this.mockObject.getDefaultLanguageId();
+    }
+
     public void prepareLocalizedFieldsForImport(Locale param0)
         throws LocaleException
     {
     }
 
-    public long getVocabularyId() {
-        return this.mockObject.getVocabularyId();
+    public void prepareLocalizedFieldsForImport()
+        throws LocaleException
+    {
     }
 
-    public void setVocabularyId(long param0) {
+    public void setSettings(String param0) {
+    }
+
+    public AssetVocabulary toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
+    }
+
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
+    }
+
+    public void setCompanyId(long param0) {
+    }
+
+    public String getSettings() {
+        return this.mockObject.getSettings();
+    }
+
+    public void setDescription(String param0) {
+    }
+
+    public void setDescription(String param0, Locale param1, Locale param2) {
+    }
+
+    public void setDescription(String param0, Locale param1) {
+    }
+
+    public void resetOriginalValues() {
     }
 
     public Map<String, Object> getModelAttributes() {
         return this.mockObject.getModelAttributes();
-    }
-
-    public void resetOriginalValues() {
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -324,6 +355,10 @@ public class AssetVocabularyMock
 
     public String getModelClassName() {
         return this.mockObject.getModelClassName();
+    }
+
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
     }
 
     public void persist()

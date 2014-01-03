@@ -5,13 +5,13 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.model.ResourceBlockPermissionsContainer;
 import com.liferay.portal.model.ResourceTypePermission;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -49,41 +49,6 @@ public class ResourceTypePermissionLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
     public ResourceBlockPermissionsContainer getResourceBlockPermissionsContainer(long param0, long param1, String param2)
         throws SystemException
     {
@@ -97,40 +62,6 @@ public class ResourceTypePermissionLocalServiceMock
         return param0;
     }
 
-    public ResourceTypePermission createResourceTypePermission(long param0) {
-        return this.mockObject.createResourceTypePermission(param0);
-    }
-
-    public ResourceTypePermission deleteResourceTypePermission(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.deleteResourceTypePermission(param0);
-    }
-
-    public ResourceTypePermission deleteResourceTypePermission(ResourceTypePermission param0)
-        throws SystemException
-    {
-        return this.mockObject.deleteResourceTypePermission(param0);
-    }
-
-    public ResourceTypePermission fetchResourceTypePermission(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public ResourceTypePermission getResourceTypePermission(long param0)
-        throws PortalException, SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public List<ResourceTypePermission> getResourceTypePermissions(int param0, int param1)
-        throws SystemException
-    {
-        return this.mockObject.getResourceTypePermissions(param0, param1);
-    }
-
     public int getResourceTypePermissionsCount()
         throws SystemException
     {
@@ -141,12 +72,6 @@ public class ResourceTypePermissionLocalServiceMock
         throws SystemException
     {
         return this.mockObject.updateResourceTypePermission(param0);
-    }
-
-    public ResourceTypePermission updateResourceTypePermission(ResourceTypePermission param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateResourceTypePermission(param0, param1);
     }
 
     public long getCompanyScopeActionIds(long param0, String param1, long param2)
@@ -199,6 +124,81 @@ public class ResourceTypePermissionLocalServiceMock
     public void updateGroupScopeResourceTypePermissions(long param0, long param1, String param2, long param3, long param4, long param5)
         throws SystemException
     {
+    }
+
+    public ResourceTypePermission createResourceTypePermission(long param0) {
+        return this.mockObject.createResourceTypePermission(param0);
+    }
+
+    public ResourceTypePermission deleteResourceTypePermission(ResourceTypePermission param0)
+        throws SystemException
+    {
+        return this.mockObject.deleteResourceTypePermission(param0);
+    }
+
+    public ResourceTypePermission deleteResourceTypePermission(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.deleteResourceTypePermission(param0);
+    }
+
+    public ResourceTypePermission fetchResourceTypePermission(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public ResourceTypePermission getResourceTypePermission(long param0)
+        throws PortalException, SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public List<ResourceTypePermission> getResourceTypePermissions(int param0, int param1)
+        throws SystemException
+    {
+        return this.mockObject.getResourceTypePermissions(param0, param1);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

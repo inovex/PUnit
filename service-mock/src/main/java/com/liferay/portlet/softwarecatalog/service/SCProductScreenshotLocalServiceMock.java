@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portlet.softwarecatalog.model.SCProductScreenshot;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -48,60 +48,14 @@ public class SCProductScreenshotLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public SCProductScreenshot deleteSCProductScreenshot(SCProductScreenshot param0)
         throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public SCProductScreenshot addSCProductScreenshot(SCProductScreenshot param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
-    }
-
-    public SCProductScreenshot createSCProductScreenshot(long param0) {
-        return this.mockObject.createSCProductScreenshot(param0);
-    }
-
-    public SCProductScreenshot deleteSCProductScreenshot(long param0)
-        throws PortalException, SystemException
     {
         return this.mockObject.deleteSCProductScreenshot(param0);
     }
 
-    public SCProductScreenshot deleteSCProductScreenshot(SCProductScreenshot param0)
-        throws SystemException
+    public SCProductScreenshot deleteSCProductScreenshot(long param0)
+        throws PortalException, SystemException
     {
         return this.mockObject.deleteSCProductScreenshot(param0);
     }
@@ -136,12 +90,6 @@ public class SCProductScreenshotLocalServiceMock
         return this.mockObject.updateSCProductScreenshot(param0);
     }
 
-    public SCProductScreenshot updateSCProductScreenshot(SCProductScreenshot param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateSCProductScreenshot(param0, param1);
-    }
-
     public void deleteProductScreenshot(SCProductScreenshot param0)
         throws PortalException, SystemException
     {
@@ -158,12 +106,6 @@ public class SCProductScreenshotLocalServiceMock
         return this.mockObject.getProductScreenshot(param0, param1);
     }
 
-    public SCProductScreenshot getProductScreenshotByFullImageId(long param0)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getProductScreenshotByFullImageId(param0);
-    }
-
     public SCProductScreenshot getProductScreenshotByThumbnailId(long param0)
         throws PortalException, SystemException
     {
@@ -174,6 +116,64 @@ public class SCProductScreenshotLocalServiceMock
         throws SystemException
     {
         return this.mockObject.getProductScreenshots(param0);
+    }
+
+    public SCProductScreenshot createSCProductScreenshot(long param0) {
+        return this.mockObject.createSCProductScreenshot(param0);
+    }
+
+    public SCProductScreenshot getProductScreenshotByFullImageId(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getProductScreenshotByFullImageId(param0);
+    }
+
+    public SCProductScreenshot addSCProductScreenshot(SCProductScreenshot param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

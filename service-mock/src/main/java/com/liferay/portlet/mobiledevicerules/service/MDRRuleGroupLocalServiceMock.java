@@ -3,17 +3,18 @@ package com.liferay.portlet.mobiledevicerules.service;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.Projection;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.model.PersistedModel;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.mobiledevicerules.model.MDRRuleGroup;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -45,6 +46,12 @@ public class MDRRuleGroupLocalServiceMock
         this.setMockObject(org.mockito.Mockito.mock(com.liferay.portlet.mobiledevicerules.service.MDRRuleGroupLocalService.class));
     }
 
+    public List<MDRRuleGroup> search(long param0, String param1, LinkedHashMap<String, Object> param2, boolean param3, int param4, int param5)
+        throws SystemException
+    {
+        return this.mockObject.search(param0, param1, param2, param3, param4, param5);
+    }
+
     public List<MDRRuleGroup> search(long param0, String param1, boolean param2, int param3, int param4)
         throws SystemException
     {
@@ -57,58 +64,16 @@ public class MDRRuleGroupLocalServiceMock
         return this.mockObject.getPersistedModel(param0);
     }
 
-    public DynamicQuery dynamicQuery() {
-        return this.mockObject.dynamicQuery();
-    }
-
-    public List dynamicQuery(DynamicQuery param0)
+    public MDRRuleGroup fetchMDRRuleGroupByUuidAndCompanyId(String param0, long param1)
         throws SystemException
     {
-        return this.mockObject.dynamicQuery(param0);
+        return this.mockObject.fetchMDRRuleGroupByUuidAndCompanyId(param0, param1);
     }
 
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2);
-    }
-
-    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
-    }
-
-    public long dynamicQueryCount(DynamicQuery param0)
-        throws SystemException
-    {
-        return this.mockObject.dynamicQueryCount(param0);
-    }
-
-    public String getBeanIdentifier() {
-        return this.mockObject.getBeanIdentifier();
-    }
-
-    public void setBeanIdentifier(String param0) {
-    }
-
-    public int searchCount(long param0, String param1, boolean param2)
-        throws SystemException
-    {
-        return this.mockObject.searchCount(param0, param1, param2);
-    }
-
-    public MDRRuleGroup getRuleGroup(long param0)
+    public MDRRuleGroup getMDRRuleGroup(long param0)
         throws PortalException, SystemException
     {
-        return this.mockObject.getRuleGroup(param0);
-    }
-
-    public MDRRuleGroup addMDRRuleGroup(MDRRuleGroup param0)
-        throws SystemException
-    {
-        _serviceObjects.put(param0.getPrimaryKey(), param0);
-        return param0;
+        return (_serviceObjects.get(param0));
     }
 
     public MDRRuleGroup createMDRRuleGroup(long param0) {
@@ -127,16 +92,22 @@ public class MDRRuleGroupLocalServiceMock
         return this.mockObject.deleteMDRRuleGroup(param0);
     }
 
-    public MDRRuleGroup fetchMDRRuleGroup(long param0)
-        throws SystemException
-    {
-        return (_serviceObjects.get(param0));
-    }
-
-    public MDRRuleGroup getMDRRuleGroup(long param0)
+    public MDRRuleGroup addRuleGroup(long param0, Map<Locale, String> param1, Map<Locale, String> param2, ServiceContext param3)
         throws PortalException, SystemException
     {
-        return (_serviceObjects.get(param0));
+        return this.mockObject.addRuleGroup(param0, param1, param2, param3);
+    }
+
+    public MDRRuleGroup fetchMDRRuleGroupByUuidAndGroupId(String param0, long param1)
+        throws SystemException
+    {
+        return this.mockObject.fetchMDRRuleGroupByUuidAndGroupId(param0, param1);
+    }
+
+    public MDRRuleGroup getMDRRuleGroupByUuidAndCompanyId(String param0, long param1)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getMDRRuleGroupByUuidAndCompanyId(param0, param1);
     }
 
     public MDRRuleGroup getMDRRuleGroupByUuidAndGroupId(String param0, long param1)
@@ -163,16 +134,10 @@ public class MDRRuleGroupLocalServiceMock
         return this.mockObject.updateMDRRuleGroup(param0);
     }
 
-    public MDRRuleGroup updateMDRRuleGroup(MDRRuleGroup param0, boolean param1)
-        throws SystemException
-    {
-        return this.mockObject.updateMDRRuleGroup(param0, param1);
-    }
-
-    public MDRRuleGroup addRuleGroup(long param0, Map<Locale, String> param1, Map<Locale, String> param2, ServiceContext param3)
+    public MDRRuleGroup copyRuleGroup(MDRRuleGroup param0, long param1, ServiceContext param2)
         throws PortalException, SystemException
     {
-        return this.mockObject.addRuleGroup(param0, param1, param2, param3);
+        return this.mockObject.copyRuleGroup(param0, param1, param2);
     }
 
     public MDRRuleGroup copyRuleGroup(long param0, long param1, ServiceContext param2)
@@ -181,18 +146,12 @@ public class MDRRuleGroupLocalServiceMock
         return this.mockObject.copyRuleGroup(param0, param1, param2);
     }
 
-    public MDRRuleGroup copyRuleGroup(MDRRuleGroup param0, long param1, ServiceContext param2)
-        throws PortalException, SystemException
-    {
-        return this.mockObject.copyRuleGroup(param0, param1, param2);
-    }
-
-    public void deleteRuleGroup(long param0)
+    public void deleteRuleGroup(MDRRuleGroup param0)
         throws SystemException
     {
     }
 
-    public void deleteRuleGroup(MDRRuleGroup param0)
+    public void deleteRuleGroup(long param0)
         throws SystemException
     {
     }
@@ -226,10 +185,40 @@ public class MDRRuleGroupLocalServiceMock
         return this.mockObject.getRuleGroupsCount(param0);
     }
 
+    public MDRRuleGroup getRuleGroup(long param0)
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getRuleGroup(param0);
+    }
+
+    public int searchCount(long param0, String param1, LinkedHashMap<String, Object> param2, boolean param3)
+        throws SystemException
+    {
+        return this.mockObject.searchCount(param0, param1, param2, param3);
+    }
+
+    public int searchCount(long param0, String param1, boolean param2)
+        throws SystemException
+    {
+        return this.mockObject.searchCount(param0, param1, param2);
+    }
+
     public List<MDRRuleGroup> searchByKeywords(long param0, String param1, boolean param2, int param3, int param4)
         throws SystemException
     {
         return this.mockObject.searchByKeywords(param0, param1, param2, param3, param4);
+    }
+
+    public List<MDRRuleGroup> searchByKeywords(long param0, String param1, LinkedHashMap<String, Object> param2, boolean param3, int param4, int param5)
+        throws SystemException
+    {
+        return this.mockObject.searchByKeywords(param0, param1, param2, param3, param4, param5);
+    }
+
+    public int searchByKeywordsCount(long param0, String param1, LinkedHashMap<String, Object> param2, boolean param3)
+        throws SystemException
+    {
+        return this.mockObject.searchByKeywordsCount(param0, param1, param2, param3);
     }
 
     public int searchByKeywordsCount(long param0, String param1, boolean param2)
@@ -242,6 +231,60 @@ public class MDRRuleGroupLocalServiceMock
         throws PortalException, SystemException
     {
         return this.mockObject.updateRuleGroup(param0, param1, param2, param3);
+    }
+
+    public MDRRuleGroup addMDRRuleGroup(MDRRuleGroup param0)
+        throws SystemException
+    {
+        _serviceObjects.put(param0.getPrimaryKey(), param0);
+        return param0;
+    }
+
+    public MDRRuleGroup fetchMDRRuleGroup(long param0)
+        throws SystemException
+    {
+        return (_serviceObjects.get(param0));
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2, OrderByComparator param3)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2, param3);
+    }
+
+    public List dynamicQuery(DynamicQuery param0, int param1, int param2)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0, param1, param2);
+    }
+
+    public List dynamicQuery(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQuery(param0);
+    }
+
+    public DynamicQuery dynamicQuery() {
+        return this.mockObject.dynamicQuery();
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0);
+    }
+
+    public long dynamicQueryCount(DynamicQuery param0, Projection param1)
+        throws SystemException
+    {
+        return this.mockObject.dynamicQueryCount(param0, param1);
+    }
+
+    public String getBeanIdentifier() {
+        return this.mockObject.getBeanIdentifier();
+    }
+
+    public void setBeanIdentifier(String param0) {
     }
 
 }

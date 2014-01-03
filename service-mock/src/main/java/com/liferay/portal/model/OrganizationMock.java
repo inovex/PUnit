@@ -2,6 +2,7 @@
 package com.liferay.portal.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -9,9 +10,9 @@ import java.util.Set;
 import javax.portlet.PortletPreferences;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.lar.StagedModelType;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portlet.expando.model.ExpandoBridge;
-
 import de.inovex.punit.servicemock.MockService;
 
 
@@ -46,18 +47,18 @@ public class OrganizationMock
         return this.mockObject.getAddress();
     }
 
+    public List<Organization> getAncestors()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.getAncestors();
+    }
+
+    public long getGroupId() {
+        return this.mockObject.getGroupId();
+    }
+
     public Group getGroup() {
         return this.mockObject.getGroup();
-    }
-
-    public boolean hasPublicLayouts() {
-        return this.mockObject.hasPublicLayouts();
-    }
-
-    public PortletPreferences getPreferences()
-        throws SystemException
-    {
-        return this.mockObject.getPreferences();
     }
 
     public List<Address> getAddresses()
@@ -66,48 +67,16 @@ public class OrganizationMock
         return this.mockObject.getAddresses();
     }
 
+    public boolean hasPublicLayouts() {
+        return this.mockObject.hasPublicLayouts();
+    }
+
     public long getLogoId() {
         return this.mockObject.getLogoId();
     }
 
-    public int getPrivateLayoutsPageCount() {
-        return this.mockObject.getPrivateLayoutsPageCount();
-    }
-
-    public int getPublicLayoutsPageCount() {
-        return this.mockObject.getPublicLayoutsPageCount();
-    }
-
-    public boolean hasPrivateLayouts() {
-        return this.mockObject.hasPrivateLayouts();
-    }
-
-    public long getGroupId() {
-        return this.mockObject.getGroupId();
-    }
-
-    public Set<String> getReminderQueryQuestions(Locale param0)
-        throws SystemException
-    {
-        return this.mockObject.getReminderQueryQuestions(param0);
-    }
-
-    public Set<String> getReminderQueryQuestions(String param0)
-        throws SystemException
-    {
-        return this.mockObject.getReminderQueryQuestions(param0);
-    }
-
-    public String buildTreePath()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.buildTreePath();
-    }
-
-    public List<Organization> getAncestors()
-        throws PortalException, SystemException
-    {
-        return this.mockObject.getAncestors();
+    public int getTypeOrder() {
+        return this.mockObject.getTypeOrder();
     }
 
     public String[] getChildrenTypes() {
@@ -118,6 +87,12 @@ public class OrganizationMock
         throws SystemException
     {
         return this.mockObject.getDescendants();
+    }
+
+    public PortletPreferences getPreferences()
+        throws SystemException
+    {
+        return this.mockObject.getPreferences();
     }
 
     public Organization getParentOrganization()
@@ -138,10 +113,6 @@ public class OrganizationMock
         return this.mockObject.getSuborganizationsSize();
     }
 
-    public int getTypeOrder() {
-        return this.mockObject.getTypeOrder();
-    }
-
     public boolean hasSuborganizations()
         throws SystemException
     {
@@ -150,6 +121,30 @@ public class OrganizationMock
 
     public boolean isParentable() {
         return this.mockObject.isParentable();
+    }
+
+    public int getPrivateLayoutsPageCount() {
+        return this.mockObject.getPrivateLayoutsPageCount();
+    }
+
+    public int getPublicLayoutsPageCount() {
+        return this.mockObject.getPublicLayoutsPageCount();
+    }
+
+    public boolean hasPrivateLayouts() {
+        return this.mockObject.hasPrivateLayouts();
+    }
+
+    public Set<String> getReminderQueryQuestions(String param0)
+        throws SystemException
+    {
+        return this.mockObject.getReminderQueryQuestions(param0);
+    }
+
+    public Set<String> getReminderQueryQuestions(Locale param0)
+        throws SystemException
+    {
+        return this.mockObject.getReminderQueryQuestions(param0);
     }
 
     public boolean isRoot() {
@@ -187,16 +182,6 @@ public class OrganizationMock
         return this.mockObject.getPrimaryKey();
     }
 
-    public void setPrimaryKey(long param0) {
-    }
-
-    public boolean isNew() {
-        return this.mockObject.isNew();
-    }
-
-    public void setNew(boolean param0) {
-    }
-
     public boolean isCachedModel() {
         return this.mockObject.isCachedModel();
     }
@@ -208,22 +193,20 @@ public class OrganizationMock
         return this.mockObject.isEscapedModel();
     }
 
-    public Serializable getPrimaryKeyObj() {
-        return this.mockObject.getPrimaryKeyObj();
-    }
-
-    public void setPrimaryKeyObj(Serializable param0) {
+    public void setPrimaryKey(long param0) {
     }
 
     public ExpandoBridge getExpandoBridge() {
         return this.mockObject.getExpandoBridge();
     }
 
+    public void setExpandoBridgeAttributes(BaseModel<?> param0) {
+    }
+
     public void setExpandoBridgeAttributes(ServiceContext param0) {
     }
 
-    public CacheModel<Organization> toCacheModel() {
-        return this.mockObject.toCacheModel();
+    public void setExpandoBridgeAttributes(ExpandoBridge param0) {
     }
 
     public Organization toEscapedModel() {
@@ -234,11 +217,59 @@ public class OrganizationMock
         return this.mockObject.toXmlString();
     }
 
-    public long getCompanyId() {
-        return this.mockObject.getCompanyId();
+    public Serializable getPrimaryKeyObj() {
+        return this.mockObject.getPrimaryKeyObj();
     }
 
-    public void setCompanyId(long param0) {
+    public void setPrimaryKeyObj(Serializable param0) {
+    }
+
+    public boolean isNew() {
+        return this.mockObject.isNew();
+    }
+
+    public void setNew(boolean param0) {
+    }
+
+    public CacheModel<Organization> toCacheModel() {
+        return this.mockObject.toCacheModel();
+    }
+
+    public Date getModifiedDate() {
+        return this.mockObject.getModifiedDate();
+    }
+
+    public void setModifiedDate(Date param0) {
+    }
+
+    public long getUserId() {
+        return this.mockObject.getUserId();
+    }
+
+    public void setUserId(long param0) {
+    }
+
+    public String getUuid() {
+        return this.mockObject.getUuid();
+    }
+
+    public void setUuid(String param0) {
+    }
+
+    public String getUserName() {
+        return this.mockObject.getUserName();
+    }
+
+    public String getUserUuid()
+        throws SystemException
+    {
+        return this.mockObject.getUserUuid();
+    }
+
+    public void setUserUuid(String param0) {
+    }
+
+    public void setUserName(String param0) {
     }
 
     public void setType(String param0) {
@@ -256,6 +287,10 @@ public class OrganizationMock
     }
 
     public void setCountryId(long param0) {
+    }
+
+    public long getCompanyId() {
+        return this.mockObject.getCompanyId();
     }
 
     public long getOrganizationId() {
@@ -279,11 +314,15 @@ public class OrganizationMock
     public void setParentOrganizationId(long param0) {
     }
 
-    public String getTreePath() {
-        return this.mockObject.getTreePath();
+    public Organization toUnescapedModel() {
+        return this.mockObject.toUnescapedModel();
     }
 
-    public void setTreePath(String param0) {
+    public Date getCreateDate() {
+        return this.mockObject.getCreateDate();
+    }
+
+    public void setCreateDate(Date param0) {
     }
 
     public boolean getRecursable() {
@@ -304,11 +343,21 @@ public class OrganizationMock
     public void setStatusId(int param0) {
     }
 
-    public Map<String, Object> getModelAttributes() {
-        return this.mockObject.getModelAttributes();
+    public void setCompanyId(long param0) {
+    }
+
+    public void setTreePath(String param0) {
+    }
+
+    public String getTreePath() {
+        return this.mockObject.getTreePath();
     }
 
     public void resetOriginalValues() {
+    }
+
+    public Map<String, Object> getModelAttributes() {
+        return this.mockObject.getModelAttributes();
     }
 
     public void setModelAttributes(Map<String, Object> param0) {
@@ -322,7 +371,22 @@ public class OrganizationMock
         return this.mockObject.getModelClassName();
     }
 
+    public StagedModelType getStagedModelType() {
+        return this.mockObject.getStagedModelType();
+    }
+
     public void persist()
+        throws SystemException
+    {
+    }
+
+    public String buildTreePath()
+        throws PortalException, SystemException
+    {
+        return this.mockObject.buildTreePath();
+    }
+
+    public void updateTreePath(String param0)
         throws SystemException
     {
     }
